@@ -31,12 +31,6 @@ quests:
     startCell: "Balmora, Temple"
     destCell: "Tharys Ancestral Tomb"
     urnName: "Remains of Mehra Tharys"
-  - id: "ck_balmora_samarys"
-    # https://en.uesp.net/wiki/Morrowind:Samarys_Ancestral_Tomb - undead guardians
-    # directions:  it's along the coast between the Odai and Seyda Neen.
-    startCell: "Balmora, Temple"
-    destCell: "Samarys Ancestral Tomb"
-    urnName: "Remains of Marvisia Samarys"
   - id: "ck_balmora_heran"
     # https://en.uesp.net/wiki/Morrowind:Heran_Ancestral_Tomb - looted, loose daedra!
     # directions-: it's south of Hla Oad
@@ -45,6 +39,29 @@ quests:
     urnName: "Remains of Joveth Heran"
     destCellEnterStage: 39
     destCellClearedStage: 40
+  - id: "ck_balmora_thalas"
+    # "https://en.uesp.net/wiki/Morrowind:Saren_Ancestral_Tomb - undead guardians
+    # directions: follow the foyada near Fort Moonmoth north, then take a right at Assarnatamat.
+    startCell: "Balmora, Temple"
+    destCell: "Thalas Ancestral Tomb"
+    urnName: "Remains of Drarym Thalas"
+  - id: "ck_balmora_andrethi"
+    # "https://en.uesp.net/wiki/Morrowind:Andrethi_Ancestral_Tomb - vampires!
+    # directions: west of balmora and south of the Norvayn Ancestral Tomb
+    startCell: "Balmora, Temple"
+    destCell: "Andrethi Ancestral Tomb"
+    urnName: "Remains of Bylen Andrethi"
+  - id: "ck_balmora_saren"
+    # "https://en.uesp.net/wiki/Morrowind:Saren_Ancestral_Tomb - daedra!
+    # directions: take the bridge near Fort Moonmoth. Once on the other side, travel northeast.
+    startCell: "Balmora, Temple"
+    destCell: "Saren Ancestral Tomb"
+    urnName: "Remains of Felara Saren"
+
+
+
+
+DELETE:
   - id: "ck_balmora_norvayn"
     # https://en.uesp.net/wiki/Morrowind:Norvayn_Ancestral_Tomb - undead guardians
     # directions: northwest of balmora, along the road that passes the ancient dunmer stronghold Hlormaren
@@ -63,29 +80,10 @@ quests:
     startCell: "Balmora, Temple"
     destCell: "Sarys Ancestral Tomb"
     urnName: "Remains of Galo Sarys"
-  - id: "ck_balmora_andrethi"
-    # "https://en.uesp.net/wiki/Morrowind:Andrethi_Ancestral_Tomb - vampires!
-    # directions: west of balmora and south of the Norvayn Ancestral Tomb
-    startCell: "Balmora, Temple"
-    destCell: "Andrethi Ancestral Tomb"
-    urnName: "Remains of Bylen Andrethi"
+
   - id: "ck_balmora_thelas"
     # https://en.uesp.net/wiki/Morrowind:Thelas_Ancestral_Tomb - undead guardians. boring
     # directions:  it's on the coast, west of Seyda Neen.
     startCell: "Balmora, Temple"
     destCell: "Thelas Ancestral Tomb"
     urnName: "Remains of Mehra Thelas"
-
-  - id: "ck_balmora_thalas"
-    # "https://en.uesp.net/wiki/Morrowind:Saren_Ancestral_Tomb - undead guardians
-    # directions: follow the foyada near Fort Moonmoth north, then take a right at Assarnatamat.
-    startCell: "Balmora, Temple"
-    destCell: "Thalas Ancestral Tomb"
-    urnName: "Remains of Drarym Thalas"
-
-  - id: "ck_balmora_saren"
-    # "https://en.uesp.net/wiki/Morrowind:Saren_Ancestral_Tomb - daedra!
-    # directions: take the bridge near Fort Moonmoth. Once on the other side, travel northeast.
-    startCell: "Balmora, Temple"
-    destCell: "Saren Ancestral Tomb"
-    urnName: "Remains of Felara Saren"
