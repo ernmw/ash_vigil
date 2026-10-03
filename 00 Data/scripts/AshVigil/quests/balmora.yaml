@@ -57,33 +57,3 @@ quests:
     startCell: "Balmora, Temple"
     destCell: "Saren Ancestral Tomb"
     urnName: "Remains of Felara Saren"
-
-
-
-
-DELETE:
-  - id: "ck_balmora_norvayn"
-    # https://en.uesp.net/wiki/Morrowind:Norvayn_Ancestral_Tomb - undead guardians
-    # directions: northwest of balmora, along the road that passes the ancient dunmer stronghold Hlormaren
-    startCell: "Balmora, Temple"
-    destCell: "Norvayn Ancestral Tomb"
-    urnName: "Remains of Rilvas Norvayn"
-  - id: "ck_balmora_lleran"
-    # "https://en.uesp.net/wiki/Morrowind:Lleran_Ancestral_Tomb - undead guardians
-    # directions: follow the Odai south out of Balmora, then cross the bridge near the Shulk Egg Mine. Follow the road, and it will be on your left.
-    startCell: "Balmora, Temple"
-    destCell: "Lleran Ancestral Tomb"
-    urnName: "Remains of Fendel Lleran"
-  - id: "ck_balmora_sarys"
-    # https://en.uesp.net/wiki/Morrowind:Sarys_Ancestral_Tomb - undead guardians. boring
-    # directions:  it's on the coast, west of Seyda Neen.
-    startCell: "Balmora, Temple"
-    destCell: "Sarys Ancestral Tomb"
-    urnName: "Remains of Galo Sarys"
-
-  - id: "ck_balmora_thelas"
-    # https://en.uesp.net/wiki/Morrowind:Thelas_Ancestral_Tomb - undead guardians. boring
-    # directions:  it's on the coast, west of Seyda Neen.
-    startCell: "Balmora, Temple"
-    destCell: "Thelas Ancestral Tomb"
-    urnName: "Remains of Mehra Thelas"
