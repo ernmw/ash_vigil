@@ -1,0 +1,3 @@
+[merge "custom-driver-name"]
+    name = omwaddon-merge-tool
+    driver = "./Backstage/merge-omwaddon.sh" %O %A %B

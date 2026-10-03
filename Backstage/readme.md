@@ -4,10 +4,11 @@ This `Backstage` folder won't be released to Nexus. It's just for internal notes
 
 ## Development Setup
 
-Run this command:
+Run these commands from the project root directory:
 
 ```sh
 git config core.hooksPath .githooks
+git config --local include.path .gitconfig.local
 ```
 
 This will keep `AshVigil_readonly.json` up-to-date. Don't edit this file directly; it will be overwritten all the time. This is important so we can see what's actually changing in the omwaddon during git diffs. It will let us catch accidental edits, and should help with merge conflicts.
