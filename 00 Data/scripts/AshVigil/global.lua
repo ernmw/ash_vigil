@@ -43,7 +43,7 @@ local function disturbCheck(object, actor)
     for _, creature in ipairs(cell:getAll(types.Creature)) do
         for _, spell in pairs(creature.type.activeSpells(creature)) do
             if spell.id == const.PEACE_SPELL then
-                settings.debugPrint("Disturbing "..actor.record.id)
+                settings.debugPrint("Disturbing "..actor.id)
                 creature.type.activeSpells(creature):remove(spell.activeSpellId)
             end
         end
@@ -225,7 +225,7 @@ end
 
 local function onCalmCreatures(data)
     settings.debugPrint("Calming enemies: " .. aux_util.deepToString(data.creatures, 3))
-    for _, creature in ipairs(data.creatures) do
+    for _, creature in pairs(data.creatures) do
         creature.type.activeSpells(creature):add({
             id = const.PEACE_SPELL,
             effects = { 0 },

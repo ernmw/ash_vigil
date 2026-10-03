@@ -140,7 +140,7 @@ local function getEnemies()
             end
         end
     end
-    return enemies
+    return enemies, undead
 end
 
 ---@type {[string]:UrnItemData}
@@ -173,6 +173,7 @@ local function onCellLoaded()
             local undeadInCurrentDestCell = {}
             enemiesInCurrentDestCell, undeadInCurrentDestCell = getEnemies()
             settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
+            settings.debugPrint("Undead in current cell: " .. tostring(#undeadInCurrentDestCell))
             core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
         elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
