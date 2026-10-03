@@ -1,0 +1,7 @@
+MENU: scripts/AshVigil/settings/menu_settings.lua
+GLOBAL: scripts/AshVigil/settings/global_settings.lua
+
+LOAD: scripts/AshVigil/content.lua
+PLAYER: scripts/AshVigil/player.lua
+GLOBAL: scripts/AshVigil/global.lua
+CUSTOM: scripts/AshVigil/urn.lua
