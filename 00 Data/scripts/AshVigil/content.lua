@@ -23,6 +23,7 @@ content.globals.records[const.URNS_LOST_GVAR] = 0
 content.globals.records[const.URNS_DELIVERED_GVAR]      = 0
 content.globals.records[const.HAS_URN_GVAR] = 0
 content.globals.records[const.URN_DELIVERY_ACTIVE_GVAR] = 0
+content.globals.records[const.INSIDE_TOMB_GVAR] = 0
 content.globals.records[const.KOTD_RANK_GVAR]      = -1
 content.globals.records[const.KOTD_REPUTATION_GVAR] = 0
 content.globals.records[const.KOTD_EXPELLED_GVAR] = 0

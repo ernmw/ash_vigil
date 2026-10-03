@@ -24,6 +24,7 @@ local MOD_NAME              = require("scripts.AshVigil.ns")
 local interfaces = require('openmw.interfaces')
 local settings   = require("scripts.AshVigil.settings.settings")
 local allQuests             = require("scripts.AshVigil.quests.load")
+local allTombs             = require("scripts.AshVigil.tombs.load")
 local const  = require("scripts.AshVigil.const")
 local aux_util = require('openmw_aux.util')
 
@@ -139,7 +140,7 @@ local function getEnemies()
             end
         end
     end
-    return enemies
+    return enemies, undead
 end
 
 ---@type {[string]:UrnItemData}
@@ -152,7 +153,7 @@ local currentQuestID = nil
 local insideDestCell = false
 local enemiesInCurrentDestCell = {}
 
-local currentCellID = pself.cell.id
+local currentCellID = pself.cell and pself.cell.id or nil
 local function onCellLoaded()
     local lastCell = currentCellID
     currentCellID = pself.cell.id
@@ -172,6 +173,7 @@ local function onCellLoaded()
             local undeadInCurrentDestCell = {}
             enemiesInCurrentDestCell, undeadInCurrentDestCell = getEnemies()
             settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
+            settings.debugPrint("Undead in current cell: " .. tostring(#undeadInCurrentDestCell))
             core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
         elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
@@ -188,6 +190,9 @@ local function onCellLoaded()
     if not insideDestCell then
         enemiesInCurrentDestCell = {}
     end
+
+    local currentTomb = allTombs[pself.cell.id]
+    core.sendGlobalEvent(MOD_NAME .. "onTomb", {entered=currentTomb ~= nil})
 end
 
 local function onActive()
@@ -368,6 +373,6 @@ return {
     engineHandlers = {
         onActive = onActive,
         onUpdate = onUpdate,
-        onQuestUpdate = onQuestUpdate,
+        onQuestUpdate = onQuestUpdate
     }
 }
