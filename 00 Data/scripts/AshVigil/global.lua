@@ -172,6 +172,12 @@ local function onSyncKeepersOfTheDeadFaction(data)
     vars[const.KOTD_EXPELLED_GVAR] = data.expelled
 end
 
+local function onTomb(data)
+    settings.debugPrint("onTomb: " .. aux_util.deepToString(data, 5))
+    local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.INSIDE_TOMB_GVAR] = data.entered == true
+end
+
 local function onCalmCreatures(data)
     settings.debugPrint("Calming enemies: " .. aux_util.deepToString(data.creatures, 3))
     for _, creature in ipairs(data.creatures) do
@@ -193,6 +199,7 @@ return {
         [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
         [MOD_NAME .. "onUrnLost"] = onUrnLost,
         [MOD_NAME .. "onSyncKeepersOfTheDeadFaction"] = onSyncKeepersOfTheDeadFaction,
+        [MOD_NAME .. "onTomb"] = onTomb,
         [MOD_NAME .. "onCalmCreatures"] = onCalmCreatures,
     },
     engineHandlers = {

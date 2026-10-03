@@ -24,6 +24,7 @@ local MOD_NAME              = require("scripts.AshVigil.ns")
 local interfaces = require('openmw.interfaces')
 local settings   = require("scripts.AshVigil.settings.settings")
 local allQuests             = require("scripts.AshVigil.quests.load")
+local allTombs             = require("scripts.AshVigil.tombs.load")
 local const  = require("scripts.AshVigil.const")
 local aux_util = require('openmw_aux.util')
 
@@ -188,6 +189,9 @@ local function onCellLoaded()
     if not insideDestCell then
         enemiesInCurrentDestCell = {}
     end
+
+    local currentTomb = allTombs[pself.cell.id]
+    core.sendGlobalEvent(MOD_NAME .. "onTomb", {entered=currentTomb ~= nil})
 end
 
 local function onActive()
