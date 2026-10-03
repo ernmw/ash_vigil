@@ -1,7 +1,5 @@
-name: "Crypt Keeper"
-description: "Keep the crypts."
-
-missingFollowerDetectionUtilError: "ERROR! You need to install the Follower Detection Util."
+name: "Ash Vigil"
+description: "Professional quests for the casual gamer."
 
 modSettingsAdminTitle: "Admin"
 disable_name: "Disable Mod"

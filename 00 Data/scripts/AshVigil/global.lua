@@ -27,6 +27,51 @@ local settings = require("scripts.AshVigil.settings.settings")
 local interfaces = require('openmw.interfaces')
 local vfs = require('openmw.vfs')
 
+---This removes the "Peace" spell from all creatures in a tomb
+local function disturbCheck(object, actor)
+    settings.debugPrint("onActivate actor: " ..
+    aux_util.deepToString(actor, 5) .. ", object: " .. aux_util.deepToString(object, 5))
+    if not types.Player.objectIsInstance(actor) then
+        return true
+    end
+    local vars = world.mwscript.getGlobalVariables(actor)
+    if vars[const.INSIDE_TOMB_GVAR] == 1 then
+        return true
+    end
+
+    local cell = actor.cell
+    for _, creature in ipairs(cell:getAll(types.Creature)) do
+        for _, spell in pairs(creature.type.activeSpells(creature)) do
+            if spell.id == const.PEACE_SPELL then
+                settings.debugPrint("Disturbing "..actor.record.id)
+                creature.type.activeSpells(creature):remove(spell.activeSpellId)
+            end
+        end
+    end
+    return true
+end
+
+local function registerOnActivated()
+    local activatedTypes = {
+        types.Apparatus,
+        types.Armor,
+        types.Book,
+        types.Clothing,
+        types.Ingredient,
+        types.Light,
+        types.Lockpick,
+        types.Miscellaneous,
+        types.Potion,
+        types.Probe,
+        types.Repair,
+        types.Weapon,
+        types.Container
+    }
+    for _, aType in pairs(activatedTypes) do
+        interfaces.Activation.addHandlerForType(aType, disturbCheck)
+    end
+end
+registerOnActivated()
 
 ---@class Persisted
 ---@field urnRecords {[string]:UrnItemData}
@@ -175,7 +220,7 @@ end
 local function onTomb(data)
     settings.debugPrint("onTomb: " .. aux_util.deepToString(data, 5))
     local vars = world.mwscript.getGlobalVariables(data.player)
-    vars[const.INSIDE_TOMB_GVAR] = data.entered == true
+    vars[const.INSIDE_TOMB_GVAR] = (data.entered == true) and 1 or 0
 end
 
 local function onCalmCreatures(data)
@@ -190,6 +235,7 @@ local function onCalmCreatures(data)
         })
     end
 end
+
 
 return {
     eventHandlers = {

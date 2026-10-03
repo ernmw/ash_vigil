@@ -47,7 +47,7 @@ local function load()
 
     local function loadFile(fileName)
         local result = markup.loadYaml(fileName)
-        for _, v in ipairs(result.quests) do
+        for _, v in ipairs(result.tombs) do
             ---@cast v Tomb
             local parsed = loadTomb(v)
             if parsed then

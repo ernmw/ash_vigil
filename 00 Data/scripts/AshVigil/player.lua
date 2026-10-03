@@ -153,7 +153,7 @@ local currentQuestID = nil
 local insideDestCell = false
 local enemiesInCurrentDestCell = {}
 
-local currentCellID = pself.cell.id
+local currentCellID = pself.cell and pself.cell.id or nil
 local function onCellLoaded()
     local lastCell = currentCellID
     currentCellID = pself.cell.id
@@ -372,6 +372,6 @@ return {
     engineHandlers = {
         onActive = onActive,
         onUpdate = onUpdate,
-        onQuestUpdate = onQuestUpdate,
+        onQuestUpdate = onQuestUpdate
     }
 }
