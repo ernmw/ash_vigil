@@ -26,6 +26,7 @@ local aux_util = require('openmw_aux.util')
 
 --- this script is in charge of dynamically attaching scripts to
 --- stuff we're interested in.
+--- it's like a bad ECS framework
 
 
 local function getRecord(obj)
@@ -70,9 +71,10 @@ local function isFollower(actor)
     for _, player in world.players do
         if followers[player.id] then
             --- it's a follower
-            return
+            return true
         end
     end
+    return false
 end
 
 local function handleGhost(actor)
@@ -136,6 +138,13 @@ local function handleTombItems(object)
     end
     local tombInfo = allTombs[object.cell.id]
     if tombInfo == nil then
+        return false
+    end
+    local genPrefix = "generated"
+    if string.sub(getRecord(object).id:lower(), 1, #genPrefix) == genPrefix then
+        --- dynamic items skipped.
+        --- this allows me to skip ash interment urns
+        --- this is kinda yucky
         return false
     end
     attachOnce(string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_item.lua"), object, tombInfo)

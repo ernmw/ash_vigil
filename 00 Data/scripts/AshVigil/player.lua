@@ -186,7 +186,7 @@ local function UiModeChanged(data)
     --- check urn status on ui change too so it's more snappy
     if (data.newMode ~= data.oldMode) then
         handleUrnStatus()
-        syncGlobals()
+        --syncGlobals()
     end
 end
 

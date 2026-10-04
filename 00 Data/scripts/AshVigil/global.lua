@@ -177,9 +177,6 @@ local function onTomb(data)
     vars[const.INSIDE_TOMB_GVAR] = (data.entered == true) and 1 or 0
 end
 
-
-
-
 return {
     eventHandlers = {
         [MOD_NAME .. "onQuestStart"] = onQuestStart,
