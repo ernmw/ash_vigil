@@ -18,6 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 local MOD_NAME        = require("scripts.AshVigil.ns")
 local core           = require("openmw.core")
 local pself           = require("openmw.self")
+local types           = require("openmw.types")
 
 ---@class TombInterloperData
 ---@field tomb Tomb?
@@ -35,22 +36,29 @@ local function onSave()
     return persist
 end
 
----@param data Tomb
-local function onInit(data)
-    if data then
-        persist = { tomb = data }
-        --- since this script is attached on activation,
-        --- we need to re-invoke activation
-        core.sendGlobalEvent(MOD_NAME .. "onTombInterloperActive", { actor = pself.object })
-    end
-end
-
 local function onDied()
     core.sendGlobalEvent(MOD_NAME .. "onTombInterloperDied", { actor = pself.object })
+
+    for _, player in pairs(pself.cell:getAll(types.Player)) do
+        player:sendEvent(MOD_NAME .. "onTombInterloperDied", {actor = pself.object})
+    end
+
 end
 
 local function onActive()
     core.sendGlobalEvent(MOD_NAME .. "onTombInterloperActive", { actor = pself.object })
+
+    for _, player in pairs(pself.cell:getAll(types.Player)) do
+        player:sendEvent(MOD_NAME .. "onTombInterloperActive", {actor = pself.object})
+    end
+end
+
+---@param data Tomb
+local function onInit(data)
+    if data then
+        persist = { tomb = data }
+        onActive()
+    end
 end
 
 return {

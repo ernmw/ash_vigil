@@ -17,16 +17,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 local MOD_NAME          = require("scripts.AshVigil.ns")
 local const = require("scripts.AshVigil.const")
-local storage  = require('openmw.storage')
-local world    = require('openmw.world')
-local async    = require('openmw.async')
 local types    = require('openmw.types')
-local core    = require('openmw.core')
-local aux_util = require('openmw_aux.util')
 local settings = require("scripts.AshVigil.settings.settings")
-local interfaces = require('openmw.interfaces')
-local vfs = require('openmw.vfs')
-
 
 local function getRecord(obj)
     return obj.type.record(obj)
@@ -57,17 +49,36 @@ local function onTombItemActivated(data)
     end
 end
 
+local function kotdStanding(player)
+    local kotdRep = types.NPC.getFactionReputation(player, const.KOTD_NAME)
+    --- 0 means not in the faction
+    local kotdRank = types.NPC.getFactionRank(player, const.KOTD_NAME)
+    local kotdExpelled = (types.NPC.isExpelled(player, const.KOTD_NAME) or types.NPC.isExpelled(player, "temple"))
+    return kotdRep > 0 and kotdRank > 0 and not kotdExpelled
+end
+
 local function onTombUndeadActive(data)
-    local players = data.actor.cell:getAll(types.Player)
-    --- TODO: if player is in KotD...
-    --- calm
-    data.actor.type.activeSpells(data.actor):add({
-        id = const.PEACE_SPELL,
-        effects = { 0 },
-        ignoreResistances = true,
-        ignoreSpellAbsorption = true,
-        ignoreReflect = true
-    })
+    local kotdPresent = false
+    for _, player in pairs(data.actor.cell:getAll(types.Player)) do
+        kotdPresent = kotdPresent or kotdStanding(player)
+    end
+
+    if kotdPresent then
+        local hasPeace = false
+        for _, spell in pairs(data.actor.type.activeSpells(data.actor)) do
+            hasPeace = hasPeace or (spell.id == const.PEACE_SPELL)
+        end
+        if not hasPeace then
+            settings.debugPrint("Calming " .. getRecord(data.actor).id)
+            data.actor.type.activeSpells(data.actor):add({
+                id = const.PEACE_SPELL,
+                effects = { 0 },
+                ignoreResistances = true,
+                ignoreSpellAbsorption = true,
+                ignoreReflect = true
+            })
+        end
+    end
 end
 
 return {
