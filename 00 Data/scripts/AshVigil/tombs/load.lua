@@ -22,8 +22,6 @@ local core   = require('openmw.core')
 local settings = require("scripts.AshVigil.settings.settings")
 local collection = require("scripts.AshVigil.collection")
 
---- maybe use flextag for this https://www.nexusmods.com/morrowind/mods/59488?
-
 ---@type {[string]: Tomb}
 local tombs    = {}
 

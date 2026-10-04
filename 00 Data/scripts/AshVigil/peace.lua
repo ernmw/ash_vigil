@@ -19,6 +19,7 @@ local MOD_NAME          = require("scripts.AshVigil.ns")
 local const = require("scripts.AshVigil.const")
 local types    = require('openmw.types')
 local settings = require("scripts.AshVigil.settings.settings")
+local allTombs             = require("scripts.AshVigil.tombs.load")
 
 local function getRecord(obj)
     return obj.type.record(obj)
@@ -62,23 +63,30 @@ local function onTombUndeadActive(data)
     for _, player in pairs(data.actor.cell:getAll(types.Player)) do
         kotdPresent = kotdPresent or kotdStanding(player)
     end
-
-    if kotdPresent then
-        local hasPeace = false
-        for _, spell in pairs(data.actor.type.activeSpells(data.actor)) do
-            hasPeace = hasPeace or (spell.id == const.PEACE_SPELL)
-        end
-        if not hasPeace then
-            settings.debugPrint("Calming " .. getRecord(data.actor).id)
-            data.actor.type.activeSpells(data.actor):add({
-                id = const.PEACE_SPELL,
-                effects = { 0 },
-                ignoreResistances = true,
-                ignoreSpellAbsorption = true,
-                ignoreReflect = true
-            })
-        end
+    if not kotdPresent then
+        return
     end
+
+    local tombData = allTombs[data.actor.cell.id]
+    if tombData.unrestfulDead ~= true then
+        return
+    end
+
+    local hasPeace = false
+    for _, spell in pairs(data.actor.type.activeSpells(data.actor)) do
+        hasPeace = hasPeace or (spell.id == const.PEACE_SPELL)
+    end
+    if not hasPeace then
+        settings.debugPrint("Calming " .. getRecord(data.actor).id)
+        data.actor.type.activeSpells(data.actor):add({
+            id = const.PEACE_SPELL,
+            effects = { 0 },
+            ignoreResistances = true,
+            ignoreSpellAbsorption = true,
+            ignoreReflect = true
+        })
+    end
+
 end
 
 return {

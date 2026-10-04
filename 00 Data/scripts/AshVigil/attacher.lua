@@ -43,6 +43,7 @@ end
 ---@class Tomb
 ---@field id string cell id
 ---@field region string region id
+---@field unrestfulDead boolean? if true, the undead occupants will not be at Peace
 
 local function isUndead(creature)
     return types.Creature.objectIsInstance(creature) and
