@@ -5,6 +5,11 @@ LOAD: scripts/AshVigil/content.lua
 PLAYER: scripts/AshVigil/player.lua
 GLOBAL: scripts/AshVigil/global.lua
 GLOBAL: scripts/AshVigil/peace.lua
-GLOBAL: scripts/AshVigil/attacher.lua
 CUSTOM: scripts/AshVigil/urn.lua
-CUSTOM: scripts/AshVigil/tomb_actor.lua
+
+GLOBAL: scripts/AshVigil/attacher.lua
+CUSTOM: scripts/AshVigil/attached/tomb_actor.lua
+CUSTOM: scripts/AshVigil/attached/tomb_container.lua
+CUSTOM: scripts/AshVigil/attached/tomb_interloper.lua
+CUSTOM: scripts/AshVigil/attached/tomb_item.lua
+CUSTOM: scripts/AshVigil/attached/tomb_undead.lua

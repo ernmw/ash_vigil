@@ -28,9 +28,21 @@ local aux_util = require('openmw_aux.util')
 --- stuff we're interested in.
 --- it's like a bad ECS framework
 
+--- don't forget to add these to the omwscripts file!
+local scripts               = {
+    tomb_actor = string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_actor.lua"),
+    tomb_container = string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_container.lua"),
+    tomb_interloper = string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_interloper.lua"),
+    tomb_item = string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_item.lua"),
+    tomb_undead = string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_undead.lua"),
+}
 
 local function getRecord(obj)
-    return obj.type.record(obj)
+    if obj.type ~= nil then
+        return obj.type.record(obj)
+    else
+        return nil
+    end
 end
 
 local function attachOnce(script, object, data)
@@ -50,18 +62,22 @@ local function isUndead(creature)
     types.Creature.record(creature).type == types.Creature.TYPE.Undead
 end
 
-local function isBandit(actor, player)
-    -- 30 is normal for friendly NPCs.
-    -- chargen boat guard has 70!
-    -- bandits have 90 and 0 disposition
-    local fightStat = types.Actor.stats.ai.fight(actor).base
-    if types.NPC.objectIsInstance(actor) then
-        local startDisposition = types.NPC.getBaseDisposition(actor, player)
-        if fightStat >= 90 and startDisposition <= 40 then
-            return true
+local function isBandit(actor)
+    --- just check the first player
+    for _, player in pairs(world.players) do
+        -- 30 is normal for friendly NPCs.
+        -- chargen boat guard has 70!
+        -- bandits have 90 and 0 disposition
+        local fightStat = types.Actor.stats.ai.fight(actor).base
+        if types.NPC.objectIsInstance(actor) then
+            local startDisposition = types.NPC.getBaseDisposition(actor, player)
+            if fightStat >= 90 and startDisposition <= 40 then
+                return true
+            end
         end
+        return fightStat >= 90
     end
-    return fightStat >= 90
+    return false
 end
 
 local function isFollower(actor)
@@ -69,7 +85,7 @@ local function isFollower(actor)
     if FollowerDetectionUtil then
         followers = FollowerDetectionUtil.getFollowerList()
     end
-    for _, player in world.players do
+    for _, player in pairs(world.players) do
         if followers[player.id] then
             --- it's a follower
             return true
@@ -79,10 +95,14 @@ local function isFollower(actor)
 end
 
 local function handleGhost(actor)
+    if not types.Creature.objectIsInstance(actor) then
+        return false
+    end
+
     if not actor:isValid() or types.Actor.isDead(actor) then
         return false
     end
-    if isUndead(actor) then
+    if not isUndead(actor) then
         return false
     end
     local tombInfo = allTombs[actor.cell.id]
@@ -93,12 +113,15 @@ local function handleGhost(actor)
         return false
     end
 
-    attachOnce(string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_undead.lua"), actor, tombInfo)
+    attachOnce(scripts.tomb_undead, actor, tombInfo)
     return true
 end
 
 
 local function handleInterloper(actor)
+    if not types.Actor.objectIsInstance(actor) then
+        return false
+    end
     if not actor:isValid() or types.Actor.isDead(actor) then
         return false
     end
@@ -113,28 +136,29 @@ local function handleInterloper(actor)
         return false
     end
 
-    attachOnce(string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_interloper.lua"), actor, tombInfo)
+    attachOnce(scripts.tomb_interloper, actor, tombInfo)
     return true
 end
 
 local sacred_item_types = {
-    types.Container,
-    types.Apparatus,
-    types.Armor,
-    types.Book,
-    types.Clothing,
-    types.Ingredient,
-    types.Light,
-    types.Lockpick,
-    types.Miscellaneous,
-    types.Potion,
-    types.Probe,
-    types.Repair,
-    types.Weapon,
+    [types.Container] = true,
+    [types.Apparatus] = true,
+    [types.Armor] = true,
+    [types.Book] = true,
+    [types.Clothing] = true,
+    [types.Ingredient] = true,
+    [types.Light] = true,
+    [types.Lockpick] = true,
+    [types.Miscellaneous] = true,
+    [types.Potion] = true,
+    [types.Probe] = true,
+    [types.Repair] = true,
+    [types.Weapon] = true,
 }
 
 local function handleTombItems(object)
     if not sacred_item_types[object.type] then
+        --settings.debugPrint("handleTombItems type is "..tostring(object.type))
        return
     end
     local tombInfo = allTombs[object.cell.id]
@@ -148,7 +172,7 @@ local function handleTombItems(object)
         --- this is kinda yucky
         return false
     end
-    attachOnce(string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_item.lua"), object, tombInfo)
+    attachOnce(scripts.tomb_item, object, tombInfo)
     return true
 end
 
@@ -160,19 +184,24 @@ local function handleTombContainers(object)
     if tombInfo == nil then
         return false
     end
-    attachOnce(string.lower("scripts\\" .. MOD_NAME .. "\\attached\\tomb_container.lua"), object, tombInfo)
+    attachOnce(scripts.tomb_container, object, tombInfo)
     return true
 end
 
 ---@type (fun(actor : table): boolean)[]
 local handlers = {
-    handleGhost,
-    handleInterloper,
     handleTombItems,
     handleTombContainers,
+    handleGhost,
+    handleInterloper
 }
 
 local function onObjectActive(object)
+    if not getRecord(object) then
+        -- markers
+        return
+    end
+    --settings.debugPrint("onObjectActive: "..tostring(getRecord(object).id))
     for _, handler in ipairs(handlers) do
         if handler(object) then
             return
@@ -182,6 +211,6 @@ end
 
 return {
     engineHandlers = {
-        onObjectActive = onObjectActive
+        onObjectActive = onObjectActive,
     }
 }

@@ -55,12 +55,14 @@ local function kotdStanding(player)
     --- 0 means not in the faction
     local kotdRank = types.NPC.getFactionRank(player, const.KOTD_NAME)
     local kotdExpelled = (types.NPC.isExpelled(player, const.KOTD_NAME) or types.NPC.isExpelled(player, "temple"))
-    return kotdRep > 0 and kotdRank > 0 and not kotdExpelled
+    settings.debugPrint("KotD rep: " .. tostring(kotdRep)..", rank:"..tostring(kotdRank)..", expelled: "..tostring(kotdExpelled))
+    return kotdRep >= 0 and kotdRank > 0 and not kotdExpelled
 end
 
 local function onTombUndeadActive(data)
     local kotdPresent = false
     for _, player in pairs(data.actor.cell:getAll(types.Player)) do
+        settings.debugPrint("Checking kotD status for " .. player.id.."...")
         kotdPresent = kotdPresent or kotdStanding(player)
     end
     if not kotdPresent then
@@ -68,7 +70,7 @@ local function onTombUndeadActive(data)
     end
 
     local tombData = allTombs[data.actor.cell.id]
-    if tombData.unrestfulDead ~= true then
+    if tombData.unrestfulDead == true then
         return
     end
 

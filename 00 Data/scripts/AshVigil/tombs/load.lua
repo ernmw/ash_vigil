@@ -50,6 +50,7 @@ local function load()
                 if type(parsed) == "string" then
                     print("Tomb load ERROR: " .. parsed)
                 else
+                    v.id = v.id:lower()
                     tombs[v.id] = v
                     count = count + 1
                 end
