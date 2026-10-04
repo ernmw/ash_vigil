@@ -4,4 +4,7 @@ GLOBAL: scripts/AshVigil/settings/global_settings.lua
 LOAD: scripts/AshVigil/content.lua
 PLAYER: scripts/AshVigil/player.lua
 GLOBAL: scripts/AshVigil/global.lua
+GLOBAL: scripts/AshVigil/peace.lua
+GLOBAL: scripts/AshVigil/attacher.lua
 CUSTOM: scripts/AshVigil/urn.lua
+CUSTOM: scripts/AshVigil/tomb_actor.lua

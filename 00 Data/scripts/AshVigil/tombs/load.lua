@@ -22,10 +22,6 @@ local core   = require('openmw.core')
 local settings = require("scripts.AshVigil.settings.settings")
 local collection = require("scripts.AshVigil.collection")
 
----@class Tomb
----@field id string cell id
----@field region string region id
-
 ---@type {[string]: Tomb}
 local tombs    = {}
 

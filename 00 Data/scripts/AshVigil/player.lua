@@ -170,11 +170,12 @@ local function onCellLoaded()
             if quest.metaData.destCellEnterStage ~= nil and quest.playerQuest.stage < quest.metaData.destCellEnterStage then
                 quest.playerQuest:addJournalEntry(quest.metaData.destCellEnterStage, pself)
             end
+            --- TOOD: these lines and logic should be moved into /attached/ scripts
             local undeadInCurrentDestCell = {}
             enemiesInCurrentDestCell, undeadInCurrentDestCell = getEnemies()
             settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
             settings.debugPrint("Undead in current cell: " .. tostring(#undeadInCurrentDestCell))
-            core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
+            --core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
         elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
             --- if we don't have the urn in our inventory, then we'll advance quest stage
