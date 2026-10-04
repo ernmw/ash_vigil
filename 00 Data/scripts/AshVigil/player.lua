@@ -100,48 +100,6 @@ local function onQuestUpdate(questId, stage)
     syncGlobals()
 end
 
-local function isUndead(creature)
-    return types.Creature.objectIsInstance(creature) and
-    types.Creature.record(creature).type == types.Creature.TYPE.Undead
-end
-
-local function isBandit(actor)
-    -- 30 is normal for friendly NPCs.
-    -- chargen boat guard has 70!
-    -- bandits have 90 and 0 disposition
-    local fightStat = types.Actor.stats.ai.fight(actor).base
-    if types.NPC.objectIsInstance(actor) then
-        local startDisposition = types.NPC.getBaseDisposition(actor, pself)
-        if fightStat >= 90 and startDisposition <= 40 then
-            return true
-        end
-    end
-    return fightStat >= 90
-end
-
----@class EnemiesBag
----@field interlopers table[]
----@field undead table[]
-local function getEnemies()
-    --- don't make this a hard dependency
-    local followers = {}
-    if FollowerDetectionUtil then
-        followers = FollowerDetectionUtil.getFollowerList()
-    end
-    --- iterate nearby for all enemies
-    local enemies = {}
-    local undead = {}
-    for _, actor in ipairs(nearby.actors) do
-        if actor:isValid() and not types.Actor.isDead(actor) and not followers[actor.id] and isBandit(actor) then
-            if isUndead(actor) then
-                table.insert(undead, actor)
-            else
-                table.insert(enemies, actor)
-            end
-        end
-    end
-    return enemies, undead
-end
 
 ---@type {[string]:UrnItemData}
 local questsToRecords = {}
@@ -151,7 +109,10 @@ local questsToRecords = {}
 local latestPlacedUrns = {}
 local currentQuestID = nil
 local insideDestCell = false
-local enemiesInCurrentDestCell = {}
+
+---cell id -> actor id -> true if alive
+---@type {[string]:({[string]:boolean})}
+local currentEnemiesInTombCell = {}
 
 local currentCellID = pself.cell and pself.cell.id or nil
 local function onCellLoaded()
@@ -170,11 +131,12 @@ local function onCellLoaded()
             if quest.metaData.destCellEnterStage ~= nil and quest.playerQuest.stage < quest.metaData.destCellEnterStage then
                 quest.playerQuest:addJournalEntry(quest.metaData.destCellEnterStage, pself)
             end
-            local undeadInCurrentDestCell = {}
+            --- TOOD: these lines and logic should be moved into /attached/ scripts
+            --[[local undeadInCurrentDestCell = {}
             enemiesInCurrentDestCell, undeadInCurrentDestCell = getEnemies()
             settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
-            settings.debugPrint("Undead in current cell: " .. tostring(#undeadInCurrentDestCell))
-            core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
+            settings.debugPrint("Undead in current cell: " .. tostring(#undeadInCurrentDestCell))]]
+            --core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
         elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
             --- if we don't have the urn in our inventory, then we'll advance quest stage
@@ -186,9 +148,6 @@ local function onCellLoaded()
                 core.sendGlobalEvent(MOD_NAME .. "onUrnPlacedDone", latestPlacedUrns[quest.metaData.id])
             end
         end
-    end
-    if not insideDestCell then
-        enemiesInCurrentDestCell = {}
     end
 
     local currentTomb = allTombs[pself.cell.id]
@@ -227,7 +186,7 @@ local function UiModeChanged(data)
     --- check urn status on ui change too so it's more snappy
     if (data.newMode ~= data.oldMode) then
         handleUrnStatus()
-        syncGlobals()
+        --syncGlobals()
     end
 end
 
@@ -264,23 +223,6 @@ local function onUpdate(dt)
     --- check for cell change
     if pself.cell.id ~= currentCellID then
         onCellLoaded()
-    end
-
-    --- check if we killed all the enemies
-    local quest = activeQuests[currentQuestID]
-    if insideDestCell and quest.metaData.destCellClearedStage ~= nil then
-        if quest.playerQuest.stage < quest.metaData.destCellClearedStage then
-            enemiesInCurrentDestCell = getEnemies()
-            if #enemiesInCurrentDestCell == 0 then
-                --- yay we did it
-                quest.playerQuest:addJournalEntry(quest.metaData.destCellClearedStage, pself)
-                --- if the player put the urn down before killing enemies,
-                --- then we also need to advance the journal up to placeStage
-                if nearbyActiveUrn() ~= nil then
-                    quest.playerQuest:addJournalEntry(quest.metaData.placeStage, pself)
-                end
-            end
-        end
     end
 
     handleUrnStatus()
@@ -363,11 +305,51 @@ local function DialogueResponse(data)
     end
 end
 
+local function onTombCleared(data)
+    local quest = activeQuests[currentQuestID]
+    if insideDestCell and quest.metaData.destCellClearedStage ~= nil then
+        if quest.playerQuest.stage < quest.metaData.destCellClearedStage then
+            --- yay we did it
+            quest.playerQuest:addJournalEntry(quest.metaData.destCellClearedStage, pself)
+            --- if the player put the urn down before killing enemies,
+            --- then we also need to advance the journal up to placeStage
+            if nearbyActiveUrn() ~= nil then
+                quest.playerQuest:addJournalEntry(quest.metaData.placeStage, pself)
+            end
+        end
+    end
+end
+
+local function onTombInterloperDied(data)
+    if currentEnemiesInTombCell[data.actor.cell.id] == nil then
+        return
+    end
+    currentEnemiesInTombCell[data.actor.cell.id][data.actor.id] = false
+    --- check for any left. if none, set all clear journal stage.
+    local allDead = true
+    for _, status in pairs(currentEnemiesInTombCell[data.actor.cell.id]) do
+        allDead = status and allDead
+    end
+    if allDead then
+        --- the tomb has been laid to rest.
+        onTombCleared()
+    end
+end
+
+local function onTombInterloperActive(data)
+    if currentEnemiesInTombCell[data.actor.cell.id] == nil then
+        currentEnemiesInTombCell[data.actor.cell.id] = {}
+    end
+    currentEnemiesInTombCell[data.actor.cell.id][data.actor.id] = true
+end
+
 return {
     eventHandlers = {
         UiModeChanged = UiModeChanged,
         [MOD_NAME .. "onUrnPlacedStart"] = onUrnPlacedStart,
         [MOD_NAME .. "onUrnInfo"] = onUrnInfo,
+        [MOD_NAME .. "onTombInterloperActive"] = onTombInterloperActive,
+        [MOD_NAME .. "onTombInterloperDied"] = onTombInterloperDied,
         DialogueResponse = DialogueResponse,
     },
     engineHandlers = {
