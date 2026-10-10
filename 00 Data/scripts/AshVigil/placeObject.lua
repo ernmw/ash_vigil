@@ -1,15 +1,52 @@
+
+local MOD_NAME          = require("scripts.AshVigil.ns")
+local const = require("scripts.AshVigil.const")
+local settings = require("scripts.AshVigil.settings.settings")
 local util  = require('openmw.util')
 local world = require('openmw.world')
 local types = require('openmw.types')
 local core  = require('openmw.core')
 
+---@alias GameObject table
+---@alias Cell      table
+
+local EPSILON = 0.05
 local ZERO = util.vector3(0, 0, 0)
 local UNIT = { util.vector3(1, 0, 0), util.vector3(0, 1, 0), util.vector3(0, 0, 1) }
 
-------------------------------------------------------------------------
--- Oriented bounding box helpers
-------------------------------------------------------------------------
+--- A bounding box with its projections precomputed.
+---@class PreppedBox
+---@field verts Vector3[]    the 8 corners, world space
+---@field axes Vector3[]     3 normalized box axes, world space
+---@field ranges number[][]  ranges[i] = { min, max } of the corners along axes[i]
+---@field mnx number
+---@field mny number
+---@field mnz number
+---@field mxx number
+---@field mxy number
+---@field mxz number
 
+---@class Tile
+---@field obj GameObject
+---@field box PreppedBox
+
+---@class PlaceOptions
+---@field maxAttempts? integer  default 200
+---@field margin? number        default 32, keep-out from tile edges (xy)
+---@field rotation? Transform   default: the object's current rotation
+---@field randomYaw? boolean    random yaw per attempt (overrides rotation)
+---@field token? any            echoed back in ObjectPlaced
+
+---@class PlaceRequest
+---@field object GameObject
+---@field cell string           interior cell name
+---@field tiles string[]        static record ids that count as room tiles
+---@field options? PlaceOptions
+
+---@param verts Vector3[]
+---@param axis Vector3
+---@return number lo
+---@return number hi
 local function project(verts, axis)
     local lo, hi = math.huge, -math.huge
     for _, v in ipairs(verts) do
@@ -20,6 +57,9 @@ local function project(verts, axis)
     return lo, hi
 end
 
+---@param verts Vector3[]
+---@param axes Vector3[]
+---@return PreppedBox
 local function prepVerts(verts, axes)
     local ranges = {}
     for i = 1, 3 do
@@ -39,6 +79,8 @@ local function prepVerts(verts, axes)
     }
 end
 
+---@param box Box
+---@return PreppedBox
 local function prepBox(box)
     local t = box.transform
     local o = t:apply(ZERO)
@@ -47,15 +89,21 @@ local function prepBox(box)
     return prepVerts(box.vertices, axes)
 end
 
-local function intersects(a, b, eps)
-    if a.mxx - b.mnx <= eps or b.mxx - a.mnx <= eps then return false end
-    if a.mxy - b.mny <= eps or b.mxy - a.mny <= eps then return false end
-    if a.mxz - b.mnz <= eps or b.mxz - a.mnz <= eps then return false end
+--- True if the boxes overlap on every separating axis.
+---@param a PreppedBox
+---@param b PreppedBox
+---@return boolean
+local function intersects(a, b)
+    if a.mxx - b.mnx <= EPSILON or b.mxx - a.mnx <= EPSILON then return false end
+    if a.mxy - b.mny <= EPSILON or b.mxy - a.mny <= EPSILON then return false end
+    if a.mxz - b.mnz <= EPSILON or b.mxz - a.mnz <= EPSILON then return false end
 
+    ---@param axis Vector3
+    ---@return boolean
     local function separated(axis)
         local alo, ahi = project(a.verts, axis)
         local blo, bhi = project(b.verts, axis)
-        return ahi - blo <= eps or bhi - alo <= eps
+        return ahi - blo <= EPSILON or bhi - alo <= EPSILON
     end
 
     for i = 1, 3 do
@@ -70,10 +118,14 @@ local function intersects(a, b, eps)
     return true
 end
 
-local function contains(b, a, eps)
+--- True if `a` lies entirely within `b`.
+---@param b PreppedBox  the container
+---@param a PreppedBox  the contained
+---@return boolean
+local function contains(b, a)
     for i = 1, 3 do
         local lo, hi = project(a.verts, b.axes[i])
-        if lo < b.ranges[i][1] - eps or hi > b.ranges[i][2] + eps then
+        if lo < b.ranges[i][1] - EPSILON or hi > b.ranges[i][2] + EPSILON then
             return false
         end
     end
@@ -84,19 +136,22 @@ end
 -- Cell scan
 ------------------------------------------------------------------------
 
+---@param cell Cell
+---@param exceptions table<string, boolean>  object ids to skip
+---@param tileSet table<string, boolean>     lowercase tile record ids
+---@return Tile[] tiles
+---@return PreppedBox[] obstacles
 local function scanCell(cell, exceptions, tileSet)
     local tiles, obstacles = {}, {}
     for _, obj in ipairs(cell:getAll()) do
         if exceptions[obj.id] == nil and obj.enabled then
-            local ok, box = pcall(function() return o:getBoundingBox() end)
-            if ok and box then
-                local h = box.halfSize
-                if h.x > 0.5 or h.y > 0.5 or h.z > 0.5 then
-                    if tileSet[obj.recordId] and types.Static.objectIsInstance(obj) then
-                        tiles[#tiles + 1] = { obj = obj, box = prepBox(box) }
-                    else
-                        obstacles[#obstacles + 1] = prepBox(box)
-                    end
+            local box = obj:getBoundingBox()
+            local h = box.halfSize
+            if h.x > 0.5 or h.y > 0.5 or h.z > 0.5 then
+                if tileSet[obj.recordId] and types.Static.objectIsInstance(obj) then
+                    tiles[#tiles + 1] = { obj = obj, box = prepBox(box) }
+                else
+                    obstacles[#obstacles + 1] = prepBox(box)
                 end
             end
         end
@@ -104,12 +159,10 @@ local function scanCell(cell, exceptions, tileSet)
     return tiles, obstacles
 end
 
-------------------------------------------------------------------------
--- Placement
-------------------------------------------------------------------------
-
--- Random point inside the tile's horizontal footprint, `margin` from its edges.
-local function randomXY(tile, margin)
+---@param tile Tile
+---@param margin number
+---@return Vector3
+local function randomPointWithinTile(tile, margin)
     local b = tile.box
     local p = ZERO
     for i = 1, 2 do
@@ -120,8 +173,12 @@ local function randomXY(tile, margin)
     return p
 end
 
--- The object's box if it had rotation `rot` and its origin at `pos`.
--- Built from its current box, so nothing has to be moved to test a spot.
+--- The object's box if it had rotation `delta` applied and its origin at `pos`.
+---@param relVerts Vector3[]  box corners relative to the object's origin
+---@param relAxes Vector3[]   box axes
+---@param delta Transform     rotation from the current orientation to the candidate one
+---@param pos Vector3
+---@return PreppedBox
 local function boxAt(relVerts, relAxes, delta, pos)
     local verts, axes = {}, {}
     for i, v in ipairs(relVerts) do verts[i] = delta:apply(v) + pos end
@@ -129,39 +186,31 @@ local function boxAt(relVerts, relAxes, delta, pos)
     return prepVerts(verts, axes)
 end
 
--- Event: PlaceObject
---   object  : GameObject to place
---   cell    : interior cell name
---   tiles   : list of static record ids that count as room tiles
---   options : maxAttempts (200), margin (32), tolerance (4),
---             rotation, randomYaw (false), token (any)
+---@param data PlaceRequest
+---@return boolean true if the object was placed ok
 local function onPlaceObject(data)
     local obj, opts = data.object, data.options or {}
-    local cell      = world.getCellByName(data.cell)
-    local tolerance = opts.tolerance or 4
     local margin    = opts.margin or 32
 
-    local function report(ok, pos, tile)
-        core.sendGlobalEvent('ObjectPlaced', {
-            object = obj, ok = ok, position = pos, tile = tile, token = opts.token,
-        })
-    end
+    local cell = world.getCellByName(data.cell)
+    if not cell then return false end
 
+    ---@type table<string, boolean>
     local tileSet = {}
     for _, id in ipairs(data.tiles) do tileSet[id:lower()] = true end
-    local exceptions = {[obj.id]=true}
-    local tiles, obstacles = scanCell(cell, exceptions, tileSet)
-    if #tiles == 0 then return report(false) end
+    local tiles, obstacles = scanCell(cell, { [obj.id] = true }, tileSet)
+    if #tiles == 0 then return false end
 
     -- the object's current box, relative to its own origin
     local cur = prepBox(obj:getBoundingBox())
+    ---@type Vector3[]
     local relVerts = {}
     for i, v in ipairs(cur.verts) do relVerts[i] = v - obj.position end
     local curInv = obj.rotation:inverse()
 
     for _ = 1, opts.maxAttempts or 200 do
         local tile = tiles[math.random(#tiles)]
-        local xy = randomXY(tile, margin)
+        local xy = randomPointWithinTile(tile, margin)
 
         local rot = opts.rotation or obj.rotation
         if opts.randomYaw then rot = util.transform.rotateZ(math.random() * 2 * math.pi) end
@@ -174,23 +223,25 @@ local function onPlaceObject(data)
 
         local mine = boxAt(relVerts, cur.axes, delta, pos)
 
-        local free = contains(tile.box, mine, tolerance)
+        local free = contains(tile.box, mine)
         if free then
             for _, ob in ipairs(obstacles) do
-                if intersects(mine, ob, tolerance) then free = false; break end
+                if intersects(mine, ob) then free = false; break end
             end
         end
 
         if free then
-            -- lift slightly, let the engine settle it onto the real floor
             obj:teleport(cell, pos + util.vector3(0, 0, 8), { onGround = true, rotation = rot })
-            return report(true, pos, tile.obj)
+            return true
         end
     end
 
-    report(false)
+    return false
 end
 
 return {
-    eventHandlers = { PlaceObject = onPlaceObject },
+    interfaceName = MOD_NAME .. "PlaceObject",
+    interface = {
+        PlaceObject = onPlaceObject
+    }
 }
