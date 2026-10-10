@@ -150,8 +150,8 @@ local function onCellLoaded()
         end
     end
 
-    local currentTomb = allTombs[pself.cell.id]
-    core.sendGlobalEvent(MOD_NAME .. "onTomb", {entered=currentTomb ~= nil})
+    -- always send out cell change events.
+    core.sendGlobalEvent(MOD_NAME .. "onCellEntered", pself.cell.id)
 end
 
 local function onActive()
