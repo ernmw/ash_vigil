@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
-log_name: Purify Tomb
+log_name: Purify Aran Tomb
 
 
         #- "aran ancestral tomb"
@@ -14,7 +14,8 @@ instances:
   - conditions:
       - has_journal:
           quest: ck_mm_aran
-          index: 39
+          min: 10
+          max: 39
       - cell:
         - "aran ancestral tomb"
       - is_dead: false
