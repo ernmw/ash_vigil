@@ -7,7 +7,9 @@ PLAYER: scripts/AshVigil/player.lua
 GLOBAL: scripts/AshVigil/global.lua
 GLOBAL: scripts/AshVigil/peace.lua
 GLOBAL: scripts/AshVigil/remover.lua
+GLOBAL: scripts/AshVigil/interloper.lua
 
 
 CUSTOM: scripts/AshVigil/ecs/urn.lua
 CUSTOM: scripts/AshVigil/ecs/peaceful.lua
+CUSTOM: scripts/AshVigil/ecs/interloper.lua

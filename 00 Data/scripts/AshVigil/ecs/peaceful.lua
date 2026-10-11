@@ -22,6 +22,7 @@ local core                  = require("openmw.core")
 local nearby                = require("openmw.nearby")
 local interfaces   = require("openmw.interfaces")
 local FollowerDetectionUtil = interfaces.FollowerDetectionUtil
+local SCRIPTS        = require("scripts.AshVigil.ecs.scripts")
 
 local function isFollower()
     if FollowerDetectionUtil then
@@ -41,30 +42,29 @@ local function calmSelf()
     })
 end
 
-
-local function onInit(data)
+local recordName = pself.type.record(pself.object).name
+local function start()
+    print("peaceful start - "..recordName)
     if isFollower() then
         core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
             object = pself.object,
-            script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+            script = SCRIPTS.peaceful
         })
     else
         calmSelf()
     end
+end
+
+local function onInit(data)
+    start()
 end
 
 local function onActive()
-    if isFollower() then
-        core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
-            object = pself.object,
-            script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
-        })
-    else
-        calmSelf()
-    end
+    start()
 end
 
 local function onDisturb()
+    print("peaceful disturbed - "..recordName)
     for _, spell in pairs(pself.type.activeSpells(pself)) do
         if spell.id == const.PEACE_SPELL then
             pself.type.activeSpells(pself):remove(spell.activeSpellId)
@@ -72,7 +72,7 @@ local function onDisturb()
     end
     core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
         object = pself.object,
-        script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+        script = SCRIPTS.peaceful
     })
 end
 
@@ -86,7 +86,7 @@ end
 local function onInactive()
     core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
         object = pself.object,
-        script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+        script = SCRIPTS.peaceful
     })
 end
 
