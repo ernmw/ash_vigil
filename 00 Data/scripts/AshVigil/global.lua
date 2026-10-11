@@ -77,7 +77,6 @@ local function onQuestStart(data)
     end
 
     local recordInstance = world.createObject(itemRecordID, 1)
-    settings.debugPrint("made new urn record (" .. tostring(itemRecordID) .. ") - " .. data.quest.urnName)
     if not recordInstance:hasScript(urnItemScriptPath) then
         recordInstance:addScript(urnItemScriptPath, {
             quest = data.quest,

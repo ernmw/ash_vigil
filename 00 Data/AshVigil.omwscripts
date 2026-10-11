@@ -3,8 +3,6 @@ GLOBAL: scripts/AshVigil/settings/global_settings.lua
 
 LOAD: scripts/AshVigil/content.lua
 
-GLOBAL: scripts/AshVigil/objectPlacer.lua
-
 PLAYER: scripts/AshVigil/player.lua
 GLOBAL: scripts/AshVigil/global.lua
 GLOBAL: scripts/AshVigil/peace.lua

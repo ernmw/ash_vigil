@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 126,
+    "num_objects": 74,
     "masters": [
       [
         "Morrowind.esm",
@@ -198,6 +198,118 @@
     }
   },
   {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_andas_remains",
+    "name": "Remains of Dralveth Andas",
+    "script": "",
+    "mesh": "o/contain_urn_05.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_aran_remains",
+    "name": "Remains of Fendrath Aran",
+    "script": "",
+    "mesh": "o/contain_urn_05.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_arethan_remains",
+    "name": "Remains of Arvethi Arethan",
+    "script": "",
+    "mesh": "o/contain_urn_04.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_hlervu_remains",
+    "name": "Remains of Bralvyn Hlervu",
+    "script": "",
+    "mesh": "o/contain_urn_01.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_releth_remains",
+    "name": "Remains of Vevrani Releth",
+    "script": "",
+    "mesh": "o/contain_urn_04.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_savel_remains",
+    "name": "Remains of Teldrisa Savel",
+    "script": "",
+    "mesh": "o/contain_urn_02.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_vandus_remains",
+    "name": "Remains of Seryndil Vandus",
+    "script": "",
+    "mesh": "o/contain_urn_03.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_mm_velas_remains",
+    "name": "Remains of Neralvys Velas",
+    "script": "",
+    "mesh": "o/contain_urn_05.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
     "type": "Enchanting",
     "flags": "",
     "id": "ck_mule",
@@ -218,34 +330,6 @@
       "cost": 0,
       "max_charge": 0,
       "flags": "0xfffe"
-    }
-  },
-  {
-    "type": "Clothing",
-    "flags": "",
-    "id": "ck_mule_slippers",
-    "name": "Slippers of the Mule",
-    "script": "",
-    "mesh": "c\\C_shoes_Common1_GND.NIF",
-    "icon": "c\\Tx_Common1_Shoes.dds",
-    "enchanting": "ck_mule",
-    "biped_objects": [
-      {
-        "biped_object_type": "LeftFoot",
-        "male_bodypart": "C_shoes_Common_6",
-        "female_bodypart": ""
-      },
-      {
-        "biped_object_type": "RightFoot",
-        "male_bodypart": "C_shoes_Common_6",
-        "female_bodypart": ""
-      }
-    ],
-    "data": {
-      "clothing_type": "Shoes",
-      "weight": 1.0,
-      "value": 1300,
-      "enchantment": 10
     }
   },
   {
@@ -1655,1238 +1739,6 @@
         }
       }
     ],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "ash interment",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "21946823594107440187944519529",
-    "prev_id": "",
-    "next_id": "46699996004933816582127711806",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Deliver your charge to their final resting place.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnCarried",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "46699996004933816582127711806",
-    "prev_id": "21946823594107440187944519529",
-    "next_id": "108653048015446302822696639873",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Then get on with it, %PCName.",
-    "filters": [
-      {
-        "index": 2,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 2
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnCarried",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": "Goodbye"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "108653048015446302822696639873",
-    "prev_id": "46699996004933816582127711806",
-    "next_id": "424330741314432785290605875144",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 90,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I'm disappointed, but not surprised. I'm revoking your membership to the Dead Keepers. You are too irresponsible for this solemn work.",
-    "filters": [
-      {
-        "index": 3,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "CK_UrnsLost",
-        "value": {
-          "type": "Integer",
-          "data": 3
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 4,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "LessEqual",
-        "id": "CK_KeeperReputation",
-        "value": {
-          "type": "Integer",
-          "data": 20
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnCarried",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ";CK_LOST_URN\nPCExpell, \"Keepers of the Dead\"\nModPCFacRep, -5, \"Temple\"\nModPCFacRep, -10, \"Keepers of the Dead\"\nModDisposition -30\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "424330741314432785290605875144",
-    "prev_id": "108653048015446302822696639873",
-    "next_id": "20920506169979889291152219322",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You lost it. You lost a body. Are you serious?",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnCarried",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": "ModPCFacRep, -5, \"Temple\"\nModPCFacRep, -10, \"Keepers of the Dead\"\nModDisposition -30\n;CK_LOST_URN\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "20920506169979889291152219322",
-    "prev_id": "424330741314432785290605875144",
-    "next_id": "35000980034551236700042603400",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Was the internment successful?",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnCarried",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": "Choice \"I lost the remains.\" 1, \"I'm still working on it.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "35000980034551236700042603400",
-    "prev_id": "20920506169979889291152219322",
-    "next_id": "94934004608200862150161078915",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "If you weren't expelled, I'd talk with you about it.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "NotEqual",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ";individual quest completion responses go below here"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "94934004608200862150161078915",
-    "prev_id": "35000980034551236700042603400",
-    "next_id": "33038037096876015443483564962",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Put simply, there's a large backlog of remains that must be interred in the ancestral tombs of Morrowind. The work is simple, but honest. I'll need to induct you into the Dead Keepers before you can be allowed to handle remains.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": -1
-        }
-      }
-    ],
-    "script_text": ";individual quest completion responses go below here"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "33038037096876015443483564962",
-    "prev_id": "94934004608200862150161078915",
-    "next_id": "331548378017508198172108031090",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Thank you for delivering the remains of Mehra Tharys.\n\nThere are still many more urns to inter. Your service is greatly appreciated.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_tharys",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_tharys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "331548378017508198172108031090",
-    "prev_id": "33038037096876015443483564962",
-    "next_id": "355931737518062149783804275391",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "You say the Heran tomb was desecrated by Daedra? How awful for the family. Thank you for clearing it out. Please, take these scrolls in case you run into any more trouble.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_heran",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_heran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddItem \"sc_almsiviintervention\" 3\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "355931737518062149783804275391",
-    "prev_id": "331548378017508198172108031090",
-    "next_id": "38762432552069687153252863823",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "I'm glad to hear the Thalas tomb was in good repair, %PCName. Here is some gold for your trouble.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_thalas",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_thalas\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "38762432552069687153252863823",
-    "prev_id": "355931737518062149783804275391",
-    "next_id": "791906573010671600256979472761",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Vampires in the Andrethi Tomb? And you've dispatched them all? You've done a great service today, %PCName.\n\nI feel terrible for putting you in such danger. Vampirism is a terrible curse. Allow me to teach you a spell to cleanse your blood.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_andrethi",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_andrethi\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddSpell \"cure common disease\"\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "791906573010671600256979472761",
-    "prev_id": "38762432552069687153252863823",
-    "next_id": "116434935111168159647695061076",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Daedra again? I'm beginning to suspect that there is a pattern to these desecrations. Go the Ghostgate and notify the Keepers of the Dead there. I'm sure they will want to get involved.\n\nAh, I forget myself. The backlog is finished, thanks to you. Please, take these slippers. You've been so helpful.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_heran",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_saren",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddItem \"ck_mule_slippers\" 1\n; conditions on this are special\n; TODO: start a new quest about desecrated tombs"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "116434935111168159647695061076",
-    "prev_id": "791906573010671600256979472761",
-    "next_id": "388672228516008240977648739163",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Daedra in the tomb? What a shame for the family, to allow their ancestors to be so desecrated. Thank you for securing the tomb.\n\nAh, I forget myself. The backlog is finished, thanks to you. Please, take these slippers. You've been so helpful.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_saren",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddItem \"ck_mule_slippers\" 1"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "388672228516008240977648739163",
-    "prev_id": "116434935111168159647695061076",
-    "next_id": "160747797616908635148461045943",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Well do come back when you're ready.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "NotEqual",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "ck_balmora_samarys",
-        "value": {
-          "type": "Integer",
-          "data": 2
-        }
-      }
-    ],
-    "script_text": ";this is the catch-all for all refusals of new quests\n;individual quest accept choices go below here"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "160747797616908635148461045943",
-    "prev_id": "388672228516008240977648739163",
-    "next_id": "218004146510703465826532972220",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Here is the urn containing the remains. Take it to the Tharys Ancestral Tomb, which is just west of the Silt Strider port here in town. Don't just leave it in the hallway where people will trip on it. After interment, the family will want to visit.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "NotEqual",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_tharys",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_tharys\" 10"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "218004146510703465826532972220",
-    "prev_id": "160747797616908635148461045943",
-    "next_id": "89246299701177961905778958615",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Here is the urn containing the remains; bring it to the Heran Ancestral Tomb. You can find it south of Hla Oad.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "NotEqual",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_heran",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_heran\" 10"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "89246299701177961905778958615",
-    "prev_id": "218004146510703465826532972220",
-    "next_id": "19696849075764660998141761702",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Here is the urn containing the remains of Drarym Thalas.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "NotEqual",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_thalas",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_thalas\" 10"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "19696849075764660998141761702",
-    "prev_id": "89246299701177961905778958615",
-    "next_id": "29798755487658890966245767879",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Here is the urn containing the remains of Bylen Andrethi. Do be careful.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "NotEqual",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_andrethi",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_andrethi\" 10"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "29798755487658890966245767879",
-    "prev_id": "19696849075764660998141761702",
-    "next_id": "292684691415557570952513443905",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Here is the urn containing the remains of Felara Saren.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "NotEqual",
-        "id": "CK_UrnDeliveryActive",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_saren",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Journal \"ck_balmora_saren\" 10"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "292684691415557570952513443905",
-    "prev_id": "29798755487658890966245767879",
-    "next_id": "34910761337139454045178429976",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I can't trust you with any interments. You've been expelled from the Keepers of the Dead.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_KeeperExpelled",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ";new delivery offers go below this line"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "34910761337139454045178429976",
-    "prev_id": "292684691415557570952513443905",
-    "next_id": "305479903710363567666667585626",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Would you deliver this ceremonial urn containing the remains of Mehra Tharys in the Tharys Ancestral Tomb? It's quite heavy.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_tharys",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "305479903710363567666667585626",
-    "prev_id": "34910761337139454045178429976",
-    "next_id": "353798524115918888090295072495",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "The Heran Ancestral Tomb hasn't been checked on in a long time. Inter the remains of Joveth Heran there, and ensure the tomb itself has been properly secured.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_heran",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "353798524115918888090295072495",
-    "prev_id": "305479903710363567666667585626",
-    "next_id": "25947904501332133240039908952",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Your next interment is in Thalas Ancestral Tomb. Follow the foyada near Fort Moonmoth north, then take a right at Assarnatamat.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_thalas",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "25947904501332133240039908952",
-    "prev_id": "353798524115918888090295072495",
-    "next_id": "150150443917150486903026342330",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Put to rest the remains of Bylen Andrethi at the Andrethi Ancestral Tomb. It's west of Balmora and south of the Norvayn Ancestral Tomb, which I've sent you to before.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_andrethi",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "150150443917150486903026342330",
-    "prev_id": "25947904501332133240039908952",
-    "next_id": "32808159103141914304859094228",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "This will be your last interment from me, %PCName. It's hard to believe that we're nearly finished.\n\nPlease deliver Felara Saren to the Saren Ancestral Tomb. To get there, take the bridge near Fort Moonmoth that spans the foyada. Once on the other side, travel northeast.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "ck_balmora_saren",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "32808159103141914304859094228",
-    "prev_id": "150150443917150486903026342330",
-    "next_id": "239508424311034822859422034340",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "I don't have any more pending interments.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "LessEqual",
-        "id": "CK_KeeperReputation",
-        "value": {
-          "type": "Integer",
-          "data": 40
-        }
-      }
-    ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "239508424311034822859422034340",
-    "prev_id": "32808159103141914304859094228",
-    "next_id": "29428538857552369729879288797",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "I don't have any more pending internments. You've cleared out the entire backlog. I would be happy to write you a letter of recommendation for advancement in the Keepers of the Dead.",
-    "filters": [],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "29428538857552369729879288797",
-    "prev_id": "239508424311034822859422034340",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "If you had better standing with the Temple, I'd talk with you about it.",
-    "filters": [],
     "script_text": ""
   }
 ]

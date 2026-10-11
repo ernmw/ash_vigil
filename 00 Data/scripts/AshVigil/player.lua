@@ -36,7 +36,7 @@ local function updateActiveQuests()
 
     for questId, quest in pairs(quests) do
         if allQuests[questId] then
-            print("syncing "..tostring(questId)..": "..aux_util.deepToString(quest, 5))
+            print("syncing "..tostring(questId).." ("..tostring(quest.stage).."): "..aux_util.deepToString(allQuests[questId], 5))
             if (quest.started and not quest.finished) and (quest.stage >= allQuests[questId].startStage) and (quest.stage < allQuests[questId].placeStage) then
                 activeQuests[questId] = {
                     metaData = allQuests[questId],
@@ -46,6 +46,9 @@ local function updateActiveQuests()
                 core.sendGlobalEvent(MOD_NAME .. "onUrnLost", {
                     player = pself,
                 })
+                activeQuests[questId] = nil
+            elseif (quest.stage == allQuests[questId].reportStage) then
+                activeQuests[questId] = nil
             end
         end
     end
@@ -144,7 +147,6 @@ end
 local function onActive()
     onCellLoaded()
     updateActiveQuests()
-    pself.type.addTopic(pself, const.TOPIC_ASH_INTERMENT)
 end
 
 local inventory = types.Actor.inventory(pself)
@@ -270,20 +272,17 @@ local function DialogueResponse(data)
 
     local topic = core.dialogue[data.type].records[data.recordId]
 
-    if topic.id:lower() == const.TOPIC_ASH_INTERMENT then
-        for _, info in pairs(topic.infos) do
-            if (info.id == data.infoId) and info.resultScript then
-                --print(info.resultScript)
-                if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
-                    onQuestFailed(data)
-                end
-                return
+    for _, info in pairs(topic.infos) do
+        if (info.id == data.infoId) and info.resultScript then
+            --print(info.resultScript)
+            if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
+                onQuestFailed(data)
             end
+            return
         end
     end
 
     local syncedTopics = {
-        [const.TOPIC_ASH_INTERMENT] = true,
         [const.TOPIC_DEAD_KEEPERS] = true,
     }
 

@@ -41,7 +41,12 @@ local function onActivate(object, actor)
     if not types.Player.objectIsInstance(actor) then
         return
     end
-    for _, other in ipairs(object.cell:getAll(types.Actor)) do
+    for _, other in pairs(object.cell:getAll(types.NPC)) do
+        if not types.Player.objectIsInstance(other) then
+            other:sendEvent(MOD_NAME .. "onDisturb")
+        end
+    end
+    for _, other in pairs(object.cell:getAll(types.Creature)) do
         other:sendEvent(MOD_NAME .. "onDisturb")
     end
 end
