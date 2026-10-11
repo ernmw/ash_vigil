@@ -35,6 +35,7 @@ local collection = require("scripts.AshVigil.collection")
 ---@field startCell string not used by anything really
 ---@field destCell string
 ---@field urnName string
+---@field urnRecord string? TODO: swap to built-in records for all Urns, defined in the yaml.
 
 ---@type {[string]: Quest}
 local quests    = {}

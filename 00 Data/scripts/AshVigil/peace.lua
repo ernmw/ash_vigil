@@ -70,7 +70,7 @@ local function onTombUndeadActive(data)
     end
 
     local tombData = allTombs[data.actor.cell.id]
-    if tombData.unrestfulDead == true then
+    if tombData.peacefulDead ~= true then
         return
     end
 

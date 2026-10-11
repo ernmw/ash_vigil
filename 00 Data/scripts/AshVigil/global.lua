@@ -25,8 +25,10 @@ local core    = require('openmw.core')
 local aux_util = require('openmw_aux.util')
 local settings = require("scripts.AshVigil.settings.settings")
 local interfaces = require('openmw.interfaces')
-local vfs = require('openmw.vfs')
+local vfs        = require('openmw.vfs')
+local allTombs             = require("scripts.AshVigil.tombs.load")
 
+--- TODO: this can be removed once we move to static urn IDs
 ---@class Persisted
 ---@field urnRecords {[string]:UrnItemData}
 
@@ -171,10 +173,9 @@ local function onSyncKeepersOfTheDeadFaction(data)
     vars[const.KOTD_EXPELLED_GVAR] = data.expelled
 end
 
-local function onTomb(data)
-    settings.debugPrint("onTomb: " .. aux_util.deepToString(data, 5))
+local function onCellEntered(data)
     local vars = world.mwscript.getGlobalVariables(data.player)
-    vars[const.INSIDE_TOMB_GVAR] = (data.entered == true) and 1 or 0
+    vars[const.INSIDE_TOMB_GVAR] = (allTombs[data] == nil) and 0 or 1
 end
 
 return {
@@ -185,7 +186,7 @@ return {
         [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
         [MOD_NAME .. "onUrnLost"] = onUrnLost,
         [MOD_NAME .. "onSyncKeepersOfTheDeadFaction"] = onSyncKeepersOfTheDeadFaction,
-        [MOD_NAME .. "onTomb"] = onTomb,
+        [MOD_NAME .. "onCellEntered"] = onCellEntered,
     },
     engineHandlers = {
         onLoad = onLoad,

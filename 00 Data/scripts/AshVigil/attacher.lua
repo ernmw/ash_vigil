@@ -55,7 +55,7 @@ end
 ---@class Tomb
 ---@field id string cell id
 ---@field region string region id
----@field unrestfulDead boolean? if true, the undead occupants will not be at Peace
+---@field peacefulDead boolean? if true, the undead occupants will be at Peace. default false.
 
 local function isUndead(creature)
     return types.Creature.objectIsInstance(creature) and
@@ -156,13 +156,13 @@ local sacred_item_types = {
     [types.Weapon] = true,
 }
 
-local function handleTombItems(object)
+local function handlePeacefulTombItems(object)
     if not sacred_item_types[object.type] then
         --settings.debugPrint("handleTombItems type is "..tostring(object.type))
        return
     end
     local tombInfo = allTombs[object.cell.id]
-    if tombInfo == nil then
+    if tombInfo == nil or tombInfo.peacefulDead ~= true then
         return false
     end
     local genPrefix = "generated"
@@ -176,12 +176,12 @@ local function handleTombItems(object)
     return true
 end
 
-local function handleTombContainers(object)
+local function handlePeacefulTombContainers(object)
     if not types.Container.objectIsInstance(object) then
         return false
     end
     local tombInfo = allTombs[object.cell.id]
-    if tombInfo == nil then
+    if tombInfo == nil or tombInfo.peacefulDead ~= true then
         return false
     end
     attachOnce(scripts.tomb_container, object, tombInfo)
@@ -190,8 +190,8 @@ end
 
 ---@type (fun(actor : table): boolean)[]
 local handlers = {
-    handleTombItems,
-    handleTombContainers,
+    handlePeacefulTombItems,
+    handlePeacefulTombContainers,
     handleGhost,
     handleInterloper
 }
