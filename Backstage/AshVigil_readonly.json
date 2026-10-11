@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 93,
+    "num_objects": 126,
     "masters": [
       [
         "Morrowind.esm",
@@ -221,147 +221,6 @@
     }
   },
   {
-    "type": "Npc",
-    "flags": "",
-    "id": "ck_boran_andules",
-    "name": "Boran Andules",
-    "script": "",
-    "mesh": "",
-    "inventory": [
-      [
-        1,
-        "steel spider blade"
-      ],
-      [
-        1,
-        "extravagant_amulet_02"
-      ],
-      [
-        1,
-        "extravagant_ring_02"
-      ],
-      [
-        1,
-        "extravagant_skirt_01"
-      ],
-      [
-        1,
-        "extravagant_shirt_02"
-      ],
-      [
-        1,
-        "extravagant_shoes_01"
-      ],
-      [
-        2,
-        "p_restore_health_c"
-      ],
-      [
-        2,
-        "p_restore_fatigue_q"
-      ],
-      [
-        2,
-        "p_cure_poison_s"
-      ],
-      [
-        2,
-        "p_cure_paralyzation_s"
-      ]
-    ],
-    "spells": [
-      "summon greater bonewalker",
-      "summon ancestral ghost",
-      "alad's caliginy",
-      "Sanctuary",
-      "far silence",
-      "sotha's mirror"
-    ],
-    "ai_data": {
-      "hello": 30,
-      "fight": 90,
-      "flee": 30,
-      "alarm": 90,
-      "services": ""
-    },
-    "ai_packages": [
-      {
-        "type": "Wander",
-        "distance": 0,
-        "duration": 5,
-        "game_hour": 0,
-        "idle2": 60,
-        "idle3": 20,
-        "idle4": 10,
-        "idle5": 10,
-        "idle6": 0,
-        "idle7": 0,
-        "idle8": 10,
-        "idle9": 0,
-        "reset": 1
-      }
-    ],
-    "travel_destinations": [],
-    "race": "Dark Elf",
-    "class": "Witch",
-    "faction": "Keepers of the Dead",
-    "head": "b_n_dark elf_f_head_02",
-    "hair": "b_n_dark elf_f_hair_09",
-    "npc_flags": "IS_BASE",
-    "blood_type": 0,
-    "data": {
-      "level": 10,
-      "stats": {
-        "attributes": [
-          52,
-          54,
-          57,
-          53,
-          72,
-          35,
-          55,
-          50
-        ],
-        "skills": [
-          6,
-          6,
-          6,
-          6,
-          6,
-          11,
-          6,
-          6,
-          11,
-          15,
-          25,
-          34,
-          48,
-          56,
-          54,
-          15,
-          15,
-          48,
-          6,
-          24,
-          24,
-          29,
-          49,
-          11,
-          6,
-          24,
-          6
-        ],
-        "health": 70,
-        "magicka": 300,
-        "fatigue": 197
-      },
-      "disposition": 30,
-      "reputation": 0,
-      "rank": 3,
-      "gold": 0
-    }
-  },
-  {
     "type": "Clothing",
     "flags": "",
     "id": "ck_mule_slippers",
@@ -392,208 +251,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_balmora_heran",
-    "dialogue_type": "Journal"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "429329781413547061896752518270",
-    "prev_id": "",
-    "next_id": "65057564606113798173502914562",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Heran Interment",
-    "quest_state": "Name",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "65057564606113798173502914562",
-    "prev_id": "429329781413547061896752518270",
-    "next_id": "32092052001892614009406754880",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 10,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I picked up the remains of Joveth Heran. I should deliver them to the Heran Ancestral Tomb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "32092052001892614009406754880",
-    "prev_id": "65057564606113798173502914562",
-    "next_id": "159834118216238474523285671376",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 49,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I interred Joveth Heran in the tomb. I should report back to the Temple.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "159834118216238474523285671376",
-    "prev_id": "32092052001892614009406754880",
-    "next_id": "25999523687860807721670609011",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 100,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Temple was notified, and I received payment.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "25999523687860807721670609011",
-    "prev_id": "159834118216238474523285671376",
-    "next_id": "17700632019833073657447301121",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 200,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I told the Temple that I lost the remains.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "17700632019833073657447301121",
-    "prev_id": "25999523687860807721670609011",
-    "next_id": "178470383512649941247707495432",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 50,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "178470383512649941247707495432",
-    "prev_id": "17700632019833073657447301121",
-    "next_id": "70149595305187907707118513199",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 39,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Something terrible happened in the tomb. It's been desecrated by daedra. I need to purge the tomb of these intruders before I can lay Joveth to rest.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "70149595305187907707118513199",
-    "prev_id": "178470383512649941247707495432",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 40,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Heran tomb is now at peace once again.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "ck_balmora_tharys",
+    "id": "ck_mm_andas",
     "dialogue_type": "Journal"
   },
   {
@@ -616,7 +274,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Tharys Interment",
+    "text": "Andas Interment",
     "quest_state": "Name",
     "filters": [],
     "script_text": ""
@@ -641,7 +299,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I picked up the remains of Mehra Tharys. I should deliver them to the Tharys Ancestral Tomb.",
+    "text": "I picked up the remains of Dralveth Andas. I should deliver them to the Andas Ancestral Tomb, near Tel Fyr.",
     "filters": [],
     "script_text": ""
   },
@@ -665,7 +323,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I interred Mehra Tharys in the tomb. I should report back to the Temple.",
+    "text": "I interred Dralveth Andas in the tomb.",
     "filters": [],
     "script_text": ""
   },
@@ -713,7 +371,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The Temple was notified, and I received payment.",
+    "text": "I received payment from the Keepers.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -738,7 +396,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I told the Temple that I lost the remains.",
+    "text": "I failed to deliver the remains.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -746,15 +404,15 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_balmora_andrethi",
+    "id": "ck_mm_aran",
     "dialogue_type": "Journal"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "2462381634061674",
+    "id": "1943187924580920",
     "prev_id": "",
-    "next_id": "1162219052245123",
+    "next_id": "3808375459248306",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 0,
@@ -769,7 +427,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Andrethi Interment",
+    "text": "Aran Interment",
     "quest_state": "Name",
     "filters": [],
     "script_text": ""
@@ -777,9 +435,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "1162219052245123",
-    "prev_id": "2462381634061674",
-    "next_id": "6061999458223061",
+    "id": "3808375459248306",
+    "prev_id": "1943187924580920",
+    "next_id": "3049930535185591",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -794,16 +452,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I picked up the remains of Bylen Andrethi. I should deliver them to the Andrethi Ancestral Tomb.",
+    "text": "I picked up the remains of Fendrath Aran. I should deliver them to the Aran Ancestral Tomb, northwest of Mababi.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "6061999458223061",
-    "prev_id": "1162219052245123",
-    "next_id": "6032866917205065",
+    "id": "3049930535185591",
+    "prev_id": "3808375459248306",
+    "next_id": "7941790247754645",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 39,
@@ -818,16 +476,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The tomb has been occupied by feral bandits. I need to purge the tomb of these intruders before I can lay Bylen to rest.",
+    "text": "The tomb has been defiled by daedra. I'll need to purge it of the mad dead and interlopers before I can inter Fendrath's remains.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "6032866917205065",
-    "prev_id": "6061999458223061",
-    "next_id": "7070489246254679",
+    "id": "7941790247754645",
+    "prev_id": "3049930535185591",
+    "next_id": "3583462819300830",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 40,
@@ -842,16 +500,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The Andrethi tomb is now at peace once again.",
+    "text": "The Aran tomb is now at peace once again.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "7070489246254679",
-    "prev_id": "6032866917205065",
-    "next_id": "1586498789666226",
+    "id": "3583462819300830",
+    "prev_id": "7941790247754645",
+    "next_id": "9816968219054704",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 49,
@@ -866,16 +524,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I interred Bylen Andrethi in the tomb. I should report back to the Temple.",
+    "text": "I interred Fendrath Aran in the tomb.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "1586498789666226",
-    "prev_id": "7070489246254679",
-    "next_id": "5125321301594485",
+    "id": "9816968219054704",
+    "prev_id": "3583462819300830",
+    "next_id": "8358677393582072",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 50,
@@ -897,9 +555,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5125321301594485",
-    "prev_id": "1586498789666226",
-    "next_id": "8838122471601623",
+    "id": "8358677393582072",
+    "prev_id": "9816968219054704",
+    "next_id": "8632377820211257",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -914,7 +572,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The Temple was notified, and I received payment.",
+    "text": "I received payment from the Keepers.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -922,8 +580,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "8838122471601623",
-    "prev_id": "5125321301594485",
+    "id": "8632377820211257",
+    "prev_id": "8358677393582072",
     "next_id": "",
     "data": {
       "dialogue_type": "Journal",
@@ -939,7 +597,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I told the Temple that I lost the remains.",
+    "text": "I failed to deliver the remains.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -947,15 +605,15 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_balmora_thalas",
+    "id": "ck_mm_arethan",
     "dialogue_type": "Journal"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5683760676043348",
+    "id": "3026377260192459",
     "prev_id": "",
-    "next_id": "3221999295814893",
+    "next_id": "1938868551477460",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 0,
@@ -970,7 +628,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Thalas Interment",
+    "text": "Arethan Interment",
     "quest_state": "Name",
     "filters": [],
     "script_text": ""
@@ -978,9 +636,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "3221999295814893",
-    "prev_id": "5683760676043348",
-    "next_id": "8724612977916437",
+    "id": "1938868551477460",
+    "prev_id": "3026377260192459",
+    "next_id": "6460251496619971",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -995,169 +653,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I picked up the remains of Drarym Thalas. I should deliver them to the Thalas Ancestral Tomb.",
+    "text": "I picked up the remains of Arvethi Arethan I should deliver them to the Aran Ancestral Tomb, east of Nchuleftingth.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "8724612977916437",
-    "prev_id": "3221999295814893",
-    "next_id": "1627932965007469",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 49,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I interred Drarym Thalas in the tomb. I should report back to the Temple.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "1627932965007469",
-    "prev_id": "8724612977916437",
-    "next_id": "3929142042927935",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 50,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3929142042927935",
-    "prev_id": "1627932965007469",
-    "next_id": "1681302215312412",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 100,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Temple was notified, and I received payment.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "1681302215312412",
-    "prev_id": "3929142042927935",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 200,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I told the Temple that I lost the remains.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "ck_balmora_saren",
-    "dialogue_type": "Journal"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "8988724558870136",
-    "prev_id": "",
-    "next_id": "3267364514084820",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Saren Interment",
-    "quest_state": "Name",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3267364514084820",
-    "prev_id": "8988724558870136",
-    "next_id": "9065654846298200",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 10,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I picked up the remains of Felara Saren. I should deliver them to the Saren Ancestral Tomb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "9065654846298200",
-    "prev_id": "3267364514084820",
-    "next_id": "9826712939178584",
+    "id": "6460251496619971",
+    "prev_id": "1938868551477460",
+    "next_id": "6955872895450950",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 39,
@@ -1172,16 +677,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The tomb has been desecrated by daedra. I need to dispatch them before I can lay Felara Saren to rest.",
+    "text": "The tomb has been defiled by daedra. I'll need to purge it of the mad dead and interlopers before I can inter Fendrath's remains.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "9826712939178584",
-    "prev_id": "9065654846298200",
-    "next_id": "9282670392535020",
+    "id": "6955872895450950",
+    "prev_id": "6460251496619971",
+    "next_id": "4195103155552423",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 40,
@@ -1196,16 +701,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The Saren tomb is now at peace once again.",
+    "text": "The Arethan tomb is now at peace once again.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "9282670392535020",
-    "prev_id": "9826712939178584",
-    "next_id": "7234615639373701",
+    "id": "4195103155552423",
+    "prev_id": "6955872895450950",
+    "next_id": "6581071000401768",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 49,
@@ -1220,16 +725,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I interred Felara Saren in the tomb. I should report back to the Temple.",
+    "text": "I interred Arvethi Arethan in the tomb.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "7234615639373701",
-    "prev_id": "9282670392535020",
-    "next_id": "5991475858468233",
+    "id": "6581071000401768",
+    "prev_id": "4195103155552423",
+    "next_id": "3258556023366595",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 50,
@@ -1251,9 +756,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5991475858468233",
-    "prev_id": "7234615639373701",
-    "next_id": "1101545589184769",
+    "id": "3258556023366595",
+    "prev_id": "6581071000401768",
+    "next_id": "9355457607177776",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -1268,7 +773,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "The Temple was notified, and I received payment.",
+    "text": "I received payment from the Keepers.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -1276,8 +781,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "1101545589184769",
-    "prev_id": "5991475858468233",
+    "id": "9355457607177776",
+    "prev_id": "3258556023366595",
     "next_id": "",
     "data": {
       "dialogue_type": "Journal",
@@ -1293,7 +798,772 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I told the Temple that I lost the remains.",
+    "text": "I failed to deliver the remains.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "ck_mm_releth",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5548317265366217",
+    "prev_id": "",
+    "next_id": "6237817619829713",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Releth Interment",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6237817619829713",
+    "prev_id": "5548317265366217",
+    "next_id": "2584941261212187",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I picked up the remains of Vevrani Releth. I should deliver them to the Releth Ancestral Tomb, which is on an island south west of Molag Mar.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2584941261212187",
+    "prev_id": "6237817619829713",
+    "next_id": "5333077906642674",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 49,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I interred Vevrani Releth in the tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5333077906642674",
+    "prev_id": "2584941261212187",
+    "next_id": "6606181087444119",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6606181087444119",
+    "prev_id": "5333077906642674",
+    "next_id": "5921160359708241",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I received payment from the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5921160359708241",
+    "prev_id": "6606181087444119",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 200,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I failed to deliver the remains.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "ck_mm_vandus",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "4963569746335086",
+    "prev_id": "",
+    "next_id": "9772623660460014",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Vandus Interment",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "9772623660460014",
+    "prev_id": "4963569746335086",
+    "next_id": "8153064060951133",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I picked up the remains of Seryndil Vandus. I should deliver them to the Vandus Ancestral Tomb, near Lake Nabia.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "8153064060951133",
+    "prev_id": "9772623660460014",
+    "next_id": "9627416295810112",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 49,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I interred Seryndil Vandus in the tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "9627416295810112",
+    "prev_id": "8153064060951133",
+    "next_id": "1872836296152773",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1872836296152773",
+    "prev_id": "9627416295810112",
+    "next_id": "5140352532739918",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I received payment from the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5140352532739918",
+    "prev_id": "1872836296152773",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 200,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I failed to deliver the remains.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "ck_mm_savel",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3282636979092772",
+    "prev_id": "",
+    "next_id": "1306869299642205",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Savel Interment",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1306869299642205",
+    "prev_id": "3282636979092772",
+    "next_id": "6935178092733702",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I picked up the remains of Teldrisa Savel. I should deliver them to the Savel Ancestral Tomb, west of Molag Mar.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6935178092733702",
+    "prev_id": "1306869299642205",
+    "next_id": "6186951111005636",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 49,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I interred Teldrisa Savel in the tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6186951111005636",
+    "prev_id": "6935178092733702",
+    "next_id": "8740158104666537",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "8740158104666537",
+    "prev_id": "6186951111005636",
+    "next_id": "2203724705995973",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I received payment from the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2203724705995973",
+    "prev_id": "8740158104666537",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 200,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I failed to deliver the remains.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "ck_mm_hlervu",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5716960958801965",
+    "prev_id": "",
+    "next_id": "6792108664431483",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hlervu Interment",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6792108664431483",
+    "prev_id": "5716960958801965",
+    "next_id": "9033616327501952",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I picked up the remains of Bralvyn Hlervu. I should deliver them to the Hlervu Ancestral Tomb, north of Azura's Shrine.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "9033616327501952",
+    "prev_id": "6792108664431483",
+    "next_id": "8313445155457558",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 49,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I interred Bralvyn Hlervu in the tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "8313445155457558",
+    "prev_id": "9033616327501952",
+    "next_id": "3535750467558879",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3535750467558879",
+    "prev_id": "8313445155457558",
+    "next_id": "5642340799080875",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I received payment from the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5642340799080875",
+    "prev_id": "3535750467558879",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 200,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I failed to deliver the remains.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "ck_mm_velas",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6366361686839823",
+    "prev_id": "",
+    "next_id": "8026165876733101",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Velas Interment",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "8026165876733101",
+    "prev_id": "6366361686839823",
+    "next_id": "6021943919353704",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I picked up the remains of Neralvys Velas. I should deliver them to the Velas Ancestral Tomb, near Telasero.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6021943919353704",
+    "prev_id": "8026165876733101",
+    "next_id": "2218252822977735",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 49,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I interred Neralvys Velas in the tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2218252822977735",
+    "prev_id": "6021943919353704",
+    "next_id": "6222444763081106",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6222444763081106",
+    "prev_id": "2218252822977735",
+    "next_id": "4453707754336530",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I received payment from the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "4453707754336530",
+    "prev_id": "6222444763081106",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 200,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I failed to deliver the remains.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -1922,7 +2192,7 @@
     "text": "Daedra again? I'm beginning to suspect that there is a pattern to these desecrations. Go the Ghostgate and notify the Keepers of the Dead there. I'm sure they will want to get involved.\n\nAh, I forget myself. The backlog is finished, thanks to you. Please, take these slippers. You've been so helpful.",
     "filters": [
       {
-        "index": 1,
+        "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
@@ -1933,7 +2203,7 @@
         }
       },
       {
-        "index": 0,
+        "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
@@ -2616,524 +2886,6 @@
     "player_faction": "",
     "sound_path": "",
     "text": "If you had better standing with the Temple, I'd talk with you about it.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "Dead Keepers",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "14318253868907886281749534900",
-    "prev_id": "",
-    "next_id": "92528161506640386841800093603",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": 0,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "ck_boran_andules",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You're not cut out for this work, %PCName. Leave me be.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_KeeperExpelled",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "92528161506640386841800093603",
-    "prev_id": "14318253868907886281749534900",
-    "next_id": "779250493012716274850160863252",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "ck_boran_andules",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "That's probably for the best.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 2
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "PCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "779250493012716274850160863252",
-    "prev_id": "92528161506640386841800093603",
-    "next_id": "925162824010536709165180697107",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "ck_boran_andules",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "I don't know what madness drove you to sign up for this, but misery loves company. Fine, you're in. Ready for your duties?",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "PCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "925162824010536709165180697107",
-    "prev_id": "779250493012716274850160863252",
-    "next_id": "764719758014143503218614441518",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "ck_boran_andules",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Thanks to this thrice-damned Edict of Exhumation, the Keepers of the Dead have to dismantle years of progress on the Ghostfence. I'm overseeing the effort, and I don't have time for pleasantries. Unless you are interested in joining me in this deep pit of mind-numbing work, leave me be.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"Join the Keepers of the Dead.\" 1, \"Later.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "764719758014143503218614441518",
-    "prev_id": "925162824010536709165180697107",
-    "next_id": "123863410213792296823686210423",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "ck_boran_andules",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Yes, %PCRank? Are you here for your duties? I don't have time for a history lesson.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "123863410213792296823686210423",
-    "prev_id": "764719758014143503218614441518",
-    "next_id": "25365890503269356269175407689",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "ck_boran_andules",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Thanks to this thrice-damned Edict of Exhumation, the Keepers of the Dead have to dismantle years of progress on the Ghostfence. I'm overseeing the effort, and I don't have time for pleasantries.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "25365890503269356269175407689",
-    "prev_id": "123863410213792296823686210423",
-    "next_id": "218752014911675009977331009780",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": 0,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "Temple",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You've been expelled from Keepers of the Dead.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "CK_KeeperExpelled",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "218752014911675009977331009780",
-    "prev_id": "25365890503269356269175407689",
-    "next_id": "284986573213655335525191654952",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": 0,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "Temple",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Yes, Keeper? How can I help you?",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "284986573213655335525191654952",
-    "prev_id": "218752014911675009977331009780",
-    "next_id": "278524844112594259828166507503",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "I was hoping you would help. Please let me know if you change your mind.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 2
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "278524844112594259828166507503",
-    "prev_id": "284986573213655335525191654952",
-    "next_id": "325544046718149617157545681645",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "Then by the authority invested to me by the Tribunal, I hereby induct you into Keepers of the Dead.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "PCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "325544046718149617157545681645",
-    "prev_id": "278524844112594259828166507503",
-    "next_id": "834281628014101489744156040460",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "The Keepers of the Dead are a special division within the Temple who are dedicated to the care of our ancestors. They mostly operate out of Necrom, but there are representatives at the Great Ghostfence at times. They've recently come into an absurd amount of work thanks to the Edict of Exhumation, and they are falling behind on ash interments. I can admit you as a provisional member if you would like to help.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Choice \"Join the Keepers of the Dead.\" 1, \"Later.\" 2\n;PCJoinFaction \"Keepers of the Dead\"\n;PCRaiseRank \"Keepers of the Dead\"\n"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "834281628014101489744156040460",
-    "prev_id": "325544046718149617157545681645",
-    "next_id": "17206603369916458785687143554",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "feldrelo sadri",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Temple",
-    "sound_path": "",
-    "text": "The Keepers of the Dead are a special division within the Temple who are dedicated to the care of our ancestors. If you are interested in joining, you must first become a Novice of the Temple by performing your duties.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Less",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "17206603369916458785687143554",
-    "prev_id": "834281628014101489744156040460",
-    "next_id": "19145350286083160910037735856",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "Ghostgate, Tower of Dawn",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You're probably looking for Boran Andules. He's downstairs.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "19145350286083160910037735856",
-    "prev_id": "17206603369916458785687143554",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "Temple",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Keepers of the Dead are a special division within the Temple who are dedicated to the care of our ancestors. They mostly operate out of Necrom, but there are representatives at the Great Ghostfence at times.",
     "filters": [],
     "script_text": ""
   }

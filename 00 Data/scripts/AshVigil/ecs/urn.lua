@@ -15,14 +15,14 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
-local core                  = require('openmw.core')
-local types                 = require('openmw.types')
-local pself                 = require('openmw.self')
-local async                 = require('openmw.async')
-local nearby = require('openmw.nearby')
-local MOD_NAME              = require("scripts.AshVigil.ns")
+local core       = require('openmw.core')
+local types      = require('openmw.types')
+local pself      = require('openmw.self')
+local async      = require('openmw.async')
+local nearby     = require('openmw.nearby')
+local MOD_NAME   = require("scripts.AshVigil.ns")
 local interfaces = require('openmw.interfaces')
-local aux_util = require('openmw_aux.util')
+local aux_util   = require('openmw_aux.util')
 
 ---@class UrnItemData
 ---@field quest Quest?
@@ -63,7 +63,7 @@ local function onLoad(data)
 end
 
 local function onSave()
-    print("Urn onSave triggered. persist data: ".. aux_util.deepToString(persist, 3))
+    print("Urn onSave triggered. persist data: " .. aux_util.deepToString(persist, 3))
     return persist
 end
 

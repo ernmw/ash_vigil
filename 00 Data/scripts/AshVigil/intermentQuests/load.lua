@@ -18,7 +18,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 local MOD_NAME = require("scripts.AshVigil.ns")
 local vfs      = require('openmw.vfs')
 local markup     = require('openmw.markup')
-local core   = require('openmw.core')
+local core       = require('openmw.core')
+local types   = require('openmw.types')
 local settings = require("scripts.AshVigil.settings.settings")
 local collection = require("scripts.AshVigil.collection")
 
@@ -32,10 +33,9 @@ local collection = require("scripts.AshVigil.collection")
 ---@field placeCompleteStage number the post-placement success stage. this means they left the urn in the tomb. default 50. this should be an empty journal entry
 ---@field reportStage number the post-reported success stage. end stage. default 100.
 ---@field lostStage number if the player gives up or sells the urn. end stage. default 200.
----@field startCell string not used by anything really
+---@field startCell string? not used by anything really
 ---@field destCell string
----@field urnName string
----@field urnRecord string? TODO: swap to built-in records for all Urns, defined in the yaml.
+---@field urnRecordId string built-in record id for the urn. don't make them on the fly
 
 ---@type {[string]: Quest}
 local quests    = {}
@@ -86,8 +86,15 @@ local function load()
         if v.destCellEnterStage and v.destCellEnterStage >= v.placeStage then
             return id..": destCellEnterStage must be < placeStage"
         end
-        if v.destCellClearedStage and v.destCellClearedStage >= v.placeStage  then
-            return id..": destCellClearedStage must be < placeStage"
+        if v.destCellClearedStage and v.destCellClearedStage >= v.placeStage then
+            return id .. ": destCellClearedStage must be < placeStage"
+        end
+        if v.urnRecordId == nil then
+            return id .. ": urnRecord is missing"
+        end
+        local itemRecord = types.Miscellaneous.records[v.urnRecordId]
+        if not itemRecord then
+            error("no misc item record for "..tostring(itemRecord))
         end
         v.id = v.id:lower()
         v.destCell = v.destCell:lower()

@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Peaceful Undead in Some Tombs
+
+instances:
+  # calm down all undead in a tomb.
+  # this is so we can get dialogue from ghosts
+  # this works with peace.lua to apply and un-apply the Calm spell effect.
+  - conditions:
+      - cell:
+        - "andas ancestral tomb"
+        - "releth ancestral tomb"
+        - "vandus ancestral tomb"
+        - "savel ancestral tomb"
+        - "hlervu ancestral tomb"
+        - "velas ancestral tomb"
+      - player_faction:
+          faction: "keepers of the dead"
+          rank: 1
+      - is_dead: false
+      - is_respawning: true
+      - creature_type: undead
+      - target_disposition:
+          min: 0
+          max: 69
+      - not: {has_lua_script: scripts/ashvigil/ecs/peaceful.lua}
+    actions:
+      - add_lua_script: scripts/ashvigil/ecs/peaceful.lua
