@@ -15,11 +15,11 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
-local MOD_NAME = require("scripts.AshVigil.ns")
-local vfs      = require('openmw.vfs')
+local MOD_NAME   = require("scripts.AshVigil.ns")
+local vfs        = require('openmw.vfs')
 local markup     = require('openmw.markup')
-local core   = require('openmw.core')
-local settings = require("scripts.AshVigil.settings.settings")
+local core       = require('openmw.core')
+local settings   = require("scripts.AshVigil.settings.settings")
 local collection = require("scripts.AshVigil.collection")
 
 ---@class DynamicSpawnInfo
@@ -27,8 +27,8 @@ local collection = require("scripts.AshVigil.collection")
 ---@field tiles string[] valid target tile record ids to place on
 ---@field objectRecord string object record to insert into cell
 
----@type DynamicSpawnInfo[]
-local spawnInfo    = {}
+---@type {[string]: DynamicSpawnInfo[]}
+local spawnInfo  = {}
 
 local function load()
     local count = 0
@@ -39,34 +39,35 @@ local function load()
 
     local function loadFile(fileName)
         local result = markup.loadYaml(fileName)
-        for _, v in ipairs(result.dynamicSpawnInfo) do
-            ---@param v DynamicSpawnInfo
-            ---@return DynamicSpawnInfo|ErrMsg
-            local function loadSpawn(v)
-                if not v.cell then
-                    return "unknown spawn: no cell"
+        for cellID, spawns in pairs(result) do
+            cellID = cellID:lower()
+            spawnInfo[cellID] = {}
+            for _, v in ipairs(spawns) do
+                ---@param v DynamicSpawnInfo
+                ---@return DynamicSpawnInfo|ErrMsg
+                local function loadSpawn(v)
+                    if not v.objectRecord then
+                        return "unknown spawn: no object record"
+                    end
+                    if #(v.tiles) <= 0 then
+                        return "unknown spawn: no tiles"
+                    end
+                    v.objectRecord = v.objectRecord:lower()
+                    for i, val in ipairs(v.tiles) do
+                        v.tiles[i] = val:lower()
+                    end
+                    v.cell = cellID
+                    return v
                 end
-                if not v.objectRecord then
-                    return "unknown spawn: no object record"
-                end
-                if #(v.tiles) <= 0 then
-                    return "unknown spawn: no tiles"
-                end
-                v.cell = v.cell:lower()
-                v.objectRecord = v.objectRecord:lower()
-                for i, val in ipairs(v.tiles) do
-                    v.tiles[i] = val:lower()
-                end
-                return v
-            end
-            ---@cast v DynamicSpawnInfo
-            local parsed = loadSpawn(v)
-            if parsed then
-                if type(parsed) == "string" then
-                    print("Spawn load ERROR: " .. parsed)
-                else
-                    table.insert(spawnInfo, v)
-                    count = count + 1
+                ---@cast v DynamicSpawnInfo
+                local parsed = loadSpawn(v)
+                if parsed then
+                    if type(parsed) == "string" then
+                        print("Spawn load ERROR: " .. parsed)
+                    else
+                        table.insert(spawnInfo[cellID], v)
+                        count = count + 1
+                    end
                 end
             end
         end

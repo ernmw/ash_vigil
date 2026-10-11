@@ -1,11 +1,24 @@
+--[[
+AshVigil for OpenMW.
+Copyright (C) 2026 Ash Vigil contributors (see AUTHORS)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+]]
 
 local MOD_NAME          = require("scripts.AshVigil.ns")
-local const = require("scripts.AshVigil.const")
-local settings = require("scripts.AshVigil.settings.settings")
 local util  = require('openmw.util')
-local world = require('openmw.world')
 local types = require('openmw.types')
-local core  = require('openmw.core')
 
 ---@alias GameObject table
 ---@alias Cell      table
@@ -39,7 +52,7 @@ local UNIT = { util.vector3(1, 0, 0), util.vector3(0, 1, 0), util.vector3(0, 0, 
 
 ---@class PlaceRequest
 ---@field object GameObject
----@field cell string           interior cell name
+---@field cell Cell           interior cell
 ---@field tiles string[]        static record ids that count as room tiles
 ---@field options? PlaceOptions
 
@@ -132,10 +145,6 @@ local function contains(b, a)
     return true
 end
 
-------------------------------------------------------------------------
--- Cell scan
-------------------------------------------------------------------------
-
 ---@param cell Cell
 ---@param exceptions table<string, boolean>  object ids to skip
 ---@param tileSet table<string, boolean>     lowercase tile record ids
@@ -192,13 +201,12 @@ local function onPlaceObject(data)
     local obj, opts = data.object, data.options or {}
     local margin    = opts.margin or 32
 
-    local cell = world.getCellByName(data.cell)
-    if not cell then return false end
+    if not data.cell then return false end
 
     ---@type table<string, boolean>
     local tileSet = {}
     for _, id in ipairs(data.tiles) do tileSet[id:lower()] = true end
-    local tiles, obstacles = scanCell(cell, { [obj.id] = true }, tileSet)
+    local tiles, obstacles = scanCell(data.cell, { [obj.id] = true }, tileSet)
     if #tiles == 0 then return false end
 
     -- the object's current box, relative to its own origin
@@ -231,7 +239,7 @@ local function onPlaceObject(data)
         end
 
         if free then
-            obj:teleport(cell, pos + util.vector3(0, 0, 8), { onGround = true, rotation = rot })
+            obj:teleport(data.cell, pos + util.vector3(0, 0, 8), { onGround = true, rotation = rot })
             return true
         end
     end
@@ -240,8 +248,8 @@ local function onPlaceObject(data)
 end
 
 return {
-    interfaceName = MOD_NAME .. "PlaceObject",
+    interfaceName = MOD_NAME .. "ObjectPlacer",
     interface = {
-        PlaceObject = onPlaceObject
+        Place = onPlaceObject
     }
 }

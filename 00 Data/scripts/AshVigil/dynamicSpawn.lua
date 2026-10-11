@@ -26,6 +26,7 @@ local aux_util = require('openmw_aux.util')
 local settings = require("scripts.AshVigil.settings.settings")
 local interfaces = require('openmw.interfaces')
 local vfs = require('openmw.vfs')
+local dynSpawns             = require("scripts.AshVigil.dynamicSpawnInfo.load")
 
 local persist = {
     finishedCells = {},
@@ -39,8 +40,34 @@ local function onSave()
     return persist
 end
 
-local function onCellEntered(data)
-    --- TODO: call PlaceObject exactly once, on cell load, for every dynamicspawninfo
+---@param spawnInfo DynamicSpawnInfo
+local function spawnInCell(spawnInfo)
+    local obj = world.createObject(spawnInfo.objectRecord, 1)
+    if obj == nil then
+        error("bad record: "..tostring(spawnInfo.objectRecord))
+    end
+    ---@type PlaceRequest
+    local opts = {
+        object = obj,
+        cell = world.getCellById(spawnInfo.cell) or world.getCellByName(spawnInfo.cell),
+        tiles = spawnInfo.tiles
+    }
+    local result = interfaces.AshVigilObjectPlacer.Place(opts)
+    if result then
+        settings.debugPrint("placed " .. spawnInfo.objectRecord .. " in cell")
+    else
+        settings.debugPrint("failed to place " .. spawnInfo.objectRecord .. " in cell")
+    end
+end
+
+local function onCellEntered(cellID)
+    if persist.finishedCells[cellID] then
+        return
+    end
+    for _, spawnDef in ipairs(dynSpawns[cellID] or {}) do
+        spawnInCell(spawnDef)
+    end
+    persist.finishedCells[cellID] = true
 end
 
 return {
