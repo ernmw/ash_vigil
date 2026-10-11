@@ -20,7 +20,7 @@ local types                 = require('openmw.types')
 local pself                 = require('openmw.self')
 local MOD_NAME              = require("scripts.AshVigil.ns")
 local settings   = require("scripts.AshVigil.settings.settings")
-local allQuests             = require("scripts.AshVigil.quests.load")
+local allQuests             = require("scripts.AshVigil.intermentQuests.load")
 local const  = require("scripts.AshVigil.const")
 local aux_util = require('openmw_aux.util')
 

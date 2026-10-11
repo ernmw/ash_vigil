@@ -24,9 +24,6 @@ local types    = require('openmw.types')
 local core    = require('openmw.core')
 local aux_util = require('openmw_aux.util')
 local settings = require("scripts.AshVigil.settings.settings")
-local interfaces = require('openmw.interfaces')
-local vfs        = require('openmw.vfs')
-local urnQuests             = require("scripts.AshVigil.quests.load")
 
 ---@class Persisted
 ---@field urnRecords {[string]:UrnItemData}
