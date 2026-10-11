@@ -24,12 +24,24 @@ local allQuests             = require("scripts.AshVigil.intermentQuests.load")
 local const  = require("scripts.AshVigil.const")
 local aux_util = require('openmw_aux.util')
 
+---@class UrnItemData
+---@field quest Quest?
+---@field itemRecordId string?
+---@field containerRecordId string?
+
+---@class UrnEventData : UrnItemData
+---@field urn table
+---@field player table
+---@field cell string
+
 ---@class QuestContainer
 ---@field metaData Quest
 ---@field playerQuest table this is a types.PLAYERQuest
 
 ---@type {[string]: QuestContainer}
 local activeQuests = {}
+
+local tombCleared = true
 
 local function updateActiveQuests()
     local quests = types.Player.quests(pself)
@@ -106,9 +118,6 @@ local latestPlacedUrns = {}
 local currentQuestID = nil
 local insideDestCell = false
 
----cell id -> actor id -> true if alive
----@type {[string]:({[string]:boolean})}
-local currentEnemiesInTombCell = {}
 
 local currentCellID = pself.cell and pself.cell.id or nil
 local function onCellLoaded()
@@ -116,6 +125,7 @@ local function onCellLoaded()
     currentCellID = pself.cell.id
     insideDestCell = false
     currentQuestID = nil
+    tombCleared = false
     --- did we enter a dest cell for an active quest?
     for _, quest in pairs(activeQuests) do
         settings.debugPrint("checking quest: " .. aux_util.deepToString(quest, 5))
@@ -230,9 +240,9 @@ local function onUrnPlacedStart(data)
     latestPlacedUrns[data.quest.id] = data
     local clearedOut = false
     if quest.metaData.destCellClearedStage ~= nil then
-        clearedOut = quest.playerQuest.stage == quest.metaData.destCellClearedStage
+        clearedOut = (quest.playerQuest.stage == quest.metaData.destCellClearedStage) or tombCleared
         if not clearedOut then
-            settings.debugPrint("skipped journal update; enemies present")
+            settings.debugPrint("skipped journal update; enemies should be present")
         end
     else
         clearedOut = quest.playerQuest.stage < quest.metaData.placeStage
@@ -291,10 +301,18 @@ local function DialogueResponse(data)
     end
 end
 
-local function onTombCleared(data)
+local function onTombInterloperActive(actor)
+    settings.debugPrint("onTombInterloperActive start")
+    tombCleared = false
+end
+
+local function onTombInterlopersCleared(cellID)
+    settings.debugPrint("onTombInterlopersCleared start")
+    tombCleared = true
     local quest = activeQuests[currentQuestID]
     if insideDestCell and quest.metaData.destCellClearedStage ~= nil then
         if quest.playerQuest.stage < quest.metaData.destCellClearedStage then
+            settings.debugPrint("onTombCleared mark journal for clear")
             --- yay we did it
             quest.playerQuest:addJournalEntry(quest.metaData.destCellClearedStage, pself)
             --- if the player put the urn down before killing enemies,
@@ -306,36 +324,13 @@ local function onTombCleared(data)
     end
 end
 
-local function onTombInterloperDied(data)
-    if currentEnemiesInTombCell[data.actor.cell.id] == nil then
-        return
-    end
-    currentEnemiesInTombCell[data.actor.cell.id][data.actor.id] = false
-    --- check for any left. if none, set all clear journal stage.
-    local allDead = true
-    for _, status in pairs(currentEnemiesInTombCell[data.actor.cell.id]) do
-        allDead = status and allDead
-    end
-    if allDead then
-        --- the tomb has been laid to rest.
-        onTombCleared()
-    end
-end
-
-local function onTombInterloperActive(data)
-    if currentEnemiesInTombCell[data.actor.cell.id] == nil then
-        currentEnemiesInTombCell[data.actor.cell.id] = {}
-    end
-    currentEnemiesInTombCell[data.actor.cell.id][data.actor.id] = true
-end
-
 return {
     eventHandlers = {
         UiModeChanged = UiModeChanged,
         [MOD_NAME .. "onUrnPlacedStart"] = onUrnPlacedStart,
         [MOD_NAME .. "onUrnInfo"] = onUrnInfo,
         [MOD_NAME .. "onTombInterloperActive"] = onTombInterloperActive,
-        [MOD_NAME .. "onTombInterloperDied"] = onTombInterloperDied,
+        [MOD_NAME .. "onTombInterlopersCleared"] = onTombInterlopersCleared,
         DialogueResponse = DialogueResponse,
     },
     engineHandlers = {

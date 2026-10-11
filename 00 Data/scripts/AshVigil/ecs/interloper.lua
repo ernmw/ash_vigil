@@ -21,6 +21,7 @@ local types           = require("openmw.types")
 local core                  = require("openmw.core")
 local interfaces           = require("openmw.interfaces")
 local FollowerDetectionUtil = interfaces.FollowerDetectionUtil
+local SCRIPTS        = require("scripts.AshVigil.ecs.scripts")
 
 local function isFollower()
     if FollowerDetectionUtil then
@@ -30,40 +31,53 @@ local function isFollower()
     end
 end
 
-local function onActive()
+local recordName = pself.type.record(pself.object).name
+--print("interloper script created - " .. recordName)
+
+local function start()
+    print("interloper start - "..recordName)
     if isFollower() then
         core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
             object = pself.object,
-            script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\interloper.lua")
+            script = SCRIPTS.interloper
         })
     else
-        for _, player in pairs(pself.cell:getAll(types.Player)) do
-            player:sendEvent(MOD_NAME .. "onTombInterloperActive", { actor = pself.object })
-        end
+        core.sendGlobalEvent(MOD_NAME .. "onTombInterloperActive", pself.object)
     end
 end
 
+local function onInit(data)
+    start()
+end
+
+local function onActive()
+    start()
+end
+
+
 local function onDied()
-    for _, player in pairs(pself.cell:getAll(types.Player)) do
-        player:sendEvent(MOD_NAME .. "onTombInterloperDied", { actor = pself.object })
-    end
+    print("interloper died - "..recordName)
+    core.sendGlobalEvent(MOD_NAME .. "onTombInterloperDied", pself.object)
     core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
         object = pself.object,
-        script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\interloper.lua")
+        script = SCRIPTS.interloper
     })
 end
 
 local function onInactive()
     core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
         object = pself.object,
-        script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+        script = SCRIPTS.interloper
     })
 end
 
 return {
     eventHandlers = {
-        onActive = onActive,
         Died = onDied,
-        onInactive = onInactive,
+    },
+    engineHandlers = {
+        onInit = onInit,
+        onActive = onActive,
+        onInactive = onInactive
     }
 }

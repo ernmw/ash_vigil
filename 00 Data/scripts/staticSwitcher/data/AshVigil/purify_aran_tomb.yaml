@@ -19,16 +19,12 @@ instances:
       - cell:
         - "aran ancestral tomb"
       - is_dead: false
-      - is_respawning: true
       - creature_type:
         - undead
         - daedra
-      - target_disposition:
-          min: 0
-          max: 69
-      - not: {has_lua_script: scripts/ashvigil/ecs/interloper.lua}
+      - not: {has_lua_script: scripts/AshVigil/ecs/interloper.lua}
     actions:
-      - add_lua_script: scripts/ashvigil/ecs/interloper.lua
+      - add_lua_script: scripts/AshVigil/ecs/interloper.lua
   # if a tomb has been purified, then remove all daedra from it
   - conditions:
       - has_journal:
@@ -37,7 +33,6 @@ instances:
       - cell:
         - "aran ancestral tomb"
       - is_dead: false
-      - is_respawning: true
       - creature_type:
         - daedra
     actions:
@@ -57,12 +52,11 @@ instances:
       - cell:
         - "aran ancestral tomb"
       - is_dead: false
-      - is_respawning: true
       - creature_type:
         - undead
       - target_disposition:
           min: 0
           max: 69
-      - not: {has_lua_script: scripts/ashvigil/ecs/peaceful.lua}
+      - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
     actions:
-      - add_lua_script: scripts/ashvigil/ecs/peaceful.lua
+      - add_lua_script: scripts/AshVigil/ecs/peaceful.lua

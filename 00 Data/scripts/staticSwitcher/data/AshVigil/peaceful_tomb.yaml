@@ -15,13 +15,9 @@ instances:
         - "velas ancestral tomb"
       - player_faction:
           faction: "keepers of the dead"
-          rank: 1
+          min: 1
       - is_dead: false
-      - is_respawning: true
       - creature_type: undead
-      - target_disposition:
-          min: 0
-          max: 69
-      - not: {has_lua_script: scripts/ashvigil/ecs/peaceful.lua}
+      - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
     actions:
-      - add_lua_script: scripts/ashvigil/ecs/peaceful.lua
+      - add_lua_script: scripts/AshVigil/ecs/peaceful.lua
