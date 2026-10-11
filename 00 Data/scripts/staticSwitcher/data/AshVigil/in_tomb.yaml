@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Set In-Tomb Global Variable
+
+instances:
+  - conditions:
+      - cell_match: tomb
+    actions:
+      - global_set:
+          name: "CK_InsideTomb"
+          value: 1
+  - conditions:
+      - not: {cell_match: tomb}
+    actions:
+      - global_set:
+          name: "CK_InsideTomb"
+          value: 0

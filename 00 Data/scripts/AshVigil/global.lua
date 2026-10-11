@@ -26,9 +26,8 @@ local aux_util = require('openmw_aux.util')
 local settings = require("scripts.AshVigil.settings.settings")
 local interfaces = require('openmw.interfaces')
 local vfs        = require('openmw.vfs')
-local allTombs             = require("scripts.AshVigil.tombs.load")
+local urnQuests             = require("scripts.AshVigil.quests.load")
 
---- TODO: this can be removed once we move to static urn IDs
 ---@class Persisted
 ---@field urnRecords {[string]:UrnItemData}
 
@@ -45,13 +44,12 @@ local function onSave()
     return persist
 end
 
---- sometimes meshes/o/xcontain_urn_05.nif, but contain_urn_05.nif exists too
-local urnMeshPath = "meshes/o/contain_urn_04.nif"
-if vfs.fileExists("meshes/o/xcontain_urn_04.nif") then
-    urnMeshPath = "meshes/o/xcontain_urn_04.nif"
-end
-local urnItemScriptPath = string.lower("scripts\\" .. MOD_NAME .. "\\urn.lua")
-local urnIconPath = string.lower("icons\\" .. MOD_NAME .. "\\urn.tga")
+--- urns can be:
+--- "meshes/o/contain_urn_04.nif"
+--- "meshes/o/xcontain_urn_04.nif"
+--- etc
+
+local urnItemScriptPath = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\urn.lua")
 
 ---@class onQuestStartData
 ---@field player table
@@ -64,31 +62,18 @@ local function onQuestStart(data)
 
     local cachedRecords = persist.urnRecords[data.quest.id]
 
-    local itemRecordID = cachedRecords and cachedRecords.itemRecordId
-    if itemRecordID == nil then
-        local itemRecordDraft = types.Miscellaneous.createRecordDraft({
-            icon = urnIconPath,
-            isKey = false,
-            model = urnMeshPath,
-            name = data.quest.urnName,
-            value = 0,
-            weight = 40,
-        })
-        local itemRecord = world.createRecord(itemRecordDraft)
-        itemRecordID = itemRecord.id
-    end
-
+    local itemRecordID = data.quest.urnRecordId
+    local itemRecord = types.Miscellaneous.records[itemRecordID]
 
     local containerRecordID = cachedRecords and cachedRecords.containerRecordId
     if containerRecordID == nil then
         local containerRecordDraft = types.Container.createRecordDraft({
             isOrganic = false,
             isRespawning = false,
-            model = urnMeshPath,
-            name = data.quest.urnName,
-            --- this is capacity now.
-            --- make it big so people can use a tomb as a home base comfortably
-            weight = 500,
+            model = itemRecord.model,
+            name = itemRecord.name,
+            --- this is capacity
+            weight = 35,
         })
         local containerRecord = world.createRecord(containerRecordDraft)
         containerRecordID = containerRecord.id
@@ -173,11 +158,6 @@ local function onSyncKeepersOfTheDeadFaction(data)
     vars[const.KOTD_EXPELLED_GVAR] = data.expelled
 end
 
-local function onCellEntered(data)
-    local vars = world.mwscript.getGlobalVariables(data.player)
-    vars[const.INSIDE_TOMB_GVAR] = (allTombs[data] == nil) and 0 or 1
-end
-
 return {
     eventHandlers = {
         [MOD_NAME .. "onQuestStart"] = onQuestStart,
@@ -186,7 +166,6 @@ return {
         [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
         [MOD_NAME .. "onUrnLost"] = onUrnLost,
         [MOD_NAME .. "onSyncKeepersOfTheDeadFaction"] = onSyncKeepersOfTheDeadFaction,
-        [MOD_NAME .. "onCellEntered"] = onCellEntered,
     },
     engineHandlers = {
         onLoad = onLoad,

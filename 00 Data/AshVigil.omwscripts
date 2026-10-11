@@ -8,13 +8,6 @@ GLOBAL: scripts/AshVigil/objectPlacer.lua
 PLAYER: scripts/AshVigil/player.lua
 GLOBAL: scripts/AshVigil/global.lua
 GLOBAL: scripts/AshVigil/peace.lua
-CUSTOM: scripts/AshVigil/urn.lua
 
-GLOBAL: scripts/AshVigil/dynamicSpawn.lua
-
-GLOBAL: scripts/AshVigil/attacher.lua
-CUSTOM: scripts/AshVigil/attached/tomb_actor.lua
-CUSTOM: scripts/AshVigil/attached/tomb_container.lua
-CUSTOM: scripts/AshVigil/attached/tomb_interloper.lua
-CUSTOM: scripts/AshVigil/attached/tomb_item.lua
-CUSTOM: scripts/AshVigil/attached/tomb_undead.lua
+CUSTOM: scripts/AshVigil/ecs/urn.lua
+CUSTOM: scripts/AshVigil/ecs/peaceful.lua
