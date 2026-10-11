@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Purify Tomb
+
+instances:
+  # send event when daedra or undead die in a tomb
+  # this works with player.lua to advance quest stages
+  - conditions:
+      - cell:
+        - "aran ancestral tomb"
+        - "arethan ancestral tomb"
+        # these next two are part of the Tel Branora questline
+        - "arano ancestral tomb"
+        - "beran ancestral tomb"
+      - player_faction:
+          faction: "keepers of the dead"
+          rank: 1
+      - is_dead: false
+      - is_respawning: true
+      - creature_type:
+        - undead
+        - daedra
+      - target_disposition:
+          min: 0
+          max: 69
+      - not: {has_lua_script: scripts/ashvigil/ecs/interloper.lua}
+    actions:
+      - add_lua_script: scripts/ashvigil/ecs/interloper.lua

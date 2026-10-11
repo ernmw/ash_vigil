@@ -18,8 +18,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 local MOD_NAME = require("scripts.AshVigil.ns")
 local const    = require("scripts.AshVigil.const")
 local pself    = require("openmw.self")
-local core     = require("openmw.core")
-local nearby    = require("openmw.nearby")
+local core                  = require("openmw.core")
+local nearby                = require("openmw.nearby")
+local interfaces   = require("openmw.interfaces")
+local FollowerDetectionUtil = interfaces.FollowerDetectionUtil
+
+local function isFollower()
+    if FollowerDetectionUtil then
+        return FollowerDetectionUtil.getState().leader ~= nil
+    else
+        return false
+    end
+end
 
 local function calmSelf()
     pself.type.activeSpells(pself):add({
@@ -33,11 +43,25 @@ end
 
 
 local function onInit(data)
-    calmSelf()
+    if isFollower() then
+        core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
+            object = pself.object,
+            script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+        })
+    else
+        calmSelf()
+    end
 end
 
 local function onActive()
-    calmSelf()
+    if isFollower() then
+        core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
+            object = pself.object,
+            script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+        })
+    else
+        calmSelf()
+    end
 end
 
 local function onDisturb()
@@ -46,6 +70,10 @@ local function onDisturb()
             pself.type.activeSpells(pself):remove(spell.activeSpellId)
         end
     end
+    core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
+        object = pself.object,
+        script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+    })
 end
 
 local function onHit()
@@ -53,6 +81,13 @@ local function onHit()
     for _, actor in pairs(nearby.actors) do
         actor:sendEvent(MOD_NAME .. "onDisturb")
     end
+end
+
+local function onInactive()
+    core.sendGlobalEvent(MOD_NAME .. "onRemoveScript", {
+        object = pself.object,
+        script = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\peaceful.lua")
+    })
 end
 
 return {
@@ -63,5 +98,6 @@ return {
     engineHandlers = {
         onActive = onActive,
         onInit = onInit,
+        onInactive = onInactive,
     },
 }

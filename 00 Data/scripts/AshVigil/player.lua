@@ -18,18 +18,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 local core                  = require('openmw.core')
 local types                 = require('openmw.types')
 local pself                 = require('openmw.self')
-local async                 = require('openmw.async')
-local nearby = require('openmw.nearby')
 local MOD_NAME              = require("scripts.AshVigil.ns")
-local interfaces = require('openmw.interfaces')
 local settings   = require("scripts.AshVigil.settings.settings")
 local allQuests             = require("scripts.AshVigil.quests.load")
-local allTombs             = require("scripts.AshVigil.tombs.load")
 local const  = require("scripts.AshVigil.const")
 local aux_util = require('openmw_aux.util')
-
----optionally use this if available
-local FollowerDetectionUtil = interfaces.FollowerDetectionUtil
 
 ---@class QuestContainer
 ---@field metaData Quest
@@ -131,12 +124,6 @@ local function onCellLoaded()
             if quest.metaData.destCellEnterStage ~= nil and quest.playerQuest.stage < quest.metaData.destCellEnterStage then
                 quest.playerQuest:addJournalEntry(quest.metaData.destCellEnterStage, pself)
             end
-            --- TOOD: these lines and logic should be moved into /attached/ scripts
-            --[[local undeadInCurrentDestCell = {}
-            enemiesInCurrentDestCell, undeadInCurrentDestCell = getEnemies()
-            settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
-            settings.debugPrint("Undead in current cell: " .. tostring(#undeadInCurrentDestCell))]]
-            --core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
         elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
             --- if we don't have the urn in our inventory, then we'll advance quest stage

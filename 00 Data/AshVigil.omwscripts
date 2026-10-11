@@ -8,6 +8,8 @@ GLOBAL: scripts/AshVigil/objectPlacer.lua
 PLAYER: scripts/AshVigil/player.lua
 GLOBAL: scripts/AshVigil/global.lua
 GLOBAL: scripts/AshVigil/peace.lua
+GLOBAL: scripts/AshVigil/remover.lua
+
 
 CUSTOM: scripts/AshVigil/ecs/urn.lua
 CUSTOM: scripts/AshVigil/ecs/peaceful.lua
