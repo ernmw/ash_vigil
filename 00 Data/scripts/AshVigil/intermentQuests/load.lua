@@ -33,7 +33,6 @@ local collection = require("scripts.AshVigil.collection")
 ---@field placeCompleteStage number the post-placement success stage. this means they left the urn in the tomb. default 50. this should be an empty journal entry
 ---@field reportStage number the post-reported success stage. end stage. default 100.
 ---@field lostStage number if the player gives up or sells the urn. end stage. default 200.
----@field startCell string? not used by anything really
 ---@field destCell string
 ---@field urnRecordId string built-in record id for the urn. don't make them on the fly
 
@@ -98,7 +97,6 @@ local function load()
         end
         v.id = v.id:lower()
         v.destCell = v.destCell:lower()
-        v.startCell = v.startCell:lower()
         local journalRecord = core.dialogue.journal.records[v.id]
         if journalRecord == nil then
             return id..":  no dialogue journal record with id " .. tostring(v.id)
@@ -142,7 +140,7 @@ local function load()
     end
 
 
-    for fileName in vfs.pathsWithPrefix("scripts\\" .. MOD_NAME .. "\\quests") do
+    for fileName in vfs.pathsWithPrefix("scripts\\" .. MOD_NAME .. "\\intermentQuests") do
         if hasSuffix(fileName:lower(), ".yaml") then
             loadFile(fileName)
         end

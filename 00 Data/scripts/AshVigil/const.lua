@@ -39,8 +39,6 @@ URN_DELIVERY_ACTIVE_GVAR!=1 and quest stage is 0: "<custom dialogue for start of
 return {
     --- this is searched for in mwscript to cancel the current quest
     MWS_LOST_URN_TOKEN = "CK_LOST_URN",
-    --- topic to get interment quests
-    TOPIC_ASH_INTERMENT = "ash interment",
     TOPIC_DEAD_KEEPERS = "dead keepers",
     --- count of total urns lost
     URNS_LOST_GVAR = "CK_UrnsLost",

@@ -1,3 +1,7 @@
+# PCRaiseRank "Temple"
+# Journal "ck_mm_andas", 10
+# coc "Andas Ancestral Tomb"
+
 quests:
   - id: "ck_mm_andas"
     destCell: "Andas Ancestral Tomb"
@@ -29,7 +33,7 @@ quests:
     urnRecordId: "ck_mm_aran_remains"
     destCellEnterStage: 39
     destCellClearedStage: 40
-  - id: "ck_arethan_heran"
+  - id: "ck_mm_arethan"
     destCell: "Arethan Ancestral Tomb"
     # arvethi
     urnRecordId: "ck_mm_arethan_remains"
