@@ -30,14 +30,14 @@
     "rank_names": [
       "Initiate",
       "Attendant",
-      "Custodian",
+      "Pallbearer",
       "Tomb Keeper",
-      "Adept",
+      "Steward",
       "Curate",
-      "Disciple",
-      "Diviner",
-      "Master",
-      "Patriarch"
+      "Vicar",
+      "Rector",
+      "Bursar",
+      "Abbot"
     ],
     "reactions": [
       {
@@ -73,8 +73,8 @@
       "requirements": [
         {
           "attributes": [
-            30,
-            30
+            25,
+            25
           ],
           "primary_skill": 0,
           "favored_skill": 0,
@@ -82,8 +82,8 @@
         },
         {
           "attributes": [
-            30,
-            30
+            25,
+            25
           ],
           "primary_skill": 15,
           "favored_skill": 5,
@@ -91,10 +91,10 @@
         },
         {
           "attributes": [
-            30,
-            30
+            25,
+            25
           ],
-          "primary_skill": 30,
+          "primary_skill": 20,
           "favored_skill": 10,
           "reputation": 25
         },
@@ -103,7 +103,7 @@
             30,
             30
           ],
-          "primary_skill": 45,
+          "primary_skill": 25,
           "favored_skill": 15,
           "reputation": 45
         },
@@ -112,54 +112,54 @@
             30,
             30
           ],
-          "primary_skill": 40,
+          "primary_skill": 30,
           "favored_skill": 10,
           "reputation": 300
         },
         {
           "attributes": [
-            31,
-            31
+            30,
+            30
           ],
-          "primary_skill": 50,
+          "primary_skill": 35,
           "favored_skill": 15,
-          "reputation": 300
-        },
-        {
-          "attributes": [
-            32,
-            32
-          ],
-          "primary_skill": 60,
-          "favored_skill": 20,
-          "reputation": 300
-        },
-        {
-          "attributes": [
-            33,
-            33
-          ],
-          "primary_skill": 70,
-          "favored_skill": 25,
-          "reputation": 300
-        },
-        {
-          "attributes": [
-            34,
-            34
-          ],
-          "primary_skill": 80,
-          "favored_skill": 30,
-          "reputation": 300
+          "reputation": 325
         },
         {
           "attributes": [
             35,
             35
           ],
-          "primary_skill": 90,
+          "primary_skill": 40,
+          "favored_skill": 20,
+          "reputation": 350
+        },
+        {
+          "attributes": [
+            35,
+            35
+          ],
+          "primary_skill": 45,
+          "favored_skill": 25,
+          "reputation": 375
+        },
+        {
+          "attributes": [
+            35,
+            35
+          ],
+          "primary_skill": 50,
+          "favored_skill": 30,
+          "reputation": 400
+        },
+        {
+          "attributes": [
+            35,
+            35
+          ],
+          "primary_skill": 60,
           "favored_skill": 35,
-          "reputation": 300
+          "reputation": 425
         }
       ],
       "favored_skills": [
