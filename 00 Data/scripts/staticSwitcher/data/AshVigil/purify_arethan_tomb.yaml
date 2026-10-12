@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Purify Arethan Tomb
+
+
+        #- "aran ancestral tomb"
+        #- "arethan ancestral tomb"
+        # these next two are part of the Tel Branora questline
+        #- "arano ancestral tomb"
+        #- "beran ancestral tomb"
+
+instances:
+  # send event when daedra or undead die in a tomb
+  # this works with player.lua to advance quest stages
+  - conditions:
+      - has_journal:
+          quest: ck_mm_arethan
+          min: 10
+          max: 39
+      - cell:
+        - "arethan ancestral tomb"
+      - is_dead: false
+      - creature_type:
+        - undead
+        - daedra
+      - not: {has_lua_script: scripts/AshVigil/ecs/interloper.lua}
+    actions:
+      - add_lua_script: scripts/AshVigil/ecs/interloper.lua
+  # if a tomb has been purified, then remove all daedra from it
+  - conditions:
+      - has_journal:
+          quest: ck_mm_arethan
+          index: 40
+      - cell:
+        - "arethan ancestral tomb"
+      - is_dead: false
+      - creature_type:
+        - daedra
+    actions:
+      - replace:
+          ancestor_ghost: 0.1
+          skeleton: 0.2
+          skeleton archer: 0.2
+          bonewalker: 0.2
+          skeleton champion: 0.2
+          bonewalker_greater: 0.2
+          bonelord: 1
+  # if a tomb has been purified, then set the undead to peaceful
+  - conditions:
+      - has_journal:
+          quest: ck_mm_arethan
+          index: 40
+      - cell:
+        - "arethan ancestral tomb"
+      - is_dead: false
+      - creature_type:
+        - undead
+      - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
+    actions:
+      - add_lua_script: scripts/AshVigil/ecs/peaceful.lua

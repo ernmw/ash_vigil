@@ -54,9 +54,6 @@ instances:
       - is_dead: false
       - creature_type:
         - undead
-      - target_disposition:
-          min: 0
-          max: 69
       - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
     actions:
       - add_lua_script: scripts/AshVigil/ecs/peaceful.lua
