@@ -5,7 +5,7 @@
 quests:
   - id: "ck_mm_andas"
     destCell: "Andas Ancestral Tomb"
-    # dralveth
+    # dralveth. conflicts with Tombs of Zafirbel Bay
     urnRecordId: "ck_mm_andas_remains"
   - id: "ck_mm_releth"
     destCell: "Releth Ancestral Tomb"
