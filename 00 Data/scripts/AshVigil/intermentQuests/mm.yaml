@@ -3,18 +3,16 @@
 # coc "Andas Ancestral Tomb"
 
 quests:
-  - id: "ck_mm_andas"
-    destCell: "Andas Ancestral Tomb"
-    # dralveth. conflicts with Tombs of Zafirbel Bay
-    urnRecordId: "ck_mm_andas_remains"
-  - id: "ck_mm_releth"
-    destCell: "Releth Ancestral Tomb"
-    # vevrani
-    urnRecordId: "ck_mm_releth_remains"
   - id: "ck_mm_vandus"
     destCell: "Vandus Ancestral Tomb"
     # seryndil
     urnRecordId: "ck_mm_vandus_remains"
+  - id: "ck_mm_arethan"
+    destCell: "Arethan Ancestral Tomb"
+    # arvethi
+    urnRecordId: "ck_mm_arethan_remains"
+    destCellEnterStage: 39
+    destCellClearedStage: 40
   - id: "ck_mm_savel"
     destCell: "Savel Ancestral Tomb"
     # teldrisa
@@ -23,19 +21,9 @@ quests:
     destCell: "Hlervu Ancestral Tomb"
     # bralvyn
     urnRecordId: "ck_mm_hlervu_remains"
-  - id: "ck_mm_velas"
-    destCell: "Velas Ancestral Tomb"
-    # neralvys
-    urnRecordId: "ck_mm_velas_remains"
   - id: "ck_mm_aran"
     destCell: "Aran Ancestral Tomb"
     # fendrath
     urnRecordId: "ck_mm_aran_remains"
-    destCellEnterStage: 39
-    destCellClearedStage: 40
-  - id: "ck_mm_arethan"
-    destCell: "Arethan Ancestral Tomb"
-    # arvethi
-    urnRecordId: "ck_mm_arethan_remains"
     destCellEnterStage: 39
     destCellClearedStage: 40
