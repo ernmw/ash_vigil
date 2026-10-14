@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 74,
+    "num_objects": 99,
     "masters": [
       [
         "Morrowind.esm",
@@ -310,6 +310,20 @@
     }
   },
   {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "ck_vaerminas_eye",
+    "name": "Vaermina's Eye",
+    "script": "",
+    "mesh": "m\\Misc_soulgem_grand.NIF",
+    "icon": "m\\Tx_soulgem_Grand.tga",
+    "data": {
+      "weight": 2.0,
+      "value": 50,
+      "flags": ""
+    }
+  },
+  {
     "type": "Enchanting",
     "flags": "",
     "id": "ck_mule",
@@ -330,6 +344,24 @@
       "cost": 0,
       "max_charge": 0,
       "flags": "0xfffe"
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "ck_bloodied_journal",
+    "name": "Bloodied Journal",
+    "script": "",
+    "mesh": "m\\Text_Octavo_03.NIF",
+    "icon": "m\\Tx_octavo_03.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a bloodied, damaged journal with many portions rendered illegible.]\n<BR>\n...the Sload assured me that Vaermina’s Eye was in a tomb near Tel Branora. I’ll need to recruit some dirty commoner to show me the way...<BR>\n<BR>\n",
+    "data": {
+      "weight": 3.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
     }
   },
   {
@@ -1655,6 +1687,303 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "ck_daedric_detective",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "161278919115279093734477571791",
+    "prev_id": "",
+    "next_id": "58254597501986626626171096222",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Daedric Detective",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "58254597501986626626171096222",
+    "prev_id": "161278919115279093734477571791",
+    "next_id": "278660501717499224058658169726",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Find out why Beran Ancestral Tomb and Arano Ancestral Tomb were infested with Daedra.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "278660501717499224058658169726",
+    "prev_id": "58254597501986626626171096222",
+    "next_id": "116878752915293170219345303689",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Giron Manas denies ever having been to the Beran Ancestral Tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "116878752915293170219345303689",
+    "prev_id": "278660501717499224058658169726",
+    "next_id": "139725257210951613905750686399",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I confronted Giron Manas with the bloodied journal I found in Beran Ancestral Tomb. He confessed to guiding the high elf into the tomb and taking an obsidian orb that was hidden there. He sold the orb in town.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "139725257210951613905750686399",
+    "prev_id": "116878752915293170219345303689",
+    "next_id": "10417530154207704503686569378",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 40,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Fadase Selvayn bought the orb, and said he later sold it to Barnand Erelie.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10417530154207704503686569378",
+    "prev_id": "139725257210951613905750686399",
+    "next_id": "347226473410042067615172606741",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Barnand hid the orb outside the tower in a mucksponge.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "347226473410042067615172606741",
+    "prev_id": "10417530154207704503686569378",
+    "next_id": "326356801110111335488159611499",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 60,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I found the mucksponge, but there was no orb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "326356801110111335488159611499",
+    "prev_id": "347226473410042067615172606741",
+    "next_id": "1160304000821859694487537588",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 70,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Barnand suggested that the Telvanni must have stolen the orb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1160304000821859694487537588",
+    "prev_id": "326356801110111335488159611499",
+    "next_id": "131324847411406235157196907618",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I've recovered the orb from Dravasa Vedas.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "131324847411406235157196907618",
+    "prev_id": "1160304000821859694487537588",
+    "next_id": "42201878428419500371540047559",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 90,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I handed the orb over to D'lgotha.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42201878428419500371540047559",
+    "prev_id": "131324847411406235157196907618",
+    "next_id": "42240387379940038742117513483",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 91,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told the Keepers that I couldn't find the source of the Daedric infestation.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42240387379940038742117513483",
+    "prev_id": "42201878428419500371540047559",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I handed Vaermina's Eye over to the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "duties",
     "dialogue_type": "Topic"
   },
@@ -1740,5 +2069,363 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Beran Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21192134877236236719646133274",
+    "prev_id": "",
+    "next_id": "31460623007638298071582374967",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "nireli farys",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s southeast of the island. Giron knows the area well if you need help finding it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31460623007638298071582374967",
+    "prev_id": "21192134877236236719646133274",
+    "next_id": "258623129815211099746592612275",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "ervyna hlervu",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s southeast of the island. Giron knows the area well if you need help finding it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "258623129815211099746592612275",
+    "prev_id": "31460623007638298071582374967",
+    "next_id": "201929210514983258712482182854",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I sold the orb in town. Please, don't tell the guards. I have nothing.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "201929210514983258712482182854",
+    "prev_id": "258623129815211099746592612275",
+    "next_id": "117654120614868944765730571808",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Alright then.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "117654120614868944765730571808",
+    "prev_id": "201929210514983258712482182854",
+    "next_id": "122200984211844499896752051952",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Fine. Yes, I went in there. I know it’s not right, but the fishing hasn’t been good this season. I needed money or I’d starve. A man came by asking around for a guide to lead him through the tomb, and I told him I could do it. \n\nOne of the worst jobs I’ve ever taken in my life. The tomb was full of Daedra. The high elf insisted we had to get to the back section of the tomb, and we snuck our way through.\n\nWhen there was an opportunity, he tipped over the Shrine at the back and pulled out some obsidian orb from underneath it. The commotion stirred all the Daedra, and we had to run. The monsters killed him. I grabbed the orb from his body because it looked expensive, and rushed out. I’m lucky I’m still alive.\n\nI sold the orb in town. Please leave me be.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"ck_daedric_detective\" 30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "122200984211844499896752051952",
+    "prev_id": "117654120614868944765730571808",
+    "next_id": "212005790016437007425557617754",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What about it? Never been.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "ck_bloodied_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice 1 \"[Show him the journal.]\", 2 \"Nevermind.\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "212005790016437007425557617754",
+    "prev_id": "122200984211844499896752051952",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What about it? Never been.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"ck_daedric_detective\" 20"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "obsidian orb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "suspicious behavior",
+    "dialogue_type": "Topic"
   }
 ]
