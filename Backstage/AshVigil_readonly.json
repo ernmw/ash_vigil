@@ -2240,17 +2240,6 @@
     "text": "Alright then.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 2
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -2298,17 +2287,6 @@
     "text": "Fine. Yes, I went in there. I know it’s not right, but the fishing hasn’t been good this season. I needed money or I’d starve. A man came by asking around for a guide to lead him through the tomb, and I told him I could do it. \n\nOne of the worst jobs I’ve ever taken in my life. The tomb was full of Daedra. The high elf insisted we had to get to the back section of the tomb, and we snuck our way through.\n\nWhen there was an opportunity, he tipped over the Shrine at the back and pulled out some obsidian orb from underneath it. The commotion stirred all the Daedra, and we had to run. The monsters killed him. I grabbed the orb from his body because it looked expensive, and rushed out. I’m lucky I’m still alive.\n\nI sold the orb in town. Please leave me be.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -2353,7 +2331,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "What about it? Never been.choice",
+    "text": "What about it? Never been.",
     "filters": [
       {
         "index": 2,
