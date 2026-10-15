@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 78,
+    "num_objects": 80,
     "masters": [
       [
         "Morrowind.esm",
@@ -355,7 +355,7 @@
     "mesh": "m\\Text_Octavo_03.NIF",
     "icon": "m\\Tx_octavo_03.tga",
     "enchanting": "",
-    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a bloodied, damaged journal with many portions rendered illegible.]\n<BR>\n...the Sload assured me that Vaermina’s Eye was in a tomb near Tel Branora. I’ll need to recruit some dirty commoner to show me the way...<BR>\n<BR>\n",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a bloodied, damaged journal with many portions rendered illegible.]\n<BR>\n...the Sload assured me that the stone was in a tomb near Tel Branora. I’ll need to recruit some dirty commoner to show me the way...<BR>\n<BR>\n",
     "data": {
       "weight": 3.0,
       "value": 0,
@@ -1716,7 +1716,7 @@
     "flags": "",
     "id": "258623129815211099746592612275",
     "prev_id": "31460623007638298071582374967",
-    "next_id": "201929210514983258712482182854",
+    "next_id": "117654120614868944765730571808",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -1761,9 +1761,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "201929210514983258712482182854",
+    "id": "117654120614868944765730571808",
     "prev_id": "258623129815211099746592612275",
-    "next_id": "117654120614868944765730571808",
+    "next_id": "201929210514983258712482182854",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -1778,55 +1778,19 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Alright then.",
+    "text": "Fine. Yes, I went in there. I know it’s not right, but the fishing hasn’t been good this season. I needed money or I’d starve. A man came by asking around for a guide to lead him through the tomb, and I told him I could do it. One of the worst jobs I’ve ever taken in my life. We snuck into the back of the tomb, past a horde of daedra, and then he dug an obsidian orb out of the ash pit.\n\nThe daedra noticed us, and in the commotion I ran for my life. It was only at the door of my own home that I realized the orb had somehow made its way into my pocket.\n\nI sold the accursed orb in town. It fetched me enough for a sack of saltrice, and I was happy to be rid of it.",
     "filters": [
       {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 1
         }
       },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "ck_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "117654120614868944765730571808",
-    "prev_id": "201929210514983258712482182854",
-    "next_id": "122200984211844499896752051952",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "giron manas",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Fine. Yes, I went in there. I know it’s not right, but the fishing hasn’t been good this season. I needed money or I’d starve. A man came by asking around for a guide to lead him through the tomb, and I told him I could do it. \n\nOne of the worst jobs I’ve ever taken in my life. The tomb was full of Daedra. The high elf insisted we had to get to the back section of the tomb, and we snuck our way through.\n\nWhen there was an opportunity, he tipped over the Shrine at the back and pulled out some obsidian orb from underneath it. The commotion stirred all the Daedra, and we had to run. The monsters killed him. I grabbed the orb from his body because it looked expensive, and rushed out. I’m lucky I’m still alive.\n\nI sold the orb in town. Please leave me be.",
-    "filters": [
       {
         "index": 1,
         "filter_type": "Journal",
@@ -1855,8 +1819,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "122200984211844499896752051952",
+    "id": "201929210514983258712482182854",
     "prev_id": "117654120614868944765730571808",
+    "next_id": "122200984211844499896752051952",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Alright then.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "122200984211844499896752051952",
+    "prev_id": "201929210514983258712482182854",
     "next_id": "212005790016437007425557617754",
     "data": {
       "dialogue_type": "Topic",
@@ -1908,14 +1930,14 @@
         }
       }
     ],
-    "script_text": "Choice 1 \"[Show him the journal.]\", 2 \"Nevermind.\""
+    "script_text": "Choice \"[Show him the journal.]\" 1 \"Nevermind.\" 2"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "212005790016437007425557617754",
     "prev_id": "122200984211844499896752051952",
-    "next_id": "",
+    "next_id": "308475445714070401288804938394",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -1956,6 +1978,100 @@
       }
     ],
     "script_text": "Journal \"ck_daedric_detective\" 20"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "308475445714070401288804938394",
+    "prev_id": "212005790016437007425557617754",
+    "next_id": "162097112815234346089132849341",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 70,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Tel Branora",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m sure one of the fishermen down near the docks can show you the way.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "162097112815234346089132849341",
+    "prev_id": "308475445714070401288804938394",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Tel Branora",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s along the shore somewhere. Ask down by the docks and stop bothering me.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
