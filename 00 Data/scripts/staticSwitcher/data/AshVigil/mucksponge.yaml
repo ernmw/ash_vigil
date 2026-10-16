@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Disturbed Mucksponge
+instances:
+  - conditions:
+      - has_journal:
+          quest: ck_daedric_detective
+          index: 50
+      - cell:
+        - "Tel Branora"
+      - record_id: "flora_muckspunge_03"
+    actions:
+      - replace:
+          ck_disturbed_mucksponge: 1
+    once: per_cell
+  - conditions:
+      - has_journal:
+          quest: ck_daedric_detective
+          min: 60
+      - cell:
+        - "Tel Branora"
+      - record_id: "ck_disturbed_mucksponge"
+    actions:
+      - replace:
+          flora_muckspunge_03: 1
