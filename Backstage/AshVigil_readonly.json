@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 80,
+    "num_objects": 87,
     "masters": [
       [
         "Morrowind.esm",
@@ -173,6 +173,21 @@
       ],
       "flags": ""
     }
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "ck_disturbed_mucksponge_script",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin ck_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"ck_daedric_detective\" == 50 )\n            Journal \"ck_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
   },
   {
     "type": "Spell",
@@ -345,6 +360,14 @@
       "max_charge": 0,
       "flags": "0xfffe"
     }
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "ck_disturbed_mucksponge",
+    "name": "Disturbed Mucksponge",
+    "script": "ck_disturbed_mucksponge_script",
+    "mesh": "f\\Flora_muckspunge_03.NIF"
   },
   {
     "type": "Book",
@@ -1814,7 +1837,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_daedric_detective\" 30"
+    "script_text": "Journal \"ck_daedric_detective\" 30\nAddtopic \"obsidian orb\""
   },
   {
     "type": "DialogueInfo",
@@ -2078,6 +2101,219 @@
     "flags": "",
     "id": "obsidian orb",
     "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "4085090864643207862087895122",
+    "prev_id": "",
+    "next_id": "22441170257480731464155010776",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fadase selvayn",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I bought the trinket from Giron. I thought it would make a nice paperweight if it didn’t sell, but Barnand took it off my hands the very next day. Made a tidy little profit.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": "Journal \"ck_daedric_detective\" 40"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22441170257480731464155010776",
+    "prev_id": "4085090864643207862087895122",
+    "next_id": "628679182013273127808107074834",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fadase selvayn",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I don’t make a habit out of sharing information about my customers’ purchases with strangers.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "628679182013273127808107074834",
+    "prev_id": "22441170257480731464155010776",
+    "next_id": "36782489206595998596395755158",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 95,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "barnand erelie",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The orb has some sort of Daedric enchantment on it. My skill in identifying it further is lacking, so I had hoped to send it off to the Mages Guild in Vivec when I concluded my business here. I didn’t want it under my bedroll or Therana’s minions to find it, so I hid it inside a mucksponge outside the tower.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Journal \"ck_daedric_detective\" 50"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36782489206595998596395755158",
+    "prev_id": "628679182013273127808107074834",
+    "next_id": "239451220017601052569324969220",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "barnand erelie",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m sorry, but I don’t know what you’re talking about.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "239451220017601052569324969220",
+    "prev_id": "36782489206595998596395755158",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "barnand erelie",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The orb is missing? Those Telvanni must have noted my suspicious behavior and retraced my steps. How foolish of me! Listen, you can have the orb so long as you keep it out of their hands.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 60
+        }
+      }
+    ],
+    "script_text": "Journal \"ck_daedric_detective\" 70"
   },
   {
     "type": "Dialogue",
