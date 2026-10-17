@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 87,
+    "num_objects": 99,
     "masters": [
       [
         "Morrowind.esm",
@@ -2281,7 +2281,7 @@
     "flags": "",
     "id": "239451220017601052569324969220",
     "prev_id": "36782489206595998596395755158",
-    "next_id": "",
+    "next_id": "14970762894497836928431397505",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -2324,9 +2324,485 @@
     "script_text": "Journal \"ck_daedric_detective\" 70"
   },
   {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14970762894497836928431397505",
+    "prev_id": "239451220017601052569324969220",
+    "next_id": "3221918519793434305020959416",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "TBD: trade in GS soul",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3221918519793434305020959416",
+    "prev_id": "14970762894497836928431397505",
+    "next_id": "100356530815620916200228415291",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "No need for that, %PCRank. We can resolve this civily. Take it, and go.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "100356530815620916200228415291",
+    "prev_id": "3221918519793434305020959416",
+    "next_id": "40254302603194199211223731809",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "A deal? That could work. There’s a Dark Seducer holed up in a tomb near here. Bring me her soul, and the orb is yours.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "40254302603194199211223731809",
+    "prev_id": "100356530815620916200228415291",
+    "next_id": "35664301157624022054266522245",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You fool!",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35664301157624022054266522245",
+    "prev_id": "40254302603194199211223731809",
+    "next_id": "531945242013800894389600514176",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Then leave me be.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "Choice \"What do you want for it?\" 1 \"[Attack.]\" 2 \"Nevermind.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "531945242013800894389600514176",
+    "prev_id": "35664301157624022054266522245",
+    "next_id": "194696971815765997142188848440",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 7
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Telvanni",
+    "sound_path": "",
+    "text": "The orb is mine, and it’s dangerous. That fool Barnand is out of his depth. I simply can’t hand it over until I’ve completed my experiments, %PCRank.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "Choice \"What do you want for it?\" 1 \"[Attack.]\" 2 \"Nevermind.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "194696971815765997142188848440",
+    "prev_id": "531945242013800894389600514176",
+    "next_id": "413080573715333243208172429757",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 70,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The orb is mine, and it’s dangerous. That fool Barnand is out of his depth, and so are you. I simply can’t give it to some jumped-up outlander until I’ve completed my experiments.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "413080573715333243208172429757",
+    "prev_id": "194696971815765997142188848440",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Why are you asking me, outlander? I don’t know where you can get one. Or why you would want one.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
     "type": "Dialogue",
     "flags": "",
     "id": "suspicious behavior",
     "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "187638135418275653595954640958",
+    "prev_id": "",
+    "next_id": "103739304012300814738272239300",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This is Tel Branora, %PCName. Everything is suspicious.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "103739304012300814738272239300",
+    "prev_id": "187638135418275653595954640958",
+    "next_id": "420452984313107928000188913902",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Tel Branora, Tower Guardpost",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Check with Darvasa. She runs security here.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "420452984313107928000188913902",
+    "prev_id": "103739304012300814738272239300",
+    "next_id": "100601549616066095439564090826",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 70,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Tel Branora",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Maybe you’d have better luck asking in the Tower Guardpost? It’s their job to look for such things.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "100601549616066095439564090826",
+    "prev_id": "420452984313107928000188913902",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Tel Branora",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Other than an outlander shoving their nose into other people’s business? No, nothing comes to mind.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": ""
   }
 ]
