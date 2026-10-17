@@ -4,14 +4,15 @@ instances:
   - conditions:
       - has_journal:
           quest: ck_daedric_detective
-          index: 50
+          min: 50
+          max: 50
       - cell:
         - "Tel Branora"
       - record_id: "flora_muckspunge_03"
     actions:
       - replace:
           ck_disturbed_mucksponge: 1
-    once: per_cell
+      - delete: true
   - conditions:
       - has_journal:
           quest: ck_daedric_detective
@@ -22,3 +23,4 @@ instances:
     actions:
       - replace:
           flora_muckspunge_03: 1
+      - delete: true
