@@ -1,19 +1,28 @@
 # Tel Branora Quest
 
-<<<<<<< HEAD
 ```sh
-
 AddTopic, "Tel Branora"
 PlaceAtPC "AV_KOTDLeader" 1 1 1
+PCRaiseRank "AV_KOTD"
 ```
 
-=======
->>>>>>> 8a913f9 (wip)
 ## Permission to Audit
+
+```sh
+Journal "AV_therana_permission" 90
+```
 
 ## Audit Beran Tomb
 
+```sh
+Journal "AV_audit_beran" 90
+```
+
 ## Audit Arano Tomb
+
+```sh
+Journal "AV_audit_arano" 90
+```
 
 ## Daedric Detective
 
