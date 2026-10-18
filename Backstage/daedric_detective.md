@@ -1,4 +1,18 @@
-# Daedric Detective
+# Tel Branora Quest
+
+```sh
+
+AddTopic, "Tel Branora"
+PlaceAtPC "AV_KOTDLeader" 1 1 1
+```
+
+## Permission to Audit
+
+## Audit Beran Tomb
+
+## Audit Arano Tomb
+
+## Daedric Detective
 
 Testing quickstart:
 ```sh
