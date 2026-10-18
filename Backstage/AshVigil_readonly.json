@@ -1301,7 +1301,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "AV_vaerminas_eye",
+    "id": "AV_obsidian_orb",
     "name": "Vaermina's Eye",
     "script": "",
     "mesh": "m\\Misc_soulgem_grand.NIF",
@@ -3595,6 +3595,590 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "Greeting 2",
+    "dialogue_type": "Greeting"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2300308849656945112234638295",
+    "prev_id": "242672632452579098",
+    "next_id": "321300809810681783419755303565",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m %Name, %Rank of %Faction. As you can see, it’s cramped and crowded here, and we’re all busy because of the trial disruptions, so I don’t have much time for small talk.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"join the Keepers\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "321300809810681783419755303565",
+    "prev_id": "2300308849656945112234638295",
+    "next_id": "39995373769789316525215952213",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What do you want? You know you’ve been expelled.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39995373769789316525215952213",
+    "prev_id": "321300809810681783419755303565",
+    "next_id": "138808290117571952549224775026",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "%PCRank. Do you have anything to report?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "138808290117571952549224775026",
+    "prev_id": "39995373769789316525215952213",
+    "next_id": "38005295146312633580859392663",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, hello. Are you here to join the Keepers of the Dead? Then you will need to talk with Firsylla Dulo. Only she can admit you. We’re still reeling from all the trial disruptions, so don’t be surprised if some things seem chaotic.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"join the Keepers\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38005295146312633580859392663",
+    "prev_id": "138808290117571952549224775026",
+    "next_id": "31876267956535538013629586610",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Greetings, %PCRank. What can I do for you?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31876267956535538013629586610",
+    "prev_id": "38005295146312633580859392663",
+    "next_id": "413723452813678717860258184502",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What do you want?",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "413723452813678717860258184502",
+    "prev_id": "31876267956535538013629586610",
+    "next_id": "311457991316145841963933392989",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Are you here to help? If you want to join the Keepers, Firsylla Dulo handles the recruitment.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"join the Keepers\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "311457991316145841963933392989",
+    "prev_id": "413723452813678717860258184502",
+    "next_id": "226264349110229132511083685845",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You’re a traitor. I don’t like talking to traitors.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "moddisposition -10\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "226264349110229132511083685845",
+    "prev_id": "311457991316145841963933392989",
+    "next_id": "733703309016941846801064541081",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Keepers of the Dead",
+    "sound_path": "",
+    "text": "Yes, %PCRank? What do you need?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "733703309016941846801064541081",
+    "prev_id": "226264349110229132511083685845",
+    "next_id": "134232308514407329262881157649",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hmm? I’m sorry deary, but St. Veloth’s Hostel is full. So many people bustling around a small space. I much prefer a quieter working environment, but there’s too much to do and not enough room to do it in.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "134232308514407329262881157649",
+    "prev_id": "733703309016941846801064541081",
+    "next_id": "371526708510049667642193413866",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Oh, do I know you? You’re very familiar. No wait, don’t tell me. Yves? No… %PCName! Yes, how can I help you, little one?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "371526708510049667642193413866",
+    "prev_id": "134232308514407329262881157649",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, young blood! Welcome to the Keepers of the Dead, %PCName. I’m Nance Bero, it’s a pleasure to meet you.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Background",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "540031653016613495292009948930",
+    "prev_id": "666731499111789993",
+    "next_id": "337955965418432338612866061790",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m Nance Bero, the Archivist for the Keepers here in Molag Mar. I must admit I was torn on taking the assignment here, but my late great-great-great third uncle, Eno Bero, convinced me to leave Necrom one last time and see the world. Did you know he served on a military ship against the Camoran Usurper’s legions? Really quite remarkable. I’ve actually never set foot in Vvardenfell before, but I’ve catalogued most of the tombs here from field reports that were sent to my office in Necrom. I don’t think I could stomach another blanched kwama egg. I have a sensitive constitution, you see.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "337955965418432338612866061790",
+    "prev_id": "540031653016613495292009948930",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Molag Mar",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "51377769602995045876711883084",
+    "prev_id": "172441041297037182",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s a well-positioned fortress. Might not have much in terms of services, but it’s sufficient for pilgrims and warriors who come here. If you need combat training, make sure to visit the Armigers Stronghold. I’ve worked with them before. They know how to handle the blade.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "vampires",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "181399438817111037201315800998",
+    "prev_id": "26303211681180729678",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Kill them with fire. Well, it would be better to expose them to the sun, but they know that, so they won’t let you. Fire usually solves the trick and it gives them no choice. Even the ones which were once Dunmer don’t seem to handle fire that well and die in agony, although much slower. It’s all they deserve. Monsters. When fighting vampires, it’s also good to have some means of magicka protection. Many of these creatures use dangerous spells.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "duties",
     "dialogue_type": "Topic"
   },
@@ -3673,6 +4257,102 @@
         "function": "VariableCompare",
         "comparison": "GreaterEqual",
         "id": "AV_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Daedra",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32670005997779844173913869898",
+    "prev_id": "75387871729862",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "When you see them, it means the job is hard. Well, maybe not the scamps. Everything else can be pretty mean. A clannfear will sense you from miles away, so don’t rely on stealth. An ogrim can kill you quickly if it gets close, so don’t let it. Flame and frost atronachs have predictable weaknesses to the opposing elements, so use that to your advantage. Don’t get too confident, though. Their magicka reflection abilities can cause you great harm, or even your death. That goes for most Daedric minions, actually. Never use a spell which will instantly kill you if reflected, as it will simply be your last one. And don’t hesitate to use Almsivi Intervention if you get in too much trouble. Yes, it may not be the most heroic act, but it will keep you alive.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "work",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3696934110142758177321141427",
+    "prev_id": "14565236722240224144",
+    "next_id": "81909357804987408497474129878",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "dialog placeholder",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "AV_KOTD",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "KOTD WORK",
+    "filters": [],
+    "script_text": ";Turedus Talanian; \r\nChoice \"I'll take the job.\" 1 \"No thanks.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "81909357804987408497474129878",
+    "prev_id": "3696934110142758177321141427",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Your first task shouldn’t be hard. I won’t be handling it, though. Talk with Keerin Meille. He is in Pilgrim’s Rest, here in Molag Mar. An outlander like you. He’s been doing quite a lot of work for us recently, so I think he deserves a short break. You can take over. And if you need additional information about our current predicament, talk to Ondar Selas.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
           "data": 0
@@ -4839,686 +5519,6 @@
         "value": {
           "type": "Integer",
           "data": 70
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "Greeting 2",
-    "dialogue_type": "Greeting"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "2300308849656945112234638295",
-    "prev_id": "242672632452579098",
-    "next_id": "321300809810681783419755303565",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I’m %Name, %Rank of %Faction. As you can see, it’s cramped and crowded here, and we’re all busy because of the trial disruptions, so I don’t have much time for small talk.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "addtopic \"join the Keepers\""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "321300809810681783419755303565",
-    "prev_id": "2300308849656945112234638295",
-    "next_id": "39995373769789316525215952213",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "What do you want? You know you’ve been expelled.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "39995373769789316525215952213",
-    "prev_id": "321300809810681783419755303565",
-    "next_id": "138808290117571952549224775026",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "%PCRank. Do you have anything to report?",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "138808290117571952549224775026",
-    "prev_id": "39995373769789316525215952213",
-    "next_id": "38005295146312633580859392663",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDSavant",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Oh, hello. Are you here to join the Keepers of the Dead? Then you will need to talk with Firsylla Dulo. Only she can admit you. We’re still reeling from all the trial disruptions, so don’t be surprised if some things seem chaotic.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "addtopic \"join the Keepers\""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "38005295146312633580859392663",
-    "prev_id": "138808290117571952549224775026",
-    "next_id": "31876267956535538013629586610",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDSavant",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Greetings, %PCRank. What can I do for you?",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "31876267956535538013629586610",
-    "prev_id": "38005295146312633580859392663",
-    "next_id": "413723452813678717860258184502",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDSavant",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "What do you want?",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "413723452813678717860258184502",
-    "prev_id": "31876267956535538013629586610",
-    "next_id": "311457991316145841963933392989",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDCrusader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Are you here to help? If you want to join the Keepers, Firsylla Dulo handles the recruitment.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "addtopic \"join the Keepers\""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "311457991316145841963933392989",
-    "prev_id": "413723452813678717860258184502",
-    "next_id": "226264349110229132511083685845",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDCrusader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You’re a traitor. I don’t like talking to traitors.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": "moddisposition -10\nGoodbye"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "226264349110229132511083685845",
-    "prev_id": "311457991316145841963933392989",
-    "next_id": "733703309016941846801064541081",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 0
-    },
-    "speaker_id": "AV_KOTDCrusader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "Keepers of the Dead",
-    "sound_path": "",
-    "text": "Yes, %PCRank? What do you need?",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "733703309016941846801064541081",
-    "prev_id": "226264349110229132511083685845",
-    "next_id": "134232308514407329262881157649",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDArch",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Hmm? I’m sorry deary, but St. Veloth’s Hostel is full. So many people bustling around a small space. I much prefer a quieter working environment, but there’s too much to do and not enough room to do it in.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "134232308514407329262881157649",
-    "prev_id": "733703309016941846801064541081",
-    "next_id": "371526708510049667642193413866",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 1
-    },
-    "speaker_id": "AV_KOTDArch",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "AV_KOTD",
-    "sound_path": "",
-    "text": "Oh, do I know you? You’re very familiar. No wait, don’t tell me. Yves? No… %PCName! Yes, how can I help you, little one?",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "371526708510049667642193413866",
-    "prev_id": "134232308514407329262881157649",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDArch",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Oh, young blood! Welcome to the Keepers of the Dead, %PCName. I’m Nance Bero, it’s a pleasure to meet you.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "Background",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "540031653016613495292009948930",
-    "prev_id": "666731499111789993",
-    "next_id": "337955965418432338612866061790",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDArch",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I’m Nance Bero, the Archivist for the Keepers here in Molag Mar. I must admit I was torn on taking the assignment here, but my late great-great-great third uncle, Eno Bero, convinced me to leave Necrom one last time and see the world. Did you know he served on a military ship against the Camoran Usurper’s legions? Really quite remarkable. I’ve actually never set foot in Vvardenfell before, but I’ve catalogued most of the tombs here from field reports that were sent to my office in Necrom. I don’t think I could stomach another blanched kwama egg. I have a sensitive constitution, you see.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "337955965418432338612866061790",
-    "prev_id": "540031653016613495292009948930",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDArchAssist",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "Molag Mar",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "51377769602995045876711883084",
-    "prev_id": "172441041297037182",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDCrusader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "It’s a well-positioned fortress. Might not have much in terms of services, but it’s sufficient for pilgrims and warriors who come here. If you need combat training, make sure to visit the Armigers Stronghold. I’ve worked with them before. They know how to handle the blade.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "vampires",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "181399438817111037201315800998",
-    "prev_id": "26303211681180729678",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDCrusader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Kill them with fire. Well, it would be better to expose them to the sun, but they know that, so they won’t let you. Fire usually solves the trick and it gives them no choice. Even the ones which were once Dunmer don’t seem to handle fire that well and die in agony, although much slower. It’s all they deserve. Monsters. When fighting vampires, it’s also good to have some means of magicka protection. Many of these creatures use dangerous spells.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "Daedra",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "32670005997779844173913869898",
-    "prev_id": "75387871729862",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDCrusader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "When you see them, it means the job is hard. Well, maybe not the scamps. Everything else can be pretty mean. A clannfear will sense you from miles away, so don’t rely on stealth. An ogrim can kill you quickly if it gets close, so don’t let it. Flame and frost atronachs have predictable weaknesses to the opposing elements, so use that to your advantage. Don’t get too confident, though. Their magicka reflection abilities can cause you great harm, or even your death. That goes for most Daedric minions, actually. Never use a spell which will instantly kill you if reflected, as it will simply be your last one. And don’t hesitate to use Almsivi Intervention if you get in too much trouble. Yes, it may not be the most heroic act, but it will keep you alive.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "work",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3696934110142758177321141427",
-    "prev_id": "14565236722240224144",
-    "next_id": "81909357804987408497474129878",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "dialog placeholder",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "AV_KOTD",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "KOTD WORK",
-    "filters": [],
-    "script_text": ";Turedus Talanian; \r\nChoice \"I'll take the job.\" 1 \"No thanks.\" 2"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "81909357804987408497474129878",
-    "prev_id": "3696934110142758177321141427",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 0
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "AV_KOTD",
-    "sound_path": "",
-    "text": "Your first task shouldn’t be hard. I won’t be handling it, though. Talk with Keerin Meille. He is in Pilgrim’s Rest, here in Molag Mar. An outlander like you. He’s been doing quite a lot of work for us recently, so I think he deserves a short break. You can take over. And if you need additional information about our current predicament, talk to Ondar Selas.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       }
     ],
