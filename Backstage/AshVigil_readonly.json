@@ -3996,14 +3996,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": -1
+      "player_rank": 0
     },
     "speaker_id": "AV_KOTDLeader",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "",
+    "player_faction": "AV_KOTD",
     "sound_path": "",
     "text": "The Beran and Arano tombs near Tel Branora haven't been assessed for hundreds of years. I need you to get permission from Mistress Therana so that they can be officially audited.",
     "filters": [
@@ -4017,20 +4017,9 @@
           "type": "Integer",
           "data": 90
         }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "AV_therana_permission",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
       }
     ],
-    "script_text": ";TODO: add condition for start"
+    "script_text": "Journal \"AV_therana_permission\" 10"
   },
   {
     "type": "DialogueInfo",
@@ -4090,6 +4079,28 @@
     "sound_path": "",
     "text": "Report back to me once you've audited Beran Tomb and Arano Tomb.",
     "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
       {
         "index": 0,
         "filter_type": "Journal",
