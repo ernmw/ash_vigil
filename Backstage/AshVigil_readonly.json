@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 215,
+    "num_objects": 221,
     "masters": [
       [
         "Morrowind.esm",
@@ -29,6 +29,15 @@
         1733277
       ]
     ]
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_ds_soul",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
   },
   {
     "type": "Faction",
@@ -256,6 +265,36 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_daedric_detective\" == 50 )\n            Journal \"AV_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "StrongSoulCheck",
+    "header": {
+      "num_shorts": 1,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 1120,
+      "variables_length": 8
+    },
+    "variables": "KLUv/QBYYQAACAAAAGNvdW50ZXIA",
+    "bytecode": "KLUv/QBYhQkAIkwrKpC3Of//////D9iZJBK+pLXbpYmFTF3yKXuOBKDYREjP26KZcdNYvrFJBpmUSZMMunoS5w++ZMEYSMSTybaBQBx5BV0D2UfAYx2Sm3qqvEbN+VRZODhi/nUextnmfeKo3qJ+LtEs41Cof8bZhvqjqCpCDc1kiYjos4eIEujKqIdHC5SC7yMkTdgffFY8ZSwcqEAmg02BO4FlIpdVw8roDFtLyt286lbAXNYCQAhAqFHNQWZhQamwcwAjCcxUBxLoEBqGoqhGoCxlBSOYYKKZYHKZLQc1RChttvB6/CALjCZ6xdVA7fNQvniO1lzL3GOOZOzjc1Rev9pFJA33BIP/aWLZDMa+3NNtuO6Pg0nRHRTy9dA130F5Z9J9yOVKP2hnT841IPnFpY6Myj2zGg==",
+    "text": "Begin StrongSoulCheck\n\nshort counter\n\n;in Greeting for HT_Stronghold (phase 1)\n\nSet \"llunela hleran\".hasSoul to 0\nSet counter to 0\n\nif ( Player->HasSoulGem \"atronach_storm\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"atronach_storm\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"atronach_storm_summon\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"atronach_storm_summon\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"golden saint\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"golden saint\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"golden saint_summon\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"golden saint_summon\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"golden saint_staada\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"golden saint_staada\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"winged twilight\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"winged twilight\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"winged twilight_summon\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"winged twilight_summon\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"winged twilight_grunda_\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"winged twilight_grunda_\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( counter > 1 )\n\tSet \"llunela hleran\".hasSoul to 1\nendif\n\nStopScript StrongSoulCheck\n\nEnd"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "StrongSoulRemove",
+    "header": {
+      "num_shorts": 1,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 1873,
+      "variables_length": 8
+    },
+    "variables": "KLUv/QBYYQAACAAAAGNvdW50ZXIA",
+    "bytecode": "KLUv/QBYrQgAMkomKoCpbSYyIiMyIlMEhjqJwBTZJzsb5TabYzbaeOGOJgUQEmGS6EMMYriTDLuOwqWDiJM/bzr9Z60D5izcMFC3OdHHJBQgRA9G2Hhu7k3YIDDo1v3M+Qm78nQt+lMYSf4zSf4zZ5ku5VShhTfZRIEZ1oWk/hWKJHo6/R5wXhYR3ByLUFfRcQJZZYEdWG1lAcYiDXyorQugVMBDOCDgQrHVBp46r2C/Bv4aMnRK+FAgeWE8HLJQF2rt4O8OD3cuDIUA1d2szqBj4HEhS1eHDQXq18DHIROJBDCjepAAtgBRu1YKczS8UCB+DbwbkP1HQOr/wK6hvGPtLumsQb5DQGVQvqidlSfGwmCjMS63INxhTYeHAg==",
+    "text": "Begin StrongSoulRemove\n\n;called in dialogue for HT_Stronghold (phase 1)\n\nshort counter\n\nSet counter to 2\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_ttmk\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_staada\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_staada\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_grunda_\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_grunda_\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\n;do it all again...\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_ttmk\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_staada\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_staada\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_grunda_\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_grunda_\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\n\nStopScript StrongSoulRemove\n\nEnd"
   },
   {
     "type": "Script",
@@ -3514,7 +3553,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I've recovered the orb from Dravasa Vedas.",
+    "text": "I've recovered the orb from Darvasa Vedas.",
     "filters": [],
     "script_text": ""
   },
@@ -3591,6 +3630,48 @@
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Greeting 1",
+    "dialogue_type": "Greeting"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37723453323938289655074105413",
+    "prev_id": "13568231434823734",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "More disruptions? I had hoped to conduct my experiments in this corner of the tower in some peace. What do you want?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "if ( Player->HasSoulGem \"AV_DarkSeducerV\" >= 1 )\n    set AV_ds_soul to 1\nelse\n    set AV_ds_soul to 0\nendif"
   },
   {
     "type": "Dialogue",
@@ -5062,8 +5143,19 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "TBD: trade in GS soul",
+    "text": "Here's the orb, as agreed.",
     "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      },
       {
         "index": 1,
         "filter_type": "Journal",
@@ -5076,7 +5168,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Player->RemoveSoulGem \"AV_DarkSeducerV\" 1\nset AV_ds_soul to 0\nPlayer->AddItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80"
   },
   {
     "type": "DialogueInfo",
@@ -5123,7 +5215,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Player->AddItem \"AV_obsidian_orb\" 1\nModDisposition -80"
   },
   {
     "type": "DialogueInfo",
@@ -5217,14 +5309,14 @@
         }
       }
     ],
-    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+    "script_text": "SetFight 100\nModDisposition -80\nStartCombat player\nGoodbye"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "35664301157624022054266522245",
     "prev_id": "40254302603194199211223731809",
-    "next_id": "531945242013800894389600514176",
+    "next_id": "18923572781979650934942863868",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5264,13 +5356,60 @@
         }
       }
     ],
-    "script_text": "Choice \"What do you want for it?\" 1 \"[Attack.]\" 2 \"Nevermind.\" 3"
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18923572781979650934942863868",
+    "prev_id": "35664301157624022054266522245",
+    "next_id": "531945242013800894389600514176",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I didn't expect you to actually defeat the Dark Seducer. I apologize for underestimating you.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Greater",
+        "id": "AV_ds_soul",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "Choice \"[Trade the soulgem for the orb.]\" 5 \"[Attack.]\" 2 \"Nevermind.\" 3"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "531945242013800894389600514176",
-    "prev_id": "35664301157624022054266522245",
+    "prev_id": "18923572781979650934942863868",
     "next_id": "194696971815765997142188848440",
     "data": {
       "dialogue_type": "Topic",
@@ -5300,7 +5439,7 @@
         }
       }
     ],
-    "script_text": "Choice \"What do you want for it?\" 1 \"[Attack.]\" 2 \"Nevermind.\" 3"
+    "script_text": "Choice \"What do you want for it?\" 1 \"Shall we settle this dispute in the traditional Telvanni way?\" 4 \"[Attack.]\" 2 \"Nevermind.\" 3"
   },
   {
     "type": "DialogueInfo",
@@ -5336,7 +5475,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Choice \"What do you want for it?\" 1 \"[Attack.]\" 2 \"Nevermind.\" 3"
   },
   {
     "type": "DialogueInfo",
