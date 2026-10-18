@@ -19,6 +19,13 @@ This will keep `AshVigil_readonly.json` up-to-date. Don't edit this file directl
 - Dialogue Editor: https://www.nexusmods.com/morrowind/mods/58547
 - Dialogue Guide: https://wiki.project-tamriel.com/wiki/Writing_and_Dialogue_Guidelines#How_Dialogue_Works
 
+## Merging
+Convert the omwaddons to json and back with `tes3conv`.
+
+If you're strictly combining addons, you can use `jq -s 'add' first.json second.json`. You will need to delete the extra header record.
+
+If you're doing a three-way merge, then look at `merge-omwaddon.sh`.
+
 ### Git tips for Windows Users
 
 After you install git (and git bash), you should have a file in `C:\Users\NAME\.bashrc`. If you don't have that file, go ahead and make it now.

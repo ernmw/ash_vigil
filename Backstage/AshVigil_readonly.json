@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 99,
+    "num_objects": 215,
     "masters": [
       [
         "Morrowind.esm",
@@ -33,7 +33,7 @@
   {
     "type": "Faction",
     "flags": "",
-    "id": "Keepers of the Dead",
+    "id": "AV_KOTD",
     "name": "Keepers of the Dead",
     "rank_names": [
       "Initiate",
@@ -53,16 +53,72 @@
         "reaction": -2
       },
       {
+        "faction": "Clan Aundae",
+        "reaction": -3
+      },
+      {
+        "faction": "Clan Berne",
+        "reaction": -3
+      },
+      {
+        "faction": "Clan Quarra",
+        "reaction": -3
+      },
+      {
         "faction": "Hlaalu",
         "reaction": 1
       },
       {
         "faction": "Imperial Cult",
-        "reaction": -1
+        "reaction": -2
+      },
+      {
+        "faction": "Keepers of the Dead",
+        "reaction": 3
+      },
+      {
+        "faction": "Nerevarine",
+        "reaction": -8
       },
       {
         "faction": "Redoran",
+        "reaction": 2
+      },
+      {
+        "faction": "Sixth House",
+        "reaction": -3
+      },
+      {
+        "faction": "T_Mw_Clan_Baluath",
+        "reaction": -3
+      },
+      {
+        "faction": "T_Mw_Clan_Orlukh",
+        "reaction": -3
+      },
+      {
+        "faction": "T_Mw_HouseDres",
         "reaction": 1
+      },
+      {
+        "faction": "T_Mw_HouseIndoril",
+        "reaction": 2
+      },
+      {
+        "faction": "T_Mw_JaNattaSyndicate",
+        "reaction": -1
+      },
+      {
+        "faction": "T_Mw_Ordinators",
+        "reaction": 2
+      },
+      {
+        "faction": "T_Mw_Shinathi",
+        "reaction": 1
+      },
+      {
+        "faction": "T_Sky_ClanKhulari",
+        "reaction": -3
       },
       {
         "faction": "Telvanni",
@@ -71,18 +127,22 @@
       {
         "faction": "Temple",
         "reaction": 2
+      },
+      {
+        "faction": "Thieves Guild",
+        "reaction": -1
       }
     ],
     "data": {
       "favored_attributes": [
         "Personality",
-        "Intelligence"
+        "Willpower"
       ],
       "requirements": [
         {
           "attributes": [
-            25,
-            25
+            30,
+            30
           ],
           "primary_skill": 0,
           "favored_skill": 0,
@@ -90,30 +150,21 @@
         },
         {
           "attributes": [
-            25,
-            25
+            30,
+            30
           ],
-          "primary_skill": 15,
-          "favored_skill": 5,
-          "reputation": 10
-        },
-        {
-          "attributes": [
-            25,
-            25
-          ],
-          "primary_skill": 20,
-          "favored_skill": 10,
-          "reputation": 25
+          "primary_skill": 10,
+          "favored_skill": 0,
+          "reputation": 5
         },
         {
           "attributes": [
             30,
             30
           ],
-          "primary_skill": 25,
-          "favored_skill": 15,
-          "reputation": 45
+          "primary_skill": 20,
+          "favored_skill": 0,
+          "reputation": 10
         },
         {
           "attributes": [
@@ -121,62 +172,71 @@
             30
           ],
           "primary_skill": 30,
-          "favored_skill": 10,
-          "reputation": 300
+          "favored_skill": 5,
+          "reputation": 20
         },
         {
           "attributes": [
             30,
             30
           ],
-          "primary_skill": 35,
-          "favored_skill": 15,
-          "reputation": 325
-        },
-        {
-          "attributes": [
-            35,
-            35
-          ],
           "primary_skill": 40,
-          "favored_skill": 20,
-          "reputation": 350
+          "favored_skill": 10,
+          "reputation": 30
         },
         {
           "attributes": [
-            35,
-            35
-          ],
-          "primary_skill": 45,
-          "favored_skill": 25,
-          "reputation": 375
-        },
-        {
-          "attributes": [
-            35,
-            35
+            31,
+            31
           ],
           "primary_skill": 50,
+          "favored_skill": 15,
+          "reputation": 45
+        },
+        {
+          "attributes": [
+            32,
+            32
+          ],
+          "primary_skill": 60,
+          "favored_skill": 20,
+          "reputation": 60
+        },
+        {
+          "attributes": [
+            33,
+            33
+          ],
+          "primary_skill": 70,
+          "favored_skill": 25,
+          "reputation": 80
+        },
+        {
+          "attributes": [
+            34,
+            34
+          ],
+          "primary_skill": 80,
           "favored_skill": 30,
-          "reputation": 400
+          "reputation": 100
         },
         {
           "attributes": [
             35,
             35
           ],
-          "primary_skill": 60,
+          "primary_skill": 90,
           "favored_skill": 35,
-          "reputation": 425
+          "reputation": 125
         }
       ],
       "favored_skills": [
+        "MediumArmor",
         "Athletics",
         "Restoration",
-        "Mysticism",
-        "Conjuration",
         "Speechcraft",
-        "None",
+        "Conjuration",
+        "Mysticism",
         "None"
       ],
       "flags": ""
@@ -198,6 +258,51 @@
     "text": "Begin AV_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_daedric_detective\" == 50 )\n            Journal \"AV_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
   },
   {
+    "type": "Script",
+    "flags": "",
+    "id": "cybDSFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\t\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nEnd cybDSFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybGSFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybGSFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nEnd cybGSFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybSloadFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybSloadFight\n\nshort doonce\nshort SloadEscape\nfloat StasisTimer\nfloat SloadEscapeTim\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio < 0.75 )\n\t\tcast \"cybSloadStasis\" \"cybtestsload\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( doonce == 1 )\n\tif ( GetEffect, sEffectReflect == 1 )\n\t\tsetparalysis 1\n\t\tset StasisTimer to 15\n\t\tset doonce to 2\n\tendif\nendif\n\nif ( doonce == 2 )\n    set StasisTimer to ( StasisTimer - GetSecondsPassed )\n\n    if ( StasisTimer <= 0 )\n        setparalysis 0\n        set doonce to 3\n    endif\n\n\tif ( GetEffect, sEffectReflect == 0 )\n\t\tset StasisTimer to 0\n\t\tsetparalysis 0\n        set doonce to 3\n\tendif\n\n\tif ( getspell \"cybSloadStasisSum\" == 0 )\n\t\taddspell \"cybSloadStasisSum\"\n\tendif\n\nendif\n\nif ( doonce == 3 )\n    if ( SloadEscape == 0 )\n        if ( GetHealthGetRatio < 0.25 )\n            cast \"cybSloadTeleport\" \"cybtestsload\"\n\n            if ( GetEffect, sEffectDetectAnimal == 1 )\n                set SloadEscape to 1\n                set SloadEscapeTim to 1\n            endif\n        endif\n    endif\n\n    if ( SloadEscape == 1 )\n        set SloadEscapeTim to ( SloadEscapeTim - GetSecondsPassed )\n\n        if ( SloadEscapeTim <= 0 )\n            set SloadEscape to 2\n            disable\n        endif\n    endif\nendif\n\nEnd cybSloadFight"
+  },
+  {
     "type": "Spell",
     "flags": "",
     "id": "AV_calmtomb",
@@ -212,6 +317,867 @@
         "duration": 10800,
         "min_magnitude": 100,
         "max_magnitude": 100
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybDSFrostShield",
+    "name": "Freezing Blast",
+    "effects": [
+      {
+        "magic_effect": "FrostShield",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 30,
+        "min_magnitude": 30,
+        "max_magnitude": 30
+      },
+      {
+        "magic_effect": "FrostDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 0,
+        "min_magnitude": 30,
+        "max_magnitude": 40
+      },
+      {
+        "magic_effect": "Burden",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 5,
+        "min_magnitude": 300,
+        "max_magnitude": 300
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 60,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybDSability",
+    "name": "Seducer Abilities",
+    "effects": [
+      {
+        "magic_effect": "FortifyMagickaMultiplier",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 60,
+        "max_magnitude": 60
+      },
+      {
+        "magic_effect": "Sanctuary",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 20,
+        "max_magnitude": 20
+      },
+      {
+        "magic_effect": "ResistMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybDSball",
+    "name": "Wild Elemental Strike",
+    "effects": [
+      {
+        "magic_effect": "WeaknessToShock",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 15,
+        "min_magnitude": 5,
+        "max_magnitude": 70
+      },
+      {
+        "magic_effect": "WeaknessToFire",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 15,
+        "min_magnitude": 5,
+        "max_magnitude": 70
+      },
+      {
+        "magic_effect": "WeaknessToFrost",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 15,
+        "min_magnitude": 5,
+        "max_magnitude": 70
+      },
+      {
+        "magic_effect": "ShockDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 15,
+        "min_magnitude": 3,
+        "max_magnitude": 3
+      },
+      {
+        "magic_effect": "FrostDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 15,
+        "min_magnitude": 3,
+        "max_magnitude": 3
+      },
+      {
+        "magic_effect": "FireDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 15,
+        "min_magnitude": 3,
+        "max_magnitude": 3
+      },
+      {
+        "magic_effect": "SpellAbsorption",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 20,
+        "max_magnitude": 20
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 70,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybDSheal",
+    "name": "Seducer Healing",
+    "effects": [
+      {
+        "magic_effect": "RestoreHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 1,
+        "min_magnitude": 80,
+        "max_magnitude": 90
+      },
+      {
+        "magic_effect": "RestoreHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 25,
+        "min_magnitude": 4,
+        "max_magnitude": 6
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 50,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybDSleech",
+    "name": "Mad Leech",
+    "effects": [
+      {
+        "magic_effect": "WeaknessToMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 25,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "Paralyze",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 3,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "AbsorbAttribute",
+        "skill": "None",
+        "attribute": "Speed",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "AbsorbHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 30
+      },
+      {
+        "magic_effect": "AbsorbHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 2,
+        "max_magnitude": 3
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 75,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybDSshield",
+    "name": "Seducer Shield",
+    "effects": [
+      {
+        "magic_effect": "Shield",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 60,
+        "max_magnitude": 60
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybGSboost",
+    "name": "GS Boost",
+    "effects": [
+      {
+        "magic_effect": "FortifyAttackBonus",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "Chameleon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "Sanctuary",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 15,
+        "max_magnitude": 15
+      },
+      {
+        "magic_effect": "RestoreFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      },
+      {
+        "magic_effect": "RestoreHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 3,
+        "max_magnitude": 3
+      },
+      {
+        "magic_effect": "BoundSpear",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "StuntedMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybGSdispel",
+    "name": "Dispel",
+    "effects": [
+      {
+        "magic_effect": "Dispel",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 15,
+        "duration": 1,
+        "min_magnitude": 100,
+        "max_magnitude": 100
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 15,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybGSscamps",
+    "name": "Summon Scamps",
+    "effects": [
+      {
+        "magic_effect": "SummonScamp",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "SummonScamp",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "SummonScamp",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "FortifyHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "FortifyFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 30,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadPoison2",
+    "name": "Sload Poison",
+    "effects": [
+      {
+        "magic_effect": "DamageHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 0,
+        "min_magnitude": 20,
+        "max_magnitude": 30
+      },
+      {
+        "magic_effect": "Poison",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 0,
+        "min_magnitude": 20,
+        "max_magnitude": 30
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 20,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadRestore",
+    "name": "Sload Restoration",
+    "effects": [
+      {
+        "magic_effect": "RestoreMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 4,
+        "max_magnitude": 5
+      },
+      {
+        "magic_effect": "FortifyMagickaMultiplier",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 80,
+        "max_magnitude": 80
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Strength",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Intelligence",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Willpower",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Speed",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadSound",
+    "name": "Screaming Flames",
+    "effects": [
+      {
+        "magic_effect": "FireDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 0,
+        "min_magnitude": 30,
+        "max_magnitude": 60
+      },
+      {
+        "magic_effect": "FireDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 5,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      },
+      {
+        "magic_effect": "Sound",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 5,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 30,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadSpell1",
+    "name": "Sload Shield",
+    "effects": [
+      {
+        "magic_effect": "SummonSkeleton",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 0,
+        "max_magnitude": 0
+      },
+      {
+        "magic_effect": "SummonSkeleton",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 0,
+        "max_magnitude": 0
+      },
+      {
+        "magic_effect": "Chameleon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 40,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadSpellPoison",
+    "name": "Sload Poison",
+    "effects": [
+      {
+        "magic_effect": "AbsorbMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 10,
+        "min_magnitude": 6,
+        "max_magnitude": 6
+      },
+      {
+        "magic_effect": "Poison",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 10,
+        "min_magnitude": 15,
+        "max_magnitude": 15
+      },
+      {
+        "magic_effect": "AbsorbFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 10,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 30,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadStasis",
+    "name": "Sload Stasis",
+    "effects": [
+      {
+        "magic_effect": "Chameleon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "Reflect",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "RestoreHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 40,
+        "max_magnitude": 40
+      },
+      {
+        "magic_effect": "RestoreFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 200,
+        "max_magnitude": 200
+      },
+      {
+        "magic_effect": "RestoreMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 100,
+        "max_magnitude": 100
+      },
+      {
+        "magic_effect": "ResistMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 75,
+        "max_magnitude": 75
+      },
+      {
+        "magic_effect": "ResistMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 1,
+        "min_magnitude": 150,
+        "max_magnitude": 150
+      },
+      {
+        "magic_effect": "Silence",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 20,
+        "duration": 15,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "DrainFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 20,
+        "duration": 5,
+        "min_magnitude": 400,
+        "max_magnitude": 400
+      },
+      {
+        "magic_effect": "DamageFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 20,
+        "duration": 15,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadStasisSum",
+    "name": "Sload Helpers",
+    "effects": [
+      {
+        "magic_effect": "SummonSkeleton",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "SummonSkeleton",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybSloadTeleport",
+    "name": "Sload Teleport",
+    "effects": [
+      {
+        "magic_effect": "DetectAnimal",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 50,
+        "max_magnitude": 50
       }
     ],
     "data": {
@@ -347,6 +1313,294 @@
     }
   },
   {
+    "type": "Weapon",
+    "flags": "",
+    "id": "cybDarkSeducerSaber",
+    "name": "Saber of Mad Accord",
+    "script": "",
+    "mesh": "tr\\w\\tr_w_ebony_saber.nif",
+    "icon": "tr\\w\\tr_w_ebony_saber.dds",
+    "enchanting": "cybDarkSeducerSaber_en",
+    "data": {
+      "weight": 30.0,
+      "value": 16000,
+      "weapon_type": "LongBladeOneHand",
+      "health": 2100,
+      "speed": 1.4,
+      "reach": 1.0,
+      "enchantment": 110,
+      "chop_min": 5,
+      "chop_max": 36,
+      "slash_min": 4,
+      "slash_max": 32,
+      "thrust_min": 1,
+      "thrust_max": 14,
+      "flags": "IGNORES_NORMAL_WEAPON_RESISTANCE"
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_DarkSeducerV",
+    "name": "Vep'ious'andra",
+    "script": "cybDSFight",
+    "mesh": "tr\\cr\\tr_cr_seducerdark_02.nif",
+    "inventory": [
+      [
+        1,
+        "random_daedra_heart"
+      ],
+      [
+        1,
+        "cybDarkSeducerSaber"
+      ]
+    ],
+    "spells": [
+      "resist fire_50",
+      "resist shock_50",
+      "resist frost_50",
+      "reflect_20",
+      "immune to normal weapons",
+      "cybDSability",
+      "cybDSleech",
+      "cybDSball",
+      "cybDSheal"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 1000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "BM_spriggan",
+    "creature_flags": "BIPED | WEAPON_AND_SHIELD | IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "creature_type": "Daedra",
+      "level": 30,
+      "strength": 75,
+      "intelligence": 100,
+      "willpower": 150,
+      "agility": 100,
+      "speed": 75,
+      "endurance": 90,
+      "personality": 100,
+      "luck": 65,
+      "health": 400,
+      "magicka": 755,
+      "fatigue": 700,
+      "soul": 450,
+      "combat": 90,
+      "magic": 100,
+      "stealth": 75,
+      "attack1": [
+        20,
+        60
+      ],
+      "attack2": [
+        20,
+        60
+      ],
+      "attack3": [
+        20,
+        60
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_GoldenSaintD",
+    "name": "Dublurep",
+    "script": "cybGSFight",
+    "mesh": "r\\Golden Saint.NIF",
+    "inventory": [
+      [
+        1,
+        "ingred_daedras_heart_01"
+      ],
+      [
+        1,
+        "cybGSring_e"
+      ]
+    ],
+    "spells": [
+      "resist fire_50",
+      "resist shock_50",
+      "resist frost_50",
+      "reflect_20",
+      "immune to normal weapons",
+      "immune to paralysis",
+      "cybGSboost",
+      "cybGSdispel"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 90,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 1000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "golden saint",
+    "creature_flags": "BIPED | WEAPON_AND_SHIELD | IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "creature_type": "Daedra",
+      "level": 25,
+      "strength": 100,
+      "intelligence": 90,
+      "willpower": 100,
+      "agility": 100,
+      "speed": 75,
+      "endurance": 100,
+      "personality": 50,
+      "luck": 50,
+      "health": 450,
+      "magicka": 90,
+      "fatigue": 700,
+      "soul": 450,
+      "combat": 100,
+      "magic": 10,
+      "stealth": 100,
+      "attack1": [
+        20,
+        60
+      ],
+      "attack2": [
+        20,
+        60
+      ],
+      "attack3": [
+        20,
+        60
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_Sload",
+    "name": "D'lgotha",
+    "script": "cybSloadFight",
+    "mesh": "pc\\cr\\PC_Sload_01.nif",
+    "inventory": [
+      [
+        6,
+        "T_Cyr_Random_SloadLoot"
+      ]
+    ],
+    "spells": [
+      "cybSloadSpell1",
+      "cybSloadSpellPoison",
+      "cybSloadPoison2",
+      "cybSloadSound",
+      "regenerate [ability]",
+      "immune to poison",
+      "immune to normal weapons",
+      "immune to paralysis",
+      "cybSloadRestore"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 90,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 256,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 25,
+        "idle3": 25,
+        "idle4": 25,
+        "idle5": 25,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "T_Glb_Cre_Sloa_01",
+    "creature_flags": "IS_BASE | WALKS",
+    "blood_type": 0,
+    "data": {
+      "creature_type": "Normal",
+      "level": 40,
+      "strength": 100,
+      "intelligence": 100,
+      "willpower": 100,
+      "agility": 50,
+      "speed": 30,
+      "endurance": 100,
+      "personality": 100,
+      "luck": 50,
+      "health": 600,
+      "magicka": 1000,
+      "fatigue": 400,
+      "soul": 450,
+      "combat": 60,
+      "magic": 120,
+      "stealth": 80,
+      "attack1": [
+        25,
+        55
+      ],
+      "attack2": [
+        25,
+        55
+      ],
+      "attack3": [
+        25,
+        55
+      ],
+      "gold": 0
+    }
+  },
+  {
     "type": "Enchanting",
     "flags": "",
     "id": "AV_mule",
@@ -367,6 +1621,791 @@
       "cost": 0,
       "max_charge": 0,
       "flags": "0xfffe"
+    }
+  },
+  {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "cybDarkSeducerSaber_en",
+    "effects": [
+      {
+        "magic_effect": "AbsorbAttribute",
+        "skill": "None",
+        "attribute": "Agility",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 25,
+        "max_magnitude": 30
+      },
+      {
+        "magic_effect": "AbsorbMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 3,
+        "max_magnitude": 4
+      },
+      {
+        "magic_effect": "AbsorbFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 6,
+        "max_magnitude": 7
+      },
+      {
+        "magic_effect": "ShockDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 3,
+        "max_magnitude": 6
+      },
+      {
+        "magic_effect": "FireDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 3,
+        "max_magnitude": 6
+      },
+      {
+        "magic_effect": "WeaknessToMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 20,
+        "max_magnitude": 30
+      },
+      {
+        "magic_effect": "DamageAttribute",
+        "skill": "None",
+        "attribute": "Willpower",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 2
+      },
+      {
+        "magic_effect": "DamageAttribute",
+        "skill": "None",
+        "attribute": "Personality",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 2
+      },
+      {
+        "magic_effect": "DamageAttribute",
+        "skill": "None",
+        "attribute": "Luck",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 2
+      }
+    ],
+    "data": {
+      "enchant_type": "CastOnStrike",
+      "cost": 40,
+      "max_charge": 400,
+      "flags": "AUTO_CALCULATE"
+    }
+  },
+  {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "cybGSring_enc",
+    "effects": [
+      {
+        "magic_effect": "Chameleon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "Sanctuary",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "WeaknessToMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "StuntedMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "SunDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 2,
+        "max_magnitude": 2
+      }
+    ],
+    "data": {
+      "enchant_type": "ConstantEffect",
+      "cost": 400,
+      "max_charge": 400,
+      "flags": "AUTO_CALCULATE"
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_KOTDArch",
+    "name": "Nance Bero",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_De_Ep_Shirt_01"
+      ],
+      [
+        1,
+        "T_De_Et_Shoes_01"
+      ],
+      [
+        1,
+        "T_De_Ex_SkirtNecrom_01"
+      ],
+      [
+        87,
+        "Gold_001"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "T_Glb_Scribe",
+    "faction": "AV_KOTD",
+    "head": "b_n_dark elf_f_head_01",
+    "hair": "b_n_dark elf_f_hair_13",
+    "npc_flags": "FEMALE | IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 12,
+      "disposition": 50,
+      "reputation": 10,
+      "rank": 4,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_KOTDArchAssist",
+    "name": "Jilammu",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_De_Cm_Shirt_06"
+      ],
+      [
+        1,
+        "T_De_Ep_SkirtShin_01"
+      ],
+      [
+        1,
+        "T_De_Cm_Shoes_03"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "T_Glb_Scribe",
+    "faction": "AV_KOTD",
+    "head": "T_B_De_HeadShinathiFemTR_06",
+    "hair": "b_n_dark elf_f_hair_19",
+    "npc_flags": "FEMALE | IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 6,
+      "disposition": 50,
+      "reputation": 5,
+      "rank": 1,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_KOTDCrusader",
+    "name": "Teris Tanalas",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_Imp_Silver_Longhammer_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_GauntL_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_GauntR_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_Boots_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_PauldL_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_PauldR_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_Cuirass_01"
+      ],
+      [
+        2,
+        "p_restore_health_q"
+      ],
+      [
+        1,
+        "p_restore_fatigue_q"
+      ],
+      [
+        1,
+        "T_De_Cm_Pants_06"
+      ],
+      [
+        1,
+        "T_De_Ep_Shirt_04"
+      ],
+      [
+        78,
+        "Gold_001"
+      ]
+    ],
+    "spells": [
+      "firebloom",
+      "hearth heal",
+      "shockbloom"
+    ],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 20,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Crusader",
+    "faction": "AV_KOTD",
+    "head": "b_n_dark elf_m_head_07",
+    "hair": "b_n_dark elf_m_hair_03",
+    "npc_flags": "IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 25,
+      "disposition": 50,
+      "reputation": 10,
+      "rank": 3,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_KOTDLPP",
+    "name": "Keerin Meille",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_He_Steel_WarAxe_01"
+      ],
+      [
+        1,
+        "T_De_KagoutiHide_Cuirass_01"
+      ],
+      [
+        1,
+        "T_De_KagoutiHide_Greaves_01"
+      ],
+      [
+        1,
+        "T_De_KagoutiHide_Boots_01"
+      ],
+      [
+        1,
+        "T_De_KagoutiHide_BracerL_01"
+      ],
+      [
+        1,
+        "T_De_KagoutiHide_BracerR_01"
+      ],
+      [
+        1,
+        "T_De_Et_Pants_01"
+      ],
+      [
+        1,
+        "T_Com_Et_Shirt_03"
+      ],
+      [
+        321,
+        "Gold_001"
+      ],
+      [
+        1,
+        "p_restore_health_q"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Breton",
+    "class": "Rogue",
+    "faction": "AV_KOTD",
+    "head": "b_n_breton_m_head_02",
+    "hair": "b_n_breton_m_hair_04",
+    "npc_flags": "IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 10,
+      "disposition": 60,
+      "reputation": 0,
+      "rank": 0,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_KOTDLeader",
+    "name": "Firsylla Dulo",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_De_Glass_Broadsword_01"
+      ],
+      [
+        1,
+        "T_Com_Ep_GloveL_01"
+      ],
+      [
+        1,
+        "T_Com_Ep_GloveR_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_Boots_01"
+      ],
+      [
+        1,
+        "T_De_BonemoldSacred_Cuirass_01"
+      ],
+      [
+        2,
+        "p_restore_health_e"
+      ],
+      [
+        1,
+        "p_restore_fatigue_q"
+      ],
+      [
+        1,
+        "T_De_Et_PantsSacredBonemold_01"
+      ],
+      [
+        1,
+        "T_De_Ex_Shirt_02"
+      ],
+      [
+        250,
+        "Gold_001"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 20,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Warrior",
+    "faction": "AV_KOTD",
+    "head": "b_n_dark elf_f_head_08",
+    "hair": "b_n_dark elf_f_hair_10",
+    "npc_flags": "FEMALE | IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 30,
+      "disposition": 45,
+      "reputation": 18,
+      "rank": 6,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_KOTDSavant",
+    "name": "Ondar Selas",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_Com_Steel_Dagger_02"
+      ],
+      [
+        1,
+        "common_pants_03_b"
+      ],
+      [
+        1,
+        "T_De_Cm_Shirt_09"
+      ],
+      [
+        1,
+        "T_De_Et_Shoes_02"
+      ],
+      [
+        1,
+        "T_De_Ex_RobeNecrom_01"
+      ],
+      [
+        150,
+        "Gold_001"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Savant",
+    "faction": "AV_KOTD",
+    "head": "b_n_dark elf_m_head_13",
+    "hair": "b_n_dark elf_m_hair_10",
+    "npc_flags": "IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 15,
+      "disposition": 50,
+      "reputation": 14,
+      "rank": 5,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_SloadRHH",
+    "name": "Velsa Sendu",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_De_Dreugh_Sparkaxe_01"
+      ],
+      [
+        1,
+        "bonemold_shield"
+      ],
+      [
+        1,
+        "T_De_AlitHide_Boots_01"
+      ],
+      [
+        1,
+        "T_De_AlitHide_BracerL_01"
+      ],
+      [
+        1,
+        "T_De_AlitHide_BracerR_01"
+      ],
+      [
+        1,
+        "T_De_AlitHide_Cuirass_01"
+      ],
+      [
+        1,
+        "T_De_AlitHide_Greaves_01"
+      ],
+      [
+        1,
+        "T_De_AlitHide_PauldronL_01"
+      ],
+      [
+        1,
+        "T_De_AlitHide_PauldronR_01"
+      ],
+      [
+        2,
+        "p_restore_health_e"
+      ],
+      [
+        1,
+        "p_restore_fatigue_q"
+      ],
+      [
+        1,
+        "p_water_breathing_s"
+      ],
+      [
+        1,
+        "p_fortify_strength_q"
+      ],
+      [
+        1,
+        "p_recall_s"
+      ],
+      [
+        1,
+        "T_De_Cm_Pants_03"
+      ],
+      [
+        1,
+        "T_De_Cm_Shirt_05"
+      ],
+      [
+        160,
+        "Gold_001"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 20,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 2000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Rogue",
+    "faction": "",
+    "head": "b_n_dark elf_f_head_03",
+    "hair": "b_n_dark elf_f_hair_01",
+    "npc_flags": "FEMALE | IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 30,
+      "disposition": 50,
+      "reputation": 12,
+      "rank": 0,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Clothing",
+    "flags": "",
+    "id": "cybGSring_e",
+    "name": "Ring of Mad Accord",
+    "script": "",
+    "mesh": "c\\C_Ring_exquisite_1.NIF",
+    "icon": "c\\tx_ring_exquisite01.tga",
+    "enchanting": "cybGSring_enc",
+    "biped_objects": [],
+    "data": {
+      "clothing_type": "Ring",
+      "weight": 0.1,
+      "value": 3000,
+      "enchantment": 1200
     }
   },
   {
@@ -2800,6 +4839,2209 @@
         "value": {
           "type": "Integer",
           "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Greeting 2",
+    "dialogue_type": "Greeting"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2300308849656945112234638295",
+    "prev_id": "242672632452579098",
+    "next_id": "321300809810681783419755303565",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m %Name, %Rank of %Faction. As you can see, it’s cramped and crowded here, and we’re all busy because of the trial disruptions, so I don’t have much time for small talk.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"join the Keepers\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "321300809810681783419755303565",
+    "prev_id": "2300308849656945112234638295",
+    "next_id": "39995373769789316525215952213",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What do you want? You know you’ve been expelled.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39995373769789316525215952213",
+    "prev_id": "321300809810681783419755303565",
+    "next_id": "138808290117571952549224775026",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "%PCRank. Do you have anything to report?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "138808290117571952549224775026",
+    "prev_id": "39995373769789316525215952213",
+    "next_id": "38005295146312633580859392663",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, hello. Are you here to join the Keepers of the Dead? Then you will need to talk with Firsylla Dulo. Only she can admit you. We’re still reeling from all the trial disruptions, so don’t be surprised if some things seem chaotic.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"join the Keepers\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38005295146312633580859392663",
+    "prev_id": "138808290117571952549224775026",
+    "next_id": "31876267956535538013629586610",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Greetings, %PCRank. What can I do for you?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31876267956535538013629586610",
+    "prev_id": "38005295146312633580859392663",
+    "next_id": "413723452813678717860258184502",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What do you want?",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "413723452813678717860258184502",
+    "prev_id": "31876267956535538013629586610",
+    "next_id": "311457991316145841963933392989",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Are you here to help? If you want to join the Keepers, Firsylla Dulo handles the recruitment.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"join the Keepers\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "311457991316145841963933392989",
+    "prev_id": "413723452813678717860258184502",
+    "next_id": "226264349110229132511083685845",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You’re a traitor. I don’t like talking to traitors.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "moddisposition -10\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "226264349110229132511083685845",
+    "prev_id": "311457991316145841963933392989",
+    "next_id": "733703309016941846801064541081",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Keepers of the Dead",
+    "sound_path": "",
+    "text": "Yes, %PCRank? What do you need?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "733703309016941846801064541081",
+    "prev_id": "226264349110229132511083685845",
+    "next_id": "134232308514407329262881157649",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hmm? I’m sorry deary, but St. Veloth’s Hostel is full. So many people bustling around a small space. I much prefer a quieter working environment, but there’s too much to do and not enough room to do it in.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "134232308514407329262881157649",
+    "prev_id": "733703309016941846801064541081",
+    "next_id": "371526708510049667642193413866",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Oh, do I know you? You’re very familiar. No wait, don’t tell me. Yves? No… %PCName! Yes, how can I help you, little one?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "371526708510049667642193413866",
+    "prev_id": "134232308514407329262881157649",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, young blood! Welcome to the Keepers of the Dead, %PCName. I’m Nance Bero, it’s a pleasure to meet you.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Background",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "540031653016613495292009948930",
+    "prev_id": "666731499111789993",
+    "next_id": "337955965418432338612866061790",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m Nance Bero, the Archivist for the Keepers here in Molag Mar. I must admit I was torn on taking the assignment here, but my late great-great-great third uncle, Eno Bero, convinced me to leave Necrom one last time and see the world. Did you know he served on a military ship against the Camoran Usurper’s legions? Really quite remarkable. I’ve actually never set foot in Vvardenfell before, but I’ve catalogued most of the tombs here from field reports that were sent to my office in Necrom. I don’t think I could stomach another blanched kwama egg. I have a sensitive constitution, you see.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "337955965418432338612866061790",
+    "prev_id": "540031653016613495292009948930",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Molag Mar",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "51377769602995045876711883084",
+    "prev_id": "172441041297037182",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s a well-positioned fortress. Might not have much in terms of services, but it’s sufficient for pilgrims and warriors who come here. If you need combat training, make sure to visit the Armigers Stronghold. I’ve worked with them before. They know how to handle the blade.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "vampires",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "181399438817111037201315800998",
+    "prev_id": "26303211681180729678",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Kill them with fire. Well, it would be better to expose them to the sun, but they know that, so they won’t let you. Fire usually solves the trick and it gives them no choice. Even the ones which were once Dunmer don’t seem to handle fire that well and die in agony, although much slower. It’s all they deserve. Monsters. When fighting vampires, it’s also good to have some means of magicka protection. Many of these creatures use dangerous spells.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Daedra",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32670005997779844173913869898",
+    "prev_id": "75387871729862",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "When you see them, it means the job is hard. Well, maybe not the scamps. Everything else can be pretty mean. A clannfear will sense you from miles away, so don’t rely on stealth. An ogrim can kill you quickly if it gets close, so don’t let it. Flame and frost atronachs have predictable weaknesses to the opposing elements, so use that to your advantage. Don’t get too confident, though. Their magicka reflection abilities can cause you great harm, or even your death. That goes for most Daedric minions, actually. Never use a spell which will instantly kill you if reflected, as it will simply be your last one. And don’t hesitate to use Almsivi Intervention if you get in too much trouble. Yes, it may not be the most heroic act, but it will keep you alive.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "work",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3696934110142758177321141427",
+    "prev_id": "14565236722240224144",
+    "next_id": "81909357804987408497474129878",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "dialog placeholder",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "AV_KOTD",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "KOTD WORK",
+    "filters": [],
+    "script_text": ";Turedus Talanian; \r\nChoice \"I'll take the job.\" 1 \"No thanks.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "81909357804987408497474129878",
+    "prev_id": "3696934110142758177321141427",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Your first task shouldn’t be hard. I won’t be handling it, though. Talk with Keerin Meille. He is in Pilgrim’s Rest, here in Molag Mar. An outlander like you. He’s been doing quite a lot of work for us recently, so I think he deserves a short break. You can take over. And if you need additional information about our current predicament, talk to Ondar Selas.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "trial disruptions",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21547889828269636202261027407",
+    "prev_id": "",
+    "next_id": "25596390534200166350857298098",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Redoran",
+    "sound_path": "",
+    "text": "Yes. That. To think that Saint Delyn’s Doctrine had to be invoked, and so soon… But I’m sure you know about it. Your colleagues like to keep things interesting, after all. So many challenges issued in a day. I suppose that was to be expected from members of your Great House. But I don’t want to be unfair. The disruptions caused by the other representatives were even more severe.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25596390534200166350857298098",
+    "prev_id": "21547889828269636202261027407",
+    "next_id": "237449760710419979787316014282",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "T_Mw_HouseIndoril",
+    "sound_path": "",
+    "text": "Yes. That. To think that Saint Delyn’s Doctrine had to be invoked, and so soon… But I’m sure you know about it. Your colleagues like to keep things interesting, after all. So many challenges issued in a day. I suppose that was to be expected from members of your Great House. But I don’t want to be unfair. The disruptions caused by the other representatives were even more severe.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "237449760710419979787316014282",
+    "prev_id": "25596390534200166350857298098",
+    "next_id": "30630645419546595314394175523",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Hlaalu",
+    "sound_path": "",
+    "text": "Yes. That. To think that Saint Delyn’s Doctrine had to be invoked, and so soon… But I’m sure you know about it. Your colleagues like to keep things interesting, after all. House Hlaalu sure made its demands well known. I didn’t expect them to show such deep concern for the state of the ancestral tombs and ancestral worship. Or was it just an excuse to claim compensation for property damage? That seems more likely, somehow. But I don’t want to be unfair. The disruptions caused by some of the other representatives were just as severe, if not more so.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "30630645419546595314394175523",
+    "prev_id": "237449760710419979787316014282",
+    "next_id": "294386723914658635063745712765",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Telvanni",
+    "sound_path": "",
+    "text": "Yes. That. To think that Saint Delyn’s Doctrine had to be invoked, and so soon… But I’m sure you know about it. Your colleagues like to keep things interesting, after all. I consider the way the Telvanni representatives conducted themselves to be quite appalling, but who am I to question the wisdom of the mage lords? I’m sure there were many important reasons for all the insults hurled and the damage caused. It’s such a pity that those reasons remain unknown to me.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "294386723914658635063745712765",
+    "prev_id": "30630645419546595314394175523",
+    "next_id": "69900982806040690810350527573",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes. That. To think that Saint Delyn’s Doctrine had to be invoked, and so soon… Well, let’s just say that the representatives of all the Great Houses kept things interesting. With so many demands, challenges, and insults, it’s hard to decide who caused us the most trouble.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "69900982806040690810350527573",
+    "prev_id": "294386723914658635063745712765",
+    "next_id": "334748835813921746172966905491",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "To put it mildly, yes. The trial involves the Temple and all the Great Houses. Such things happen, but it’s been a while since I’ve seen such heated debate on faith and ancestor worship. Many House nobles accused the Temple of negligence because of the way the ancestral remains were treated. There were some organization failures that inflamed tensions, I’m afraid. I guess that’s on us, at least in part. The trial is on hiatus now, and that’s for the better. Saint Delyn’s Doctrine and all. With the way things are going, the trial will probably last many years.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "334748835813921746172966905491",
+    "prev_id": "69900982806040690810350527573",
+    "next_id": "98773221508263440097054065559",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s why we ended up in Molag Mar. I’m sure that the proximity of an old Hlaalu ancestral tomb plays a big part, as now it’s one of the major goals in our tomb purification and restoration process. Vivec city would have been nicer, but there is certainly no shortage of work around here. Molag Amur is mostly hostile wilderness, and Azura’s Coast is only slightly better. Outlaws, vampires, Daedric minions. I’m sure that they will all give us lots of trouble, but I welcome the challenge.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "98773221508263440097054065559",
+    "prev_id": "334748835813921746172966905491",
+    "next_id": "29113242205455717207460463840",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I have faith that these disruptions are only temporary. I am grateful for the assistance provided by the Order of the Keepers of the Dead. The Order has not been seen on Vvardenfell in quite some time, and there is always too much work and too few capable people to carry it out.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29113242205455717207460463840",
+    "prev_id": "98773221508263440097054065559",
+    "next_id": "10577148497348688871937273679",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "tharer rotheloth",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Molag Mar",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It is unfortunate how disruptive the trial has been. I think that some nobles have treated the Temple too harshly, voicing their concerns loudly for selfish reasons. However, sometimes our faith must be tested and our actions judged. Perhaps we can all learn something from the experience.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10577148497348688871937273679",
+    "prev_id": "29113242205455717207460463840",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Molag Mar",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s been quite confusing. I’d be lying if I said I understood most of it. The Temple acts out of concern for the people. What do the Great Houses want from us?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Delyn's Doctrine",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18244784206039734056304944389",
+    "prev_id": "",
+    "next_id": "32952605504110432267562545206",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was shocked that it was invoked as well.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32952605504110432267562545206",
+    "prev_id": "18244784206039734056304944389",
+    "next_id": "383213650913170576706829594454",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 5
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I was shocked that it was invoked as well.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "383213650913170576706829594454",
+    "prev_id": "32952605504110432267562545206",
+    "next_id": "19285582006121138851418310993",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Why are you asking me about that? Wait. You don’t know? By the Three… they sent us a moron.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19285582006121138851418310993",
+    "prev_id": "383213650913170576706829594454",
+    "next_id": "403033255717831929060116221337",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m not in the mood to give a lecture, outlander. Ask Ondar Selas, if you want to know. Maybe he will tell you.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "403033255717831929060116221337",
+    "prev_id": "19285582006121138851418310993",
+    "next_id": "11863675474913344090125724748",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Blessed be His name. There are many legal subtleties involved, but in short, Saint Delyn’s Doctrine allows the Archcanon to call a halt to the proceedings until a consensus on the key points can be reached through individual negotiations. This golden rule prevents conflicts from spiraling out of control during the trial. Some say that invoking Saint Delyn’s Doctrine is an act of desperation. It’s certainly not invoked often. In fact, it can’t be. Nor can it last forever. It’s always a strictly temporary measure and it’s no different here, as everyone will be preparing for the next stage of the trial. As for me, I call it prudence. Saint Delyn was a just and wise man. This Doctrine is one of his many contributions to Temple law.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11863675474913344090125724748",
+    "prev_id": "403033255717831929060116221337",
+    "next_id": "24560009739448842341347199549",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s why the trial was halted. Ask Ondar Selas, if you want to know more. I focus on my job. I’m not an expert on the Doctrine.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "24560009739448842341347199549",
+    "prev_id": "11863675474913344090125724748",
+    "next_id": "113210578016820054000052068814",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "You should know, however, that it is never an easy decision for an Archcanon, as it always comes at a cost. Some interpret such an act as a sign of weakness that can be exploited. The Doctrine can also never be invoked again in the same case, and all parties are aware of this. Still, history shows us that many agreements were reached only after Saint Delyn’s Doctrine was invoked. There can be no guarantee, but the Doctrine has proven to be effective.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "113210578016820054000052068814",
+    "prev_id": "24560009739448842341347199549",
+    "next_id": "52463941808749192847691554227",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I am glad that you have taken interest in the legal aspects of the Doctrine, %PCRank. Saint Delyn the Wise taught us that one should never lose sight of the primary goal. Unfortunately, this is not something that every Dunmer remembers. When the parties are too invested in the conflict or too focused on their personal gains, there is little chance of reaching an agreement which can be considered just. By invoking the Doctrine, the trial is put on hiatus and the parties are encouraged to engage in honest negotiations.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "52463941808749192847691554227",
+    "prev_id": "113210578016820054000052068814",
+    "next_id": "247798035112521292749402844884",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It is rare for an outlander who is not part of our congregation to take interest in the legal aspects of the Doctrine. Unfortunately, I have other duties, so I cannot discuss it with you at this time.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "247798035112521292749402844884",
+    "prev_id": "52463941808749192847691554227",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I will not discuss this with someone who broke the rules of the Tribunal Temple.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "join the Keepers",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41276968624018381523973692933",
+    "prev_id": "",
+    "next_id": "297994110010217593075774470422",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You’ve been expelled.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "297994110010217593075774470422",
+    "prev_id": "41276968624018381523973692933",
+    "next_id": "24584557503949222388835602910",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Mhm. Very funny. You've already joined.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "24584557503949222388835602910",
+    "prev_id": "297994110010217593075774470422",
+    "next_id": "384345906213486166832064295720",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Then I welcome you in our ranks, %PCRank.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "PCJoinFaction \"Keepers of the Dead\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "384345906213486166832064295720",
+    "prev_id": "24584557503949222388835602910",
+    "next_id": "41405972502211819579853128468",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Let me know if you change your mind.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41405972502211819579853128468",
+    "prev_id": "384345906213486166832064295720",
+    "next_id": "37055810452002726794991387602",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "You want to join us? We could certainly use the help. There is much which needs to be done. Census work, tomb purification and restoration. If you need work, we have it.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "RankRequirement",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"I want to join you.\" 1 \"I don't want to join you.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37055810452002726794991387602",
+    "prev_id": "41405972502211819579853128468",
+    "next_id": "27979040931396471899909680395",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "If you’re serious about joining, then prove yourself by your devotion to the Tribunal. Only Temple Novices, at a minimum, are eligible for service.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "RankRequirement",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "27979040931396471899909680395",
+    "prev_id": "37055810452002726794991387602",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I will be blunt. We’re not looking for people like you. You don’t meet our requirements.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "accused the Temple",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "685382271012220536776539372079",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This is no secret, although some wish it were. Many ancestral tombs were abandoned or fell to cultists, necromancers, and worse. Nobles claim that it’s a stain on the honor of their clans and families, and some demand recompense for the damage done to their property as well. According to them, the tomb caretakers on Vvardenfell were marginalized on the Temple’s insistence, and the security provided by the Temple was pulled away to guard the Great Ghostfence. As the Keepers, we’re in the middle of all of this. I can’t say we’re being treated fairly. Personally, I think that the Temple defence was solid, and it’s more about politics than faith and doctrine.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Temple defence",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "381331463515479100869122219844",
+    "prev_id": "",
+    "next_id": "651818584013066565332717620217",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The truth is that the Temple didn’t force the nobles to change their ways. We encouraged certain changes for the greater good, but if the nobles truly disagreed, they could continue following the old ways. Some did. Yet somehow many more are now accusing the Temple of negligence, and I consider that grossly unfair. So now is the time of the Great Reorganization.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "651818584013066565332717620217",
+    "prev_id": "381331463515479100869122219844",
+    "next_id": "39111532008924398047946660634",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Nobody can deny that the Ghostfence protected Vvardenfell from many horrors, even when it ceased to be completely effective. Oh, it’s very convenient for the nobles to make their accusations now. I’m sure that Vvardenfell’s recent reorganization into an Imperial Province District, the surge of colonization, and the Great House struggles for influence had nothing to do with it. Nothing at all.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39111532008924398047946660634",
+    "prev_id": "651818584013066565332717620217",
+    "next_id": "563641272013955600074890601062",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There were good reasons for the changes in the practice of ancestor worship. Every Dunmer had a solemn duty to support the Great Ghostfence. Well, it was as much an honor as a duty. One holy purpose. No honest Dunmer can believe otherwise. The Great Ghostfence became so central to the whole nation that few are even calling it by its full name. This was not a result of any formal act, but a cultural change. Driven by necessity, I might add.\n",
+    "filters": [],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "563641272013955600074890601062",
+    "prev_id": "39111532008924398047946660634",
+    "next_id": "168619534811365185953831858367",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You know better than most what role the Ghostfence served, so nobody needs to explain its importance to you. The stance of some Great House nobles seems to be flexible, but often in a way which I cannot condone. Given the danger posed by the Blight, I believe that the Temple was right in discouraging the old ways. It was not done by force, and the families could still follow their traditions if that was their firm belief.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "C3_DestroyDagoth",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "168619534811365185953831858367",
+    "prev_id": "563641272013955600074890601062",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "tholer saryoni",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The stance of some Great House nobles seems to be flexible, but often in a way which I cannot condone. Given the danger posed by the Blight, maintaining the Ghostfence is of utmost importance. I believe that the Temple was right in discouraging the old ways. It was not done by force, and the families could still follow their traditions if that was their firm belief.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "the Great Reorganization",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "395695991716372814773795325004",
+    "prev_id": "",
+    "next_id": "158858259215932026344750208666",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "After Saint Delyn’s doctrine was invoked and petty squabbles put to rest, some sort of compromise could be reached. We’ve been preparing a census of the ancestral tombs and family remains and keeping the families informed. We also plan to purify and restore tombs when we can and when doing so won’t result in damage to the family remains or clan property. The process had begun long before the Great Ghostfence was deactivated. Everything had to be done in a way which wouldn’t weaken the Great Ghostfence. Since the Blight is gone, maybe now we’ll be able to make faster progress.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "C3_DestroyDagoth",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "158858259215932026344750208666",
+    "prev_id": "395695991716372814773795325004",
+    "next_id": "134538269918191650739420465906",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "After Saint Delyn’s doctrine was invoked and petty squabbles put to rest, some sort of compromise could be reached. We’ve been preparing a census of the ancestral tombs and family remains and keeping the families informed. We also plan to purify and restore tombs when we can and when doing so won’t result in damage to the family remains or clan property. All that has to be done in a way which won’t weaken the Great Ghostfence. It’s a long and arduous process.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "134538269918191650739420465906",
+    "prev_id": "158858259215932026344750208666",
+    "next_id": "35994781193765896228899829555",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I came up with the term myself. I plan to write a book about it, when I get the time. There was a flood of requests and demands concerning the status of family remains, urns and ancestral tombs. Many fake ones as well! Clearly an attempt at sabotage or some other intrigue.",
+    "filters": [],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35994781193765896228899829555",
+    "prev_id": "134538269918191650739420465906",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Sure. I like simpler terms, like tomb purification and tomb restoration. They actually tell you what the work is about. But Ondar Selas probably knows what he is saying. He is a smart man, after all.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "tomb purification",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "323288228511769650483970290428",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s why we ended up in Molag Mar. I’m sure that the proximity of an old Hlaalu ancestral tomb plays a big part, as now it’s one of the major goals in our tomb purification and restoration process. Vivec city would have been nicer, but there is certainly no shortage of work around here. Molag Amur is mostly hostile wilderness, and Azura’s Coast is only slightly better. Outlaws, vampires, Daedric minions. I’m sure that they will all give us lots of trouble, but I welcome the challenge.",
+    "filters": [],
+    "script_text": "addtopic \"Daedra\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "tomb restoration",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "357945156014051183503026039478",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That usually takes far longer than purification. Traditionally, the families were expected to maintain their tombs, but you already know that it’s far more complex than that. I’ll be honest. I’m a bit lost in the formalities involved. My family doesn’t even have a tomb, or at least I don’t know about it. Some remains of my ancestors are kept at my local temple, and I make my prayers there. But what’s important here is that the restoration effort can vary greatly in scope and difficulty. It’s determined by the agreement made between the Temple and the family.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Nance Bero",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "420557598814489495961875048827",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "She’s been with the Keepers for nearly a century now. I’m her assistant; I help with day-to-day tasks and take notes for her. She doesn’t seem bothered at all by the trial disputes, but I suppose preparing for your own funeral puts political concerns into perspective.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "outlaws",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "353595410813638672058295958836",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Surprisingly, they are the most varied and unpredictable of our foes. A tomb robber may be no more than a petty thief who was lured by the loot, or an expert killer who will make you sweat with every blow. I never underestimate them. I knew some people who did, and they paid a heavy price for it.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Keepers of the Dead",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "213880054016497802613528218069",
+    "prev_id": "",
+    "next_id": "31105032972387721588350465665",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "Buoyant Armiger",
+    "speaker_faction": "",
+    "speaker_cell": "Molag Mar",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s rare to see members of the Order on Vvardenfell. It speaks to the significance of the trial, I suppose. They have important work to do here. We assist the Keepers in tomb purification duties, and conduct joint investigations as well, much to the dismay of the Ordinators. They would prefer to have sole authority over such matters. Even if they did, they don’t have the numbers to handle all of it.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31105032972387721588350465665",
+    "prev_id": "213880054016497802613528218069",
+    "next_id": "23355722756274200103087069563",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "Guard",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Molag Mar",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The circumstances of the Order’s appearance in Molag Mar are unfortunate, but the Order’s work is just. We lend assistance when we can.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "23355722756274200103087069563",
+    "prev_id": "31105032972387721588350465665",
+    "next_id": "340495634013285627475537564140",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Redoran",
+    "speaker_cell": "Molag Mar",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "They’ve been stationed at Saint Veloth’s Hostel for some time. It’s good to see that the Temple has taken the concerns voiced by the Great Houses seriously. Practices related to ancestor worship are a matter of personal honor and conviction, but no one can doubt House Redoran’s sacrifices in the fight against Dagoth Ur’s minions. While we’ve been helping to contain the threat near the Ghostfence, far too many ancestral tombs in places under the Temple’s protection have been looted by the grave robbers or defiled by cultists.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "340495634013285627475537564140",
+    "prev_id": "23355722756274200103087069563",
+    "next_id": "1144629975342858156325167541",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Molag Mar, Redoran Stronghold",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "They’ve been stationed at Saint Veloth’s Hostel for some time. It’s good to see that the Temple has taken the concerns voiced by the Great Houses seriously. Practices related to ancestor worship are a matter of personal honor and conviction, but no one can doubt House Redoran’s sacrifices in the fight against Dagoth Ur’s minions. While we’ve been helping to contain the threat near the Ghostfence, far too many ancestral tombs in places under the Temple’s protection have been looted by the grave robbers or defiled by cultists.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotClass",
+        "function": "NotClass",
+        "comparison": "Equal",
+        "id": "Guard",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1144629975342858156325167541",
+    "prev_id": "340495634013285627475537564140",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Molag Mar, Temple",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Unfortunately, we couldn’t fit the members of the Order here. They’re staying at Saint Veloth’s Hostel.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotClass",
+        "function": "NotClass",
+        "comparison": "Equal",
+        "id": "Guard",
+        "value": {
+          "type": "Integer",
+          "data": 1
         }
       }
     ],
