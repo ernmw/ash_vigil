@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 221,
+    "num_objects": 249,
     "masters": [
       [
         "Morrowind.esm",
@@ -3626,8 +3626,704 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I handed Vaermina's Eye over to the Keepers.",
+    "text": "I handed orb over to the Keepers.",
     "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_therana_permission",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "94438853507606752963822396711",
+    "prev_id": "",
+    "next_id": "30739261065837631290908837588",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Permission to Audit",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "30739261065837631290908837588",
+    "prev_id": "94438853507606752963822396711",
+    "next_id": "42841629205302456774589790231",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "started. TBD",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42841629205302456774589790231",
+    "prev_id": "30739261065837631290908837588",
+    "next_id": "93888231205967593727382767198",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 90,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "work done, waiting to report. TBD.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "93888231205967593727382767198",
+    "prev_id": "42841629205302456774589790231",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "done. TBD",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_audit_arano",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22330391821495986766936030451",
+    "prev_id": "",
+    "next_id": "69301021603784876969456128091",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Audit Arano Tomb",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "69301021603784876969456128091",
+    "prev_id": "22330391821495986766936030451",
+    "next_id": "22748314655747690703919567029",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "started. TBD.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22748314655747690703919567029",
+    "prev_id": "69301021603784876969456128091",
+    "next_id": "23176631408210771015778502984",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 90,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "work done, waiting to report. TBD.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "23176631408210771015778502984",
+    "prev_id": "22748314655747690703919567029",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "done. TBD.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_audit_beran",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2737608731404638193252376558",
+    "prev_id": "",
+    "next_id": "11798909005624064240715487892",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Audit Beran Tomb",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11798909005624064240715487892",
+    "prev_id": "2737608731404638193252376558",
+    "next_id": "394769206015201169036212287163",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "started. TBD.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "394769206015201169036212287163",
+    "prev_id": "11798909005624064240715487892",
+    "next_id": "29289684868042798538061075072",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 90,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "work done, waiting to report. TBD.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29289684868042798538061075072",
+    "prev_id": "394769206015201169036212287163",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "done. TBD.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Tel Branora",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "476833720014493890575387965440",
+    "prev_id": "327417864306611853",
+    "next_id": "13094785893440066766827774665",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Stop bothering me. Find work elsewhere.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13094785893440066766827774665",
+    "prev_id": "476833720014493890575387965440",
+    "next_id": "266977990714056670294149910783",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The Beran and Arano tombs near Tel Branora haven't been assessed for hundreds of years. I need you to get permission from Mistress Therana so that they can be officially audited.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ";TODO: add condition for start"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "266977990714056670294149910783",
+    "prev_id": "13094785893440066766827774665",
+    "next_id": "2026988031183734686594460725",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Best news I've had all day, %PCRank. Since you're familar with the island, you're going to perform the audit of both the tombs. We're not sure what you'll find, so be prepared to purge the tombs.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 100\nJournal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10\n;TBD: give reward"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2026988031183734686594460725",
+    "prev_id": "266977990714056670294149910783",
+    "next_id": "420274817710737166852295034193",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Report back to me once you've audited Beran Tomb and Arano Tomb.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "420274817710737166852295034193",
+    "prev_id": "2026988031183734686594460725",
+    "next_id": "243332480816753559963930361125",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This is very disturbing news, %PCRank. I hadn't expected Beran Tomb to be defiled to such a degree. I want you to find out why. The journal you found is a good starting point. Interrogate the locals.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_bloodied_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 100\nJournal \"AV_audit_arano\" 100\nJournal \"AV_daedric_detective\" 10\nAddtopic \"Beran Tomb\"\n; TBD: rewards"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "243332480816753559963930361125",
+    "prev_id": "420274817710737166852295034193",
+    "next_id": "176159944016559573297167116351",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This is very disturbing news, %PCRank. I hadn't expected Beran Tomb to be defiled to such a degree. I want you to find out why. You should scour the tomb for any clues.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 100\nJournal \"AV_audit_arano\" 100\nJournal \"AV_daedric_detective\" 10\nAddtopic \"Beran Tomb\"\n; TBD: rewards"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "176159944016559573297167116351",
+    "prev_id": "243332480816753559963930361125",
+    "next_id": "339129070416920391834212102070",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This orb was at the center of the defilement? Thank you for retrieving it. I'll have Ondar study it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_daedric_detective\" 100\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\n; TBD: rewards"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "339129070416920391834212102070",
+    "prev_id": "176159944016559573297167116351",
+    "next_id": "952167348011751148915741727814",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You're telling me the trail just stops there, then? I should have sent Ondas.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_daedric_detective\" 91\n; no rewards on purpose!"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "952167348011751148915741727814",
+    "prev_id": "339129070416920391834212102070",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Tel Branora is just south of here. We've had a lot of difficulty in dealing with Mistress Therana.",
     "filters": [],
     "script_text": ""
   },
@@ -5121,7 +5817,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_daedric_detective\" 70"
+    "script_text": "Journal \"AV_daedric_detective\" 70\nAddtopic \"suspicious behavior\""
   },
   {
     "type": "DialogueInfo",
@@ -5482,7 +6178,7 @@
     "flags": "",
     "id": "413080573715333243208172429757",
     "prev_id": "194696971815765997142188848440",
-    "next_id": "",
+    "next_id": "40777897009177055654234143068",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5508,6 +6204,114 @@
         "value": {
           "type": "Integer",
           "data": 70
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "40777897009177055654234143068",
+    "prev_id": "413080573715333243208172429757",
+    "next_id": "724372167012113877046267435160",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I'll send the orb to Necrom for further study, after Ondar is done with it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "724372167012113877046267435160",
+    "prev_id": "40777897009177055654234143068",
+    "next_id": "236659334315929921968892791105",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was starting to rely on your abilities, %PCRank. It's unfortunate you were unable to retrieve the artifact.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "236659334315929921968892791105",
+    "prev_id": "724372167012113877046267435160",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I don't know what the significance of this orb is, but it seems to be at the center of the tomb defilement near Tel Branora. Find it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
         }
       }
     ],
