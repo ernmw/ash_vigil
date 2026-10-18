@@ -1341,7 +1341,7 @@
     "type": "MiscItem",
     "flags": "",
     "id": "AV_obsidian_orb",
-    "name": "Vaermina's Eye",
+    "name": "Obsidian Orb",
     "script": "",
     "mesh": "m\\Misc_soulgem_grand.NIF",
     "icon": "m\\Tx_soulgem_Grand.tga",
@@ -5081,7 +5081,7 @@
     "flags": "",
     "id": "239451220017601052569324969220",
     "prev_id": "36782489206595998596395755158",
-    "next_id": "14970762894497836928431397505",
+    "next_id": "100356530815620916200228415291",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5126,102 +5126,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "14970762894497836928431397505",
-    "prev_id": "239451220017601052569324969220",
-    "next_id": "3221918519793434305020959416",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "darvasa vedas",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Here's the orb, as agreed.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 5
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 70
-        }
-      }
-    ],
-    "script_text": "Player->RemoveSoulGem \"AV_DarkSeducerV\" 1\nset AV_ds_soul to 0\nPlayer->AddItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3221918519793434305020959416",
-    "prev_id": "14970762894497836928431397505",
-    "next_id": "100356530815620916200228415291",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "darvasa vedas",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "No need for that, %PCRank. We can resolve this civily. Take it, and go.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 4
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 70
-        }
-      }
-    ],
-    "script_text": "Player->AddItem \"AV_obsidian_orb\" 1\nModDisposition -80"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "100356530815620916200228415291",
-    "prev_id": "3221918519793434305020959416",
+    "prev_id": "239451220017601052569324969220",
     "next_id": "40254302603194199211223731809",
     "data": {
       "dialogue_type": "Topic",
@@ -5247,7 +5153,7 @@
         "id": "",
         "value": {
           "type": "Integer",
-          "data": 3
+          "data": 1
         }
       },
       {
@@ -5316,7 +5222,7 @@
     "flags": "",
     "id": "35664301157624022054266522245",
     "prev_id": "40254302603194199211223731809",
-    "next_id": "18923572781979650934942863868",
+    "next_id": "3221918519793434305020959416",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5361,8 +5267,102 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "18923572781979650934942863868",
+    "id": "3221918519793434305020959416",
     "prev_id": "35664301157624022054266522245",
+    "next_id": "14970762894497836928431397505",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "No need for that, %PCRank. We can resolve this civily. Take it, and go.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "Player->AddItem \"AV_obsidian_orb\" 1\nModDisposition -80"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14970762894497836928431397505",
+    "prev_id": "3221918519793434305020959416",
+    "next_id": "18923572781979650934942863868",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "darvasa vedas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Here's the orb, as agreed.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "Player->RemoveSoulGem \"AV_DarkSeducerV\" 1\nset AV_ds_soul to 0\nPlayer->AddItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18923572781979650934942863868",
+    "prev_id": "14970762894497836928431397505",
     "next_id": "531945242013800894389600514176",
     "data": {
       "dialogue_type": "Topic",
