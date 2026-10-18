@@ -6,11 +6,11 @@ instances:
       - cell_match: tomb
     actions:
       - global_set:
-          name: "CK_InsideTomb"
+          name: "AV_InsideTomb"
           value: 1
   - conditions:
       - not: {cell_match: tomb}
     actions:
       - global_set:
-          name: "CK_InsideTomb"
+          name: "AV_InsideTomb"
           value: 0

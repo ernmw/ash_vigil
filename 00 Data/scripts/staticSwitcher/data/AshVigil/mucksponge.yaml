@@ -3,7 +3,7 @@ log_name: Disturbed Mucksponge
 instances:
   - conditions:
       - has_journal:
-          quest: ck_daedric_detective
+          quest: av_daedric_detective
           min: 50
           max: 50
       - cell:
@@ -11,15 +11,15 @@ instances:
       - record_id: "flora_muckspunge_03"
     actions:
       - replace:
-          ck_disturbed_mucksponge: 1
+          av_disturbed_mucksponge: 1
       - delete: true
   - conditions:
       - has_journal:
-          quest: ck_daedric_detective
+          quest: av_daedric_detective
           min: 60
       - cell:
         - "Tel Branora"
-      - record_id: "ck_disturbed_mucksponge"
+      - record_id: "av_disturbed_mucksponge"
     actions:
       - replace:
           flora_muckspunge_03: 1
