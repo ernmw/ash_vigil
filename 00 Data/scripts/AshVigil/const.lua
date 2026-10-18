@@ -23,7 +23,7 @@ Prioritized TOPIC_ASH_INTERMENT dialogue responses:
 URN_DELIVERY_ACTIVE_GVAR=1 AND HAS_URN_GVAR=1: must be valid for all urn quest givers.
     - "Deliver your charge to their final resting place." No side-effects.
 URN_DELIVERY_ACTIVE_GVAR=1 AND HAS_URN_GVAR=0: "Was the internment successful?" must be valid for all urn quest givers. Choice of responding:
-    - "I lost the remains." This should have an attached result mwscript that contains the string "CK_LOST_URN".
+    - "I lost the remains." This should have an attached result mwscript that contains the string "av_LOST_URN".
        This will notify the lua that the active quest should be killed.
        The mwscript should reduce reputation in the faction and damage disposition, too.
     - "I'm working on it." No side-effects.
@@ -38,20 +38,20 @@ URN_DELIVERY_ACTIVE_GVAR!=1 and quest stage is 0: "<custom dialogue for start of
 
 return {
     --- this is searched for in mwscript to cancel the current quest
-    MWS_LOST_URN_TOKEN = "CK_LOST_URN",
+    MWS_LOST_URN_TOKEN = "AV_LOST_URN",
     TOPIC_DEAD_KEEPERS = "dead keepers",
     --- count of total urns lost
-    URNS_LOST_GVAR = "CK_UrnsLost",
+    URNS_LOST_GVAR = "AV_UrnsLost",
     --- count of total urns delivered
-    URNS_DELIVERED_GVAR = "CK_UrnsDelivered",
+    URNS_DELIVERED_GVAR = "AV_UrnsDelivered",
     --- 1 if the player is carrying an urn right now
-    HAS_URN_GVAR = "CK_UrnCarried",
+    HAS_URN_GVAR = "AV_UrnCarried",
     --- 1 if the player has an urn delivery quest active
-    URN_DELIVERY_ACTIVE_GVAR = "CK_UrnDeliveryActive",
-    KOTD_RANK_GVAR = "CK_KeeperRank",
-    KOTD_REPUTATION_GVAR = "CK_KeeperReputation",
-    KOTD_EXPELLED_GVAR = "CK_KeeperExpelled",
+    URN_DELIVERY_ACTIVE_GVAR = "AV_UrnDeliveryActive",
+    KOTD_RANK_GVAR = "AV_KeeperRank",
+    KOTD_REPUTATION_GVAR = "AV_KeeperReputation",
+    KOTD_EXPELLED_GVAR = "AV_KeeperExpelled",
     KOTD_NAME = "keepers of the dead",
-    PEACE_SPELL = "ck_calmtomb",
-    INSIDE_TOMB_GVAR = "CK_InsideTomb",
+    PEACE_SPELL = "av_calmtomb",
+    INSIDE_TOMB_GVAR = "AV_InsideTomb",
 }

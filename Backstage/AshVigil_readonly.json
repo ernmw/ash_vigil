@@ -185,7 +185,7 @@
   {
     "type": "Script",
     "flags": "",
-    "id": "ck_disturbed_mucksponge_script",
+    "id": "AV_disturbed_mucksponge_script",
     "header": {
       "num_shorts": 0,
       "num_longs": 0,
@@ -195,12 +195,12 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin ck_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"ck_daedric_detective\" == 50 )\n            Journal \"ck_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
+    "text": "Begin AV_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_daedric_detective\" == 50 )\n            Journal \"AV_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
   },
   {
     "type": "Spell",
     "flags": "",
-    "id": "ck_calmtomb",
+    "id": "AV_calmtomb",
     "name": "Peace",
     "effects": [
       {
@@ -223,7 +223,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_andas_remains",
+    "id": "AV_mm_andas_remains",
     "name": "Remains of Dralveth Andas",
     "script": "",
     "mesh": "o/contain_urn_05.nif",
@@ -237,7 +237,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_aran_remains",
+    "id": "AV_mm_aran_remains",
     "name": "Remains of Fendrath Aran",
     "script": "",
     "mesh": "o/contain_urn_05.nif",
@@ -251,7 +251,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_arethan_remains",
+    "id": "AV_mm_arethan_remains",
     "name": "Remains of Arvethi Arethan",
     "script": "",
     "mesh": "o/contain_urn_04.nif",
@@ -265,7 +265,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_hlervu_remains",
+    "id": "AV_mm_hlervu_remains",
     "name": "Remains of Bralvyn Hlervu",
     "script": "",
     "mesh": "o/contain_urn_01.nif",
@@ -279,7 +279,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_releth_remains",
+    "id": "AV_mm_releth_remains",
     "name": "Remains of Vevrani Releth",
     "script": "",
     "mesh": "o/contain_urn_04.nif",
@@ -293,7 +293,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_savel_remains",
+    "id": "AV_mm_savel_remains",
     "name": "Remains of Teldrisa Savel",
     "script": "",
     "mesh": "o/contain_urn_02.nif",
@@ -307,7 +307,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_vandus_remains",
+    "id": "AV_mm_vandus_remains",
     "name": "Remains of Seryndil Vandus",
     "script": "",
     "mesh": "o/contain_urn_03.nif",
@@ -321,7 +321,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_mm_velas_remains",
+    "id": "AV_mm_velas_remains",
     "name": "Remains of Neralvys Velas",
     "script": "",
     "mesh": "o/contain_urn_05.nif",
@@ -335,7 +335,7 @@
   {
     "type": "MiscItem",
     "flags": "",
-    "id": "ck_vaerminas_eye",
+    "id": "AV_vaerminas_eye",
     "name": "Vaermina's Eye",
     "script": "",
     "mesh": "m\\Misc_soulgem_grand.NIF",
@@ -349,7 +349,7 @@
   {
     "type": "Enchanting",
     "flags": "",
-    "id": "ck_mule",
+    "id": "AV_mule",
     "effects": [
       {
         "magic_effect": "Feather",
@@ -372,15 +372,15 @@
   {
     "type": "Activator",
     "flags": "",
-    "id": "ck_disturbed_mucksponge",
+    "id": "AV_disturbed_mucksponge",
     "name": "Disturbed Mucksponge",
-    "script": "ck_disturbed_mucksponge_script",
+    "script": "AV_disturbed_mucksponge_script",
     "mesh": "f\\Flora_muckspunge_03.NIF"
   },
   {
     "type": "Book",
     "flags": "",
-    "id": "ck_bloodied_journal",
+    "id": "AV_bloodied_journal",
     "name": "Bloodied Journal",
     "script": "",
     "mesh": "m\\Text_Octavo_03.NIF",
@@ -398,7 +398,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_mm_aran",
+    "id": "AV_mm_aran",
     "dialogue_type": "Journal"
   },
   {
@@ -599,7 +599,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_mm_arethan",
+    "id": "AV_mm_arethan",
     "dialogue_type": "Journal"
   },
   {
@@ -800,7 +800,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_mm_vandus",
+    "id": "AV_mm_vandus",
     "dialogue_type": "Journal"
   },
   {
@@ -953,7 +953,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_mm_savel",
+    "id": "AV_mm_savel",
     "dialogue_type": "Journal"
   },
   {
@@ -1106,7 +1106,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_mm_hlervu",
+    "id": "AV_mm_hlervu",
     "dialogue_type": "Journal"
   },
   {
@@ -1259,7 +1259,7 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "ck_daedric_detective",
+    "id": "AV_daedric_detective",
     "dialogue_type": "Journal"
   },
   {
@@ -1572,7 +1572,7 @@
       "speaker_sex": "Any",
       "player_rank": -1
     },
-    "speaker_id": "ck_boran_andules",
+    "speaker_id": "AV_boran_andules",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -1586,7 +1586,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_balmora_saren",
+        "id": "AV_balmora_saren",
         "value": {
           "type": "Integer",
           "data": 100
@@ -1597,7 +1597,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
+        "id": "AV_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1619,7 +1619,7 @@
       "speaker_sex": "Any",
       "player_rank": -1
     },
-    "speaker_id": "ck_boran_andules",
+    "speaker_id": "AV_boran_andules",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -1633,7 +1633,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
+        "id": "AV_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1675,7 +1675,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -1686,7 +1686,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1722,7 +1722,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -1733,7 +1733,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1769,7 +1769,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -1780,7 +1780,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 30
@@ -1827,7 +1827,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -1838,14 +1838,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
         }
       }
     ],
-    "script_text": "Journal \"ck_daedric_detective\" 30\nAddtopic \"obsidian orb\""
+    "script_text": "Journal \"AV_daedric_detective\" 30\nAddtopic \"obsidian orb\""
   },
   {
     "type": "DialogueInfo",
@@ -1885,7 +1885,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -1896,7 +1896,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1932,7 +1932,7 @@
         "filter_type": "Item",
         "function": "ItemType",
         "comparison": "Greater",
-        "id": "ck_bloodied_journal",
+        "id": "AV_bloodied_journal",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1943,7 +1943,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -1954,7 +1954,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
@@ -1990,7 +1990,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -2001,14 +2001,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
         }
       }
     ],
-    "script_text": "Journal \"ck_daedric_detective\" 20"
+    "script_text": "Journal \"AV_daedric_detective\" 20"
   },
   {
     "type": "DialogueInfo",
@@ -2037,7 +2037,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -2048,7 +2048,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2084,7 +2084,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -2095,7 +2095,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Greater",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2137,7 +2137,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -2148,14 +2148,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 30
         }
       }
     ],
-    "script_text": "Journal \"ck_daedric_detective\" 40"
+    "script_text": "Journal \"AV_daedric_detective\" 40"
   },
   {
     "type": "DialogueInfo",
@@ -2184,7 +2184,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -2195,7 +2195,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 30
@@ -2231,14 +2231,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 40
         }
       }
     ],
-    "script_text": "Journal \"ck_daedric_detective\" 50"
+    "script_text": "Journal \"AV_daedric_detective\" 50"
   },
   {
     "type": "DialogueInfo",
@@ -2267,7 +2267,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 40
@@ -2303,7 +2303,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 91
@@ -2314,14 +2314,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 60
         }
       }
     ],
-    "script_text": "Journal \"ck_daedric_detective\" 70"
+    "script_text": "Journal \"AV_daedric_detective\" 70"
   },
   {
     "type": "DialogueInfo",
@@ -2350,7 +2350,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2397,7 +2397,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2444,7 +2444,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2491,7 +2491,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2538,7 +2538,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2574,7 +2574,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2610,7 +2610,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2646,7 +2646,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2688,7 +2688,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2724,7 +2724,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2760,7 +2760,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
@@ -2796,7 +2796,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_daedric_detective",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
           "data": 70
