@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 249,
+    "num_objects": 258,
     "masters": [
       [
         "Morrowind.esm",
@@ -7355,7 +7355,7 @@
     "flags": "",
     "id": "685382271012220536776539372079",
     "prev_id": "",
-    "next_id": "",
+    "next_id": "67897098802658493738574031279",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -7372,6 +7372,42 @@
     "sound_path": "",
     "text": "This is no secret, although some wish it were. Many ancestral tombs were abandoned or fell to cultists, necromancers, and worse. Nobles claim that it’s a stain on the honor of their clans and families, and some demand recompense for the damage done to their property as well. According to them, the tomb caretakers on Vvardenfell were marginalized on the Temple’s insistence, and the security provided by the Temple was pulled away to guard the Great Ghostfence. As the Keepers, we’re in the middle of all of this. I can’t say we’re being treated fairly. Personally, I think that the Temple defence was solid, and it’s more about politics than faith and doctrine.",
     "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "67897098802658493738574031279",
+    "prev_id": "685382271012220536776539372079",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Of course that the nobles love doing that. It makes it easier to accept their own failures. I don’t have to like it, though. And I never will.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
     "script_text": ""
   },
   {
@@ -7654,7 +7690,7 @@
     "flags": "",
     "id": "35994781193765896228899829555",
     "prev_id": "134538269918191650739420465906",
-    "next_id": "",
+    "next_id": "313271522112088235091377074164",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -7671,6 +7707,42 @@
     "sound_path": "",
     "text": "Sure. I like simpler terms, like tomb purification and tomb restoration. They actually tell you what the work is about. But Ondar Selas probably knows what he is saying. He is a smart man, after all.",
     "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "313271522112088235091377074164",
+    "prev_id": "35994781193765896228899829555",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Is this what he calls it? I see. I’m less about grand words and more about actions. But it’s good that he cares. Not everybody does.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
     "script_text": ""
   },
   {
@@ -7959,7 +8031,7 @@
     "flags": "",
     "id": "1144629975342858156325167541",
     "prev_id": "340495634013285627475537564140",
-    "next_id": "",
+    "next_id": "359621301213868802554121388555",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -7993,6 +8065,248 @@
         "function": "NotClass",
         "comparison": "Equal",
         "id": "Guard",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "359621301213868802554121388555",
+    "prev_id": "1144629975342858156325167541",
+    "next_id": "12084337294919000456968566632",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Trust me. We do a lot. When a census of tombs and ancestral remains needs to be conducted, it’s us Keepers who handle most of the work. When there are disputes concerning burials or ancestral testimonies, we come in. When tombs are defiled, we prepare detailed reports and oversee the investigations. And if there is corruption, we root it out. Well, the Ordinators do some of that as well. I will give them that.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12084337294919000456968566632",
+    "prev_id": "359621301213868802554121388555",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Our presence on Vvardenfell is relatively limited. Some ignorant mer have interpreted this as abandonment. It is regrettable that so many share this misguided belief. They see a looted tomb or a misplaced urn and they blame the Keepers. What they do not want to see is all the record-keeping, all the investigations and all the other work which the Order does behind the scenes. It is very convenient to ignore all of it, but also lazy and unfair.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "climb the ranks",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "410910648610235587960002793030",
+    "prev_id": "",
+    "next_id": "31211811636835693933373620135",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What is it, %PCRank? You’re pretty new here. Do you expect to become a Rector or a Bursar soon? I’m glad to see your enthusiasm, but just so you know, it takes years of effort to rise so high. My advice always stays the same. Focus on the work at hand. And we’re doing some good work here.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31211811636835693933373620135",
+    "prev_id": "410910648610235587960002793030",
+    "next_id": "333498744916174745185837991390",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Mhm. Yes. This reminds me of how long it took me to become %Rank. Perhaps even too long. It was not easy at all. Anyway, I wish you the very best.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "333498744916174745185837991390",
+    "prev_id": "31211811636835693933373620135",
+    "next_id": "412669361311649091898827806825",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s not the most important thing here. It took a lot of effort to become %Rank, but I’m happy with my position.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "412669361311649091898827806825",
+    "prev_id": "333498744916174745185837991390",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Is that something Keerin said? He’s way too focused on such things, but I know that he means well and he’s been such a great support lately. Makes me hopeful for the future. It can be hard sometimes, but I’ll be fine. I’m sure that you’ll be fine as well, %PCName.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
           "data": 1
