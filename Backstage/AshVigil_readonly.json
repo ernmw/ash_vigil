@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 291,
+    "num_objects": 298,
     "masters": [
       [
         "Morrowind.esm",
@@ -2442,6 +2442,23 @@
       "reputation": 12,
       "rank": 0,
       "gold": 0
+    }
+  },
+  {
+    "type": "Clothing",
+    "flags": "",
+    "id": "AV_savel_keepsake",
+    "name": "Savel Keepsake",
+    "script": "",
+    "mesh": "c\\Amulet_Extravagant_2.NIF",
+    "icon": "c\\tx_amulet_extrav2.tga",
+    "enchanting": "",
+    "biped_objects": [],
+    "data": {
+      "clothing_type": "Amulet",
+      "weight": 1.0,
+      "value": 90,
+      "enchantment": 50
     }
   },
   {
@@ -5405,7 +5422,43 @@
     "flags": "",
     "id": "81909357804987408497474129878",
     "prev_id": "3696934110142758177321141427",
-    "next_id": "242591305517732936088982169316",
+    "next_id": "18439490606346578255811806185",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "AV_KOTD",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You've been expelled, %PCName. Find work elsewhere.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18439490606346578255811806185",
+    "prev_id": "81909357804987408497474129878",
+    "next_id": "305254786612741214461770969371",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5423,14 +5476,61 @@
     "text": "Your first task shouldn’t be hard. I won’t be handling it, though. Talk with Keerin Meille. He is in Pilgrim’s Rest, here in Molag Mar. An outlander like you. He’s been doing quite a lot of work for us recently, so I think he deserves a short break. You can take over. And if you need additional information about our current predicament, talk to Ondar Selas.",
     "filters": [
       {
-        "index": 1,
+        "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "Less",
         "id": "AV_mm_vandus",
         "value": {
           "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
           "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "305254786612741214461770969371",
+    "prev_id": "18439490606346578255811806185",
+    "next_id": "242591305517732936088982169316",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "There is something that Ondar needs done. Talk with him about the details.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
         }
       },
       {
@@ -5451,7 +5551,7 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "242591305517732936088982169316",
-    "prev_id": "81909357804987408497474129878",
+    "prev_id": "305254786612741214461770969371",
     "next_id": "409473209015728577545304779026",
     "data": {
       "dialogue_type": "Topic",
@@ -5709,7 +5809,7 @@
     "flags": "",
     "id": "186254021216081983624948685132",
     "prev_id": "15857226943406727127507679407",
-    "next_id": "",
+    "next_id": "370480278314309535699323891736",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5749,7 +5849,65 @@
         }
       }
     ],
-    "script_text": "Choice \"Yes.\" 1 \"Not right now.\" 2"
+    "script_text": "AddTopic \"investigate weird reports\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "370480278314309535699323891736",
+    "prev_id": "186254021216081983624948685132",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Good that you are here. I think that I have an assignment well-suited to your abilities. There is an ancestral tomb belonging to the Savel family. It lies east of Molag Mar. If you need detailed directions, I’m sure that Nance Bero will assist you. I want you to go to that tomb and investigate weird reports we’ve received.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"investigate weird reports\""
   },
   {
     "type": "Dialogue",
@@ -6618,7 +6776,7 @@
         }
       }
     ],
-    "script_text": "Player->AddItem \"AV_obsidian_orb\" 1\nRemoveItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80\nModDisposition -80"
+    "script_text": "Player->RemoveSoulGem \"AV_DarkSeducerV\" 1\nset AV_ds_soul to 0\nPlayer->AddItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80\nRemoveItem \"AV_obsidian_orb\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -9652,5 +9810,127 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "investigate weird reports",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "153295230415050113636915400988",
+    "prev_id": "",
+    "next_id": "33384266989396003595302729335",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb.\n\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "33384266989396003595302729335",
+    "prev_id": "153295230415050113636915400988",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb. Take this family keepsake. It should allow you to investigate the tomb without interference from its guardians. Return it after you are done with work.\n\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 10\nPlayer->AddItem \"AV_savel_keepsake\" 1\n"
   }
 ]
