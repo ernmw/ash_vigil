@@ -33,3 +33,13 @@ instances:
     actions:
       - add:
           AV_bloodied_journal: 1
+  - conditions:
+      - has_journal:
+          quest: av_daedric_detective
+          min: 70
+          max: 70
+      - record_id: "darvasa vedas"
+    once: true
+    actions:
+      - add:
+          AV_obsidian_orb: 1

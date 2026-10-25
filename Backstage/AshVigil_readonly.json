@@ -6016,7 +6016,7 @@
         }
       }
     ],
-    "script_text": "Player->AddItem \"AV_obsidian_orb\" 1\nModDisposition -80"
+    "script_text": "Player->AddItem \"AV_obsidian_orb\" 1\nRemoveItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80\nModDisposition -80"
   },
   {
     "type": "DialogueInfo",
@@ -6063,7 +6063,7 @@
         }
       }
     ],
-    "script_text": "Player->RemoveSoulGem \"AV_DarkSeducerV\" 1\nset AV_ds_soul to 0\nPlayer->AddItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80"
+    "script_text": "Player->RemoveSoulGem \"AV_DarkSeducerV\" 1\nset AV_ds_soul to 0\nPlayer->AddItem \"AV_obsidian_orb\" 1\nJournal \"AV_daedric_detective\" 80\nRemoveItem \"AV_obsidian_orb\" 1"
   },
   {
     "type": "DialogueInfo",
