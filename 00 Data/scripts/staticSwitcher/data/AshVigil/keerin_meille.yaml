@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Keerin Meille (AV_KOTDLPP)
+instances:
+  - conditions:
+      - has_journal:
+          quest: AV_meet_the_boss
+          index: 100
+    once: true
+    actions:
+      - disable: true

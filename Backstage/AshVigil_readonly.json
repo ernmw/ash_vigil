@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 285,
+    "num_objects": 291,
     "masters": [
       [
         "Morrowind.esm",
@@ -1302,6 +1302,20 @@
     "name": "Remains of Teldrisa Savel",
     "script": "",
     "mesh": "o/contain_urn_02.nif",
+    "icon": "AshVigil\\urn.tga",
+    "data": {
+      "weight": 35.0,
+      "value": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "AV_mm_stolen_remains",
+    "name": "Stolen Remains",
+    "script": "",
+    "mesh": "o/contain_urn_03.nif",
     "icon": "AshVigil\\urn.tga",
     "data": {
       "weight": 35.0,
@@ -5467,7 +5481,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Journal \"AV_mm_vandus\" 100\nPlayer->AddItem \"T_Bre_Drink_DigestifEillevon_01\" 1\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\""
   },
   {
     "type": "DialogueInfo",
@@ -9337,5 +9351,306 @@
     "flags": "",
     "id": "meet the boss",
     "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28889010747352059389017692504",
+    "prev_id": "",
+    "next_id": "19259850525179721320618639480",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m so glad the meeting went well! I didn’t want to scare you, so I hope you’ll forgive me for being so sparse on the details.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 120
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19259850525179721320618639480",
+    "prev_id": "28889010747352059389017692504",
+    "next_id": "414069612915404833737207788507",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Head down to the Underworks, then look for the breach under the water level. Jump in, and then swim through the tunnel until you hit the end. I don’t know if you’ve swum in an underwater cave before, %PCName, but it’s unpleasant at best and terrifying at worst. The boss is at the end. Just be respectful, and don’t lie. He’ll know.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "414069612915404833737207788507",
+    "prev_id": "19259850525179721320618639480",
+    "next_id": "34864905414736946085589527665",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Deliver this urn directly to the boss. It will make a good impression on him. Head down to the Underworks, then look for the breach under the water level. Jump in, and then swim through the tunnel until you hit the end. I don’t know if you’ve swum in an underwater cave before, %PCName, but it’s unpleasant at best and terrifying at worst. The boss is at the end. Just be respectful, and don’t lie. He’ll know. Here, take my potions of waterbreathing. I can pick up some more later.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_meet_the_boss\" 20\nPlayer->AddItem \"AV_mm_stolen_remains\" 1\nPlayer->AddItem \"p_water_breathing_s\" 4\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "34864905414736946085589527665",
+    "prev_id": "414069612915404833737207788507",
+    "next_id": "13632943776007307996002111874",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That is quite the accusation, %PCRank. I’ll have Teris deal with it. Don’t go into that flooded cave.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Player->RemoveItem \"AV_mm_stolen_remains\" 1\nModDisposition 15\nModPCFacRep 10 \"AV_KOTD\"\nJournal \"AV_meet_the_boss\" 100\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13632943776007307996002111874",
+    "prev_id": "34864905414736946085589527665",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That is quite the accusation, %PCRank. Do you have any proof?",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
   }
 ]
