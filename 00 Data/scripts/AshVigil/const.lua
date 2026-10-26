@@ -55,4 +55,5 @@ return {
     PEACE_SPELL = "av_calmtomb",
     INSIDE_TOMB_GVAR = "AV_InsideTomb",
     ELVAS_SAVEL_DEAD_GVAR = "AV_EvlasSavelDead",
+    BAREN_ALEN_DEAD_GVAR = "AV_BarenAlenDead",
 }

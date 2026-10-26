@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 298,
+    "num_objects": 308,
     "masters": [
       [
         "Morrowind.esm",
@@ -5157,6 +5157,36 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "invitation",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "204493126770781524",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "hlireni indavel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Were you summoned? Or do you come of your own free will? It hardly matters... the party is open to all. But make sure you pay your respects to the host. And grab a drink from Lustidrike, over in the corner. Then feel free to mingle with the other guests, to join the dancing, chancing throng. I believe the ones in the gold masks are party crashers, but all are welcome to the Mad God's Masque and Bellicose Ball.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Background",
     "dialogue_type": "Topic"
   },
@@ -9820,8 +9850,317 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "153295230415050113636915400988",
+    "id": "19594230097330464377661410935",
     "prev_id": "",
+    "next_id": "153295230415050113636915400988",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Thank you for returning this.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "RemoveItem \"AV_savel_keepsake\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "153295230415050113636915400988",
+    "prev_id": "19594230097330464377661410935",
+    "next_id": "41243892849982752904054954728",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What? Elvas Savel is dead? I don’t know if you had anything to do with it, but… Well, this is most disappointing. His death will cause us more issues than it will solve, %PCRank. Please, return the keepsake.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_EvlasSavelDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41243892849982752904054954728",
+    "prev_id": "153295230415050113636915400988",
+    "next_id": "24080818269469891194013867455",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What? Elvas Savel is dead? I don’t know if you had anything to do with it, but… Well, this is most disappointing. His death will cause us more issues than it will solve, %PCRank.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_EvlasSavelDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 110\nRemoveItem \"AV_savel_keepsake\" 1\nModDisposition -10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "24080818269469891194013867455",
+    "prev_id": "41243892849982752904054954728",
+    "next_id": "3654921113206318083849070612",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Almost done, %PCRank. Please return the keepsake.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 60
+        }
+      },
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 55
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3654921113206318083849070612",
+    "prev_id": "24080818269469891194013867455",
     "next_id": "33384266989396003595302729335",
     "data": {
       "dialogue_type": "Topic",
@@ -9879,8 +10218,8 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "33384266989396003595302729335",
-    "prev_id": "153295230415050113636915400988",
-    "next_id": "",
+    "prev_id": "3654921113206318083849070612",
+    "next_id": "16915169871178573405450545971",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -9931,6 +10270,221 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 10\nPlayer->AddItem \"AV_savel_keepsake\" 1\n"
+    "script_text": "Journal \"AV_mm_savel\" 10\nPlayer->AddItem \"AV_savel_keepsake\" 1\nAddTopic \"family keepsake\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16915169871178573405450545971",
+    "prev_id": "33384266989396003595302729335",
+    "next_id": "42383898339972743958458873841",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I know that Elvas Savel withdrew his claims. Well done. Thank you. Take these scrolls. They may be useful to you.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 60
+        }
+      },
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 55
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 100\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42383898339972743958458873841",
+    "prev_id": "16915169871178573405450545971",
+    "next_id": "22490384181176923036498306815",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "If you think you’re done with your work, I’ll need the keepsake back, %PCRank. ",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22490384181176923036498306815",
+    "prev_id": "42383898339972743958458873841",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Interesting. Elvas Savel hasn’t withdrawn his claims yet, so there is still busywork ahead of us. This should be enough for our purposes, though. Thank you. Take these scrolls. They may be useful to you.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "family keepsake",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "931276804016952233706363351426",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Tomb guardians are bound by powerful rituals that prevent them from doing harm to family members. The rituals endure for a long time by mortal standard, so even if the tomb is not well-maintained, the tomb guardians don’t suddenly become hostile. Well, at least they shouldn’t. Unfortunately, the guardians sometimes become corrupted by liches, cultists or necromancers. Teris can probably tell you more about this.\n\nIt’s not possible to easily replicate these rituals. However, as the Keepers, we deal with the matters concerning the dead on a daily basis and use sanctified methods to access the tombs we need. A family keepsake is a small trinket crafted with the family’s permission that members of our Order may use for this purpose. Mostly those of lower rank, as senior members of the Order have other means of carrying out their duties. Interestingly, the Savel family keepsake I gave you was crafted a long time ago. I think that Elvas Savel may not even be aware of its existence.\n\nOne more thing. It goes without saying that you are not to take any of the gifts or other family belongings from the tomb. A few months ago some foolish Initiate tried to use a similar keepsake to loot another tomb. We found him dead much later. The keepsake didn’t protect him from the guardians’ wrath.\n",
+    "filters": [],
+    "script_text": ""
   }
 ]

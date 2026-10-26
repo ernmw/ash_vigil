@@ -1,8 +1,13 @@
 # yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
-log_name: Elvas Savel
+log_name: Savel Tomb Quest Support
 instances:
   - conditions:
       - record_id: "elvas savel"
     once: true
     actions:
       - add_lua_script: scripts/AshVigil/ecs/elvas_savel.lua
+  - conditions:
+      - record_id: "baren alen"
+    once: true
+    actions:
+      - add_lua_script: scripts/AshVigil/ecs/baren_alen.lua

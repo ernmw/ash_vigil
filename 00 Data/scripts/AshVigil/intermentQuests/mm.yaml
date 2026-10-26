@@ -13,10 +13,10 @@ quests:
     urnRecordId: "av_mm_arethan_remains"
     destCellEnterStage: 39
     destCellClearedStage: 40
-  - id: "av_mm_savel"
-    destCell: "Savel Ancestral Tomb"
+#  - id: "av_mm_savel"
+#    destCell: "Savel Ancestral Tomb"
     # teldrisa
-    urnRecordId: "av_mm_savel_remains"
+#    urnRecordId: "av_mm_savel_remains"
   - id: "av_mm_hlervu"
     destCell: "Hlervu Ancestral Tomb"
     # bralvyn
