@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 308,
+    "num_objects": 315,
     "masters": [
       [
         "Morrowind.esm",
@@ -265,6 +265,21 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_daedric_detective\" == 50 )\n            Journal \"AV_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_savel_journal_script",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_savel_journal_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_mm_savel\" == 10 )\n            Journal \"AV_mm_savel\" 20\n        endif\n\n    endif\n\nEnd"
   },
   {
     "type": "Script",
@@ -2505,6 +2520,24 @@
     }
   },
   {
+    "type": "Book",
+    "flags": "",
+    "id": "AV_savel_journal",
+    "name": "Thief's Journal",
+    "script": "AV_savel_journal_script",
+    "mesh": "m\\Text_Octavo_03.NIF",
+    "icon": "m\\Tx_octavo_03.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This looks like a journal of the thief who tried to rob the tomb. It has many personal entries, but only some bits that may be important to you.]\n<BR>\n… I’ve got a very weird job offer today. A man named Elvas Savel wants me to make a mess in a tomb belonging to his own family and throw some Hlaalu stuff around. Make it look like tomb robbers, he said. I think that he plans to link the “robbery” to some Hlaalu noble from Vivec. Hah. I can make that convincing, for sure. Happy to take all the loot from the tomb.\n<BR>\n<BR>\n",
+    "data": {
+      "weight": 3.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
     "type": "Dialogue",
     "flags": "",
     "id": "AV_mm_aran",
@@ -3085,7 +3118,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Inter Teldrisa Savel",
+    "text": "Savel Investigation",
     "quest_state": "Name",
     "filters": [],
     "script_text": ""
@@ -3110,7 +3143,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I picked up the remains of Teldrisa Savel. I should deliver them to the Savel Ancestral Tomb, west of Molag Mar.",
+    "text": "I was asked to investigate reports of theft at the Savel Ancestral Tomb.",
     "filters": [],
     "script_text": ""
   },
@@ -3122,7 +3155,7 @@
     "next_id": "6186951111005636",
     "data": {
       "dialogue_type": "Journal",
-      "disposition": 49,
+      "disposition": 20,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -3134,7 +3167,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I interred Teldrisa Savel in the tomb.",
+    "text": "I found the journal of a thief that implicates Elvas Savel.",
     "filters": [],
     "script_text": ""
   },
@@ -3143,7 +3176,31 @@
     "flags": "",
     "id": "6186951111005636",
     "prev_id": "6935178092733702",
-    "next_id": "8740158104666537",
+    "next_id": "233494006211765435074490168165",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 40,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Elvas Savel is working with Baren Alen.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "233494006211765435074490168165",
+    "prev_id": "6186951111005636",
+    "next_id": "10176274263124382312070546925",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 50,
@@ -3158,7 +3215,55 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "",
+    "text": "I struck a deal between Baren Alen and Elvas Savel.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10176274263124382312070546925",
+    "prev_id": "233494006211765435074490168165",
+    "next_id": "3827003455874369734659169313",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 55,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Elvas Savel rewarded me.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3827003455874369734659169313",
+    "prev_id": "10176274263124382312070546925",
+    "next_id": "8740158104666537",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 60,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I struck a deal with Baren Alen, to ruin Elvas Savel.",
     "filters": [],
     "script_text": ""
   },
@@ -3166,8 +3271,8 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "8740158104666537",
-    "prev_id": "6186951111005636",
-    "next_id": "2203724705995973",
+    "prev_id": "3827003455874369734659169313",
+    "next_id": "237116171014652682566668544657",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -3182,7 +3287,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I received payment from the Keepers.",
+    "text": "I made my report to the Keepers. I got Elvas Savel to withdraw his claims.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -3190,12 +3295,12 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "2203724705995973",
+    "id": "237116171014652682566668544657",
     "prev_id": "8740158104666537",
-    "next_id": "",
+    "next_id": "2203724705995973",
     "data": {
       "dialogue_type": "Journal",
-      "disposition": 200,
+      "disposition": 110,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -3207,7 +3312,32 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I failed to deliver the remains.",
+    "text": "I made my report to the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2203724705995973",
+    "prev_id": "237116171014652682566668544657",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 120,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report the Keepers. Elvas Savel is dead.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
