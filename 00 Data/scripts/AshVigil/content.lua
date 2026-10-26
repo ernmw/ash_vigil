@@ -27,3 +27,6 @@ content.globals.records[const.INSIDE_TOMB_GVAR] = 0
 content.globals.records[const.KOTD_RANK_GVAR]      = -1
 content.globals.records[const.KOTD_REPUTATION_GVAR] = 0
 content.globals.records[const.KOTD_EXPELLED_GVAR] = 0
+
+content.globals.records[const.ELVAS_SAVEL_DEAD_GVAR]    = 0
+content.globals.records[const.BAREN_ALEN_DEAD_GVAR]     = 0

@@ -5,6 +5,7 @@ instances:
       - has_journal:
           quest: AV_meet_the_boss
           index: 100
+      - record_id: "AV_KOTDLPP"
     once: true
     actions:
       - disable: true
