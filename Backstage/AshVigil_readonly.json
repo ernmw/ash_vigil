@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 328,
+    "num_objects": 343,
     "masters": [
       [
         "Morrowind.esm",
@@ -29,6 +29,33 @@
         1733277
       ]
     ]
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_BarenAlenDead",
+    "value": {
+      "type": "Float",
+      "data": 0.0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_EvlasSavelDead",
+    "value": {
+      "type": "Float",
+      "data": 0.0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_InsideTomb",
+    "value": {
+      "type": "Float",
+      "data": 0.0
+    }
   },
   {
     "type": "GlobalVariable",
@@ -10276,7 +10303,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\nRemoveItem \"AV_savel_keepsake\" 1\nModDisposition -10"
+    "script_text": "Journal \"AV_mm_savel\" 110\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nModDisposition -10"
   },
   {
     "type": "DialogueInfo",
@@ -10367,7 +10394,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb.\n\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
+    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb.\r\n\r\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
     "filters": [
       {
         "index": 2,
@@ -10425,7 +10452,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb. Take this family keepsake. It should allow you to investigate the tomb without interference from its guardians. Return it after you are done with work.\n\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
+    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb. Take this family keepsake. It should allow you to investigate the tomb without interference from its guardians. Return it after you are done with work.\r\n\r\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
     "filters": [
       {
         "index": 2,
@@ -10461,7 +10488,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 10\nPlayer->AddItem \"AV_savel_keepsake\" 1\nAddTopic \"family keepsake\""
+    "script_text": "Journal \"AV_mm_savel\" 10\r\nPlayer->AddItem \"AV_savel_keepsake\" 1\r\nAddTopic \"family keepsake\""
   },
   {
     "type": "DialogueInfo",
@@ -10519,7 +10546,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 105\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 105\r\nModDisposition 10\r\nModPCFacRep 5 \"AV_KOTD\"\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nPlayer->AddItem \"sc_nerusislockjaw\" 1\r\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -10577,7 +10604,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 105\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 105\r\nModDisposition 10\r\nModPCFacRep 5 \"AV_KOTD\"\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nPlayer->AddItem \"sc_nerusislockjaw\" 1\r\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -10693,7 +10720,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 110\r\nModDisposition 5\r\nModPCFacRep 5 \"AV_KOTD\"\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nPlayer->AddItem \"sc_nerusislockjaw\" 1\r\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -10740,7 +10767,7 @@
         }
       }
     ],
-    "script_text": "ModDisposition -20\nGoodbye"
+    "script_text": "ModDisposition -20\r\nGoodbye"
   },
   {
     "type": "DialogueInfo",
@@ -10762,7 +10789,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.\n\nI think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
+    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.\r\n\r\nI think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
     "filters": [
       {
         "index": 3,
@@ -10812,7 +10839,7 @@
         }
       }
     ],
-    "script_text": "ModDisposition 15\nJournal \"AV_mm_savel\" 55\nplayer->AddItem \"Gold_001\" 300\n"
+    "script_text": "ModDisposition 15\r\nJournal \"AV_mm_savel\" 55\r\nplayer->AddItem \"Gold_001\" 300\r\n"
   },
   {
     "type": "DialogueInfo",
@@ -10870,7 +10897,7 @@
         }
       }
     ],
-    "script_text": "ModDisposition -20\nGoodbye"
+    "script_text": "ModDisposition -20\r\nGoodbye"
   },
   {
     "type": "DialogueInfo",
@@ -10928,7 +10955,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 40\nModDisposition 10"
+    "script_text": "Journal \"AV_mm_savel\" 40\r\nModDisposition 10"
   },
   {
     "type": "DialogueInfo",
@@ -10986,7 +11013,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 40\nplayer->AddItem \"Gold_001\" 150\n"
+    "script_text": "Journal \"AV_mm_savel\" 40\r\nplayer->AddItem \"Gold_001\" 150\r\n"
   },
   {
     "type": "DialogueInfo",
@@ -11033,7 +11060,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 40\nplayer->AddItem \"Gold_001\" 150\n"
+    "script_text": "Journal \"AV_mm_savel\" 40\r\nplayer->AddItem \"Gold_001\" 150\r\n"
   },
   {
     "type": "DialogueInfo",
@@ -11123,7 +11150,7 @@
     "flags": "",
     "id": "193969472417815577374980504186",
     "prev_id": "295765880111066161873920209976",
-    "next_id": "",
+    "next_id": "6798257787385001205",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -11164,6 +11191,636 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6798257787385001205",
+    "prev_id": "193969472417815577374980504186",
+    "next_id": "6760904308643759029",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There was a member of the Savel family who had been an annoyance with all of his claims. He died, though. Tragic.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_EvlasSavelDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6760904308643759029",
+    "prev_id": "6798257787385001205",
+    "next_id": "11926357472584186390",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’ll accept Savel’s deal.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 52
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11926357472584186390",
+    "prev_id": "6760904308643759029",
+    "next_id": "2396640897816317176",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 65,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m not going to haggle from a powerless position. Convince Elvas he needs a deal first, and then we’ll see.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2396640897816317176",
+    "prev_id": "11926357472584186390",
+    "next_id": "8407203565230413402",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 65,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hmm. Very well. Actually, this may make things much easier. To be honest, I don’t have the time to focus my attention on this matter. Trial disruptions have been such a distraction. I have other business I need to attend to. Tell Elvas Savel that I will make the deal with him.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 52"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "8407203565230413402",
+    "prev_id": "2396640897816317176",
+    "next_id": "10618010632429720566",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I don’t find it convincing. I don’t see the need to make a deal at this time.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10618010632429720566",
+    "prev_id": "8407203565230413402",
+    "next_id": "106022153703444022",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Interesting. Based on what you’re saying, this would put a stop to his claims very soon. I want your cooperation. I offer you 400 drakes.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Choice \"600. I know you can afford it.\" 4 \"Agreed.\" 5 \"No.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "106022153703444022",
+    "prev_id": "10618010632429720566",
+    "next_id": "11941420795803473867",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It's a shame we couldn't come to a mutually beneficial understanding.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11941420795803473867",
+    "prev_id": "106022153703444022",
+    "next_id": "14579929206308101589",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 85,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Done. I will handle the formalities. Here is the money.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 60\r\nplayer->AddItem \"Gold_001\" 600\r\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14579929206308101589",
+    "prev_id": "11941420795803473867",
+    "next_id": "11566545345263317047",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Done. I will handle the formalities. Here is the money.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "PcMercantile",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 60
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 60\r\nplayer->AddItem \"Gold_001\" 600\r\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11566545345263317047",
+    "prev_id": "14579929206308101589",
+    "next_id": "18153558963377466748",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Done. I will handle the formalities. Here is the money.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 60\r\nplayer->AddItem \"Gold_001\" 400\r\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18153558963377466748",
+    "prev_id": "11566545345263317047",
+    "next_id": "9687715880093686842",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Well, the offer stands.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "9687715880093686842",
+    "prev_id": "18153558963377466748",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There is a member of the Savel family who has been an annoyance with all of his claims. I had nothing to do with any tomb looting. Why are you asking me about this?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": "Choice \"[Try to convince him to make the deal with Elvas Savel.]\" 1 \"[Offer to work with him to ruin Elvas Savel and negotiate a fee.]\" 2 \"Nevermind.\" 3"
   },
   {
     "type": "Dialogue",
