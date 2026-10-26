@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 315,
+    "num_objects": 328,
     "masters": [
       [
         "Morrowind.esm",
@@ -3272,7 +3272,7 @@
     "flags": "",
     "id": "8740158104666537",
     "prev_id": "3827003455874369734659169313",
-    "next_id": "237116171014652682566668544657",
+    "next_id": "2789808339685792515093843863",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -3295,8 +3295,33 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "237116171014652682566668544657",
+    "id": "2789808339685792515093843863",
     "prev_id": "8740158104666537",
+    "next_id": "237116171014652682566668544657",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 105,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report to the Keepers. I got Elvas Savel to withdraw his claims.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "237116171014652682566668544657",
+    "prev_id": "2789808339685792515093843863",
     "next_id": "2203724705995973",
     "data": {
       "dialogue_type": "Journal",
@@ -4664,7 +4689,7 @@
     "flags": "",
     "id": "37723453323938289655074105413",
     "prev_id": "13568231434823734",
-    "next_id": "",
+    "next_id": "22164207282642835034325131475",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -4694,6 +4719,42 @@
       }
     ],
     "script_text": "if ( Player->HasSoulGem \"AV_DarkSeducerV\" >= 1 )\n    set AV_ds_soul to 1\nelse\n    set AV_ds_soul to 0\nendif"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22164207282642835034325131475",
+    "prev_id": "37723453323938289655074105413",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You’ve ruined me. I don’t want to talk to you.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 105
+        }
+      }
+    ],
+    "script_text": "ModDisposition -30\nGoodbye"
   },
   {
     "type": "Dialogue",
@@ -10407,7 +10468,7 @@
     "flags": "",
     "id": "16915169871178573405450545971",
     "prev_id": "33384266989396003595302729335",
-    "next_id": "42383898339972743958458873841",
+    "next_id": "218427790113679628889121486322",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -10425,17 +10486,6 @@
     "text": "I know that Elvas Savel withdrew his claims. Well done. Thank you. Take these scrolls. They may be useful to you.",
     "filters": [
       {
-        "index": 3,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 60
-        }
-      },
-      {
         "index": 5,
         "filter_type": "Item",
         "function": "ItemType",
@@ -10450,7 +10500,7 @@
         "index": 3,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -10469,13 +10519,71 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 100\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 105\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "218427790113679628889121486322",
+    "prev_id": "16915169871178573405450545971",
+    "next_id": "42383898339972743958458873841",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I know that Elvas Savel withdrew his claims. Well done. Thank you. Take these scrolls. They may be useful to you.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 60
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 105\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "42383898339972743958458873841",
-    "prev_id": "16915169871178573405450545971",
+    "prev_id": "218427790113679628889121486322",
     "next_id": "22490384181176923036498306815",
     "data": {
       "dialogue_type": "Topic",
@@ -10527,14 +10635,14 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "22490384181176923036498306815",
     "prev_id": "42383898339972743958458873841",
-    "next_id": "",
+    "next_id": "31152264035687648573108537338",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -10586,6 +10694,476 @@
       }
     ],
     "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31152264035687648573108537338",
+    "prev_id": "22490384181176923036498306815",
+    "next_id": "405791935915869250728739792814",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Baren Alen? Dead? Damn it. Maybe I can try with some other family member or… Ah, it's way harder now. I'm in trouble. Leave me be.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_BarenAlenDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "ModDisposition -20\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "405791935915869250728739792814",
+    "prev_id": "31152264035687648573108537338",
+    "next_id": "37843682925689926097628584784",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.\n\nI think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37843682925689926097628584784",
+    "prev_id": "405791935915869250728739792814",
+    "next_id": "1587099478582321045510573637",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Perfect. Here is your cut. Pleasure doing business with you. That Alen deal was all I needed. I’ll not bother the Temple with my claims anymore.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 52
+        }
+      }
+    ],
+    "script_text": "ModDisposition 15\nJournal \"AV_mm_savel\" 55\nplayer->AddItem \"Gold_001\" 300\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1587099478582321045510573637",
+    "prev_id": "37843682925689926097628584784",
+    "next_id": "41771900341872402788607210686",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Argh. Why? Do you know how much trouble I'm in? What have I done to you? Leave me be.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcMercantile",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "ModDisposition -20\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41771900341872402788607210686",
+    "prev_id": "1587099478582321045510573637",
+    "next_id": "156917980214722712417418962505",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Great. Then you know what to do.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcMercantile",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 40\nModDisposition 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "156917980214722712417418962505",
+    "prev_id": "41771900341872402788607210686",
+    "next_id": "398888488010825526784545326235",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Agreed. You know what to do.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcMercantile",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 40\nplayer->AddItem \"Gold_001\" 150\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "398888488010825526784545326235",
+    "prev_id": "156917980214722712417418962505",
+    "next_id": "256969342011368801232885201314",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Agreed. You know what to do.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_savel\" 40\nplayer->AddItem \"Gold_001\" 150\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "256969342011368801232885201314",
+    "prev_id": "398888488010825526784545326235",
+    "next_id": "295765880111066161873920209976",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I have expenses. A huge debt I need to pay. I can't give you more than 300.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Choice \"Fine.\" 2 \"No.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "295765880111066161873920209976",
+    "prev_id": "256969342011368801232885201314",
+    "next_id": "193969472417815577374980504186",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What is this nonsense? I had nothing to do wi– Alright, listen. Things didn’t exactly go as planned, but I can still do this. There is a noble in Vivec. Barren Alen, the Treasurer in Hlaalu Canton. I only needed this one final piece to support several claims I’ve made. I know that he has money. I think that he’ll make a deal. We can help each other. You’ll support my story and convince Alen to make the deal. Once this is done, I’ll withdraw all my claims against the Temple. I’ll also give you a cut. 300 gold.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Choice \"Pay me an additonal 150 upfront and we have a deal.\" 1 \"Fine.\" 2 \"No.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "193969472417815577374980504186",
+    "prev_id": "295765880111066161873920209976",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You know what to do.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
