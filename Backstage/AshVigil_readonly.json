@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 362,
+    "num_objects": 369,
     "masters": [
       [
         "Morrowind.esm",
@@ -42,7 +42,25 @@
   {
     "type": "GlobalVariable",
     "flags": "",
+    "id": "AV_DSDead",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
     "id": "AV_EvlasSavelDead",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_GSDead",
     "value": {
       "type": "Short",
       "data": 0
@@ -360,7 +378,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\t\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nEnd cybDSFight"
+    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tset AV_DSDead to 1\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( GetJournalIndex \"AV_audit_arano\" == 80 )\n\t; disappear once orb is given\n\t; TODO: play teleportation VFX effect\n\tDisable\nelseif ( GetJournalIndex \"AV_audit_arano\" == 110 )\n\t; stay gone if orb is given\n\tDisable\nelseif ( AV_DSDead == 0 )\n\t; appear if not dead\n\tEnable\nendif\n\nEnd cybDSFight"
   },
   {
     "type": "Script",
@@ -375,7 +393,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybGSFight\n\nshort doonce\nshort deathDone\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tif ( deathDone == 0)\n\t\tJournal \"AV_audit_beran\" 90\n\t\tset deathDone to 1\n\tendif\nendif\n\nEnd cybGSFight"
+    "text": "Begin cybGSFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tset AV_GSDead to 1\nendif\n\nif ( GetJournalIndex \"AV_audit_beran\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( AV_GSDead == 0 )\n\t; appear if not dead\n\tEnable\nendif\n\nEnd cybGSFight"
   },
   {
     "type": "Script",
@@ -4089,7 +4107,7 @@
     "flags": "",
     "id": "69301021603784876969456128091",
     "prev_id": "22330391821495986766936030451",
-    "next_id": "22748314655747690703919567029",
+    "next_id": "120091691315369218396548107766",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -4104,19 +4122,19 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "started. TBD.",
+    "text": "I need to conduct an audit of Arano Ancestral Tomb, near Tel Branora.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "22748314655747690703919567029",
+    "id": "120091691315369218396548107766",
     "prev_id": "69301021603784876969456128091",
-    "next_id": "23176631408210771015778502984",
+    "next_id": "360861991911202387278079653195",
     "data": {
       "dialogue_type": "Journal",
-      "disposition": 90,
+      "disposition": 20,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -4128,7 +4146,55 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "work done, waiting to report. TBD.",
+    "text": "Vep’ious’andra, a Dark Seducer occupying the tomb, offered me a saber if I kill her rival, Dublurep. She also alluded to other rewards.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "360861991911202387278079653195",
+    "prev_id": "120091691315369218396548107766",
+    "next_id": "22748314655747690703919567029",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Vep’ious’andra has asked me to retrieve an orb that was stolen from her.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22748314655747690703919567029",
+    "prev_id": "360861991911202387278079653195",
+    "next_id": "23176631408210771015778502984",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave the Dark Seducer the obsidian orb.",
     "filters": [],
     "script_text": ""
   },
@@ -4137,7 +4203,7 @@
     "flags": "",
     "id": "23176631408210771015778502984",
     "prev_id": "22748314655747690703919567029",
-    "next_id": "",
+    "next_id": "29375833028838298278212893805",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -4152,7 +4218,32 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "done. TBD.",
+    "text": "I made my report to Firsylla and gave her the orb.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29375833028838298278212893805",
+    "prev_id": "23176631408210771015778502984",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report to Firsylla.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4193,7 +4284,7 @@
     "flags": "",
     "id": "11798909005624064240715487892",
     "prev_id": "2737608731404638193252376558",
-    "next_id": "394769206015201169036212287163",
+    "next_id": "29289684868042798538061075072",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -4215,32 +4306,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "394769206015201169036212287163",
-    "prev_id": "11798909005624064240715487892",
-    "next_id": "29289684868042798538061075072",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 90,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I killed a Golden Saint in Beran Tomb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "29289684868042798538061075072",
-    "prev_id": "394769206015201169036212287163",
+    "prev_id": "11798909005624064240715487892",
     "next_id": "",
     "data": {
       "dialogue_type": "Journal",
@@ -6834,7 +6901,7 @@
     "flags": "",
     "id": "940392646010464289828144069183",
     "prev_id": "162097112815234346089132849341",
-    "next_id": "3191859308923698392339530283",
+    "next_id": "127591396112577884705806002124",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -6872,15 +6939,200 @@
           "type": "Integer",
           "data": 10
         }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 10"
+    "script_text": "Journal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "3191859308923698392339530283",
+    "id": "127591396112577884705806002124",
     "prev_id": "940392646010464289828144069183",
+    "next_id": "311238934412277848650922738104",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The increased daedric presence and this journal put me at unease. Thank you for bringing this to my attention.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_bloodied_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "311238934412277848650922738104",
+    "prev_id": "127591396112577884705806002124",
+    "next_id": "10163571773805269418744441944",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "It’s not unheard-of for daedra to infest tombs, but Golden Saints doing so are exceedingly rare. There must be additional clues in the Beran tomb to explain its presence.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_bloodied_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10163571773805269418744441944",
+    "prev_id": "311238934412277848650922738104",
+    "next_id": "27948504948114904701818150390",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "This journal is disturbing. A sload in Vvardenfell that is taking interest in the ancestral tombs here needs to be dealt with. Finish clearing the tomb, and report back to me.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_bloodied_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "27948504948114904701818150390",
+    "prev_id": "10163571773805269418744441944",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
@@ -6896,21 +7148,32 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "It’s not unheard-of for daedra to infest tombs, but Golden Saints doing so are exceedingly rare. Thank you for putting an end to it, %PCRank.",
+    "text": "Go audit the Beran Ancestral Tomb near Tel Branora.",
     "filters": [
       {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_audit_beran",
         "value": {
           "type": "Integer",
-          "data": 90
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 100
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\""
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -12534,6 +12797,17 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
         "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
@@ -12553,6 +12827,6 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_arano\" 10"
+    "script_text": "Journal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10"
   }
 ]
