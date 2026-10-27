@@ -375,7 +375,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybGSFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nEnd cybGSFight"
+    "text": "Begin cybGSFight\n\nshort doonce\nshort deathDone\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tif ( deathDone == 0)\n\t\tJournal \"AV_audit_beran\" 90\n\t\tset deathDone to 1\n\tendif\nendif\n\nEnd cybGSFight"
   },
   {
     "type": "Script",
