@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 346,
+    "num_objects": 362,
     "masters": [
       [
         "Morrowind.esm",
@@ -35,8 +35,8 @@
     "flags": "",
     "id": "AV_BarenAlenDead",
     "value": {
-      "type": "Float",
-      "data": 0.0
+      "type": "Short",
+      "data": 0
     }
   },
   {
@@ -44,8 +44,8 @@
     "flags": "",
     "id": "AV_EvlasSavelDead",
     "value": {
-      "type": "Float",
-      "data": 0.0
+      "type": "Short",
+      "data": 0
     }
   },
   {
@@ -53,8 +53,17 @@
     "flags": "",
     "id": "AV_InsideTomb",
     "value": {
-      "type": "Float",
-      "data": 0.0
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_TheranaDead",
+    "value": {
+      "type": "Short",
+      "data": 0
     }
   },
   {
@@ -3880,7 +3889,7 @@
     "flags": "",
     "id": "30739261065837631290908837588",
     "prev_id": "94438853507606752963822396711",
-    "next_id": "42841629205302456774589790231",
+    "next_id": "167768263110773985635391382893",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -3895,16 +3904,88 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "started. TBD",
+    "text": "Firsylla has asked me to secure permission from Mistress Therana in Tel Branora so the Keepers of the Dead can perform an official audit of the ancestral tombs there.",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "42841629205302456774589790231",
+    "id": "167768263110773985635391382893",
     "prev_id": "30739261065837631290908837588",
-    "next_id": "93888231205967593727382767198",
+    "next_id": "32173081556502142890392195069",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Therana has agreed to allow an audit if I kill Dalen.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32173081556502142890392195069",
+    "prev_id": "167768263110773985635391382893",
+    "next_id": "12389064582652699970597888271",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Therana has agreed to allow an audit if I bring her 33 large kwama eggs and 22 small kwama eggs.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12389064582652699970597888271",
+    "prev_id": "32173081556502142890392195069",
+    "next_id": "755188983017867337755495569121",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 40,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Therana wants an egg before she will grant the Keepers access to the tombs.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "755188983017867337755495569121",
+    "prev_id": "12389064582652699970597888271",
+    "next_id": "42841629205302456774589790231",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 90,
@@ -3919,16 +4000,16 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "work done, waiting to report. TBD.",
+    "text": "Therana has agreed to allow the tombs to be audited.\n",
     "filters": [],
     "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "93888231205967593727382767198",
-    "prev_id": "42841629205302456774589790231",
-    "next_id": "",
+    "id": "42841629205302456774589790231",
+    "prev_id": "755188983017867337755495569121",
+    "next_id": "93888231205967593727382767198",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -3943,7 +4024,31 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "done. TBD",
+    "text": "Mistress Therana is dead. There's no need to get her permission.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "93888231205967593727382767198",
+    "prev_id": "42841629205302456774589790231",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told Firsylla that we have permission to audit the tombs.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4103,7 +4208,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "started. TBD.",
+    "text": "I need to conduct an audit of Beran Ancestral Tomb, near Tel Branora.",
     "filters": [],
     "script_text": ""
   },
@@ -4127,7 +4232,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "work done, waiting to report. TBD.",
+    "text": "I killed a Golden Saint in Beran Tomb.",
     "filters": [],
     "script_text": ""
   },
@@ -4151,7 +4256,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "done. TBD.",
+    "text": "I made my report to Firsylla.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4386,7 +4491,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_therana_permission\" 10"
+    "script_text": "Journal \"AV_therana_permission\" 10\n;TODO: remove; this is replaced by permission to audit"
   },
   {
     "type": "DialogueInfo",
@@ -5753,7 +5858,7 @@
     "flags": "",
     "id": "305254786612741214461770969371",
     "prev_id": "18439490606346578255811806185",
-    "next_id": "242591305517732936088982169316",
+    "next_id": "5911408290107197882501776595",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -5798,8 +5903,113 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "242591305517732936088982169316",
+    "id": "5911408290107197882501776595",
     "prev_id": "305254786612741214461770969371",
+    "next_id": "382474703614209496577415157191",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The ancestral tombs near Tel Branora haven't been assessed for hundreds of years. I need you to get permission to audit the tombs from Mistress Therana.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Arano Tomb\"\nAddTopic \"Beran Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "382474703614209496577415157191",
+    "prev_id": "5911408290107197882501776595",
+    "next_id": "242591305517732936088982169316",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I need you to conduct an audit of the Arano and Beran tombs near Tel Branora.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Arano Tomb\"\nAddTopic \"Beran Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "242591305517732936088982169316",
+    "prev_id": "382474703614209496577415157191",
     "next_id": "409473209015728577545304779026",
     "data": {
       "dialogue_type": "Topic",
@@ -5815,7 +6025,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "I don't have anything for you right now.",
+    "text": "I don't have anything new for you right now.",
     "filters": [
       {
         "index": 1,
@@ -5829,7 +6039,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_vandus\" 100\nPlayer->AddItem \"T_Bre_Drink_DigestifEillevon_01\" 1\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\""
+    "script_text": ""
   },
   {
     "type": "DialogueInfo",
@@ -6577,7 +6787,7 @@
     "flags": "",
     "id": "162097112815234346089132849341",
     "prev_id": "308475445714070401288804938394",
-    "next_id": "",
+    "next_id": "940392646010464289828144069183",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -6618,6 +6828,89 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "940392646010464289828144069183",
+    "prev_id": "162097112815234346089132849341",
+    "next_id": "3191859308923698392339530283",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The preliminary audit is simple. Just conduct a cursory walk through all parts of the tomb. Note any hazards that are present, or if the tomb has been robbed or desecrated. Purge the tomb of any mad undead or daedra that might be present.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3191859308923698392339530283",
+    "prev_id": "940392646010464289828144069183",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "It’s not unheard-of for daedra to infest tombs, but Golden Saints doing so are exceedingly rare. Thank you for putting an end to it, %PCRank.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\""
   },
   {
     "type": "Dialogue",
@@ -11992,5 +12285,274 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "permission to audit",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "386623409218152870442792443985",
+    "prev_id": "",
+    "next_id": "21179311186369644216518381154",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The Beran and Arano tombs near Tel Branora haven't been assessed for hundreds of years. They are overdue for an official audit. You're going to secure permission from Mistress Therana so we can conduct that audit. Stay out of the tombs until we can finish the paperwork. Once you secure permission, return to me.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21179311186369644216518381154",
+    "prev_id": "386623409218152870442792443985",
+    "next_id": "17883835706276754588314624815",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "That's... surprising news. She was unpredictable, but I can't help but think the people of Tel Branora will be worse off with her passing. We'll move on with the audit of the Arano and Beran tombs, then.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TheranaDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 100\nAddTopic \"Beran Tomb\"\nAddTopic \"Arano Tomb\"\nModDisposition -5\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "17883835706276754588314624815",
+    "prev_id": "21179311186369644216518381154",
+    "next_id": "117935262414207342556185790159",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Have you secured permission yet from Mistress Therana?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TheranaDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"She's dead.\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "117935262414207342556185790159",
+    "prev_id": "17883835706276754588314624815",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TheranaDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 100\nAddTopic \"Beran Tomb\"\nAddTopic \"Arano Tomb\"\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Arano Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "429003553113364899508451114310",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The preliminary audit is simple. Just conduct a cursory walk through all parts of the tomb. Note any hazards that are present, or if the tomb has been robbed or desecrated. Purge the tomb of any mad undead or daedra that might be present.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_arano\" 10"
   }
 ]
