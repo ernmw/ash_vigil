@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Permission to Audit
+instances:
+  - conditions:
+      - record_id: "therana"
+    once: true
+    actions:
+      - add_lua_script: scripts/AshVigil/ecs/therana.lua
