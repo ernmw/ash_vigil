@@ -4372,7 +4372,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "The Beran and Arano tombs near Tel Branora haven't been assessed for hundreds of years. I need you to get permission from Mistress Therana so that they can be officially audited.",
+    "text": "The Beran and Arano tombs near Tel Branora haven't been assessed for hundreds of years. I need you to get permission from Mistress Therana so that they can be officially audited. Once you've secured permission, return to me so we can complete the paperwork.",
     "filters": [
       {
         "index": 1,
@@ -4422,7 +4422,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_therana_permission\" 100\nJournal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10\n;TBD: give reward"
+    "script_text": "Journal \"AV_therana_permission\" 100\nJournal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10\nplayer->AddItem \"Gold_001\" 500"
   },
   {
     "type": "DialogueInfo",
@@ -7320,7 +7320,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I don't know what the significance of this orb is, but it seems to be at the center of the tomb defilement near Tel Branora. Find it.",
+    "text": "I don't know what this orb is, but it seems to be at the center of the tomb defilement near Tel Branora. Find it.",
     "filters": [
       {
         "index": 1,
@@ -11060,7 +11060,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 40\r\nplayer->AddItem \"Gold_001\" 150\r\n"
+    "script_text": "Journal \"AV_mm_savel\" 40\nplayer->AddItem \"Gold_001\" 150\n"
   },
   {
     "type": "DialogueInfo",
