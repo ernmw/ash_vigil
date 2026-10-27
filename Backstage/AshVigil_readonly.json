@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 343,
+    "num_objects": 346,
     "masters": [
       [
         "Morrowind.esm",
@@ -7713,7 +7713,7 @@
     "flags": "",
     "id": "10577148497348688871937273679",
     "prev_id": "29113242205455717207460463840",
-    "next_id": "",
+    "next_id": "312009637914180834290599268244",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -7739,6 +7739,53 @@
         "value": {
           "type": "Integer",
           "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "312009637914180834290599268244",
+    "prev_id": "10577148497348688871937273679",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Personally, I treat the trial as a distraction that’s also causing all sorts of annoying issues. Can you believe that some dragged ebony deals and Vvardenfell colonization effort into this? Also, claims on Temple’s negligence and a push for tomb restoration made by some families associated with House Hlaalu made other nobles scream all the louder about us being Imperial agents. I can see how some may be looking for opportunities there. I wish them good luck with their business, but I want to dedicate my efforts elsewhere.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 52
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 55
         }
       }
     ],
@@ -11833,7 +11880,7 @@
     "flags": "",
     "id": "931276804016952233706363351426",
     "prev_id": "",
-    "next_id": "",
+    "next_id": "12055316221832459279415760190",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -11850,6 +11897,100 @@
     "sound_path": "",
     "text": "Tomb guardians are bound by powerful rituals that prevent them from doing harm to family members. The rituals endure for a long time by mortal standard, so even if the tomb is not well-maintained, the tomb guardians don’t suddenly become hostile. Well, at least they shouldn’t. Unfortunately, the guardians sometimes become corrupted by liches, cultists or necromancers. Teris can probably tell you more about this.\n\nIt’s not possible to easily replicate these rituals. However, as the Keepers, we deal with the matters concerning the dead on a daily basis and use sanctified methods to access the tombs we need. A family keepsake is a small trinket crafted with the family’s permission that members of our Order may use for this purpose. Mostly those of lower rank, as senior members of the Order have other means of carrying out their duties. Interestingly, the Savel family keepsake I gave you was crafted a long time ago. I think that Elvas Savel may not even be aware of its existence.\n\nOne more thing. It goes without saying that you are not to take any of the gifts or other family belongings from the tomb. A few months ago some foolish Initiate tried to use a similar keepsake to loot another tomb. We found him dead much later. The keepsake didn’t protect him from the guardians’ wrath.\n",
     "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12055316221832459279415760190",
+    "prev_id": "931276804016952233706363351426",
+    "next_id": "29917192107677748685284387551",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You have what? I don’t agree with this at all. I’ll make a complaint to the Temple.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_savel_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "ModDisposition -10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29917192107677748685284387551",
+    "prev_id": "12055316221832459279415760190",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It should be effective. Based on my experience, the keepsake should pacify the tomb guardians as long as you don’t do anything they view as hostile. Like attacking them or stealing from the tomb. But I know you wouldn’t do that. Only an evil interloper like a lich would resist the keepsake’s influence. I doubt that there is a lich there, though. In case you encounter some angry ghost or a corrupted guardian, you can use Turn Undead or Calm. Might be enough to avoid a fight entirely.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
     "script_text": ""
   }
 ]
