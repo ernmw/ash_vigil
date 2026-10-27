@@ -17,7 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 local MOD_NAME          = require("scripts.AshVigil.ns")
 local aux_util = require('openmw_aux.util')
-local world = require('openmw_aux.world')
+local world = require('openmw.world')
 local settings = require("scripts.AshVigil.settings.settings")
 
 ---@class onSetGlobalVariableData
