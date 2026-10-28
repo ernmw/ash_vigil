@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 378,
+    "num_objects": 379,
     "masters": [
       [
         "Morrowind.esm",
@@ -88,6 +88,15 @@
     "type": "GlobalVariable",
     "flags": "",
     "id": "AV_ds_soul",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_stone_location",
     "value": {
       "type": "Short",
       "data": 0
@@ -3625,7 +3634,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Find out why Beran Ancestral Tomb and Arano Ancestral Tomb were infested with Daedra.",
+    "text": "Find the stone that was stolen from the Baren Tomb.",
     "filters": [],
     "script_text": ""
   },
@@ -3802,7 +3811,7 @@
     "flags": "",
     "id": "131324847411406235157196907618",
     "prev_id": "1160304000821859694487537588",
-    "next_id": "42201878428419500371540047559",
+    "next_id": "1340440622947302797066433547",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 90,
@@ -3824,7 +3833,7 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "42201878428419500371540047559",
+    "id": "1340440622947302797066433547",
     "prev_id": "131324847411406235157196907618",
     "next_id": "42240387379940038742117513483",
     "data": {
@@ -3841,8 +3850,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I told the Keepers that I couldn't find the source of the Daedric infestation.",
-    "quest_state": "Finished",
+    "text": "I handed the orb over to Vep'ious'andra.",
     "filters": [],
     "script_text": ""
   },
@@ -3850,8 +3858,8 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "42240387379940038742117513483",
-    "prev_id": "42201878428419500371540047559",
-    "next_id": "",
+    "prev_id": "1340440622947302797066433547",
+    "next_id": "42201878428419500371540047559",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -3867,6 +3875,31 @@
     "player_faction": "",
     "sound_path": "",
     "text": "I handed orb over to the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42201878428419500371540047559",
+    "prev_id": "42240387379940038742117513483",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told the Keepers that I couldn't find the source of the Daedric infestation.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4155,7 +4188,7 @@
     "flags": "",
     "id": "360861991911202387278079653195",
     "prev_id": "120091691315369218396548107766",
-    "next_id": "22748314655747690703919567029",
+    "next_id": "23176631408210771015778502984",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 30,
@@ -4177,32 +4210,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "22748314655747690703919567029",
-    "prev_id": "360861991911202387278079653195",
-    "next_id": "23176631408210771015778502984",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 80,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I gave the Dark Seducer the obsidian orb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "23176631408210771015778502984",
-    "prev_id": "22748314655747690703919567029",
+    "prev_id": "360861991911202387278079653195",
     "next_id": "29375833028838298278212893805",
     "data": {
       "dialogue_type": "Journal",
@@ -4218,7 +4227,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I made my report to Firsylla and gave her the orb.",
+    "text": "I killed the Dark Seducer and made my report to Firsylla.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4243,7 +4252,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I made my report to Firsylla.",
+    "text": "I made my report to Firsylla, but omitted the Dark Seducer.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4489,395 +4498,6 @@
     "dialogue_type": "Topic"
   },
   {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "476833720014493890575387965440",
-    "prev_id": "327417864306611853",
-    "next_id": "13094785893440066766827774665",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Stop bothering me. Find work elsewhere.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "PcExpelled",
-        "comparison": "Greater",
-        "id": "AV_therana_permission",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "13094785893440066766827774665",
-    "prev_id": "476833720014493890575387965440",
-    "next_id": "266977990714056670294149910783",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 0
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "AV_KOTD",
-    "sound_path": "",
-    "text": "The Beran and Arano tombs near Tel Branora haven't been assessed for hundreds of years. I need you to get permission from Mistress Therana so that they can be officially audited. Once you've secured permission, return to me so we can complete the paperwork.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_therana_permission",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      }
-    ],
-    "script_text": "Journal \"AV_therana_permission\" 10\n;TODO: remove; this is replaced by permission to audit"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "266977990714056670294149910783",
-    "prev_id": "13094785893440066766827774665",
-    "next_id": "2026988031183734686594460725",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Best news I've had all day, %PCRank. Since you're familar with the island, you're going to perform the audit of both the tombs. We're not sure what you'll find, so be prepared to purge the tombs.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_therana_permission",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      }
-    ],
-    "script_text": "Journal \"AV_therana_permission\" 100\nJournal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10\nplayer->AddItem \"Gold_001\" 500"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "2026988031183734686594460725",
-    "prev_id": "266977990714056670294149910783",
-    "next_id": "420274817710737166852295034193",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Report back to me once you've audited Beran Tomb and Arano Tomb.",
-    "filters": [
-      {
-        "index": 3,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "AV_audit_arano",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_audit_arano",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "420274817710737166852295034193",
-    "prev_id": "2026988031183734686594460725",
-    "next_id": "243332480816753559963930361125",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "This is very disturbing news, %PCRank. I hadn't expected Beran Tomb to be defiled to such a degree. I want you to find out why. The journal you found is a good starting point. Interrogate the locals.",
-    "filters": [
-      {
-        "index": 2,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "Greater",
-        "id": "AV_bloodied_journal",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_audit_arano",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      }
-    ],
-    "script_text": "Journal \"AV_audit_beran\" 100\nJournal \"AV_audit_arano\" 100\nJournal \"AV_daedric_detective\" 10\nAddtopic \"Beran Tomb\"\n; TBD: rewards"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "243332480816753559963930361125",
-    "prev_id": "420274817710737166852295034193",
-    "next_id": "176159944016559573297167116351",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "This is very disturbing news, %PCRank. I hadn't expected Beran Tomb to be defiled to such a degree. I want you to find out why. You should scour the tomb for any clues.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_audit_arano",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      }
-    ],
-    "script_text": "Journal \"AV_audit_beran\" 100\nJournal \"AV_audit_arano\" 100\nJournal \"AV_daedric_detective\" 10\nAddtopic \"Beran Tomb\"\n; TBD: rewards"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "176159944016559573297167116351",
-    "prev_id": "243332480816753559963930361125",
-    "next_id": "339129070416920391834212102070",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "This orb was at the center of the defilement? Thank you for retrieving it. I'll have Ondar study it.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "Greater",
-        "id": "AV_obsidian_orb",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": "Journal \"AV_daedric_detective\" 100\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\n; TBD: rewards"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "339129070416920391834212102070",
-    "prev_id": "176159944016559573297167116351",
-    "next_id": "952167348011751148915741727814",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You're telling me the trail just stops there, then? I should have sent Ondas.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      }
-    ],
-    "script_text": "Journal \"AV_daedric_detective\" 91\n; no rewards on purpose!"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "952167348011751148915741727814",
-    "prev_id": "339129070416920391834212102070",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_KOTDLeader",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Tel Branora is just south of here. We've had a lot of difficulty in dealing with Mistress Therana.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
     "type": "Dialogue",
     "flags": "",
     "id": "Greeting 1",
@@ -4960,6 +4580,42 @@
     "flags": "",
     "id": "30880746287565079535000953574",
     "prev_id": "22164207282642835034325131475",
+    "next_id": "210673205914869451577917977415",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You disgusting imbecile! That orb is mine!",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye\n;player returned orb before killing DS"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "210673205914869451577917977415",
+    "prev_id": "30880746287565079535000953574",
     "next_id": "29749974272952443845178555048",
     "data": {
       "dialogue_type": "Greeting",
@@ -4982,20 +4638,20 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 100
+          "data": 90
         }
       }
     ],
-    "script_text": "SetFight 100\nStartCombat player\nGoodbye\n;player returned orb before killing DS"
+    "script_text": "Journal \"AV_audit_beran\" 80\nJournal \"AV_daedric_detective\" 91\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nDisable\nGoodbye\n"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "29749974272952443845178555048",
-    "prev_id": "30880746287565079535000953574",
+    "prev_id": "210673205914869451577917977415",
     "next_id": "768436939017681305692544628459",
     "data": {
       "dialogue_type": "Greeting",
@@ -5039,7 +4695,7 @@
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_audit_beran",
         "value": {
           "type": "Integer",
@@ -5047,7 +4703,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nDisable\nGoodbye\n"
+    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 2\nDisable\nGoodbye\n"
   },
   {
     "type": "DialogueInfo",
@@ -5221,7 +4877,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead"
+    "script_text": "Journal \"AV_audit_beran\" 30\nJournal \"AV_daedric_detective\" 10\n;rival already dead"
   },
   {
     "type": "DialogueInfo",
@@ -5279,7 +4935,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead"
+    "script_text": "Journal \"AV_audit_beran\" 30\nJournal \"AV_daedric_detective\" 10\n;rival already dead"
   },
   {
     "type": "DialogueInfo",
@@ -5348,7 +5004,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead"
+    "script_text": "Journal \"AV_audit_beran\" 20\nJournal \"AV_daedric_detective\" 10\n;rival not already dead"
   },
   {
     "type": "DialogueInfo",
@@ -5406,7 +5062,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead"
+    "script_text": "Journal \"AV_audit_beran\" 20\nJournal \"AV_daedric_detective\" 10\n;rival not already dead"
   },
   {
     "type": "DialogueInfo",
@@ -5442,7 +5098,7 @@
         }
       }
     ],
-    "script_text": "Choice \"A proposal? I’m here to kill you.\" 1 \"I'm not interested.\" 2 \"What proposal?\" 3"
+    "script_text": "Choice \"A proposal? I’m here to kill you.\" 1 \"I’m not interested.\" 2 \"What proposal?\" 3"
   },
   {
     "type": "Dialogue",
@@ -7343,7 +6999,7 @@
     "flags": "",
     "id": "162097112815234346089132849341",
     "prev_id": "308475445714070401288804938394",
-    "next_id": "940392646010464289828144069183",
+    "next_id": "328750145711441401503074276834",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -7388,8 +7044,204 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "940392646010464289828144069183",
+    "id": "328750145711441401503074276834",
     "prev_id": "162097112815234346089132849341",
+    "next_id": "41311667036135206129227216545",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I want you to track down this \"stone\" in Tel Branora, and bring it back to me. I have a suspicion that it's deeply involved in these tomb defilements.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41311667036135206129227216545",
+    "prev_id": "328750145711441401503074276834",
+    "next_id": "612682877012448086643572111746",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Thank you for tracking down this obsidian orb, %PCName. You have my gratitude.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_daedric_detective\" 100\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nModDisposition 10\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 1000\nSet AV_stone_location 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "612682877012448086643572111746",
+    "prev_id": "41311667036135206129227216545",
+    "next_id": "940392646010464289828144069183",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I'm disappointed that you couldn't retrieve the stone for me, %PCRank. Perhaps I should have asked someone more capable.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 91
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_daedric_detective\" 110\nModDisposition -20\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "940392646010464289828144069183",
+    "prev_id": "612682877012448086643572111746",
     "next_id": "127591396112577884705806002124",
     "data": {
       "dialogue_type": "Topic",
@@ -7463,7 +7315,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "The increased daedric presence and this journal put me at unease. Thank you for bringing this to my attention.",
+    "text": "The increased daedric presence and this journal put me at unease. Thank you for bringing this to my attention. I want you to track down this \"stone\" mentioned in the journal, and bring it back to me. I have a suspicion that it's deeply involved in these tomb defilements.",
     "filters": [
       {
         "index": 2,
@@ -7491,7 +7343,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_audit_beran",
         "value": {
           "type": "Integer",
@@ -7499,7 +7351,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\""
+    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400\nJournal \"AV_daedric_detective\" 10\n"
   },
   {
     "type": "DialogueInfo",
@@ -7622,6 +7474,53 @@
     "flags": "",
     "id": "27948504948114904701818150390",
     "prev_id": "10163571773805269418744441944",
+    "next_id": "401179864412765430162527718348",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Go audit the Beran Ancestral Tomb near Tel Branora.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "401179864412765430162527718348",
+    "prev_id": "27948504948114904701818150390",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
@@ -13265,7 +13164,7 @@
     "flags": "",
     "id": "429003553113364899508451114310",
     "prev_id": "",
-    "next_id": "",
+    "next_id": "38273749249658924935121603996",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13317,5 +13216,259 @@
       }
     ],
     "script_text": "Journal \"AV_audit_beran\" 10\nJournal \"AV_audit_arano\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38273749249658924935121603996",
+    "prev_id": "429003553113364899508451114310",
+    "next_id": "40744975184121303364667495090",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A Dark Seducer? This is, to be blunt, very unusual. Sheogorath’s minions don’t typically defile ancestral tombs. Please, take these as payment.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_DSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_arano\" 100\nModDisposition 10\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "40744975184121303364667495090",
+    "prev_id": "38273749249658924935121603996",
+    "next_id": "34991969179673497103647441786",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Good, I'm glad you didn't have any trouble this time.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_DSDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_arano\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "34991969179673497103647441786",
+    "prev_id": "40744975184121303364667495090",
+    "next_id": "865919005015252101701565543167",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Then go finish it, %PCRank.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_DSDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "865919005015252101701565543167",
+    "prev_id": "34991969179673497103647441786",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You’ve completed the Arano audit?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_DSDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Choice \"[Lie.] Yes. Nothing unusual.\" 1 \"Not yet.\" 2"
   }
 ]
