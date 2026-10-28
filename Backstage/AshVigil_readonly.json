@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 379,
+    "num_objects": 378,
     "masters": [
       [
         "Morrowind.esm",
@@ -387,7 +387,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tset AV_DSDead to 1\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( GetJournalIndex \"AV_audit_arano\" == 80 )\n\t; disappear once orb is given\n\t; TODO: play teleportation VFX effect\n\tDisable\nelseif ( GetJournalIndex \"AV_audit_arano\" == 110 )\n\t; stay gone if orb is given\n\tDisable\nelseif ( AV_DSDead == 0 )\n\t; appear if not dead\n\tEnable\nendif\n\nEnd cybDSFight"
+    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tset AV_DSDead to 1\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( AV_stone_location == 2 )\n\t; disappear once orb is given\n\t; TODO: play teleportation VFX effect\n\t; TODO: this might work fine just in dialogue\n\tDisable\nelseif ( AV_DSDead == 0 )\n\t; appear if not dead\n\tEnable\nendif\n\nEnd cybDSFight"
   },
   {
     "type": "Script",
@@ -4580,42 +4580,6 @@
     "flags": "",
     "id": "30880746287565079535000953574",
     "prev_id": "22164207282642835034325131475",
-    "next_id": "210673205914869451577917977415",
-    "data": {
-      "dialogue_type": "Greeting",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "AV_DarkSeducerV",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "You disgusting imbecile! That orb is mine!",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      }
-    ],
-    "script_text": "SetFight 100\nStartCombat player\nGoodbye\n;player returned orb before killing DS"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "210673205914869451577917977415",
-    "prev_id": "30880746287565079535000953574",
     "next_id": "29749974272952443845178555048",
     "data": {
       "dialogue_type": "Greeting",
@@ -4634,24 +4598,35 @@
     "text": "You disgusting imbecile! That orb is mine!",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_daedric_detective",
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_stone_location",
         "value": {
           "type": "Integer",
-          "data": 90
+          "data": 2
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 0
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 80\nJournal \"AV_daedric_detective\" 91\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nDisable\nGoodbye\n"
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye\n;player returned orb before killing DS"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "29749974272952443845178555048",
-    "prev_id": "210673205914869451577917977415",
+    "prev_id": "30880746287565079535000953574",
     "next_id": "768436939017681305692544628459",
     "data": {
       "dialogue_type": "Greeting",
