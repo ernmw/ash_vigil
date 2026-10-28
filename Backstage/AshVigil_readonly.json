@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 385,
+    "num_objects": 394,
     "masters": [
       [
         "Morrowind.esm",
@@ -13142,7 +13142,7 @@
     "flags": "",
     "id": "76856067001473645283587687608",
     "prev_id": "117935262414207342556185790159",
-    "next_id": "25373977148041112783171922835",
+    "next_id": "17459476118730801584888650065",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13187,8 +13187,44 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "25373977148041112783171922835",
+    "id": "17459476118730801584888650065",
     "prev_id": "76856067001473645283587687608",
+    "next_id": "25373977148041112783171922835",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The tombs? Go on in, I don't care.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25373977148041112783171922835",
+    "prev_id": "17459476118730801584888650065",
     "next_id": "32801303648698764702289871986",
     "data": {
       "dialogue_type": "Topic",
@@ -13465,7 +13501,7 @@
     "flags": "",
     "id": "172213265417552859707869319722",
     "prev_id": "41923843817421321568531539931",
-    "next_id": "",
+    "next_id": "37909660929961894542225183616",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13517,6 +13553,514 @@
       }
     ],
     "script_text": "Journal \"AV_therana_permission\" 40\nChoice \"[Give her a small kwama egg.]\" 1 \"[Give her a large kwama egg.]\" 2 \"I'll be back with one.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37909660929961894542225183616",
+    "prev_id": "172213265417552859707869319722",
+    "next_id": "233924086912973916740193804150",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Oh, these are perfect. Yes. So precious. What? Oh, go do what you want in the tombs. Leave me alone now.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "food_kwama_egg_01",
+        "value": {
+          "type": "Integer",
+          "data": 22
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "food_kwama_egg_02",
+        "value": {
+          "type": "Integer",
+          "data": 33
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 90\nPlayer->RemoveItem \"food_kwama_egg_01\" 22\nPlayer->RemoveItem \"food_kwama_egg_02\" 33\nModDisposition 30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "233924086912973916740193804150",
+    "prev_id": "37909660929961894542225183616",
+    "next_id": "9738879700538641089291369335",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "This isn't what I asked for!",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": "ModDisposition -10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "9738879700538641089291369335",
+    "prev_id": "233924086912973916740193804150",
+    "next_id": "978836216017525748889107232024",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What? I can’t hear you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "978836216017525748889107232024",
+    "prev_id": "9738879700538641089291369335",
+    "next_id": "136546178611329872149085651496",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Do you have my eggs yet?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": "Choice \"[Give her the eggs.]\" 1 \"I'm working on it\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "136546178611329872149085651496",
+    "prev_id": "978836216017525748889107232024",
+    "next_id": "239479202712079359073336834671",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Good. Get to it.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 20"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "239479202712079359073336834671",
+    "prev_id": "136546178611329872149085651496",
+    "next_id": "196190981012142918267190246572",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A gift? Ah, how nice of you. Of course. I don’t ask for much. Just bring me the eggs. Listen carefully, as I won’t repeat myself. 33 large ones. 22 small ones. And no ash yams. None at all. I hate them.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "196190981012142918267190246572",
+    "prev_id": "239479202712079359073336834671",
+    "next_id": "399469089912733054226012958649",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Don’t think I will forget about it. Dalen needs to be dealt with.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "399469089912733054226012958649",
+    "prev_id": "196190981012142918267190246572",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What do you want? What tombs? Ah. No. Not yet. No permission. Not while that witch Trerayna Dalen is plotting right under my nose! Deal with her and then we can talk about permission.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_TreraynaDalenDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
