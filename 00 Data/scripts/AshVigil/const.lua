@@ -57,4 +57,5 @@ return {
     ELVAS_SAVEL_DEAD_GVAR = "AV_EvlasSavelDead",
     BAREN_ALEN_DEAD_GVAR = "AV_BarenAlenDead",
     THERANA_DEAD_GVAR = "AV_TheranaDead",
+    TRERAYNA_DALEN_DEAD_GVAR = "AV_TreraynaDalenDead"
 }
