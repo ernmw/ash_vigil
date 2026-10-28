@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 398,
+    "num_objects": 401,
     "masters": [
       [
         "Morrowind.esm",
@@ -6922,7 +6922,7 @@
     "flags": "",
     "id": "258623129815211099746592612275",
     "prev_id": "31460623007638298071582374967",
-    "next_id": "117654120614868944765730571808",
+    "next_id": "77528798704998345036932109950",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -6947,7 +6947,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -6967,8 +6967,55 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "117654120614868944765730571808",
+    "id": "77528798704998345036932109950",
     "prev_id": "258623129815211099746592612275",
+    "next_id": "117654120614868944765730571808",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "giron manas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, I went in there. I know it’s not right, but the fishing hasn’t been good this season. I needed money or I’d starve. A man came by asking around for a guide to lead him through the tomb, and I told him I could do it. One of the worst jobs I’ve ever taken in my life. We snuck into the back of the tomb, past a horde of daedra, and then he dug an obsidian orb out of the ash pit.\n\nThe daedra noticed us, and in the commotion I ran for my life. It was only at the door of my own home that I realized the orb had somehow made its way into my pocket.\n\nI sold the accursed orb in town. It fetched me enough for a sack of saltrice, and I was happy to be rid of it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_daedric_detective",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_daedric_detective\" 30\nAddtopic \"obsidian orb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "117654120614868944765730571808",
+    "prev_id": "77528798704998345036932109950",
     "next_id": "201929210514983258712482182854",
     "data": {
       "dialogue_type": "Topic",
@@ -7005,7 +7052,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -7063,7 +7110,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -7168,7 +7215,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -7690,7 +7737,7 @@
     "flags": "",
     "id": "27948504948114904701818150390",
     "prev_id": "10163571773805269418744441944",
-    "next_id": "401179864412765430162527718348",
+    "next_id": "10159523021908703633798519245",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -7735,7 +7782,7 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "401179864412765430162527718348",
+    "id": "10159523021908703633798519245",
     "prev_id": "27948504948114904701818150390",
     "next_id": "",
     "data": {
@@ -7745,38 +7792,15 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDLeader",
+    "speaker_id": "AV_KOTDArch",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Go audit the Beran Ancestral Tomb near Tel Branora.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 10
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      }
-    ],
+    "text": "The Beran Ancestral Tomb is near Tel Branora, along the eastern coast. It's really quite a marvelous construction, from what I can gather.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -7815,7 +7839,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -7862,7 +7886,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -7981,7 +8005,7 @@
         "id": "AV_daedric_detective",
         "value": {
           "type": "Integer",
-          "data": 91
+          "data": 100
         }
       },
       {
@@ -8412,13 +8436,13 @@
     "filters": [
       {
         "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_daedric_detective",
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_stone_location",
         "value": {
           "type": "Integer",
-          "data": 100
+          "data": 3
         }
       }
     ],
@@ -8448,13 +8472,24 @@
     "filters": [
       {
         "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_daedric_detective",
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_stone_location",
         "value": {
           "type": "Integer",
-          "data": 90
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 3
         }
       }
     ],
@@ -8483,11 +8518,11 @@
     "text": "I don't know what this orb is, but it seems to be at the center of the tomb defilement near Tel Branora. Find it.",
     "filters": [
       {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "AV_daedric_detective",
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_stone_location",
         "value": {
           "type": "Integer",
           "data": 0
@@ -14559,7 +14594,7 @@
     "flags": "",
     "id": "865919005015252101701565543167",
     "prev_id": "34991969179673497103647441786",
-    "next_id": "",
+    "next_id": "22561255296856176423224834970",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14611,5 +14646,76 @@
       }
     ],
     "script_text": "Choice \"[Lie.] Yes. Nothing unusual.\" 1 \"Not yet.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22561255296856176423224834970",
+    "prev_id": "865919005015252101701565543167",
+    "next_id": "233574174913569491292711977498",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Go audit the Arano Ancestral Tomb near Tel Branora.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_audit_arano",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "233574174913569491292711977498",
+    "prev_id": "22561255296856176423224834970",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Arano Tomb? Oh yes, this one should be near Tel Branora, along the southern coast.",
+    "filters": [],
+    "script_text": ""
   }
 ]
