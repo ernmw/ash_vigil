@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 394,
+    "num_objects": 398,
     "masters": [
       [
         "Morrowind.esm",
@@ -4589,7 +4589,7 @@
     "flags": "",
     "id": "30880746287565079535000953574",
     "prev_id": "22164207282642835034325131475",
-    "next_id": "29749974272952443845178555048",
+    "next_id": "343458272710788863793636198557",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -4634,8 +4634,124 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "29749974272952443845178555048",
+    "id": "343458272710788863793636198557",
     "prev_id": "30880746287565079535000953574",
+    "next_id": "28691779438170525495783640989",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I can feel Dublurep’s death. It is warm and sweet, just like you, little friend. Now bring me the orb and you’ll be rewarded.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28691779438170525495783640989",
+    "prev_id": "343458272710788863793636198557",
+    "next_id": "29749974272952443845178555048",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You have the orb, but haven’t yet killed Dublurep. Return to me once you’ve slain her, and you’ll be rewarded.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29749974272952443845178555048",
+    "prev_id": "28691779438170525495783640989",
     "next_id": "768436939017681305692544628459",
     "data": {
       "dialogue_type": "Greeting",
@@ -4651,8 +4767,19 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Oh, my sweet little darling. You've been so good to me. And a promise is a promise, isn't it? Here, take my saber. A dangerous thing for my dangerous friend. Now run along, pretty thing. I have some business to attend to. [The Dark Seducer teleports away.]",
+    "text": "Oh, my sweet little darling. You've been so good to me. And a promise is a promise, isn't it? Here, take my saber. A dangerous thing for my dangerous friend. Now run along, pretty thing. I have some business to attend to.",
     "filters": [
+      {
+        "index": 3,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
       {
         "index": 2,
         "filter_type": "Function",
@@ -4687,7 +4814,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 2\nDisable\nGoodbye\n"
+    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 2\nGoodbye\n"
   },
   {
     "type": "DialogueInfo",
@@ -4711,6 +4838,17 @@
     "sound_path": "",
     "text": "You disgusting imbecile! That orb is mine!",
     "filters": [
+      {
+        "index": 3,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
       {
         "index": 2,
         "filter_type": "Function",
@@ -4770,6 +4908,17 @@
     "text": "A present? For me? I didn’t doubt you for a moment, darling. Everything you wish is within your reach, now.",
     "filters": [
       {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_GSDead",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
         "index": 1,
         "filter_type": "Item",
         "function": "ItemType",
@@ -4784,7 +4933,7 @@
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_audit_beran",
         "value": {
           "type": "Integer",
@@ -4861,7 +5010,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\nJournal \"AV_daedric_detective\" 10\n;rival already dead"
+    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
@@ -4919,7 +5068,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\nJournal \"AV_daedric_detective\" 10\n;rival already dead"
+    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
@@ -4988,14 +5137,14 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\nJournal \"AV_daedric_detective\" 10\n;rival not already dead"
+    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "27202569379916007846169793367",
     "prev_id": "1022383151923823299286182713",
-    "next_id": "22327710238259137950547621636",
+    "next_id": "255339316215365631902721201562",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -5046,13 +5195,118 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\nJournal \"AV_daedric_detective\" 10\n;rival not already dead"
+    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "255339316215365631902721201562",
+    "prev_id": "27202569379916007846169793367",
+    "next_id": "65145255004144462334151317714",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Tsk-tsk-tsk. It’s the last mistake you’ll ever make, darling. Let’s play, then!",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "LessEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "65145255004144462334151317714",
+    "prev_id": "255339316215365631902721201562",
+    "next_id": "22327710238259137950547621636",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, you are very much out. But we can get so, so much closer. I’m happy with your answer. Well, you know what to do. I’ll be waiting here, darling.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 30\nJournal \"AV_daedric_detective\" 10"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "22327710238259137950547621636",
-    "prev_id": "27202569379916007846169793367",
+    "prev_id": "65145255004144462334151317714",
     "next_id": "",
     "data": {
       "dialogue_type": "Greeting",
@@ -7125,28 +7379,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 90
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_daedric_detective",
-        "value": {
-          "type": "Integer",
-          "data": 10
         }
       },
       {
