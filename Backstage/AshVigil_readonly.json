@@ -9227,7 +9227,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Then I welcome you in our ranks, %PCRank.",
+    "text": "Then I welcome you in our ranks, %PCRank. There's much work to be done.",
     "filters": [
       {
         "index": 0,
@@ -9241,7 +9241,7 @@
         }
       }
     ],
-    "script_text": "PCJoinFaction \"Keepers of the Dead\""
+    "script_text": "PCJoinFaction \"AV_KOTD\"\nAddTopic \"work\""
   },
   {
     "type": "DialogueInfo",
