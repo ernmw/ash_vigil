@@ -14,8 +14,3 @@ GLOBAL: scripts/AshVigil/setglobalvariable.lua
 CUSTOM: scripts/AshVigil/ecs/urn.lua
 CUSTOM: scripts/AshVigil/ecs/peaceful.lua
 CUSTOM: scripts/AshVigil/ecs/interloper.lua
-
-CUSTOM: scripts/AshVigil/ecs/elvas_savel.lua
-CUSTOM: scripts/AshVigil/ecs/baren_alen.lua
-CUSTOM: scripts/AshVigil/ecs/therana.lua
-CUSTOM: scripts/AshVigil/ecs/trerayna_dalen.lua

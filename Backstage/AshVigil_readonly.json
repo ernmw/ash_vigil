@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 409,
+    "num_objects": 404,
     "masters": [
       [
         "Morrowind.esm",
@@ -42,52 +42,7 @@
   {
     "type": "GlobalVariable",
     "flags": "",
-    "id": "AV_DSDead",
-    "value": {
-      "type": "Short",
-      "data": 0
-    }
-  },
-  {
-    "type": "GlobalVariable",
-    "flags": "",
-    "id": "AV_EvlasSavelDead",
-    "value": {
-      "type": "Short",
-      "data": 0
-    }
-  },
-  {
-    "type": "GlobalVariable",
-    "flags": "",
-    "id": "AV_GSDead",
-    "value": {
-      "type": "Short",
-      "data": 0
-    }
-  },
-  {
-    "type": "GlobalVariable",
-    "flags": "",
     "id": "AV_InsideTomb",
-    "value": {
-      "type": "Short",
-      "data": 0
-    }
-  },
-  {
-    "type": "GlobalVariable",
-    "flags": "",
-    "id": "AV_TheranaDead",
-    "value": {
-      "type": "Short",
-      "data": 0
-    }
-  },
-  {
-    "type": "GlobalVariable",
-    "flags": "",
-    "id": "AV_TreraynaDalenDead",
     "value": {
       "type": "Short",
       "data": 0
@@ -381,7 +336,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tset AV_DSDead to 1\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( AV_stone_location == 2 )\n\t; disappear once orb is given\n\t; TODO: play teleportation VFX effect\n\t; TODO: this might work fine just in dialogue\n\tDisable\nelseif ( AV_DSDead == 0 )\n\t; appear if not dead\n\tEnable\nendif\n\nEnd cybDSFight"
+    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( AV_stone_location == 2 )\n\t; disappear once orb is given\n\t; TODO: play teleportation VFX effect\n\t; TODO: this might work fine just in dialogue\n\tDisable\nelse\n\t; appear\n\tEnable\nendif\n\nEnd cybDSFight"
   },
   {
     "type": "Script",
@@ -396,7 +351,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybGSFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( onDeath == 1 )\n\tset AV_GSDead to 1\nendif\n\nif ( GetJournalIndex \"AV_audit_beran\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( AV_GSDead == 0 )\n\t; appear if not dead\n\tEnable\nendif\n\nEnd cybGSFight"
+    "text": "Begin cybGSFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\n\nif ( GetJournalIndex \"AV_audit_beran\" < 10 )\n\t; quest hasn't started\n\tDisable\nelse\n\t; appear\n\tEnable\nendif\n\nEnd cybGSFight"
   },
   {
     "type": "Script",
@@ -4639,14 +4594,14 @@
     "text": "I can feel Dublurep’s death. It is warm and sweet, just like you, little friend. Now bring me the orb and you’ll be rewarded.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -4951,6 +4906,17 @@
     "text": "Ah, so hasty. So impatient.  Don’t worry, we’ll have time to play. You just haven’t heard what I have to say yet. We can help each other. In fact, you’ve helped me already. I know what you’ve done. Dublurep, my rival, is dead. I know it was your doing.\n\nThis is a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only one tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -4967,17 +4933,6 @@
         "function": "Choice",
         "comparison": "GreaterEqual",
         "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
         "value": {
           "type": "Integer",
           "data": 1
@@ -5020,6 +4975,17 @@
     "text": "Ah. You’ve shown interest. Good. Very good. We can help each other. In fact, you’ve helped me already. I know what you’ve done. Dublurep, my rival, is dead. I know it was your doing.\n\nThis is a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only one tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Function",
         "function": "Choice",
@@ -5028,17 +4994,6 @@
         "value": {
           "type": "Integer",
           "data": 3
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -7381,6 +7336,17 @@
     "text": "The increased daedric presence and this journal put me at unease. Thank you for bringing this to my attention. I want you to track down this \"stone\" mentioned in the journal, and bring it back to me. I have a suspicion that it's deeply involved in these tomb defilements.",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Item",
         "function": "ItemType",
@@ -7389,17 +7355,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -7439,6 +7394,17 @@
     "text": "It’s not unheard-of for daedra to infest tombs, but Golden Saints doing so are exceedingly rare. There must be additional clues in the Beran tomb to explain its presence.",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Item",
         "function": "ItemType",
@@ -7447,17 +7413,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -7497,22 +7452,22 @@
     "text": "This journal is disturbing. A sload in Vvardenfell that is taking interest in the ancestral tombs here needs to be dealt with. Finish clearing the tomb, and report back to me.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "Greater",
-        "id": "AV_bloodied_journal",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_GoldenSaintD",
         "value": {
           "type": "Integer",
           "data": 0
         }
       },
       {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_bloodied_journal",
         "value": {
           "type": "Integer",
           "data": 0
@@ -11200,17 +11155,6 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_mm_vandus",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
         "comparison": "Greater",
         "id": "AV_mm_savel",
         "value": {
@@ -11224,6 +11168,17 @@
         "function": "PcExpelled",
         "comparison": "Equal",
         "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 5,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "elvas savel",
         "value": {
           "type": "Integer",
           "data": 0
@@ -11255,6 +11210,17 @@
     "text": "What? Elvas Savel is dead? I don’t know if you had anything to do with it, but… Well, this is most disappointing. His death will cause us more issues than it will solve, %PCRank.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "elvas savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 5,
         "filter_type": "Item",
         "function": "ItemType",
@@ -11266,33 +11232,11 @@
         }
       },
       {
-        "index": 4,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_EvlasSavelDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
         "index": 3,
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Less",
         "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_mm_vandus",
         "value": {
           "type": "Integer",
           "data": 100
@@ -11773,7 +11717,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -11785,14 +11729,14 @@
     "text": "Baren Alen? Dead? Damn it. Maybe I can try with some other family member or… Ah, it's way harder now. I'm in trouble. Leave me be.",
     "filters": [
       {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_BarenAlenDead",
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "baren alen",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -11820,7 +11764,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -11867,7 +11811,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -11903,7 +11847,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -11961,7 +11905,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12019,7 +11963,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12077,7 +12021,7 @@
       "disposition": 80,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12124,7 +12068,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12171,7 +12115,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12218,7 +12162,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12265,7 +12209,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "elvas savel",
     "speaker_race": "",
@@ -12324,14 +12268,14 @@
     "text": "There was a member of the Savel family who had been an annoyance with all of his claims. He died, though. Tragic.",
     "filters": [
       {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_EvlasSavelDead",
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "elvas savel",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -13120,22 +13064,22 @@
     "text": "That's... surprising news. She was unpredictable, but I can't help but think the people of Tel Branora will be worse off with her passing. We'll move on with the audit of the Arano and Beran tombs, then.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "therana",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
         "comparison": "Equal",
         "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TheranaDead",
         "value": {
           "type": "Integer",
           "data": 1
@@ -13377,6 +13321,17 @@
     "text": "You don't have one! Don't try to trick me, %PCRace.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Item",
         "function": "ItemType",
@@ -13385,17 +13340,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -13446,6 +13390,17 @@
     "text": "Not the small one! Gah! Go away.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Item",
         "function": "ItemType",
@@ -13454,17 +13409,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -13515,6 +13459,17 @@
     "text": "You don't have one! Don't try to trick me, %PCRace.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Item",
         "function": "ItemType",
@@ -13523,17 +13478,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -13584,6 +13528,17 @@
     "text": "Oh, this one is perfect. Yes. So precious. What? Oh, go do what you want in the tombs. Leave me alone now.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Item",
         "function": "ItemType",
@@ -13592,17 +13547,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -13653,14 +13597,14 @@
     "text": "Are you the one who dealt with that fool, Dalen? Yes, yes, do what you want in the tombs, but bring me a kwama egg first. What? Haven’t I told you already? Well, I’m telling you now. Bring me the egg!",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -14283,6 +14227,17 @@
     "text": "A Dark Seducer? This is, to be blunt, very unusual. Sheogorath’s minions don’t typically defile ancestral tombs. Please, take these as payment.",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_DarkSeducerV",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -14291,17 +14246,6 @@
         "value": {
           "type": "Integer",
           "data": 100
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_DSDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
@@ -14341,6 +14285,17 @@
     "text": "Good, I'm glad you didn't have any trouble this time.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_DarkSeducerV",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -14360,17 +14315,6 @@
         "value": {
           "type": "Integer",
           "data": 100
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_DSDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -14410,6 +14354,17 @@
     "text": "Then go finish it, %PCRank.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_DarkSeducerV",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -14429,17 +14384,6 @@
         "value": {
           "type": "Integer",
           "data": 100
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_DSDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -14479,6 +14423,17 @@
     "text": "You’ve completed the Arano audit?",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_DarkSeducerV",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -14487,17 +14442,6 @@
         "value": {
           "type": "Integer",
           "data": 100
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_DSDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
