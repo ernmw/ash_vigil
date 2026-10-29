@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 404,
+    "num_objects": 409,
     "masters": [
       [
         "Morrowind.esm",
@@ -6009,7 +6009,7 @@
     "sound_path": "",
     "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
     "filters": [],
-    "script_text": ""
+    "script_text": "AddTopic \"Nance Bero\"\nAddTopic \"Keerin Meille\""
   },
   {
     "type": "Dialogue",
@@ -6301,7 +6301,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "AddTopic \"Keerin Meille\""
   },
   {
     "type": "DialogueInfo",
@@ -14806,5 +14806,131 @@
       }
     ],
     "script_text": "Choice \"Yes.\" 1 \"Not right now.\" 2"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Keerin Meille",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "270441179216929088429031526788",
+    "prev_id": "",
+    "next_id": "937864445014349348801096282127",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Of all the contingencies I planned for, dealing with a double-agent wasn’t one of them. Thank you for exposing him, %PCRank.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "937864445014349348801096282127",
+    "prev_id": "270441179216929088429031526788",
+    "next_id": "1401816148771875791760097751",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "He’s a Breton Initiate. You can find him at the Pilgrim’s Rest when he’s on break.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1401816148771875791760097751",
+    "prev_id": "937864445014349348801096282127",
+    "next_id": "37506048871130270032117673108",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I… I’m sorry, %PCName. I can’t talk about this. It’s too painful.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37506048871130270032117673108",
+    "prev_id": "1401816148771875791760097751",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "We met in Narsis and became fast friends. We were both foreigners, in our own ways, there. It was easy to form a bond and commiserate about life in the big city. When I joined the Keepers and needed to move to Necrom to continue my studies, he signed on as an initiate so he could stay with me. I’m lucky to have him.",
+    "filters": [],
+    "script_text": ""
   }
 ]
