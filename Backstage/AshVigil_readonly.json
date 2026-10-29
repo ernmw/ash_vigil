@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 404,
+    "num_objects": 403,
     "masters": [
       [
         "Morrowind.esm",
@@ -29,15 +29,6 @@
         1733277
       ]
     ]
-  },
-  {
-    "type": "GlobalVariable",
-    "flags": "",
-    "id": "AV_BarenAlenDead",
-    "value": {
-      "type": "Short",
-      "data": 0
-    }
   },
   {
     "type": "GlobalVariable",
@@ -4652,11 +4643,11 @@
     "text": "You have the orb, but haven’t yet killed Dublurep. Return to me once you’ve slain her, and you’ll be rewarded.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
         "value": {
           "type": "Integer",
           "data": 0
@@ -4710,14 +4701,14 @@
     "text": "Oh, my sweet little darling. You've been so good to me. And a promise is a promise, isn't it? Here, take my saber. A dangerous thing for my dangerous friend. Now run along, pretty thing. I have some business to attend to.",
     "filters": [
       {
-        "index": 3,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -4779,14 +4770,14 @@
     "text": "You disgusting imbecile! That orb is mine!",
     "filters": [
       {
-        "index": 3,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -4848,14 +4839,14 @@
     "text": "A present? For me? I didn’t doubt you for a moment, darling. Everything you wish is within your reach, now.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -11127,17 +11118,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 4,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_EvlasSavelDead",
-        "value": {
-          "type": "Integer",
-          "data": 1
         }
       },
       {
