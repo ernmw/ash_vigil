@@ -13821,10 +13821,10 @@
     "filters": [
       {
         "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
+        "filter_type": "Dead",
+        "function": "DeadType",
         "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
+        "id": "trerayna dalen",
         "value": {
           "type": "Integer",
           "data": 0
@@ -13867,6 +13867,17 @@
     "text": "Good. Get to it.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -13875,17 +13886,6 @@
         "value": {
           "type": "Integer",
           "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -13936,6 +13936,17 @@
     "text": "A gift? Ah, how nice of you. Of course. I don’t ask for much. Just bring me the eggs. Listen carefully, as I won’t repeat myself. 33 large ones. 22 small ones. And no ash yams. None at all. I hate them.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -13944,17 +13955,6 @@
         "value": {
           "type": "Integer",
           "data": 2
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -14005,6 +14005,17 @@
     "text": "Don’t think I will forget about it. Dalen needs to be dealt with.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -14013,17 +14024,6 @@
         "value": {
           "type": "Integer",
           "data": 3
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -14074,11 +14074,11 @@
     "text": "What do you want? What tombs? Ah. No. Not yet. No permission. Not while that witch Trerayna Dalen is plotting right under my nose! Deal with her and then we can talk about permission.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
         "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
+        "id": "trerayna dalen",
         "value": {
           "type": "Integer",
           "data": 0
