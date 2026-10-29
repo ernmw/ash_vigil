@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Waiting Door Corruption
+priority: polish
+
+instances:
+  - conditions:
+      - cell:
+          # these are tombs in Molag Amur and Azura's Coast
+        - "Hlervi Ancestral Tomb"
+        - "Vandus Ancestral Tomb"
+        - "Hlervu Ancestral Tomb"
+        - "Aran Ancestral Tomb"
+        - "Arys Ancestral Tomb"
+        - "Raviro Ancestral Tomb"
+        - "Alas Ancestral Tomb"
+        - "Serano Ancestral Tomb"
+        - "Arano Ancestral Tomb"
+        - "Verelnim Ancestral Tomb"
+        - "Dreloth Ancestral Tomb"
+        - "Velas Ancestral Tomb"
+        - "Omaren Ancestral Tomb"
+        - "Andules Ancestral Tomb"
+        - "Helan Ancestral Tomb"
+        - "Andas Ancestral Tomb"
+        - "Sadryon Ancestral Tomb"
+        - "Andalen Ancestral Tomb"
+        - "Savel Ancestral Tomb"
+        - "Arenim Ancestral Tomb"
+        - "Ravel Ancestral Tomb"
+        - "Beran Ancestral Tomb"
+        - "Redas Ancestral Tomb"
+        - "Releth Ancestral Tomb"
+        - "Baram Ancestral Tomb"
+        - "Gimothran Ancestral Tomb"
+        - "Maren Ancestral Tomb"
+        - "Marvani Ancestral Tomb"
+        - "Arethan Ancestral Tomb"
+        - "Dulo Ancestral Tomb"
+        - "Hlaalu Ancestral Tomb"
+      - global_value:
+          # stone location 2 is DS
+        - AV_stone_location:
+            min: 2
+            max: 2
+      - is_dead: false
+      - creature_type: undead
+      - not: {record_id: Lich}
+      - not: {record_id: lich}
+    actions:
+      - replace:
+          scamp: 0.06
+          clannfear: 0.06
+          atronach_flame: 0.06
+          atronach_frost: 0.06
+          atronach_storm: 0.06
+          T_Dae_Cre_DridLs_01: 0.06
+          daedroth: 0.06
+          dremora: 0.06
+          dremora lord: 0.06
+          golden saint: 0.06
+          hunger: 0.06
+          ogrim: 0.06
+          T_Dae_Cre_SeducDark_01: 0.06
+          T_Dae_Cre_SpiderDae_01: 0.06
+          winged twilight: 0.06
+          T_Dae_Cre_Drid_01: 0.06
+          T_Dae_Cre_LordFl_01: 0.06
+          T_Dae_Cre_LordFr_01: 0.06
+          T_Dae_Cre_LordSt_01: 0.06
+          ogrim titan: 0.06

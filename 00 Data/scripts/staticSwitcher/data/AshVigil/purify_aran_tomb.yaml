@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
 log_name: Purify Aran Tomb
-
+priority: balance
 
         #- "aran ancestral tomb"
         #- "arethan ancestral tomb"
