@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Place KOTD Members
+instances:
+  # pilgrim's rest
+  - conditions:
+      - record_id: "mundrila ienith"
+    once: true
+    actions:
+      - create:
+          AV_KOTDLPP:
+            position:
+              x: 100
+              y: 100
+  # st veloth's hostel
+  - conditions:
+      # Coordinates: 3904 4032 15680
+      # in her facing: Coordinates: 3392 4032 15680
+      # toward bar: Coordinates: 3905.42 3794.84 15553
+      - record_id: "tadara indaram"
+    once: true
+    actions:
+      - create:
+          AV_KOTDArch:
+            position:
+              x: -150
+              y: -100
+      - create:
+          AV_KOTDArchAssist:
+            position:
+              x: -150
+              y: -200
+      - create:
+          AV_KOTDCrusader:
+            position:
+              x: -300
+              y: -100
+      - create:
+          AV_KOTDLeader:
+            position:
+              x: -300
+              y: -200
+      - create:
+          AV_KOTDSavant:
+            position:
+              x: -450
+              y: -300
