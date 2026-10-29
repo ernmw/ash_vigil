@@ -5024,6 +5024,17 @@
     "text": "Ah, so hasty. So impatient.  Don’t worry, we’ll have time to play. You just haven’t heard what I have to say yet. We can help each other. You see, I have a rival. Dublurep, she calls herself. A Golden Saint. Cold, aloof and annoying. She’s squatting in a tomb nearby. I want her dead and I think you want her dead, too.\n\nThis will be a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? And once you deal with Dublurep, there is one other tiny thing I’ll need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for one Golden Saint dead and one small orb. It’s quite a bargain.",
     "filters": [
       {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Function",
         "function": "Choice",
@@ -5043,17 +5054,6 @@
         "value": {
           "type": "Integer",
           "data": 1
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -5093,6 +5093,17 @@
     "text": "Ah. You’ve shown interest. Good. Very good. We can help each other. You see, I have a rival. Dublurep, she calls herself. A Golden Saint. Cold, aloof and annoying. She’s squatting in a tomb nearby. I want her dead and I think you want her dead, too.\n\nThis will be a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only a tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.\n",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Function",
         "function": "Choice",
@@ -5101,17 +5112,6 @@
         "value": {
           "type": "Integer",
           "data": 3
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_GSDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -13113,14 +13113,14 @@
     "text": "Have you secured permission yet from Mistress Therana?",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TheranaDead",
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "therana",
         "value": {
           "type": "Integer",
-          "data": 1
+          "data": 0
         }
       },
       {
@@ -13170,17 +13170,6 @@
     "sound_path": "",
     "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs.",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TheranaDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
       {
         "index": 1,
         "filter_type": "Journal",
