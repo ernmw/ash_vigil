@@ -14,7 +14,7 @@ instances:
         - "hlervu ancestral tomb"
         - "velas ancestral tomb"
       - player_faction:
-          faction: "keepers of the dead"
+          faction: "AV_KOTD"
           min: 1
       - is_dead: false
       - creature_type: undead
