@@ -96,8 +96,15 @@ local function onQuestUpdate(questId, stage)
         -- let's re-sync everything
         updateActiveQuests()
 
+        if not activeQuests[questId] then
+            syncGlobals()
+            return
+        end
+
         -- if this is the start of a new quest, give the player the urn
-        if activeQuests[questId].metaData.startStage == activeQuests[questId].playerQuest.stage then
+        local startStage = activeQuests[questId].metaData.startStage
+        local actualStage = activeQuests[questId].playerQuest.stage
+        if startStage == actualStage then
             core.sendGlobalEvent(MOD_NAME .. "onQuestStart", {
                 player = pself.object,
                 quest = allQuests[questId],

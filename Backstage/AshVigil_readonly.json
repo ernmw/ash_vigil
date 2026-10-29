@@ -10167,7 +10167,7 @@
     "flags": "",
     "id": "12084337294919000456968566632",
     "prev_id": "359621301213868802554121388555",
-    "next_id": "23787155081632822382547456909",
+    "next_id": "36741940947483157086255070796",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -10189,9 +10189,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "23787155081632822382547456909",
+    "id": "36741940947483157086255070796",
     "prev_id": "12084337294919000456968566632",
-    "next_id": "36741940947483157086255070796",
+    "next_id": "23787155081632822382547456909",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -10204,29 +10204,17 @@
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "",
+    "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "The Keepers are a group within the Temple dedicated to the handling of the dead and maintenance of tombs. If you want to join, go talk with Firsylla up in St. Veloth’s Hostel.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      }
-    ],
-    "script_text": ""
+    "text": "It’s not easy being an outlander working for the Keepers. They’re an insular division of the Temple, and they have a solemn, culturally important duty. Don’t expect to climb the ranks. The Keepers are glad to have extra hands during the trial disruptions, but once those resolve, you, Jilammu, and I are going to face a lot more scrutiny. It’s important to appropriately plan for your future.",
+    "filters": [],
+    "script_text": "AddTopic \"climb the ranks\"\nAddTopic \"plan for your future\""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "36741940947483157086255070796",
-    "prev_id": "23787155081632822382547456909",
+    "id": "23787155081632822382547456909",
+    "prev_id": "36741940947483157086255070796",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
@@ -10242,21 +10230,9 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "It’s not easy being an outlander working for the Keepers. They’re an insular division of the Temple, and they have a solemn, culturally important duty. Don’t expect to climb the ranks. The Keepers are glad to have extra hands during the trial disruptions, but once those resolve, you, Jilammu, and I are going to face a lot more scrutiny. It’s important to appropriately plan for your future.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Function",
-        "function": "SameFaction",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": "AddTopic \"climb the ranks\"\nAddTopic \"plan for your future\""
+    "text": "The Keepers are a group within the Temple dedicated to the handling of the dead and maintenance of tombs. If you want to join, go talk with Firsylla up in St. Veloth’s Hostel.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -14664,7 +14640,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Great, I knew I could count on you. If you don’t know where a tomb is, Nance Bero can usually point you to the right spot. This one is near Lake Nabia. From Suran, just follow the river north until you spot it. The tomb’s already been pacified, so the locals shouldn’t bother you so long as you behave yourself. All you need to do is get the urn in the tomb, someplace out of the way, and then leave. The family might show up a couple weeks after interment, so don’t make a mess. The pot’s heavy, so lift with your legs.",
+    "text": "Great, I knew I could count on you. If you don’t know where a tomb is, Nance Bero can usually point you to the right spot. This one is near Lake Nabia. From Suran, just follow the river north until you spot it.\n\nThe tomb’s already been pacified, so the locals shouldn’t bother you so long as you behave yourself. All you need to do is get the urn in the tomb, someplace out of the way, and then leave. The family might show up a couple weeks after interment, so don’t make a mess. The pot’s heavy, so lift with your legs.\n\nOh! And take this lockpick. Sometimes the tombs are locked up tight.",
     "filters": [
       {
         "index": 2,
@@ -14700,7 +14676,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_vandus\" 10"
+    "script_text": "Journal \"AV_mm_vandus\" 10\nPlayer->AddItem \"pick_journeyman_01\" 1"
   },
   {
     "type": "DialogueInfo",
