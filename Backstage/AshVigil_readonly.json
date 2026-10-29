@@ -6587,7 +6587,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -6630,7 +6630,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "AddTopic \"investigate weird reports\""
   },
   {
     "type": "Dialogue",
@@ -11111,7 +11111,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11169,7 +11169,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11260,7 +11260,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11336,7 +11336,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nModDisposition -10"
+    "script_text": "Journal \"AV_mm_savel\" 110\nRemoveItem \"AV_savel_keepsake\" 1\nModDisposition -10"
   },
   {
     "type": "DialogueInfo",
@@ -11351,7 +11351,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11420,7 +11420,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11478,7 +11478,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11536,7 +11536,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11594,7 +11594,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11652,7 +11652,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11710,7 +11710,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
