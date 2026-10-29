@@ -13657,17 +13657,6 @@
         }
       },
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -13676,6 +13665,17 @@
         "value": {
           "type": "Integer",
           "data": 30
+        }
+      },
+      {
+        "index": 5,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
         }
       }
     ],
@@ -13704,6 +13704,17 @@
     "text": "This isn't what I asked for!",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Function",
         "function": "Choice",
@@ -13712,17 +13723,6 @@
         "value": {
           "type": "Integer",
           "data": 1
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
@@ -13762,6 +13762,17 @@
     "text": "What? I can’t hear you.",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Function",
         "function": "Choice",
@@ -13770,17 +13781,6 @@
         "value": {
           "type": "Integer",
           "data": 2
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "Equal",
-        "id": "AV_TreraynaDalenDead",
-        "value": {
-          "type": "Integer",
-          "data": 0
         }
       },
       {
