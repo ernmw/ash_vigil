@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 409,
+    "num_objects": 408,
     "masters": [
       [
         "Morrowind.esm",
@@ -337,21 +337,6 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_daedric_detective\" == 50 )\n            Journal \"AV_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
-  },
-  {
-    "type": "Script",
-    "flags": "",
-    "id": "AV_savel_journal_script",
-    "header": {
-      "num_shorts": 0,
-      "num_longs": 0,
-      "num_floats": 0,
-      "bytecode_length": 0,
-      "variables_length": 0
-    },
-    "variables": "KLUv/QBYIQAAAAAAAA==",
-    "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_savel_journal_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_mm_savel\" == 10 )\n            Journal \"AV_mm_savel\" 20\n        endif\n\n    endif\n\nEnd"
   },
   {
     "type": "Script",
@@ -2596,11 +2581,11 @@
     "flags": "",
     "id": "AV_savel_journal",
     "name": "Thief's Journal",
-    "script": "AV_savel_journal_script",
+    "script": "",
     "mesh": "m\\Text_Octavo_03.NIF",
     "icon": "m\\Tx_octavo_03.tga",
     "enchanting": "",
-    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This looks like a journal of the thief who tried to rob the tomb. It has many personal entries, but only some bits that may be important to you.]\n<BR>\n… I’ve got a very weird job offer today. A man named Elvas Savel wants me to make a mess in a tomb belonging to his own family and throw some Hlaalu stuff around. Make it look like tomb robbers, he said. I think that he plans to link the “robbery” to some Hlaalu noble from Vivec. Hah. I can make that convincing, for sure. Happy to take all the loot from the tomb.\n<BR>\n<BR>\n",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This looks like a journal of the thief who tried to rob the tomb. It has many personal entries, but only some bits that may be important to you.]\n<BR>\n...I’ve got a very weird job offer today. A man named Elvas Savel wants me to make a mess in a tomb belonging to his own family and throw some Hlaalu stuff around. Make it look like tomb robbers, he said. I think that he plans to link the “robbery” to some Hlaalu noble from Vivec. Hah. I can make that convincing, for sure. Happy to take all the loot from the tomb.\n<BR>\n<BR>\n",
     "data": {
       "weight": 3.0,
       "value": 0,
@@ -3239,7 +3224,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I found the journal of a thief that implicates Elvas Savel.",
+    "text": "",
     "filters": [],
     "script_text": ""
   },
@@ -6587,7 +6572,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -6630,7 +6615,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "AddTopic \"investigate weird reports\""
   },
   {
     "type": "Dialogue",
@@ -11111,7 +11096,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11169,7 +11154,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11260,7 +11245,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11336,7 +11321,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nModDisposition -10"
+    "script_text": "Journal \"AV_mm_savel\" 110\nRemoveItem \"AV_savel_keepsake\" 1\nModDisposition -10"
   },
   {
     "type": "DialogueInfo",
@@ -11351,7 +11336,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11420,7 +11405,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11478,7 +11463,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11521,7 +11506,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 10\r\nPlayer->AddItem \"AV_savel_keepsake\" 1\r\nAddTopic \"family keepsake\""
+    "script_text": "Journal \"AV_mm_savel\" 10\nPlayer->AddItem \"AV_savel_keepsake\" 1\nAddTopic \"family keepsake\""
   },
   {
     "type": "DialogueInfo",
@@ -11536,7 +11521,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11594,7 +11579,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11652,7 +11637,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11661,6 +11646,17 @@
     "sound_path": "",
     "text": "If you think you’re done with your work, I’ll need the keepsake back, %PCRank. ",
     "filters": [
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_savel_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
       {
         "index": 5,
         "filter_type": "Item",
@@ -11676,11 +11672,11 @@
         "index": 3,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       },
       {
@@ -11710,7 +11706,7 @@
       "speaker_sex": "Any",
       "player_rank": 0
     },
-    "speaker_id": "AV_KOTDCrusader",
+    "speaker_id": "AV_KOTDSavant",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
@@ -11719,6 +11715,17 @@
     "sound_path": "",
     "text": "Interesting. Elvas Savel hasn’t withdrawn his claims yet, so there is still busywork ahead of us. This should be enough for our purposes, though. Thank you. Take these scrolls. They may be useful to you.",
     "filters": [
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_savel_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
       {
         "index": 5,
         "filter_type": "Item",
@@ -11738,7 +11745,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       },
       {
@@ -11753,7 +11760,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\r\nModDisposition 5\r\nModPCFacRep 5 \"AV_KOTD\"\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nPlayer->AddItem \"sc_nerusislockjaw\" 1\r\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -11822,8 +11829,19 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.\r\n\r\nI think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
+    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.\n\nI think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
     "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
       {
         "index": 3,
         "filter_type": "Journal",
@@ -12042,7 +12060,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       }
     ],
@@ -12089,11 +12107,11 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 40\r\nplayer->AddItem \"Gold_001\" 150\r\n"
+    "script_text": "Journal \"AV_mm_savel\" 40\nplayer->AddItem \"Gold_001\" 150\n"
   },
   {
     "type": "DialogueInfo",
@@ -12136,7 +12154,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       }
     ],
@@ -12165,6 +12183,17 @@
     "text": "What is this nonsense? I had nothing to do wi– Alright, listen. Things didn’t exactly go as planned, but I can still do this. There is a noble in Vivec. Barren Alen, the Treasurer in Hlaalu Canton. I only needed this one final piece to support several claims I’ve made. I know that he has money. I think that he’ll make a deal. We can help each other. You’ll support my story and convince Alen to make the deal. Once this is done, I’ll withdraw all my claims against the Temple. I’ll also give you a cut. 300 gold.",
     "filters": [
       {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_journal",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
         "index": 3,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -12172,7 +12201,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       }
     ],
