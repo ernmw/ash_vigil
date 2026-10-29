@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 408,
+    "num_objects": 409,
     "masters": [
       [
         "Morrowind.esm",
@@ -11807,7 +11807,7 @@
         }
       }
     ],
-    "script_text": "ModDisposition -20\r\nGoodbye"
+    "script_text": "ModDisposition -20\nGoodbye"
   },
   {
     "type": "DialogueInfo",
@@ -11890,7 +11890,7 @@
         }
       }
     ],
-    "script_text": "ModDisposition 15\r\nJournal \"AV_mm_savel\" 55\r\nplayer->AddItem \"Gold_001\" 300\r\n"
+    "script_text": "ModDisposition 15\nJournal \"AV_mm_savel\" 55\nplayer->AddItem \"Gold_001\" 300\n"
   },
   {
     "type": "DialogueInfo",
@@ -11944,11 +11944,11 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       }
     ],
-    "script_text": "ModDisposition -20\r\nGoodbye"
+    "script_text": "ModDisposition -20\nGoodbye"
   },
   {
     "type": "DialogueInfo",
@@ -12002,11 +12002,11 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 20
+          "data": 10
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 40\r\nModDisposition 10"
+    "script_text": "Journal \"AV_mm_savel\" 40\nModDisposition 10"
   },
   {
     "type": "DialogueInfo",
@@ -12212,7 +12212,7 @@
     "flags": "",
     "id": "193969472417815577374980504186",
     "prev_id": "295765880111066161873920209976",
-    "next_id": "6798257787385001205",
+    "next_id": "38807396461564562207619299609",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -12257,8 +12257,55 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "6798257787385001205",
+    "id": "38807396461564562207619299609",
     "prev_id": "193969472417815577374980504186",
+    "next_id": "6798257787385001205",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6798257787385001205",
+    "prev_id": "38807396461564562207619299609",
     "next_id": "6760904308643759029",
     "data": {
       "dialogue_type": "Topic",
