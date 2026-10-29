@@ -7255,7 +7255,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_daedric_detective\" 100\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nModDisposition 10\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 1000\nSet AV_stone_location 3"
+    "script_text": "Journal \"AV_daedric_detective\" 100\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nModDisposition 10\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 1000\nSet AV_stone_location 1"
   },
   {
     "type": "DialogueInfo",
@@ -8257,7 +8257,7 @@
         "id": "AV_stone_location",
         "value": {
           "type": "Integer",
-          "data": 3
+          "data": 1
         }
       }
     ],
@@ -8304,7 +8304,7 @@
         "id": "AV_stone_location",
         "value": {
           "type": "Integer",
-          "data": 3
+          "data": 1
         }
       }
     ],
