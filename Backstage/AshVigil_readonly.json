@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1713532
+        1733277
       ]
     ]
   },
@@ -1429,7 +1429,7 @@
     "id": "AV_DarkSeducerV",
     "name": "Vep'ious'andra",
     "script": "cybDSFight",
-    "mesh": "tr\\cr\\tr_cr_seducerdark_02.nif",
+    "mesh": "AshVigil\\tr_cr_seducerdark_02.nif",
     "inventory": [
       [
         1,
