@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Place Savel Body
+instances:
+  - conditions:
+      - has_journal:
+          quest: av_mm_savel
+          min: 10
+      # Coordinates: 410.258 -531.44 376.753
+      # toward center: Coordinates: -127.973 34.0702 384
+      - record_id: "Furn_shrine_Veloth_cure_01"
+    once: true
+    actions:
+      - create:
+          AV_AngryGhostBody:
+            position:
+              x: -350
+              y: 470
+  - conditions:
+      - has_journal:
+          quest: av_mm_savel
+          min: 10
+      # Coordinates: 410.258 -531.44 376.753
+      # toward center: Coordinates: -127.973 34.0702 384
+      - record_id: "Furn_shrine_Veloth_cure_01"
+    once: true
+    actions:
+      - create:
+          AV_savel_journal:
+            position:
+              x: -320
+              y: 500
+              z: 13
