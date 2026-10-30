@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 403,
+    "num_objects": 406,
     "masters": [
       [
         "Morrowind.esm",
@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1733277
+        1713532
       ]
     ]
   },
@@ -34,6 +34,15 @@
     "type": "GlobalVariable",
     "flags": "",
     "id": "AV_InsideTomb",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_SloadFightLair",
     "value": {
       "type": "Short",
       "data": 0
@@ -287,36 +296,6 @@
   {
     "type": "Script",
     "flags": "",
-    "id": "StrongSoulCheck",
-    "header": {
-      "num_shorts": 1,
-      "num_longs": 0,
-      "num_floats": 0,
-      "bytecode_length": 1120,
-      "variables_length": 8
-    },
-    "variables": "KLUv/QBYYQAACAAAAGNvdW50ZXIA",
-    "bytecode": "KLUv/QBYhQkAIkwrKpC3Of//////D9iZJBK+pLXbpYmFTF3yKXuOBKDYREjP26KZcdNYvrFJBpmUSZMMunoS5w++ZMEYSMSTybaBQBx5BV0D2UfAYx2Sm3qqvEbN+VRZODhi/nUextnmfeKo3qJ+LtEs41Cof8bZhvqjqCpCDc1kiYjos4eIEujKqIdHC5SC7yMkTdgffFY8ZSwcqEAmg02BO4FlIpdVw8roDFtLyt286lbAXNYCQAhAqFHNQWZhQamwcwAjCcxUBxLoEBqGoqhGoCxlBSOYYKKZYHKZLQc1RChttvB6/CALjCZ6xdVA7fNQvniO1lzL3GOOZOzjc1Rev9pFJA33BIP/aWLZDMa+3NNtuO6Pg0nRHRTy9dA130F5Z9J9yOVKP2hnT841IPnFpY6Myj2zGg==",
-    "text": "Begin StrongSoulCheck\n\nshort counter\n\n;in Greeting for HT_Stronghold (phase 1)\n\nSet \"llunela hleran\".hasSoul to 0\nSet counter to 0\n\nif ( Player->HasSoulGem \"atronach_storm\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"atronach_storm\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"atronach_storm_summon\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"atronach_storm_summon\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"golden saint\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"golden saint\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"golden saint_summon\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"golden saint_summon\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"golden saint_staada\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"golden saint_staada\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"winged twilight\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"winged twilight\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"winged twilight_summon\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"winged twilight_summon\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( Player->HasSoulGem \"winged twilight_grunda_\" > 1 )\n\tSet counter to ( counter + 2 )\nelseif ( Player->HasSoulGem \"winged twilight_grunda_\" > 0 )\n\tSet counter to ( counter + 1 )\nendif\n\nif ( counter > 1 )\n\tSet \"llunela hleran\".hasSoul to 1\nendif\n\nStopScript StrongSoulCheck\n\nEnd"
-  },
-  {
-    "type": "Script",
-    "flags": "",
-    "id": "StrongSoulRemove",
-    "header": {
-      "num_shorts": 1,
-      "num_longs": 0,
-      "num_floats": 0,
-      "bytecode_length": 1873,
-      "variables_length": 8
-    },
-    "variables": "KLUv/QBYYQAACAAAAGNvdW50ZXIA",
-    "bytecode": "KLUv/QBYrQgAMkomKoCpbSYyIiMyIlMEhjqJwBTZJzsb5TabYzbaeOGOJgUQEmGS6EMMYriTDLuOwqWDiJM/bzr9Z60D5izcMFC3OdHHJBQgRA9G2Hhu7k3YIDDo1v3M+Qm78nQt+lMYSf4zSf4zZ5ku5VShhTfZRIEZ1oWk/hWKJHo6/R5wXhYR3ByLUFfRcQJZZYEdWG1lAcYiDXyorQugVMBDOCDgQrHVBp46r2C/Bv4aMnRK+FAgeWE8HLJQF2rt4O8OD3cuDIUA1d2szqBj4HEhS1eHDQXq18DHIROJBDCjepAAtgBRu1YKczS8UCB+DbwbkP1HQOr/wK6hvGPtLumsQb5DQGVQvqidlSfGwmCjMS63INxhTYeHAg==",
-    "text": "Begin StrongSoulRemove\n\n;called in dialogue for HT_Stronghold (phase 1)\n\nshort counter\n\nSet counter to 2\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_ttmk\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_staada\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_staada\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_grunda_\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_grunda_\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\n;do it all again...\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"atronach_storm_ttmk\" > 0 )\n\t\tPlayer->RemoveSoulGem \"atronach_storm_ttmk\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"golden saint_staada\" > 0 )\n\t\tPlayer->RemoveSoulGem \"golden saint_staada\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_summon\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_summon\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\nif ( counter > 0 )\n\tif ( Player->HasSoulGem \"winged twilight_grunda_\" > 0 )\n\t\tPlayer->RemoveSoulGem \"winged twilight_grunda_\" 1\n\t\tSet counter to ( counter - 1 )\n\tendif\nendif\n\n\nStopScript StrongSoulRemove\n\nEnd"
-  },
-  {
-    "type": "Script",
-    "flags": "",
     "id": "cybDSFight",
     "header": {
       "num_shorts": 0,
@@ -342,7 +321,37 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybGSFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\n\nif ( GetJournalIndex \"AV_audit_beran\" < 10 )\n\t; quest hasn't started\n\tDisable\nelse\n\t; appear\n\tEnable\nendif\n\nEnd cybGSFight"
+    "text": "Begin cybGSFight\n\nshort doonce\nshort GSARb\n\nif ( GSARb == 0 )\n\tsetarmorbonus 100\n\tset GSARb to 1\nendif\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio <= 0.5 )\n\t\taddspell \"cybGSscamps\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( GetJournalIndex \"AV_audit_beran\" < 10 )\n\t; quest hasn't started\n\tDisable\nelse\n\t; appear\n\tEnable\nendif\n\nEnd cybGSFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybGhostFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybGhostFight\n\nif ( OnActivate == 1 )\n\treturn\nendif\n\nif ( onDeath == 1 )\n\tif ( getdisabled == 0 )\n\t\tplaysound \"mysticism hit\"\n\t\tdisable\n\tendif\nendif\n\nif ( geteffect, sEffectTurnUndead == 1 )\n\tif ( getdisabled == 0 )\n\t\tplaysound \"conjuration hit\"\n\t\tMessageBox \"Angry ghost was banished with magic.\"\n\t\tdisable\n\tendif\nendif\n\nif ( geteffect, sEffectCalmCreature == 1 )\n\tif ( getdisabled == 0 )\n\t\tplaysound \"illusion hit\"\n\t\tMessageBox \"Angry ghost was calmed with magic and vanished.\"\n\t\tdisable\n\tendif\nendif\n\nif ( geteffect, sEffectCalmHumanoid == 1 )\n\tif ( getdisabled == 0 )\n\t\tplaysound \"illusion hit\"\n\t\tMessageBox \"Angry ghost was calmed with magic and vanished.\"\n\t\tdisable\n\tendif\nendif\n\nEnd cybGhostFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybGhostSpawn",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybGhostSpawn\n\nshort triggered\n\nif ( triggered == 0 )\n    if ( OnActivate )\n        set triggered to 1\n        PlaceAtPC \"AV_AngryGhost\" 1,200,0\n\t\tplaysound \"illusion cast\"\n        Activate\n    elseif ( Player->GetItemCount \"AV_savel_journal\" > 0 )\n        set triggered to 1\n        PlaceAtPC \"AV_AngryGhost\" 1,200,0\n\t\tplaysound \"illusion cast\"\n    endif\nendif\n\nEnd"
   },
   {
     "type": "Script",
@@ -357,7 +366,22 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybSloadFight\n\nshort doonce\nshort SloadEscape\nfloat StasisTimer\nfloat SloadEscapeTim\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio < 0.75 )\n\t\tcast \"cybSloadStasis\" \"cybtestsload\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( doonce == 1 )\n\tif ( GetEffect, sEffectReflect == 1 )\n\t\tsetparalysis 1\n\t\tset StasisTimer to 15\n\t\tset doonce to 2\n\tendif\nendif\n\nif ( doonce == 2 )\n    set StasisTimer to ( StasisTimer - GetSecondsPassed )\n\n    if ( StasisTimer <= 0 )\n        setparalysis 0\n        set doonce to 3\n    endif\n\n\tif ( GetEffect, sEffectReflect == 0 )\n\t\tset StasisTimer to 0\n\t\tsetparalysis 0\n        set doonce to 3\n\tendif\n\n\tif ( getspell \"cybSloadStasisSum\" == 0 )\n\t\taddspell \"cybSloadStasisSum\"\n\tendif\n\nendif\n\nif ( doonce == 3 )\n    if ( SloadEscape == 0 )\n        if ( GetHealthGetRatio < 0.25 )\n            cast \"cybSloadTeleport\" \"cybtestsload\"\n\n            if ( GetEffect, sEffectDetectAnimal == 1 )\n                set SloadEscape to 1\n                set SloadEscapeTim to 1\n            endif\n        endif\n    endif\n\n    if ( SloadEscape == 1 )\n        set SloadEscapeTim to ( SloadEscapeTim - GetSecondsPassed )\n\n        if ( SloadEscapeTim <= 0 )\n            set SloadEscape to 2\n            disable\n        endif\n    endif\nendif\n\nEnd cybSloadFight"
+    "text": "Begin cybSloadFight\n\nshort doonce\nshort SloadARb\nshort SloadEscape\nshort OnPCHitMe\nfloat StasisTimer\nfloat SloadEscapeTim\n\nif ( SloadARb == 0 )\n\tsetarmorbonus 75\n\tset SloadARb to 1\nendif\n\nif ( AV_SloadFightLair == 0 )\n\tif ( OnPCHitMe == 1 )\n\t\tset AV_SloadFightLair to 1\n\t\tset OnPCHitMe to 0\n\tendif\nelse\n\tstartcombat player\nendif\n\nif ( doonce == 0 )\n\tif ( GetHealthGetRatio < 0.75 )\n\t\tcast \"cybSloadStasis\" \"AV_Sload\"\n\t\tset doonce to 1\n\tendif\nendif\n\nif ( doonce == 1 )\n\tif ( GetEffect, sEffectReflect == 1 )\n\t\tsetparalysis 1\n\t\tset StasisTimer to 15\n\t\tset doonce to 2\n\tendif\nendif\n\nif ( doonce == 2 )\n    set StasisTimer to ( StasisTimer - GetSecondsPassed )\n\n    if ( StasisTimer <= 0 )\n        setparalysis 0\n        set doonce to 3\n    endif\n\n\tif ( GetEffect, sEffectReflect == 0 )\n\t\tset StasisTimer to 0\n\t\tsetparalysis 0\n        set doonce to 3\n\tendif\n\n\tif ( getspell \"cybSloadStasisSum\" == 0 )\n\t\taddspell \"cybSloadStasisSum\"\n\tendif\n\nendif\n\nif ( doonce == 3 )\n    if ( SloadEscape == 0 )\n        if ( GetHealthGetRatio < 0.25 )\n            cast \"cybSloadTeleport\" \"AV_Sload\"\n\n            if ( GetEffect, sEffectDetectAnimal == 1 )\n                set SloadEscape to 1\n                set SloadEscapeTim to 1\n            endif\n        endif\n    endif\n\n    if ( SloadEscape == 1 )\n        set SloadEscapeTim to ( SloadEscapeTim - GetSecondsPassed )\n\n        if ( SloadEscapeTim <= 0 )\n            set SloadEscape to 2\n            disable\n        endif\n    endif\nendif\n\nEnd cybSloadFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybVelsaFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybVelsaFight\n\nshort nolore\nshort OnPCHitMe\n\nif ( AV_SloadFightLair == 0 )\n\tif ( OnPCHitMe == 1 )\n\t\tset AV_SloadFightLair to 1\n\t\tset OnPCHitMe to 0\n\tendif\nelse\n\tstartcombat player\nendif\n\nEnd cybVelsaFight"
   },
   {
     "type": "Spell",
@@ -695,16 +719,6 @@
         "duration": 0,
         "min_magnitude": 50,
         "max_magnitude": 50
-      },
-      {
-        "magic_effect": "Sanctuary",
-        "skill": "None",
-        "attribute": "None",
-        "range": "OnSelf",
-        "area": 0,
-        "duration": 0,
-        "min_magnitude": 15,
-        "max_magnitude": 15
       },
       {
         "magic_effect": "RestoreFatigue",
@@ -1612,7 +1626,7 @@
     ],
     "ai_data": {
       "hello": 0,
-      "fight": 90,
+      "fight": 30,
       "flee": 0,
       "alarm": 0,
       "services": ""
@@ -1858,6 +1872,138 @@
       "cost": 400,
       "max_charge": 400,
       "flags": "AUTO_CALCULATE"
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_AngryGhost",
+    "name": "Angry Ghost",
+    "script": "cybGhostFight",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_Nor_Silver_Claw_01"
+      ],
+      [
+        1,
+        "T_Nor_Leather1_BarcerL_01"
+      ],
+      [
+        1,
+        "T_Nor_Leather1_BarcerR_01"
+      ],
+      [
+        1,
+        "T_Nor_Leather1_Boots_01"
+      ],
+      [
+        1,
+        "T_Nor_Leather1_PauldR_01"
+      ],
+      [
+        1,
+        "T_Nor_Leather1_PauldL_01"
+      ],
+      [
+        1,
+        "T_Nor_Leather1_Cuirass_01"
+      ],
+      [
+        1,
+        "common_pants_02"
+      ],
+      [
+        1,
+        "common_shirt_06"
+      ]
+    ],
+    "spells": [
+      "ghost ability"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 100,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 200,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 20,
+        "idle5": 20,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 20,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Nord",
+    "class": "Thief",
+    "faction": "",
+    "head": "b_n_nord_m_hair05",
+    "hair": "b_n_nord_m_head_01",
+    "npc_flags": "IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "level": 13,
+      "stats": {
+        "attributes": [
+          65,
+          0,
+          50,
+          80,
+          80,
+          70,
+          0,
+          40
+        ],
+        "skills": [
+          40,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          50,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          20,
+          5,
+          70,
+          50,
+          75,
+          75,
+          20,
+          5,
+          5,
+          40
+        ],
+        "health": 180,
+        "magicka": 0,
+        "fatigue": 300
+      },
+      "disposition": 0,
+      "reputation": 0,
+      "rank": 0,
+      "gold": 0
     }
   },
   {
@@ -2349,7 +2495,7 @@
     "flags": "",
     "id": "AV_SloadRHH",
     "name": "Velsa Sendu",
-    "script": "nolore",
+    "script": "cybVelsaFight",
     "mesh": "",
     "inventory": [
       [
@@ -2426,7 +2572,7 @@
       "hello": 30,
       "fight": 30,
       "flee": 20,
-      "alarm": 100,
+      "alarm": 0,
       "services": ""
     },
     "ai_packages": [
@@ -2527,7 +2673,7 @@
     "flags": "",
     "id": "AV_savel_journal",
     "name": "Thief's Journal",
-    "script": "",
+    "script": "cybGhostSpawn",
     "mesh": "m\\Text_Octavo_03.NIF",
     "icon": "m\\Tx_octavo_03.tga",
     "enchanting": "",
