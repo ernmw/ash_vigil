@@ -351,7 +351,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybGhostSpawn\n\nshort triggered\n\nif ( triggered == 0 )\n    ; place in world, not in container\n    if ( OnActivate )\n        set triggered to 1\n        PlaceAtPC \"AV_AngryGhost\" 1,200,0\n\t\tplaysound \"illusion cast\"\n        Activate\n    endif\nendif\n\nEnd"
+    "text": "Begin cybGhostSpawn\n\nshort triggered\n\nif ( triggered == 0 )\n\n    if ( OnActivate )\n\n        if ( GetPCCell \"Savel Ancestral Tomb\" == 1 )\n\n            set triggered to 1\n\n            PlaceAtPC \"AV_AngryGhost\" 1, 200, 0\n\n            PlaySound \"illusion cast\"\n\n        endif\n\n        Activate\n\n    endif\n\nendif\n\nEnd"
   },
   {
     "type": "Script",
