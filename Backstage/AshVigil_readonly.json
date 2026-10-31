@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 407,
+    "num_objects": 442,
     "masters": [
       [
         "Morrowind.esm",
@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1733277
+        1713532
       ]
     ]
   },
@@ -281,6 +281,51 @@
   {
     "type": "Script",
     "flags": "",
+    "id": "AV_HelanNecroScript",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_HelanNecroScript\n\nshort nolore\n\n; template for the necromancer script (disable/enable, journal entries etc.)\n\nEnd AV_HelanNecroScript\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_TaluriScript",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_TaluriScript\n\n; template for the ghost script (local flags, disable/enable etc.)\n\nEnd AV_TaluriScript\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_TappiusSCript",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_TappiusSCript\n\n; template for the ghost script (local flags, disable/enable etc.)\n\nEnd AV_TappiusSCript\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
     "id": "AV_disturbed_mucksponge_script",
     "header": {
       "num_shorts": 0,
@@ -356,6 +401,36 @@
   {
     "type": "Script",
     "flags": "",
+    "id": "cybLichFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybLichFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( getdistance, player < 400 )\n\t\tif ( GetDetected, Player == 1 )\n\t\t\tif ( player->getinvisible == 0 )\n\t\t\t\taddspell \"cybLichSummonAV\"\n\t\t\t\tplaceatpc \"AV_LichPGhost\" 1,128,1\n\t\t\t\tset doonce to 1\n\t\t\tendif\n\t\tendif\n\tendif\nendif\n\nif ( getdistance, player <= 250 )\n\tif ( getspell \"cybLichShieldAV\" == 0 )\n\t\taddspell \"cybLichShieldAV\"\n\tendif\nendif\n\nEnd cybLichFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybSkeletonFight",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybSkeletonFight\n\nshort doonce\nshort OnPCHitMe\n\nif ( doonce == 0 )\n\t\tsetarmorbonus 140\n\t\tset doonce to 1\nendif\n\nif ( AV_SloadFightLair == 0 )\n\tif ( OnPCHitMe == 1 )\n\t\tset AV_SloadFightLair to 1\n\t\tset OnPCHitMe to 0\n\tendif\nelse\n\tstartcombat player\nendif\n\nEnd cybSkeletonFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
     "id": "cybSloadFight",
     "header": {
       "num_shorts": 0,
@@ -386,6 +461,49 @@
   {
     "type": "Spell",
     "flags": "",
+    "id": "AV_MadnessCall",
+    "name": "Call of Madness",
+    "effects": [
+      {
+        "magic_effect": "SummonScamp",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "SummonScamp",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "DamageFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 2
+      }
+    ],
+    "data": {
+      "spell_type": "Power",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
     "id": "AV_calmtomb",
     "name": "Peace",
     "effects": [
@@ -404,6 +522,165 @@
       "spell_type": "Spell",
       "cost": 0,
       "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybCiniaAVAb",
+    "name": "Cinia Perma Spells",
+    "effects": [
+      {
+        "magic_effect": "SummonBonelord",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "SummonGreaterBonewalker",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybCiniaBall",
+    "name": "Devouring Blast",
+    "effects": [
+      {
+        "magic_effect": "ShockDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 0,
+        "min_magnitude": 20,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "ShockDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 20,
+        "min_magnitude": 2,
+        "max_magnitude": 2
+      },
+      {
+        "magic_effect": "AbsorbHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 0,
+        "min_magnitude": 20,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "AbsorbHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 20,
+        "min_magnitude": 2,
+        "max_magnitude": 2
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 40,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybCiniaSpellDev",
+    "name": "Draining Aura",
+    "effects": [
+      {
+        "magic_effect": "SpellAbsorption",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 8,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "SpellAbsorption",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 30,
+        "min_magnitude": 20,
+        "max_magnitude": 20
+      },
+      {
+        "magic_effect": "WeaknessToMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "DrainSkill",
+        "skill": "Enchant",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 40,
+        "max_magnitude": 40
+      },
+      {
+        "magic_effect": "DrainAttribute",
+        "skill": "None",
+        "attribute": "Agility",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 40,
+        "max_magnitude": 40
+      },
+      {
+        "magic_effect": "DamageFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 30,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 60,
+      "flags": ""
     }
   },
   {
@@ -462,8 +739,8 @@
         "range": "OnSelf",
         "area": 0,
         "duration": 0,
-        "min_magnitude": 60,
-        "max_magnitude": 60
+        "min_magnitude": 16,
+        "max_magnitude": 16
       },
       {
         "magic_effect": "Sanctuary",
@@ -850,6 +1127,337 @@
     "data": {
       "spell_type": "Spell",
       "cost": 30,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybGhostBoostAV",
+    "name": "Ghost Abilities",
+    "effects": [
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Agility",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Endurance",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Strength",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Speed",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Willpower",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybLichBoostAV",
+    "name": "Lich Abilities",
+    "effects": [
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Agility",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Endurance",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Intelligence",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Strength",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Speed",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Willpower",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      },
+      {
+        "magic_effect": "FortifyMagickaMultiplier",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 100,
+        "max_magnitude": 100
+      },
+      {
+        "magic_effect": "RestoreMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      },
+      {
+        "magic_effect": "SpellAbsorption",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 20,
+        "max_magnitude": 20
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybLichCorrosiveAV",
+    "name": "Corrosive Flames",
+    "effects": [
+      {
+        "magic_effect": "FireDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 0,
+        "min_magnitude": 40,
+        "max_magnitude": 60
+      },
+      {
+        "magic_effect": "DisintegrateWeapon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 0,
+        "min_magnitude": 80,
+        "max_magnitude": 100
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 50,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybLichPoisonAV",
+    "name": "Corrosive Cloud",
+    "effects": [
+      {
+        "magic_effect": "Poison",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 10,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      },
+      {
+        "magic_effect": "DisintegrateWeapon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 10,
+        "min_magnitude": 20,
+        "max_magnitude": 20
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 50,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybLichRestoration",
+    "name": "Lich Restoration",
+    "effects": [
+      {
+        "magic_effect": "RestoreHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 1,
+        "min_magnitude": 80,
+        "max_magnitude": 80
+      },
+      {
+        "magic_effect": "RestoreHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 3,
+        "max_magnitude": 3
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 50,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybLichShieldAV",
+    "name": "Lich Shield",
+    "effects": [
+      {
+        "magic_effect": "FireShield",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "Shield",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "Shield",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 70,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "cybLichSummonAV",
+    "name": "Lich Summon",
+    "effects": [
+      {
+        "magic_effect": "SummonSkeleton",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
       "flags": "ALWAYS_SUCCEEDS"
     }
   },
@@ -1258,6 +1866,39 @@
     }
   },
   {
+    "type": "Spell",
+    "flags": "",
+    "id": "cyb_TaluriSpell",
+    "name": "Velas Revenge",
+    "effects": [
+      {
+        "magic_effect": "FireDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 4,
+        "max_magnitude": 4
+      },
+      {
+        "magic_effect": "Poison",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 4,
+        "max_magnitude": 4
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 40,
+      "flags": ""
+    }
+  },
+  {
     "type": "MiscItem",
     "flags": "",
     "id": "AV_mm_andas_remains",
@@ -1400,6 +2041,58 @@
   {
     "type": "Weapon",
     "flags": "",
+    "id": "CybLichStaff",
+    "name": "Staff of Spell Nullification",
+    "script": "",
+    "mesh": "TR\\w\\TR_w_adamant_staff.NIF",
+    "icon": "TR\\w\\TR_w_adamant_staff.dds",
+    "enchanting": "cybLichStaff_en",
+    "data": {
+      "weight": 12.0,
+      "value": 8000,
+      "weapon_type": "BluntTwoWide",
+      "health": 700,
+      "speed": 1.75,
+      "reach": 1.8,
+      "enchantment": 130,
+      "chop_min": 2,
+      "chop_max": 14,
+      "slash_min": 3,
+      "slash_max": 14,
+      "thrust_min": 1,
+      "thrust_max": 10,
+      "flags": "IGNORES_NORMAL_WEAPON_RESISTANCE"
+    }
+  },
+  {
+    "type": "Weapon",
+    "flags": "",
+    "id": "cybCiniaAxe",
+    "name": "Cinia's Toothed Axe",
+    "script": "",
+    "mesh": "Sky\\w\\Sky_Orc_THD_Axe_01.nif",
+    "icon": "Sky\\w\\Tx_Orc_THD_Axe_01.dds",
+    "enchanting": "cybCiniaAxe_en",
+    "data": {
+      "weight": 23.0,
+      "value": 6000,
+      "weapon_type": "AxeTwoHand",
+      "health": 2500,
+      "speed": 1.0,
+      "reach": 1.0,
+      "enchantment": 100,
+      "chop_min": 18,
+      "chop_max": 32,
+      "slash_min": 2,
+      "slash_max": 23,
+      "thrust_min": 0,
+      "thrust_max": 2,
+      "flags": "IGNORES_NORMAL_WEAPON_RESISTANCE"
+    }
+  },
+  {
+    "type": "Weapon",
+    "flags": "",
     "id": "cybDarkSeducerSaber",
     "name": "Saber of Mad Accord",
     "script": "",
@@ -1429,7 +2122,7 @@
     "id": "AV_DarkSeducerV",
     "name": "Vep'ious'andra",
     "script": "cybDSFight",
-    "mesh": "AshVigil\\tr_cr_seducerdark_02.nif",
+    "mesh": "AshVigil\\xtr_cr_seducer_01.nif",
     "inventory": [
       [
         1,
@@ -1458,23 +2151,7 @@
       "alarm": 0,
       "services": ""
     },
-    "ai_packages": [
-      {
-        "type": "Wander",
-        "distance": 1000,
-        "duration": 5,
-        "game_hour": 0,
-        "idle2": 60,
-        "idle3": 20,
-        "idle4": 10,
-        "idle5": 0,
-        "idle6": 0,
-        "idle7": 0,
-        "idle8": 0,
-        "idle9": 0,
-        "reset": 1
-      }
-    ],
+    "ai_packages": [],
     "travel_destinations": [],
     "sound": "BM_spriggan",
     "creature_flags": "BIPED | WEAPON_AND_SHIELD | IS_BASE",
@@ -1491,7 +2168,7 @@
       "personality": 100,
       "luck": 65,
       "health": 400,
-      "magicka": 755,
+      "magicka": 360,
       "fatigue": 700,
       "soul": 450,
       "combat": 90,
@@ -1508,6 +2185,175 @@
       "attack3": [
         20,
         60
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_GhostTaluriVelas",
+    "name": "Taluri Velas",
+    "script": "AV_TaluriScript",
+    "mesh": "r\\AncestorGhost.NIF",
+    "inventory": [
+      [
+        1,
+        "random_ectoplasm"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to frost",
+      "immune to shock",
+      "immune to disease",
+      "immune to normal weapons",
+      "immune to fire",
+      "ghost ability",
+      "cyb_TaluriSpell"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 300,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "ancestor_ghost",
+    "creature_flags": "IS_BASE | WALKS",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 14,
+      "strength": 60,
+      "intelligence": 100,
+      "willpower": 100,
+      "agility": 80,
+      "speed": 25,
+      "endurance": 80,
+      "personality": 50,
+      "luck": 50,
+      "health": 150,
+      "magicka": 160,
+      "fatigue": 400,
+      "soul": 180,
+      "combat": 60,
+      "magic": 90,
+      "stealth": 30,
+      "attack1": [
+        15,
+        33
+      ],
+      "attack2": [
+        15,
+        33
+      ],
+      "attack3": [
+        15,
+        33
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_GhostTappius",
+    "name": "Tappius Scala",
+    "script": "AV_TappiusSCript",
+    "mesh": "r\\AncestorGhost.NIF",
+    "inventory": [
+      [
+        1,
+        "random_ectoplasm"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to frost",
+      "immune to shock",
+      "immune to disease",
+      "immune to normal weapons",
+      "immune to fire",
+      "ghost ability",
+      "regenerate [ability]"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 300,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "ancestor_ghost",
+    "scale": 1.3,
+    "creature_flags": "IS_BASE | WALKS",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 14,
+      "strength": 85,
+      "intelligence": 50,
+      "willpower": 100,
+      "agility": 100,
+      "speed": 25,
+      "endurance": 100,
+      "personality": 50,
+      "luck": 50,
+      "health": 200,
+      "magicka": 50,
+      "fatigue": 400,
+      "soul": 180,
+      "combat": 90,
+      "magic": 10,
+      "stealth": 30,
+      "attack1": [
+        21,
+        45
+      ],
+      "attack2": [
+        21,
+        45
+      ],
+      "attack3": [
+        21,
+        45
       ],
       "gold": 0
     }
@@ -1603,6 +2449,192 @@
   {
     "type": "Creature",
     "flags": "",
+    "id": "AV_LichP",
+    "name": "Goron Velas",
+    "script": "cybLichFight",
+    "mesh": "r\\Liche.NIF",
+    "inventory": [
+      [
+        1,
+        "CybLichStaff"
+      ],
+      [
+        1,
+        "T_IngCrea_LichDust_01"
+      ],
+      [
+        1,
+        "random_bonemeal"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to disease",
+      "resist shock_50",
+      "immune to frost",
+      "immune to paralysis",
+      "T_Dis_CalironsCurse",
+      "chills",
+      "T_Dis_ChronDiasis",
+      "T_Dis_Wizardfever",
+      "cybLichBoostAV",
+      "cybLichCorrosiveAV",
+      "cybLichPoisonAV",
+      "cybLichRestoration"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 90,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 1000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "lich",
+    "creature_flags": "BIPED | WEAPON_AND_SHIELD | IS_BASE",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 25,
+      "strength": 75,
+      "intelligence": 100,
+      "willpower": 130,
+      "agility": 80,
+      "speed": 65,
+      "endurance": 90,
+      "personality": 50,
+      "luck": 50,
+      "health": 360,
+      "magicka": 900,
+      "fatigue": 1000,
+      "soul": 350,
+      "combat": 70,
+      "magic": 110,
+      "stealth": 50,
+      "attack1": [
+        20,
+        50
+      ],
+      "attack2": [
+        20,
+        50
+      ],
+      "attack3": [
+        20,
+        50
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_LichPGhost",
+    "name": "Plaguebearer Ghost",
+    "script": "",
+    "mesh": "r\\AncestorGhost.NIF",
+    "inventory": [
+      [
+        1,
+        "random_ectoplasm"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to frost",
+      "immune to shock",
+      "immune to disease",
+      "immune to normal weapons",
+      "immune to fire",
+      "ghost ability",
+      "T_Dis_Wizardfever",
+      "T_Dis_ChronDiasis",
+      "chills",
+      "T_Dis_CalironsCurse",
+      "cybGhostBoostAV"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 90,
+      "flee": 20,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 512,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "ancestor_ghost",
+    "scale": 1.3000001,
+    "creature_flags": "IS_BASE | WALKS",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 14,
+      "strength": 100,
+      "intelligence": 100,
+      "willpower": 100,
+      "agility": 100,
+      "speed": 25,
+      "endurance": 100,
+      "personality": 50,
+      "luck": 75,
+      "health": 150,
+      "magicka": 100,
+      "fatigue": 400,
+      "soul": 180,
+      "combat": 85,
+      "magic": 20,
+      "stealth": 50,
+      "attack1": [
+        25,
+        45
+      ],
+      "attack2": [
+        25,
+        45
+      ],
+      "attack3": [
+        25,
+        45
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
     "id": "AV_Sload",
     "name": "D'lgotha",
     "script": "cybSloadFight",
@@ -1686,6 +2718,95 @@
     }
   },
   {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_SloadSkelChamp",
+    "name": "D'lgotha's Skeleton Champion",
+    "script": "cybSkeletonFight",
+    "mesh": "r\\Skeleton.NIF",
+    "inventory": [
+      [
+        1,
+        "ingred_bonemeal_01"
+      ],
+      [
+        3,
+        "random_bonemeal"
+      ],
+      [
+        1,
+        "T_Orc_Regular_Claymore_01"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to disease",
+      "immune to frost",
+      "resist shock_50"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 10,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 1000,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "sound": "skeleton",
+    "scale": 1.1,
+    "creature_flags": "BIPED | WEAPON_AND_SHIELD | IS_BASE",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 20,
+      "strength": 100,
+      "intelligence": 50,
+      "willpower": 50,
+      "agility": 100,
+      "speed": 65,
+      "endurance": 100,
+      "personality": 50,
+      "luck": 50,
+      "health": 250,
+      "magicka": 30,
+      "fatigue": 1000,
+      "soul": 200,
+      "combat": 100,
+      "magic": 20,
+      "stealth": 20,
+      "attack1": [
+        20,
+        40
+      ],
+      "attack2": [
+        20,
+        40
+      ],
+      "attack3": [
+        20,
+        40
+      ],
+      "gold": 0
+    }
+  },
+  {
     "type": "Enchanting",
     "flags": "",
     "id": "AV_mule",
@@ -1706,6 +2827,39 @@
       "cost": 0,
       "max_charge": 0,
       "flags": "0xfffe"
+    }
+  },
+  {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "cybCiniaAxe_en",
+    "effects": [
+      {
+        "magic_effect": "Reflect",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      },
+      {
+        "magic_effect": "FortifySkill",
+        "skill": "Axe",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      }
+    ],
+    "data": {
+      "enchant_type": "ConstantEffect",
+      "cost": 1,
+      "max_charge": 1,
+      "flags": ""
     }
   },
   {
@@ -1872,6 +3026,49 @@
       "cost": 400,
       "max_charge": 400,
       "flags": "AUTO_CALCULATE"
+    }
+  },
+  {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "cybLichStaff_en",
+    "effects": [
+      {
+        "magic_effect": "Dispel",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 8,
+        "duration": 1,
+        "min_magnitude": 50,
+        "max_magnitude": 100
+      },
+      {
+        "magic_effect": "SpellAbsorption",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 5,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "SpellAbsorption",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 30,
+        "min_magnitude": 20,
+        "max_magnitude": 20
+      }
+    ],
+    "data": {
+      "enchant_type": "CastWhenUsed",
+      "cost": 100,
+      "max_charge": 400,
+      "flags": ""
     }
   },
   {
@@ -2116,6 +3313,156 @@
       },
       "disposition": 0,
       "reputation": 0,
+      "rank": 0,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_Cinia",
+    "name": "Cinia Carrus",
+    "script": "nolore",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_belt_01"
+      ],
+      [
+        2,
+        "p_restore_health_e"
+      ],
+      [
+        1,
+        "dragonscale_cuirass"
+      ],
+      [
+        1,
+        "T_Imp_Dragonscale_PauldronL_01"
+      ],
+      [
+        1,
+        "T_Imp_Dragonscale_PauldronR_01"
+      ],
+      [
+        1,
+        "adamantium_bracer_left"
+      ],
+      [
+        1,
+        "adamantium_bracer_right"
+      ],
+      [
+        1,
+        "dragonscale_helm"
+      ],
+      [
+        1,
+        "T_Imp_Silver_Greaves_01"
+      ],
+      [
+        1,
+        "T_Imp_Silver_Boots_01"
+      ],
+      [
+        1,
+        "T_Com_Ex_Shirt_01"
+      ],
+      [
+        1,
+        "T_Com_Ex_Skirt_01"
+      ],
+      [
+        1,
+        "cybCiniaAxe"
+      ]
+    ],
+    "spells": [
+      "cybCiniaAVAb",
+      "cybCiniaBall",
+      "cybCiniaSpellDev"
+    ],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 10,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 256,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Imperial",
+    "class": "Battlemage",
+    "faction": "",
+    "head": "b_n_imperial_f_head_03",
+    "hair": "B_N_Imperial_F_Hair_07",
+    "npc_flags": "FEMALE | IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "level": 25,
+      "stats": {
+        "attributes": [
+          85,
+          100,
+          100,
+          85,
+          60,
+          80,
+          60,
+          40
+        ],
+        "skills": [
+          40,
+          5,
+          90,
+          90,
+          70,
+          5,
+          75,
+          5,
+          25,
+          50,
+          80,
+          25,
+          25,
+          90,
+          80,
+          25,
+          25,
+          5,
+          5,
+          25,
+          5,
+          5,
+          5,
+          5,
+          5,
+          40,
+          5
+        ],
+        "health": 220,
+        "magicka": 200,
+        "fatigue": 350
+      },
+      "disposition": 50,
+      "reputation": 12,
       "rank": 0,
       "gold": 0
     }
@@ -2718,6 +4065,78 @@
       "level": 30,
       "disposition": 50,
       "reputation": 12,
+      "rank": 0,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_necromancerHelan",
+    "name": "Fadren Dalar",
+    "script": "AV_HelanNecroScript",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_De_Cm_Robe_01"
+      ],
+      [
+        1,
+        "T_Com_Cm_Shoes_01"
+      ],
+      [
+        1,
+        "p_restore_magicka_s"
+      ],
+      [
+        1,
+        "sc_summonskeletalservant"
+      ],
+      [
+        1,
+        "T_Com_Steel_Staff_Disorient"
+      ]
+    ],
+    "spells": [
+      "summon skeletal minion"
+    ],
+    "ai_data": {
+      "hello": 30,
+      "fight": 90,
+      "flee": 20,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 500,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Necromancer",
+    "faction": "",
+    "head": "b_n_dark elf_m_head_06",
+    "hair": "b_n_dark elf_m_hair_02",
+    "npc_flags": "IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 13,
+      "disposition": 0,
+      "reputation": 0,
       "rank": 0,
       "gold": 0
     }
@@ -4780,7 +6199,7 @@
     "flags": "",
     "id": "30880746287565079535000953574",
     "prev_id": "22164207282642835034325131475",
-    "next_id": "343458272710788863793636198557",
+    "next_id": "201357628815117105370940008578",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -4825,9 +6244,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "343458272710788863793636198557",
+    "id": "201357628815117105370940008578",
     "prev_id": "30880746287565079535000953574",
-    "next_id": "28691779438170525495783640989",
+    "next_id": "31387448571561757598678676007",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -4842,49 +6261,99 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I can feel Dublurep’s death. It is warm and sweet, just like you, little friend. Now bring me the orb and you’ll be rewarded.",
+    "text": "[Dark Seducer blows you a kiss, grins wickedly and vanishes with a loud crack]",
     "filters": [
       {
-        "index": 3,
-        "filter_type": "Dead",
-        "function": "DeadType",
-        "comparison": "Greater",
-        "id": "AV_GoldenSaintD",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Item",
-        "function": "ItemType",
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
         "comparison": "Equal",
-        "id": "AV_obsidian_orb",
+        "id": "",
         "value": {
           "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 20
+          "data": 103
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30"
+    "script_text": "Messagebox, \"You hear cackling sounds. Something is not right here.\"\n\nset AV_stone_location to 2\nplaysound \"conjuration hit\"\n\nGoodbye"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "28691779438170525495783640989",
-    "prev_id": "343458272710788863793636198557",
+    "id": "31387448571561757598678676007",
+    "prev_id": "201357628815117105370940008578",
+    "next_id": "11218991567872772844572616589",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Vep'ious'andra looks straight into your eyes and bites her lip] My time here is almost at end. My master calls, you see. I’ll miss you so, so much, darling. I hope my presents bring you joy. [She tilts her head] You won’t forget about me, right? Well, let me demonstrate how it all works.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 102
+        }
+      }
+    ],
+    "script_text": "Messagebox, \"You learned Call of Madness power.\"\nplayer->addspell \"AV_MadnessCall\"\n\nChoice \"Continue\" 103"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11218991567872772844572616589",
+    "prev_id": "31387448571561757598678676007",
+    "next_id": "128494158610399294375429014112",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Vep'ious'andra circles around you and whispers into your other ear] You need to focus now. Mh-hm-hm. I know it’s hard to focus with me around. Just try it. No distractions. Can you manage it? [She brushes your check gently] Only for a moment. Think about bringing something new into this world. It’s not a scary thought. It’s a beautiful one. With the right touch, the barrier between the planes crack. Not for long. But long enough.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 101
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 102"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "128494158610399294375429014112",
+    "prev_id": "11218991567872772844572616589",
     "next_id": "29749974272952443845178555048",
     "data": {
       "dialogue_type": "Greeting",
@@ -4900,49 +6369,27 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "You have the orb, but haven’t yet killed Dublurep. Return to me once you’ve slain her, and you’ll be rewarded.",
+    "text": "[Vep'ious'andra steps closer and whispers into your ear] There is this little magic trick I’d like to teach you. It will bring... companions into this plane. Not nearly as lovely as me, of course. But they have their uses. I don’t want them interrupting us here. Not yet. Let us have a few moments just to ourselves.",
     "filters": [
       {
-        "index": 3,
-        "filter_type": "Dead",
-        "function": "DeadType",
-        "comparison": "Greater",
-        "id": "AV_GoldenSaintD",
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "Greater",
-        "id": "AV_obsidian_orb",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 20
+          "data": 100
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30"
+    "script_text": "Choice \"Continue\" 101"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "29749974272952443845178555048",
-    "prev_id": "28691779438170525495783640989",
+    "prev_id": "128494158610399294375429014112",
     "next_id": "768436939017681305692544628459",
     "data": {
       "dialogue_type": "Greeting",
@@ -4958,7 +6405,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Oh, my sweet little darling. You've been so good to me. And a promise is a promise, isn't it? Here, take my saber. A dangerous thing for my dangerous friend. Now run along, pretty thing. I have some business to attend to.",
+    "text": "Oh, my sweet little darling. You've been so good to me. And a promise is a promise, isn't it? Here, take my saber. A dangerous weapon for my dangerous friend. Now, as for my other gifts to you…",
     "filters": [
       {
         "index": 4,
@@ -5005,14 +6452,14 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 2\nGoodbye\n"
+    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\n\nChoice \"Continue\" 100"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "768436939017681305692544628459",
     "prev_id": "29749974272952443845178555048",
-    "next_id": "242755894716837064459540208662",
+    "next_id": "180999392318296587957130011590",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -5079,7 +6526,7 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "242755894716837064459540208662",
+    "id": "180999392318296587957130011590",
     "prev_id": "768436939017681305692544628459",
     "next_id": "77809499604852021840822789036",
     "data": {
@@ -5096,49 +6543,27 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "A present? For me? I didn’t doubt you for a moment, darling. Everything you wish is within your reach, now.",
+    "text": "This is a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only one tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.",
     "filters": [
       {
         "index": 3,
-        "filter_type": "Dead",
-        "function": "DeadType",
-        "comparison": "Greater",
-        "id": "AV_GoldenSaintD",
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "Greater",
-        "id": "AV_obsidian_orb",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
-        "value": {
-          "type": "Integer",
-          "data": 30
+          "data": 20
         }
       }
     ],
-    "script_text": "Choice \"[Give her the orb.]\" 1 \"No. I'm not giving it to you.\" 2"
+    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "77809499604852021840822789036",
-    "prev_id": "242755894716837064459540208662",
+    "prev_id": "180999392318296587957130011590",
     "next_id": "79861914203399377430744631155",
     "data": {
       "dialogue_type": "Greeting",
@@ -5154,7 +6579,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Ah, so hasty. So impatient.  Don’t worry, we’ll have time to play. You just haven’t heard what I have to say yet. We can help each other. In fact, you’ve helped me already. I know what you’ve done. Dublurep, my rival, is dead. I know it was your doing.\n\nThis is a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only one tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.",
+    "text": "Ah, so hasty. So impatient.  Don’t worry, we’ll have time to play. You just haven’t heard what I have to say yet. We can help each other. In fact, you’ve helped me already. I know what you’ve done. Dublurep, my rival, is dead. I know it was your doing.",
     "filters": [
       {
         "index": 4,
@@ -5201,14 +6626,14 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Choice \"Continue\" 20"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "79861914203399377430744631155",
     "prev_id": "77809499604852021840822789036",
-    "next_id": "1022383151923823299286182713",
+    "next_id": "22320013871643258424981774855",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -5223,7 +6648,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Ah. You’ve shown interest. Good. Very good. We can help each other. In fact, you’ve helped me already. I know what you’ve done. Dublurep, my rival, is dead. I know it was your doing.\n\nThis is a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only one tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.",
+    "text": "Ah. You’ve shown interest. Good. Very good. We can help each other. In fact, you’ve helped me already. I know what you’ve done. Dublurep, my rival, is dead. I know it was your doing.",
     "filters": [
       {
         "index": 3,
@@ -5259,13 +6684,85 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Choice \"Continue\" 20"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22320013871643258424981774855",
+    "prev_id": "79861914203399377430744631155",
+    "next_id": "301896546112304907817467527345",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "And once you deal with Dublurep, there is one other tiny thing I’ll need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for one Golden Saint dead and one small orb. It’s quite a bargain.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 22
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "301896546112304907817467527345",
+    "prev_id": "22320013871643258424981774855",
+    "next_id": "1022383151923823299286182713",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This will be a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun?",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 21
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 22"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "1022383151923823299286182713",
-    "prev_id": "79861914203399377430744631155",
+    "prev_id": "301896546112304907817467527345",
     "next_id": "27202569379916007846169793367",
     "data": {
       "dialogue_type": "Greeting",
@@ -5281,7 +6778,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Ah, so hasty. So impatient.  Don’t worry, we’ll have time to play. You just haven’t heard what I have to say yet. We can help each other. You see, I have a rival. Dublurep, she calls herself. A Golden Saint. Cold, aloof and annoying. She’s squatting in a tomb nearby. I want her dead and I think you want her dead, too.\n\nThis will be a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? And once you deal with Dublurep, there is one other tiny thing I’ll need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for one Golden Saint dead and one small orb. It’s quite a bargain.",
+    "text": "Ah, so hasty. So impatient.  Don’t worry, we’ll have time to play. You just haven’t heard what I have to say yet. We can help each other. You see, I have a rival. Dublurep, she calls herself. A Golden Saint. Cold, aloof and annoying. She’s squatting in a tomb nearby. I want her dead and I think you want her dead, too.",
     "filters": [
       {
         "index": 4,
@@ -5328,7 +6825,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Choice \"Continue\" 21"
   },
   {
     "type": "DialogueInfo",
@@ -5350,7 +6847,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Ah. You’ve shown interest. Good. Very good. We can help each other. You see, I have a rival. Dublurep, she calls herself. A Golden Saint. Cold, aloof and annoying. She’s squatting in a tomb nearby. I want her dead and I think you want her dead, too.\n\nThis will be a good start. I can be good to you. A sweet little friend. Don’t you want friends? Maybe we can even be a little bit more. Wouldn’t that be fun? You see, there is only a tiny thing I need. A small orb. I love the way it looks on my neck, but it was stolen from me. Some petty little thief. I want the orb back. It’s in the town nearby. Tel Branora, it’s called. Bring the orb to me and you’ll be rewarded. I have so many things to share. Like my shiny little saber. Oh, and all the magic tricks I can teach you. And my sweet kisses. All that for a small orb. It’s quite a bargain.\n",
+    "text": "Ah. You’ve shown interest. Good. Very good. We can help each other. You see, I have a rival. Dublurep, she calls herself. A Golden Saint. Cold, aloof and annoying. She’s squatting in a tomb nearby. I want her dead and I think you want her dead, too.",
     "filters": [
       {
         "index": 3,
@@ -5386,7 +6883,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Choice \"Continue\" 21"
   },
   {
     "type": "DialogueInfo",
@@ -5498,7 +6995,7 @@
     "flags": "",
     "id": "22327710238259137950547621636",
     "prev_id": "65145255004144462334151317714",
-    "next_id": "",
+    "next_id": "242755894716837064459540208662",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -5528,6 +7025,180 @@
       }
     ],
     "script_text": "Choice \"A proposal? I’m here to kill you.\" 1 \"I’m not interested.\" 2 \"What proposal?\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "242755894716837064459540208662",
+    "prev_id": "22327710238259137950547621636",
+    "next_id": "28691779438170525495783640989",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "A present? For me? I didn’t doubt you for a moment, darling. Everything you wish is within your reach, now.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": "Choice \"[Give her the orb.]\" 1 \"No. I'm not giving it to you.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28691779438170525495783640989",
+    "prev_id": "242755894716837064459540208662",
+    "next_id": "343458272710788863793636198557",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You have the orb, but haven’t yet killed Dublurep. Return to me once you’ve slain her, and you’ll be rewarded.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "343458272710788863793636198557",
+    "prev_id": "28691779438170525495783640989",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_DarkSeducerV",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I can feel Dublurep’s death. It is warm and sweet, just like you, little friend. Now bring me the orb and you’ll be rewarded.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GoldenSaintD",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_audit_beran",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_audit_beran\" 30"
   },
   {
     "type": "Dialogue",
@@ -14453,7 +16124,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "A Dark Seducer? This is, to be blunt, very unusual. Sheogorath’s minions don’t typically defile ancestral tombs. Please, take these as payment.",
+    "text": "A Seducer? This is, to be blunt, very unusual. These Daedric minions don’t typically defile ancestral tombs. Please, take these as payment.",
     "filters": [
       {
         "index": 3,
