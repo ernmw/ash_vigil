@@ -18,10 +18,9 @@ Items marked with `*` have been modified from the original.
 
 (Tamriel_Data)[https://www.nexusmods.com/morrowind/mods/44537].
 
-- `00 Data/meshes/AshVigil/tr_cr_seducerdark_02.nif` *
-- `00 Data/meshes/AshVigil/xtr_cr_seducerdark_02.kf`
-- `00 Data/meshes/AshVigil/xtr_cr_seducerdark_02.nif`
-- `00 Data/textures/AshVigil/tr_cr_seducer_attire.dds` *
-- `00 Data/textures/AshVigil/tr_cr_seducer_body_02.dds` *
-- `00 Data/textures/AshVigil/tr_cr_seducer_eye_glow.dds`
+- `00 Data/textures/AshVigil/tr_cr_seducer_body_01.dds` *
 - `00 Data/textures/AshVigil/tr_cr_seducer_head_01.dds` *
+- `00 Data/textures/AshVigil/tr_cr_seducer_attire.dds` *
+- `00 Data/meshes/AshVigil/tr_cr_seducer_01.nif`
+- `00 Data/meshes/AshVigil/xtr_cr_seducer_01.kf` *
+- `00 Data/meshes/AshVigil/xtr_cr_seducer_01.nif`
