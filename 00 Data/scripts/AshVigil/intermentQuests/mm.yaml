@@ -7,23 +7,22 @@ quests:
     destCell: "Vandus Ancestral Tomb"
     # seryndil
     urnRecordId: "av_mm_vandus_remains"
-  - id: "av_mm_arethan"
-    destCell: "Arethan Ancestral Tomb"
-    # arvethi
-    urnRecordId: "av_mm_arethan_remains"
-    destCellEnterStage: 39
-    destCellClearedStage: 40
-#  - id: "av_mm_savel"
-#    destCell: "Savel Ancestral Tomb"
-    # teldrisa
-#    urnRecordId: "av_mm_savel_remains"
-  - id: "av_mm_hlervu"
-    destCell: "Hlervu Ancestral Tomb"
-    # bralvyn
-    urnRecordId: "av_mm_hlervu_remains"
-  - id: "av_mm_aran"
-    destCell: "Aran Ancestral Tomb"
-    # fendrath
-    urnRecordId: "av_mm_aran_remains"
-    destCellEnterStage: 39
-    destCellClearedStage: 40
+
+# Disable unfinished delivery quests.
+
+#  - id: "av_mm_arethan"
+#    destCell: "Arethan Ancestral Tomb"
+#    # arvethi
+#    urnRecordId: "av_mm_arethan_remains"
+#    destCellEnterStage: 39
+#    destCellClearedStage: 40
+#  - id: "av_mm_hlervu"
+#    destCell: "Hlervu Ancestral Tomb"
+#    # bralvyn
+#    urnRecordId: "av_mm_hlervu_remains"
+#  - id: "av_mm_aran"
+#    destCell: "Aran Ancestral Tomb"
+#    # fendrath
+#    urnRecordId: "av_mm_aran_remains"
+#    destCellEnterStage: 39
+#    destCellClearedStage: 40
