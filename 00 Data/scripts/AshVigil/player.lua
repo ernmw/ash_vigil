@@ -24,16 +24,6 @@ local allQuests             = require("scripts.AshVigil.intermentQuests.load")
 local const  = require("scripts.AshVigil.const")
 local aux_util = require('openmw_aux.util')
 
----@class UrnItemData
----@field quest Quest?
----@field itemRecordId string?
----@field containerRecordId string?
-
----@class UrnEventData : UrnItemData
----@field urn table
----@field player table
----@field cell string
-
 ---@class QuestContainer
 ---@field metaData Quest
 ---@field playerQuest table this is a types.PLAYERQuest

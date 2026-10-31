@@ -8,7 +8,8 @@ GLOBAL: scripts/AshVigil/global.lua
 GLOBAL: scripts/AshVigil/peace.lua
 GLOBAL: scripts/AshVigil/remover.lua
 GLOBAL: scripts/AshVigil/interloper.lua
-GLOBAL: scripts/AshVigil/setglobalvariable.lua
+GLOBAL: scripts/AshVigil/sss.lua
+GLOBAL: scripts/AshVigil/set_global_variable.lua
 
 
 CUSTOM: scripts/AshVigil/ecs/urn.lua

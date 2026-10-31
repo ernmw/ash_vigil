@@ -82,7 +82,7 @@ local function debugPrint(str, ...)
     if adminContainer.debugMode then
         local arg = { ... }
         if arg ~= nil then
-            print(string.format("DEBUG: " .. str, unpack(arg)))
+            print(string.format("DEBUG: " .. str, table.unpack(arg)))
         else
             print("DEBUG: " .. str)
         end
