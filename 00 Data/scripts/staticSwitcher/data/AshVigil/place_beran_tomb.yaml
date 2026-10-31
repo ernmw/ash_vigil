@@ -3,7 +3,7 @@ log_name: Place Beran Tomb Stuff
 instances:
   - conditions:
       # needed for audit beran tomb
-      - cell: Beran Ancestral Tomb
+      - cell: "Beran Ancestral Tomb"
       - has_journal:
           quest: av_audit_beran
           min: 10
@@ -17,6 +17,7 @@ instances:
             position:
               x: -25
               y: -120
+              z: 50
   - conditions:
       # needed for daedric detective
       - has_journal:
