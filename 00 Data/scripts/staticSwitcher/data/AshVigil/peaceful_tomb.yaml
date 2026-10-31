@@ -18,8 +18,11 @@ instances:
           min: 1
       - is_dead: false
       - creature_type: undead
+      - is_follower: false
       - not: {record_id: Lich}
       - not: {record_id: lich}
+      - not: {record_id: summon}
+      - not: {record_id: "^AV_"}
       - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
     actions:
       - add_lua_script: scripts/AshVigil/ecs/peaceful.lua

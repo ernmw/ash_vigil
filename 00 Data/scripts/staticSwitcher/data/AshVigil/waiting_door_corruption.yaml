@@ -44,8 +44,11 @@ instances:
             max: 2
       - is_dead: false
       - creature_type: undead
+      - is_follower: false
       - not: {record_id: Lich}
       - not: {record_id: lich}
+      - not: {record_id: summon}
+      - not: {record_id: "^AV_"}
     actions:
       - replace:
           scamp: 0.06
