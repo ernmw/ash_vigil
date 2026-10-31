@@ -2,6 +2,7 @@
 log_name: Place Savel Body
 instances:
   - conditions:
+      - cell: Savel Ancestral Tomb
       - has_journal:
           quest: av_mm_savel
           min: 10
@@ -16,6 +17,7 @@ instances:
               x: -350
               y: 470
   - conditions:
+      - cell: Savel Ancestral Tomb
       - has_journal:
           quest: av_mm_savel
           min: 10

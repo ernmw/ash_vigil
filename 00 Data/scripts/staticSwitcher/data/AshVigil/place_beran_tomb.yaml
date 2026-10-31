@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Place Beran Tomb Stuff
+instances:
+  - conditions:
+      # needed for audit beran tomb
+      - cell: Beran Ancestral Tomb
+      - has_journal:
+          quest: av_audit_beran
+          min: 10
+      # Coordinates: -753.708 10506.6 -1181.4
+      # scamp: Coordinates: -801.362 10266.4 -1133.69
+      - record_id: "Furn_shrine_Tribunal_cure_01"
+    once: true
+    actions:
+      - create:
+          AV_GoldenSaintD:
+            position:
+              x: -25
+              y: -120
+  - conditions:
+      # needed for daedric detective
+      - has_journal:
+          quest: av_audit_beran
+          min: 10
+      - cell:
+        - "Beran Ancestral Tomb"
+      - record_id: "dead he male_01"
+      - not: {carrying: "AV_bloodied_journal" }
+    once: true
+    actions:
+      - add:
+          AV_bloodied_journal: 1

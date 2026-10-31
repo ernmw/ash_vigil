@@ -25,15 +25,6 @@ instances:
           flora_muckspunge_03: 1
       - delete: true
   - conditions:
-      - cell:
-        - "Beran Ancestral Tomb"
-      - record_id: "dead he male_01"
-      - not: {carrying: "AV_bloodied_journal" }
-    once: true
-    actions:
-      - add:
-          AV_bloodied_journal: 1
-  - conditions:
       - has_journal:
           quest: av_daedric_detective
           min: 70
