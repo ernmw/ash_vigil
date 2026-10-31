@@ -10,3 +10,5 @@ debugMode_description: "Turn on verbose logging. Please turn this on and grab th
 modSettingsGameplayTitle: "Gameplay"
 hardMode_name: "Hard Mode"
 hardMode_description: "Enable urn carrying."
+
+sssTooOld: "Ash Vigil: You need to update Static Switching System (SSS)."
