@@ -7,12 +7,18 @@ instances:
   # this works with peace.lua to apply and un-apply the Calm spell effect.
   - conditions:
       - cell:
+        # first quest, deliver urn
+        - "vandus ancestral tomb"
+        # investigate weird reports, find body
+        - "savel ancestral tomb"
         - "andas ancestral tomb"
         - "releth ancestral tomb"
-        - "vandus ancestral tomb"
-        - "savel ancestral tomb"
         - "hlervu ancestral tomb"
         - "velas ancestral tomb"
+      - global_value:
+          # stone locations 0 and 1 are safe
+        - AV_stone_location:
+            max: 1
       - player_faction:
           faction: "AV_KOTD"
           min: 1
