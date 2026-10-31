@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Place Arano Tomb Stuff
+instances:
+  - conditions:
+      - cell: "Arano Ancestral Tomb"
+      - has_journal:
+          quest: av_audit_arano
+          min: 10
+      # Coordinates: 1170.52 -424.978 -919.997
+      # other: Coordinates: 1584 144 -960
+      - record_id: "furn_firepit00"
+    once: true
+    actions:
+      - create:
+          AV_DarkSeducerV:
+            position:
+              x: 200
+              y: 275
