@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 442,
+    "num_objects": 443,
     "masters": [
       [
         "Morrowind.esm",
@@ -15074,14 +15074,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "The tombs? Go on in, I don't care.",
     "filters": [
@@ -15089,7 +15089,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15110,14 +15110,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "You don't have one! Don't try to trick me, %PCRace.",
     "filters": [
@@ -15179,14 +15179,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "Not the small one! Gah! Go away.",
     "filters": [
@@ -15248,14 +15248,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "You don't have one! Don't try to trick me, %PCRace.",
     "filters": [
@@ -15311,20 +15311,20 @@
     "flags": "",
     "id": "41923843817421321568531539931",
     "prev_id": "27194670509007098027965030258",
-    "next_id": "172213265417552859707869319722",
+    "next_id": "19926335901774785914656786105",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "Oh, this one is perfect. Yes. So precious. What? Oh, go do what you want in the tombs. Leave me alone now.",
     "filters": [
@@ -15378,22 +15378,80 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "172213265417552859707869319722",
+    "id": "19926335901774785914656786105",
     "prev_id": "41923843817421321568531539931",
-    "next_id": "37909660929961894542225183616",
+    "next_id": "172213265417552859707869319722",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hurry!",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "172213265417552859707869319722",
+    "prev_id": "19926335901774785914656786105",
+    "next_id": "37909660929961894542225183616",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
     "sound_path": "",
     "text": "Are you the one who dealt with that fool, Dalen? Yes, yes, do what you want in the tombs, but bring me a kwama egg first. What? Haven’t I told you already? Well, I’m telling you now. Bring me the egg!",
     "filters": [
@@ -15423,7 +15481,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15444,14 +15502,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "Oh, these are perfect. Yes. So precious. What? Oh, go do what you want in the tombs. Leave me alone now.",
     "filters": [
@@ -15524,14 +15582,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "This isn't what I asked for!",
     "filters": [
@@ -15582,14 +15640,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "What? I can’t hear you.",
     "filters": [
@@ -15640,14 +15698,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "Do you have my eggs yet?",
     "filters": [
@@ -15687,14 +15745,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "Good. Get to it.",
     "filters": [
@@ -15735,7 +15793,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15756,14 +15814,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "A gift? Ah, how nice of you. Of course. I don’t ask for much. Just bring me the eggs. Listen carefully, as I won’t repeat myself. 33 large ones. 22 small ones. And no ash yams. None at all. I hate them.",
     "filters": [
@@ -15804,7 +15862,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15825,14 +15883,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "Don’t think I will forget about it. Dalen needs to be dealt with.",
     "filters": [
@@ -15873,7 +15931,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15894,14 +15952,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "therana",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "AV_KOTD",
+    "player_faction": "",
     "sound_path": "",
     "text": "What do you want? What tombs? Ah. No. Not yet. No permission. Not while that witch Trerayna Dalen is plotting right under my nose! Deal with her and then we can talk about permission.",
     "filters": [
@@ -15931,7 +15989,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15939,7 +15997,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Choice \"It will be done.\" 1 \"[Offer to make a gift instead.]\" 2 \"[Stay silent.]\" 3"
   },
   {
     "type": "Dialogue",

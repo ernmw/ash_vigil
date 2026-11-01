@@ -58,5 +58,21 @@ coc "Molag Mar, Redoran Stronghold"
 ```
 
 ```
-coc Vivec, Hlaalu Vaults
+coc "Vivec, Hlaalu Vaults"
+```
+
+## Permission to Audit
+
+Skip to this:
+```
+Journal "AV_therana_permission 10"
+```
+
+```
+coc "Tel Branora, Upper Tower: Therana's Chamber"
+```
+
+```
+Player->AddItem "food_kwama_egg_01" 22
+Player->AddItem "food_kwama_egg_02" 33
 ```
