@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 442,
+    "num_objects": 440,
     "masters": [
       [
         "Morrowind.esm",
@@ -13361,7 +13361,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 105\r\nModDisposition 10\r\nModPCFacRep 5 \"AV_KOTD\"\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nPlayer->AddItem \"sc_nerusislockjaw\" 1\r\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 105\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nPlayer->RemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -13419,7 +13419,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 105\r\nModDisposition 10\r\nModPCFacRep 5 \"AV_KOTD\"\r\nRemoveItem \"AV_savel_keepsake\" 1\r\nPlayer->AddItem \"sc_nerusislockjaw\" 1\r\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 105\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nPlayer->RemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -13538,7 +13538,7 @@
         "index": 3,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -13557,7 +13557,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nRemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
+    "script_text": "Journal \"AV_mm_savel\" 110\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nPlayer->RemoveItem \"AV_savel_keepsake\" 1\nPlayer->AddItem \"sc_nerusislockjaw\" 1\nPlayer->AddItem \"T_EnSc_Com_DidalasSplendor\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -13741,7 +13741,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 52
+          "data": 50
         }
       }
     ],
@@ -14045,7 +14045,7 @@
     "flags": "",
     "id": "193969472417815577374980504186",
     "prev_id": "295765880111066161873920209976",
-    "next_id": "38807396461564562207619299609",
+    "next_id": "6798257787385001205",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14090,55 +14090,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "38807396461564562207619299609",
-    "prev_id": "193969472417815577374980504186",
-    "next_id": "6798257787385001205",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "elvas savel",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Greater",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 3,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "6798257787385001205",
-    "prev_id": "38807396461564562207619299609",
+    "prev_id": "193969472417815577374980504186",
     "next_id": "6760904308643759029",
     "data": {
       "dialogue_type": "Topic",
@@ -14186,7 +14139,7 @@
     "flags": "",
     "id": "6760904308643759029",
     "prev_id": "6798257787385001205",
-    "next_id": "11926357472584186390",
+    "next_id": "2396640897816317176",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14211,64 +14164,17 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 52
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "11926357472584186390",
-    "prev_id": "6760904308643759029",
-    "next_id": "2396640897816317176",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 65,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "baren alen",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I’m not going to haggle from a powerless position. Convince Elvas he needs a deal first, and then we’ll see.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
           "data": 40
         }
-      },
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
       }
     ],
-    "script_text": ""
+    "script_text": "Journal \"AV_mm_savel\" 50"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "2396640897816317176",
-    "prev_id": "11926357472584186390",
+    "prev_id": "6760904308643759029",
     "next_id": "8407203565230413402",
     "data": {
       "dialogue_type": "Topic",
@@ -14294,7 +14200,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 50
+          "data": 40
         }
       },
       {
@@ -14309,7 +14215,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 52"
+    "script_text": "Journal \"AV_mm_savel\" 50"
   },
   {
     "type": "DialogueInfo",
@@ -14341,7 +14247,7 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 50
+          "data": 40
         }
       },
       {
@@ -14381,17 +14287,6 @@
     "text": "Interesting. Based on what you’re saying, this would put a stop to his claims very soon. I want your cooperation. I offer you 400 drakes.",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -14406,7 +14301,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -14439,17 +14334,6 @@
     "text": "It's a shame we couldn't come to a mutually beneficial understanding.",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -14464,7 +14348,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -14497,17 +14381,6 @@
     "text": "Done. I will handle the formalities. Here is the money.",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -14522,7 +14395,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -14530,7 +14403,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 60\r\nplayer->AddItem \"Gold_001\" 600\r\n"
+    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 600\n"
   },
   {
     "type": "DialogueInfo",
@@ -14555,17 +14428,6 @@
     "text": "Done. I will handle the formalities. Here is the money.",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -14580,7 +14442,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -14599,7 +14461,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 60\r\nplayer->AddItem \"Gold_001\" 600\r\n"
+    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 600\n"
   },
   {
     "type": "DialogueInfo",
@@ -14624,17 +14486,6 @@
     "text": "Done. I will handle the formalities. Here is the money.",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -14649,7 +14500,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -14657,7 +14508,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 60\r\nplayer->AddItem \"Gold_001\" 400\r\n"
+    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 400\n"
   },
   {
     "type": "DialogueInfo",
@@ -14682,17 +14533,6 @@
     "text": "Well, the offer stands.",
     "filters": [
       {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -14707,7 +14547,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -14743,22 +14583,11 @@
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "GreaterEqual",
+        "comparison": "Equal",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
           "data": 40
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 50
         }
       }
     ],
