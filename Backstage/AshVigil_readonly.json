@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 440,
+    "num_objects": 442,
     "masters": [
       [
         "Morrowind.esm",
@@ -12965,7 +12965,7 @@
     "flags": "",
     "id": "19594230097330464377661410935",
     "prev_id": "",
-    "next_id": "153295230415050113636915400988",
+    "next_id": "97777344306170908815905961983",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13021,8 +13021,55 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "153295230415050113636915400988",
+    "id": "97777344306170908815905961983",
     "prev_id": "19594230097330464377661410935",
+    "next_id": "153295230415050113636915400988",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Your investigation was very helpful, %PCRank.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "153295230415050113636915400988",
+    "prev_id": "97777344306170908815905961983",
     "next_id": "41243892849982752904054954728",
     "data": {
       "dialogue_type": "Topic",
@@ -14139,7 +14186,7 @@
     "flags": "",
     "id": "6760904308643759029",
     "prev_id": "6798257787385001205",
-    "next_id": "2396640897816317176",
+    "next_id": "384557652510661886080045832981",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14157,6 +14204,53 @@
     "text": "I’ll accept Savel’s deal.",
     "filters": [
       {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 55
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "384557652510661886080045832981",
+    "prev_id": "6760904308643759029",
+    "next_id": "2396640897816317176",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’ll handle the formalities. A pleasure doing business with you.",
+    "filters": [
+      {
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -14164,17 +14258,17 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 40
+          "data": 60
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 50"
+    "script_text": ""
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "2396640897816317176",
-    "prev_id": "6760904308643759029",
+    "prev_id": "384557652510661886080045832981",
     "next_id": "8407203565230413402",
     "data": {
       "dialogue_type": "Topic",
