@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1713532
+        1733277
       ]
     ]
   },
@@ -7240,7 +7240,7 @@
         }
       }
     ],
-    "script_text": "addtopic \"join the Keepers\""
+    "script_text": "addtopic \"join the Keepers\"\nAddTopic \"Keepers of the Dead\""
   },
   {
     "type": "DialogueInfo",
@@ -7847,7 +7847,7 @@
     "sound_path": "",
     "text": "I’m Nance Bero, the Archivist for the Keepers here in Molag Mar. I must admit I was torn on taking the assignment here, but my late great-great-great third uncle, Eno Bero, convinced me to leave Necrom one last time and see the world. Did you know he served on a military ship against the Camoran Usurper’s legions? Really quite remarkable. I’ve actually never set foot in Vvardenfell before, but I’ve catalogued most of the tombs here from field reports that were sent to my office in Necrom. I don’t think I could stomach another blanched kwama egg. I have a sensitive constitution, you see.",
     "filters": [],
-    "script_text": ""
+    "script_text": "AddTopic \"Keepers of the Dead\""
   },
   {
     "type": "DialogueInfo",
@@ -7871,7 +7871,7 @@
     "sound_path": "",
     "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
     "filters": [],
-    "script_text": "AddTopic \"Nance Bero\"\nAddTopic \"Keerin Meille\""
+    "script_text": "AddTopic \"Nance Bero\"\nAddTopic \"Keerin Meille\"\nAddTopic \"Keepers of the Dead\""
   },
   {
     "type": "Dialogue",
@@ -12059,7 +12059,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": -1
+      "player_rank": 0
     },
     "speaker_id": "AV_KOTDLPP",
     "speaker_race": "",
@@ -13267,7 +13267,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "The Savel family may not be the biggest or most influential, but we’ve received several claims for property damage already and there are rumors that they may try to make claims against other families as well.  I suspect that politics is at play here, as is often the case. I don’t trust half of the reports I read these days. Too many fakes. Please check if there is anything suspicious happening in the tomb.\r\n\r\nYou should know that a member of the Savel family is here in Molag Mar. His name is Elvas Savel and he can usually be found at Redoran Stronghold. If my suspicions are confirmed, we should be able to make Elvas Savel withdraw his claims. You are free to discuss this matter with him, if you think that it will help you.",
+    "text": "Nothing to report yet?",
     "filters": [
       {
         "index": 2,
@@ -13770,17 +13770,6 @@
     "text": "Argh. Why? Do you know how much trouble I'm in? What have I done to you? Leave me be.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Function",
-        "function": "PcMercantile",
-        "comparison": "GreaterEqual",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Function",
         "function": "Choice",
@@ -13827,17 +13816,6 @@
     "sound_path": "",
     "text": "Great. Then you know what to do.",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Function",
-        "function": "PcMercantile",
-        "comparison": "GreaterEqual",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 50
-        }
-      },
       {
         "index": 1,
         "filter_type": "Function",
