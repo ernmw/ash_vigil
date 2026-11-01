@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 442,
+    "num_objects": 443,
     "masters": [
       [
         "Morrowind.esm",
@@ -15311,7 +15311,7 @@
     "flags": "",
     "id": "41923843817421321568531539931",
     "prev_id": "27194670509007098027965030258",
-    "next_id": "172213265417552859707869319722",
+    "next_id": "19926335901774785914656786105",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -15378,8 +15378,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "172213265417552859707869319722",
+    "id": "19926335901774785914656786105",
     "prev_id": "41923843817421321568531539931",
+    "next_id": "172213265417552859707869319722",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "therana",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hurry!",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "trerayna dalen",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "172213265417552859707869319722",
+    "prev_id": "19926335901774785914656786105",
     "next_id": "37909660929961894542225183616",
     "data": {
       "dialogue_type": "Topic",
@@ -15423,7 +15481,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15735,7 +15793,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15804,7 +15862,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15873,7 +15931,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15931,7 +15989,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -15939,7 +15997,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Choice \"It will be done.\" 1 \"[Offer to make a gift instead.]\" 2 \"[Stay silent.]\" 3"
   },
   {
     "type": "Dialogue",
