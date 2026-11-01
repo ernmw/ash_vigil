@@ -58,5 +58,5 @@ coc "Molag Mar, Redoran Stronghold"
 ```
 
 ```
-coc Vivec, Hlaalu Vaults
+coc "Vivec, Hlaalu Vaults"
 ```
