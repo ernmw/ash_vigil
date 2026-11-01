@@ -30,10 +30,10 @@ Talk with Keerin.
 
 ## Savel
 
+To skip to this quest:
 ```
 Journal "AV_mm_vandus" 100
 ```
-
 
 ```
 coc "Molag Mar, St. Veloth's Hostel"
@@ -41,19 +41,22 @@ coc "Molag Mar, St. Veloth's Hostel"
 
 Talk with Ondar.
 
->> TODO: Place body with Thief's Journal in Savel.
+```
+coc "Savel Ancestral Tomb"
+```
 
-```
-Player->AddItem "AV_savel_journal" 1
-```
+Pick up Thief's Journal.
+
+Now you have to test three branches:
+
+- Talk to Ondar and finish the quest early.
+- Talk to Savel and offer to help him, and actually do.
+- Talk to Savel and offer to help him. But when you talk to Baren, double-cross Savel.
 
 ```
 coc "Molag Mar, Redoran Stronghold"
-GetJournalIndex "AV_mm_savel"
 ```
 
-Talk with Elvas Savel in the Redoran Stronghold.
-
-...
-
-Talk with Baren Alen in `Vivec, Hlaalu Vaults`.
+```
+coc Vivec, Hlaalu Vaults
+```
