@@ -13113,7 +13113,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
@@ -13204,7 +13204,7 @@
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Greater",
+        "comparison": "GreaterEqual",
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
