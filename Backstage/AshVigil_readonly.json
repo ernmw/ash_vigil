@@ -5253,7 +5253,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Find the stone that was stolen from the Baren Tomb.",
+    "text": "Find the stone that was stolen from the Beran Tomb.",
     "filters": [],
     "script_text": ""
   },
@@ -6445,14 +6445,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 30
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\n\nChoice \"Continue\" 100"
+    "script_text": "Journal \"AV_audit_arano\" 80\nRemoveItem \"cybDarkSeducerSaber\" 1\nPlayer->AddItem \"cybDarkSeducerSaber\" 1\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\n\nChoice \"Continue\" 100"
   },
   {
     "type": "DialogueInfo",
@@ -6514,7 +6514,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 30
@@ -6557,7 +6557,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Journal \"AV_audit_arano\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
@@ -6619,7 +6619,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
@@ -6677,7 +6677,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
@@ -6720,7 +6720,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Journal \"AV_audit_arano\" 20\n;rival not already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
@@ -6818,7 +6818,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
@@ -6876,7 +6876,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
@@ -6934,7 +6934,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
@@ -6981,14 +6981,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30\nJournal \"AV_daedric_detective\" 10"
+    "script_text": "Journal \"AV_audit_arano\" 30\nJournal \"AV_daedric_detective\" 10"
   },
   {
     "type": "DialogueInfo",
@@ -7017,7 +7017,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 10
@@ -7075,7 +7075,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 30
@@ -7133,14 +7133,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 20
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30"
+    "script_text": "Journal \"AV_audit_arano\" 30"
   },
   {
     "type": "DialogueInfo",
@@ -7191,14 +7191,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_audit_beran",
+        "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
           "data": 20
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 30"
+    "script_text": "Journal \"AV_audit_arano\" 30"
   },
   {
     "type": "Dialogue",
@@ -9291,7 +9291,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400\nJournal \"AV_daedric_detective\" 10\n"
+    "script_text": "Journal \"AV_audit_beran\" 100\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400\nJournal \"AV_daedric_detective\" 10\n"
   },
   {
     "type": "DialogueInfo",
@@ -9341,7 +9341,7 @@
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_audit_beran",
         "value": {
           "type": "Integer",
@@ -16119,7 +16119,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_arano\" 100\nModDisposition 10\nModPCFacRep 10 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400"
+    "script_text": "Journal \"AV_audit_arano\" 100\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400"
   },
   {
     "type": "DialogueInfo",
