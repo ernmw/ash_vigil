@@ -40,6 +40,8 @@ local function calmSelf()
     })
 end
 
+-- AVblowkiss
+local kiss_anim = "knockdown"
 
 local function onKissDone()
     print("kiss done")
@@ -47,13 +49,13 @@ local function onKissDone()
 end
 
 local function start()
-    interfaces.AnimationController.addTextKeyHandler("AVblowkiss", function(groupname, key)
+    interfaces.AnimationController.addTextKeyHandler(kiss_anim, function(groupname, key)
         if key == "stop" then
             --- all done with kiss!
             onKissDone()
         end
     end)
-    interfaces.AnimationController.playBlendedAnimation("AVblowkiss", { startkey = "start", stopkey = "stop", priority = animation.PRIORITY.Scripted })
+    animation.playBlended(pself, kiss_anim, { startkey = "start", stopkey = "stop", priority = animation.PRIORITY.Scripted, autoDisable = true })
 end
 
 
@@ -64,7 +66,7 @@ local function onInit(data)
     start()
 end
 
-local function onActivate()
+local function onActive()
     start()
 end
 
@@ -89,7 +91,7 @@ end
 return {
     engineHandlers = {
         onUpdate = onUpdate,
-        onActivate = onActivate,
+        onActive = onActive,
         onInit = onInit,
         onLoad = onLoad,
         onSave = onSave,

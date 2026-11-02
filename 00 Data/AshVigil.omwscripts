@@ -16,3 +16,4 @@ GLOBAL: scripts/AshVigil/kiss_handler.lua
 CUSTOM: scripts/AshVigil/ecs/urn.lua
 CUSTOM: scripts/AshVigil/ecs/peaceful.lua
 CUSTOM: scripts/AshVigil/ecs/interloper.lua
+CUSTOM: scripts/AshVigil/ecs/ds.lua

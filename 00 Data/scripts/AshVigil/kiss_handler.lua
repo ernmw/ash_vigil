@@ -50,7 +50,7 @@ local function onKissStop(data)
     --- play recall VFX
     local recall = core.magic.effects.records[core.magic.EFFECT_TYPE.Recall]
     local model = types.Static.records[recall.castStatic].model
-    core.world.vfx.spawn(model, data.actor.position, {
+    world.vfx.spawn(model, data.actor.position, {
         particleTextureOverride = recall.particle,
         loop = false,
     })
@@ -58,7 +58,7 @@ local function onKissStop(data)
     data.actor:remove()
     --- spawn hostile scamps
     local summonEffect = core.magic.effects.records[
-        core.magic.EFFECT_TYPE.SummonCreature01
+        core.magic.EFFECT_TYPE.SummonScamp
     ]
     local summonModel = types.Static.records[summonEffect.castStatic].model
     local summonScamp = function(position)

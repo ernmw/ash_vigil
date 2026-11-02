@@ -351,7 +351,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\nelseif ( AV_stone_location == 2 )\n\t; disappear once orb is given\n\t; TODO: play teleportation VFX effect\n\t; TODO: this might work fine just in dialogue\n\tDisable\nelse\n\t; appear\n\tEnable\nendif\n\nEnd cybDSFight"
+    "text": "Begin cybDSFight\n\nshort OnPCHitMe\n\nif ( OnPCHitMe == 1 )\n\tif ( getdistance, player <= 200 ) \n\t\tif ( getspell \"cybDSshield\" == 0 )\n\t\t\taddspell \"cybDSshield\"\n\t\t\tplaysound3d \"alteration hit\"\n\t\tendif\n\tendif\n\tset OnPCHitMe to 0\nendif\n\nif ( geteffect, sEffectFrostDamage == 1 )\n\tif ( getspell \"cybDSFrostShield\" == 0 )\n\t\taddspell \"cybDSFrostShield\"\n\tendif\nendif\n\nif ( GetJournalIndex \"AV_audit_arano\" < 10 )\n\t; quest hasn't started\n\tDisable\n\nelseif ( GetJournalIndex \"AV_audit_arano\" == 10 )\n\t; appear\n\tEnable\nendif\n\nEnd cybDSFight"
   },
   {
     "type": "Script",
