@@ -273,7 +273,7 @@ end
 
 ---@param data DialogueResponseData
 local function DialogueResponse(data)
-    if data.type ~= "topic" then
+    if data.type ~= "topic" and data.type ~= "greeting" then
         return
     end
 
