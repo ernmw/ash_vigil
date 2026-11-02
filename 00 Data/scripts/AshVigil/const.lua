@@ -39,6 +39,8 @@ URN_DELIVERY_ACTIVE_GVAR!=1 and quest stage is 0: "<custom dialogue for start of
 return {
     --- this is searched for in mwscript to cancel the current quest
     MWS_LOST_URN_TOKEN = "AV_LOST_URN",
+    --- this attaches the ds.lua to the NPC
+    MWS_DOKISS_TOKEN = "AV_DOKISS",
     TOPIC_DEAD_KEEPERS = "dead keepers",
     --- count of total urns lost
     URNS_LOST_GVAR = "AV_UrnsLost",

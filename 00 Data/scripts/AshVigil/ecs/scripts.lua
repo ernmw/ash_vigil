@@ -25,4 +25,5 @@ return {
     interloper = getPath("interloper"),
     peaceful = getPath("peaceful"),
     urn = getPath("urn"),
+    ds = getPath("ds"),
 }

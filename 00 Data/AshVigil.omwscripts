@@ -10,6 +10,7 @@ GLOBAL: scripts/AshVigil/remover.lua
 GLOBAL: scripts/AshVigil/interloper.lua
 GLOBAL: scripts/AshVigil/sss.lua
 GLOBAL: scripts/AshVigil/set_global_variable.lua
+GLOBAL: scripts/AshVigil/kiss_handler.lua
 
 
 CUSTOM: scripts/AshVigil/ecs/urn.lua
