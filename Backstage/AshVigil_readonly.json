@@ -6251,7 +6251,7 @@
         }
       }
     ],
-    "script_text": "Messagebox, \"You hear cackling sounds. Something is not right here.\"\n\nset AV_stone_location to 2\nplaysound \"conjuration hit\"\n\nGoodbye"
+    "script_text": "Messagebox, \"You hear cackling sounds. Something is not right here.\"\n\nset AV_stone_location to 2\nplaysound \"conjuration hit\"\n\n; AV_DOKISS\nGoodbye"
   },
   {
     "type": "DialogueInfo",
