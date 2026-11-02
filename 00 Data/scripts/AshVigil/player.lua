@@ -285,6 +285,9 @@ local function DialogueResponse(data)
             if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
                 onQuestFailed(data)
             end
+            if info.resultScript:find(const.MWS_DOKISS_TOKEN, 1, true) then
+                core.sendGlobalEvent(MOD_NAME .. "onKissStart", { player = pself, actor = data.actor })
+            end
             return
         end
     end

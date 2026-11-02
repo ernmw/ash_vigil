@@ -17,6 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 local MOD_NAME          = require("scripts.AshVigil.ns")
 local const = require("scripts.AshVigil.const")
+local SCRIPTS        = require("scripts.AshVigil.ecs.scripts")
 local storage  = require('openmw.storage')
 local world    = require('openmw.world')
 local async    = require('openmw.async')
@@ -45,8 +46,6 @@ end
 --- "meshes/o/contain_urn_04.nif"
 --- "meshes/o/xcontain_urn_04.nif"
 --- etc
-
-local urnItemScriptPath = string.lower("scripts\\" .. MOD_NAME .. "\\ecs\\urn.lua")
 
 ---@class onQuestStartData
 ---@field player table
@@ -77,8 +76,8 @@ local function onQuestStart(data)
     end
 
     local recordInstance = world.createObject(itemRecordID, 1)
-    if not recordInstance:hasScript(urnItemScriptPath) then
-        recordInstance:addScript(urnItemScriptPath, {
+    if not recordInstance:hasScript(SCRIPTS.urn) then
+        recordInstance:addScript(SCRIPTS.urn, {
             quest = data.quest,
             itemRecordId = itemRecordID,
             containerRecordId = containerRecordID,
