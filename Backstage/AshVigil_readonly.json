@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 443,
+    "num_objects": 442,
     "masters": [
       [
         "Morrowind.esm",
@@ -5783,7 +5783,7 @@
     "flags": "",
     "id": "120091691315369218396548107766",
     "prev_id": "69301021603784876969456128091",
-    "next_id": "360861991911202387278079653195",
+    "next_id": "23176631408210771015778502984",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 20,
@@ -5798,31 +5798,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Vep’ious’andra, a Dark Seducer occupying the tomb, offered me a saber if I kill her rival, Dublurep. She also alluded to other rewards.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "360861991911202387278079653195",
-    "prev_id": "120091691315369218396548107766",
-    "next_id": "23176631408210771015778502984",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Vep’ious’andra has asked me to retrieve an orb that was stolen from her.",
+    "text": "Vep’ious’andra, a Seducer occupying the tomb, offered me a saber if I kill her rival and retrieve an orb that was stolen from her. She also alluded to other rewards.",
     "filters": [],
     "script_text": ""
   },
@@ -5830,7 +5806,7 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "23176631408210771015778502984",
-    "prev_id": "360861991911202387278079653195",
+    "prev_id": "120091691315369218396548107766",
     "next_id": "29375833028838298278212893805",
     "data": {
       "dialogue_type": "Journal",
@@ -5846,7 +5822,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I killed the Dark Seducer and made my report to Firsylla.",
+    "text": "I killed the Seducer and made my report to Firsylla.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -5871,7 +5847,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I made my report to Firsylla, but omitted the Dark Seducer.",
+    "text": "I made my report to Firsylla, but omitted the Seducer.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -6448,7 +6424,7 @@
         "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
-          "data": 30
+          "data": 20
         }
       }
     ],
@@ -6513,11 +6489,11 @@
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "GreaterEqual",
         "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
-          "data": 30
+          "data": 20
         }
       }
     ],
@@ -6557,7 +6533,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_arano\" 30\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
+    "script_text": "Journal \"AV_audit_arano\" 20\n;rival already dead\nChoice \"No deal.\" 4 \"A saber? I'll just take it from your corpse.\" 5 \"Fine. I'm in.\" 6"
   },
   {
     "type": "DialogueInfo",
@@ -6988,7 +6964,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_arano\" 30\nJournal \"AV_daedric_detective\" 10"
+    "script_text": "Journal \"AV_daedric_detective\" 10"
   },
   {
     "type": "DialogueInfo",
@@ -7078,7 +7054,7 @@
         "id": "AV_audit_arano",
         "value": {
           "type": "Integer",
-          "data": 30
+          "data": 20
         }
       }
     ],
@@ -7140,7 +7116,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_arano\" 30"
+    "script_text": ""
   },
   {
     "type": "DialogueInfo",
@@ -7198,7 +7174,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_audit_arano\" 30"
+    "script_text": ""
   },
   {
     "type": "Dialogue",
