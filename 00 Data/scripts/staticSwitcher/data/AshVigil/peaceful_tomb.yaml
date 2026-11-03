@@ -11,10 +11,10 @@ instances:
         - "vandus ancestral tomb"
         # investigate weird reports, find body
         - "savel ancestral tomb"
-        - "andas ancestral tomb"
-        - "releth ancestral tomb"
-        - "hlervu ancestral tomb"
-        - "velas ancestral tomb"
+        #- "andas ancestral tomb"
+        #- "releth ancestral tomb"
+        #- "hlervu ancestral tomb"
+        #- "velas ancestral tomb"
       - global_value:
           # stone locations 0 and 1 are safe
         - AV_stone_location:
