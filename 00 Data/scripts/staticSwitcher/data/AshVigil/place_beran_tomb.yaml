@@ -7,6 +7,7 @@ instances:
       - has_journal:
           quest: av_audit_beran
           min: 10
+          max: 10
       # Coordinates: -753.708 10506.6 -1181.4
       # scamp: Coordinates: -801.362 10266.4 -1133.69
       - record_id: "Furn_shrine_Tribunal_cure_01"
@@ -23,6 +24,7 @@ instances:
       - has_journal:
           quest: av_audit_beran
           min: 10
+          max: 10
       - cell:
         - "Beran Ancestral Tomb"
       - record_id: "dead he male_01"

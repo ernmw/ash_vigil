@@ -6,6 +6,7 @@ instances:
       - has_journal:
           quest: av_audit_arano
           min: 10
+          max: 10
       # Coordinates: 1170.52 -424.978 -919.997
       # other: Coordinates: 1584 144 -960
       - record_id: "furn_firepit00"

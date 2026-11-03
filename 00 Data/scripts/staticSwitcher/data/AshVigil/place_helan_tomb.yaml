@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Place Helan Tomb Stuff
+instances:
+  - conditions:
+      - cell: Helan Ancestral Tomb
+      - has_journal:
+          quest: av_mm_helan
+          min: 10
+          max: 10
+      # Coordinates: -383.466 1802.04 151.488
+      # other: -688 1728 144
+      - record_id: "chest_tomb_large00"
+    once: true
+    actions:
+      - create:
+          AV_helan_necro:
+            position:
+              x: -150
+              y: -30
+              z: 10

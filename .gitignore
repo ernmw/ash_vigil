@@ -1,3 +1,4 @@
 *.html
 *.json
 !AshVigil_readonly.json
+!replacerSchema.json
