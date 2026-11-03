@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 457,
+    "num_objects": 470,
     "masters": [
       [
         "Morrowind.esm",
@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1713532
+        1733277
       ]
     ]
   },
@@ -1895,6 +1895,20 @@
     "data": {
       "spell_type": "Spell",
       "cost": 40,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "AV_helan_keepsake",
+    "name": "Helan Keepsake",
+    "script": "",
+    "mesh": "tr\\m\\tr_misc_de_g_platter.nif",
+    "icon": "tr\\m\\tr_misc_de_g_platter.dds",
+    "data": {
+      "weight": 6.5,
+      "value": 12,
       "flags": ""
     }
   },
@@ -4072,6 +4086,133 @@
   {
     "type": "Npc",
     "flags": "",
+    "id": "AV_helan_necro",
+    "name": "Caethor",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "daedric tanto"
+      ],
+      [
+        1,
+        "extravagant_robe_01_t"
+      ],
+      [
+        1,
+        "extravagant_shoes_02"
+      ],
+      [
+        1,
+        "sc_blackstorm"
+      ],
+      [
+        1,
+        "sc_manarape"
+      ],
+      [
+        3,
+        "p_restore_health_q"
+      ],
+      [
+        3,
+        "p_restore_magicka_q"
+      ]
+    ],
+    "spells": [
+      "Dispel",
+      "summon skeletal minion",
+      "summon least bonewalker",
+      "disintegrate weapon"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 90,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 0,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 10,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 10,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Wood Elf",
+    "class": "Sorcerer",
+    "faction": "",
+    "head": "b_n_wood elf_m_head_02",
+    "hair": "b_n_wood elf_m_hair_03",
+    "npc_flags": "IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "level": 10,
+      "stats": {
+        "attributes": [
+          70,
+          100,
+          100,
+          73,
+          83,
+          86,
+          57,
+          40
+        ],
+        "skills": [
+          8,
+          8,
+          45,
+          45,
+          8,
+          13,
+          8,
+          8,
+          13,
+          80,
+          90,
+          80,
+          65,
+          80,
+          85,
+          90,
+          28,
+          28,
+          8,
+          8,
+          8,
+          13,
+          55,
+          50,
+          8,
+          8,
+          8
+        ],
+        "health": 100,
+        "magicka": 200,
+        "fatigue": 300
+      },
+      "disposition": 5,
+      "reputation": 0,
+      "rank": 0,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
     "id": "AV_necromancerHelan",
     "name": "Fadren Dalar",
     "script": "AV_HelanNecroScript",
@@ -6082,6 +6223,86 @@
     "player_faction": "",
     "sound_path": "",
     "text": "I followed the tunnel as Keerin instructed me and met D'lgotha, a Sload necromancer. He has work for me.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_mm_helan",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "264841780812989974833544900566",
+    "prev_id": "",
+    "next_id": "18756639757303305240450525873",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Helan Tomb Investigation",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18756639757303305240450525873",
+    "prev_id": "264841780812989974833544900566",
+    "next_id": "260823595415777706109840482691",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I agreed to investigate eerie voices in Helan Ancestral Tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "260823595415777706109840482691",
+    "prev_id": "18756639757303305240450525873",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I killed the necromancer and made my report to Ondar.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -8417,7 +8638,7 @@
     "flags": "",
     "id": "370480278314309535699323891736",
     "prev_id": "186254021216081983624948685132",
-    "next_id": "",
+    "next_id": "27589280702243398254510023803",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -8469,6 +8690,64 @@
       }
     ],
     "script_text": "AddTopic \"investigate weird reports\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "27589280702243398254510023803",
+    "prev_id": "370480278314309535699323891736",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "We received a concerning report regarding Helan Tomb.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Helan Tomb\""
   },
   {
     "type": "Dialogue",
@@ -17294,6 +17573,269 @@
     "sound_path": "",
     "text": "We met in Narsis and became fast friends. We were both foreigners, in our own ways, there. It was easy to form a bond and commiserate about life in the big city. When I joined the Keepers and needed to move to Necrom to continue my studies, he signed on as an initiate so he could stay with me. I’m lucky to have him.",
     "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Helan Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13717302427373036144825598602",
+    "prev_id": "",
+    "next_id": "303620647213617301722972408705",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A necromancer? Really? Well, this is certainly a cause of concern. It was quite bold of him to do it so close to Molag Mar, full of Buoyant Armigers. I guess that he thought he had the element of surprise on his side. I’m glad that you managed to eliminate the threat. No need to return that keepsake, as it’s clearly useless. I’ll need some time to analyze the situation. Here, have something for your trouble. Firsylla will probably want to talk to you now. Ugh, I don’t enjoy the prospect of my next conversation with her.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_helan_necro",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_helan\" 100\nModDisposition 5\nModPCFacRep 5 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 100\nplayer->AddItem \"T_Com_Potion_Shield_Q\" 2\nplayer->AddItem \"T_Com_Potion_FortifyCasting_Q\" 2\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "303620647213617301722972408705",
+    "prev_id": "13717302427373036144825598602",
+    "next_id": "97183849405904563552389638069",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "How’s the investigation going, %PCRank?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_helan_necro",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "97183849405904563552389638069",
+    "prev_id": "303620647213617301722972408705",
+    "next_id": "281196700216727011536079518781",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "However, recently another pilgrim reported something similar. Again, it wasn’t much of a report. No substance. I would probably ignore it, but Firsylla insists that our previous audit be verified. Fortunately, it’s not far away. Just a bit north of Molag Mar. Please, take this keepsake and go to the tomb to verify the audit. Make sure that the tomb was not disturbed in any way. When you get back, I may have some more important work for you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_helan\" 10\nplayer->AddItem \"AV_helan_keepsake\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "281196700216727011536079518781",
+    "prev_id": "97183849405904563552389638069",
+    "next_id": "561340089015860418661908751567",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "This one should be a formality. Helan Ancestral Tomb was audited as part of our census a while back. We declared the tomb secure. It was just a small tomb with a few guardians. No sign of any corruption. Some outlander pilgrim reported hearing eerie voices coming from the tomb. They scared her and she ran away to Molag Mar. Hardly a cause of concern. We can’t react to every report like that. ",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "561340089015860418661908751567",
+    "prev_id": "281196700216727011536079518781",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Helan Tomb is just northeast of Molag Mar. You should be able to see it from the top floor of the canton.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
     "script_text": ""
   }
 ]
