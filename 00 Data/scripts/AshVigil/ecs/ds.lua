@@ -41,7 +41,10 @@ local function calmSelf()
 end
 
 -- AVblowkiss
-local kiss_anim = "knockdown"
+local kiss_anim = "av_ds_blowkiss"
+
+
+print("DS has group:", animation.hasGroup(pself, kiss_anim))
 
 local function onKissDone()
     print("kiss done")
@@ -50,6 +53,7 @@ end
 
 local function start()
     interfaces.AnimationController.addTextKeyHandler(kiss_anim, function(groupname, key)
+        print("text key- groupname:"..tostring(groupname)..", key: "..tostring(key))
         if key == "stop" then
             --- all done with kiss!
             onKissDone()
