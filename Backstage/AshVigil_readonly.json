@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 442,
+    "num_objects": 457,
     "masters": [
       [
         "Morrowind.esm",
@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1733277
+        1713532
       ]
     ]
   },
@@ -8349,7 +8349,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "It’s an easy job. All you need to do is inter remains at Vandus Tomb.",
+    "text": "All you need to do is inter remains at Vandus Tomb.",
     "filters": [
       {
         "index": 1,
@@ -10480,9 +10480,9 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "To put it mildly, yes. The trial involves the Temple and all the Great Houses. Such things happen, but it’s been a while since I’ve seen such heated debate on faith and ancestor worship. Many House nobles accused the Temple of negligence because of the way the ancestral remains were treated. There were some organization failures that inflamed tensions, I’m afraid. I guess that’s on us, at least in part. The trial is on hiatus now, and that’s for the better. Saint Delyn’s Doctrine and all. With the way things are going, the trial will probably last many years.",
+    "text": "To put it mildly, yes. The trial involves the Temple and all the Great Houses. Such things happen, but it’s been a while since I’ve seen such heated debate on faith and ancestor worship. Many House nobles accused the Temple of negligence because of the way the ancestral remains were treated. There were some organizational failures that inflamed tensions, I’m afraid. I guess that’s on us, at least in part. The trial is on hiatus now, and that’s for the better. Saint Delyn’s Doctrine and all. With the way things are going, the trial will probably last many years.",
     "filters": [],
-    "script_text": ""
+    "script_text": "addtopic \"Delyn's Doctrine\""
   },
   {
     "type": "DialogueInfo",
@@ -10597,10 +10597,10 @@
     "flags": "",
     "id": "312009637914180834290599268244",
     "prev_id": "10577148497348688871937273679",
-    "next_id": "",
+    "next_id": "378636379715502130840974709972",
     "data": {
       "dialogue_type": "Topic",
-      "disposition": 0,
+      "disposition": 30,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -10622,21 +10622,163 @@
         "id": "AV_mm_savel",
         "value": {
           "type": "Integer",
-          "data": 52
+          "data": 50
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "378636379715502130840974709972",
+    "prev_id": "312009637914180834290599268244",
+    "next_id": "15168894645218217899291900013",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Honestly, I try to keep my nose out of politics. Big waves happen in the ocean, and little fish like me can’t do anything about it but keep on swimming. You’re not a little fish, though %PCName. You make waves.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
         }
       },
       {
         "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "LessEqual",
-        "id": "AV_mm_savel",
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
-          "data": 55
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcReputation",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 10
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "15168894645218217899291900013",
+    "prev_id": "378636379715502130840974709972",
+    "next_id": "354721858016862464254862128162",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Honestly, I try to keep my nose out of politics. Big waves happen in the ocean, and little fish like me can’t do anything about it but keep on swimming. You don’t seem like a little fish, though, %PCName. You’re going to make big waves, I can tell.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "SameFaction",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "354721858016862464254862128162",
+    "prev_id": "15168894645218217899291900013",
+    "next_id": "72190245405864450458251863795",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Not the first time and not the last time. There is always another problem or another scandal. They come and go.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "72190245405864450458251863795",
+    "prev_id": "354721858016862464254862128162",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s been keeping us on edge. Well, not Nance, but she is special like that. It’s so crowded here. Quite different from Necrom, that’s for sure. And I’ve never seen the Vicar so overworked and impatient. I just try not to get in her way.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -10925,7 +11067,7 @@
     "flags": "",
     "id": "247798035112521292749402844884",
     "prev_id": "52463941808749192847691554227",
-    "next_id": "",
+    "next_id": "28190742987866143455864730159",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -10954,6 +11096,30 @@
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28190742987866143455864730159",
+    "prev_id": "247798035112521292749402844884",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "When there is a big family meeting and everyone starts bickering, the wise thing to do is to split up before it turns into a fight. They may not speak with each other for a while, but it’ll pass. Then they’ll start solving old problems instead of causing new ones. Saint Delyn knew that, blessed be His soul and name. He turned that wisdom into a Doctrine and we should all make use of it.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -11282,7 +11448,7 @@
     "flags": "",
     "id": "67897098802658493738574031279",
     "prev_id": "685382271012220536776539372079",
-    "next_id": "",
+    "next_id": "23248112109259497871921347031",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -11311,6 +11477,30 @@
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "23248112109259497871921347031",
+    "prev_id": "67897098802658493738574031279",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I took it personally. I don’t think I’ve done anything wrong, but if I have, I’d like to know what exactly. Yet people don’t want to say it to my face or speak in vague terms. That’s annoying.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -11617,7 +11807,7 @@
     "flags": "",
     "id": "313271522112088235091377074164",
     "prev_id": "35994781193765896228899829555",
-    "next_id": "",
+    "next_id": "25908710274081231027407620507",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -11646,6 +11836,54 @@
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25908710274081231027407620507",
+    "prev_id": "313271522112088235091377074164",
+    "next_id": "31658685377463609629672796675",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "My child, it’s not “the Great Reorganization”. Things should just get back to how they once were. I love ALMSIVI and my ancestors with all my heart. We’ve all lost something when we turned away from the old rites. It pains me to see so many ancestral tombs abandoned and despoiled. I know that my ancestors think the same, as I speak with them often in Necrom. And I’m sure that ancestors of many good old Dunmer families would agree with us as well, even if some of them are too proud to admit it.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31658685377463609629672796675",
+    "prev_id": "25908710274081231027407620507",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, I don’t know. I don’t think about it this way. Maybe I just haven’t been with the Keepers long enough.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -11878,6 +12116,17 @@
           "type": "Integer",
           "data": 0
         }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotId",
+        "function": "NotIdType",
+        "comparison": "Equal",
+        "id": "elvas savel",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
       }
     ],
     "script_text": ""
@@ -11921,6 +12170,17 @@
         "function": "NotClass",
         "comparison": "Equal",
         "id": "Guard",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "NotId",
+        "function": "NotIdType",
+        "comparison": "Equal",
+        "id": "elvas savel",
         "value": {
           "type": "Integer",
           "data": 1
@@ -11984,7 +12244,7 @@
     "next_id": "12084337294919000456968566632",
     "data": {
       "dialogue_type": "Topic",
-      "disposition": 0,
+      "disposition": 30,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -12008,7 +12268,7 @@
     "next_id": "36741940947483157086255070796",
     "data": {
       "dialogue_type": "Topic",
-      "disposition": 0,
+      "disposition": 30,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -12053,7 +12313,7 @@
     "flags": "",
     "id": "23787155081632822382547456909",
     "prev_id": "36741940947483157086255070796",
-    "next_id": "",
+    "next_id": "14273190792804478784377194045",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -12069,6 +12329,54 @@
     "player_faction": "",
     "sound_path": "",
     "text": "The Keepers are a group within the Temple dedicated to the handling of the dead and maintenance of tombs. If you want to join, go talk with Firsylla up in St. Veloth’s Hostel.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14273190792804478784377194045",
+    "prev_id": "23787155081632822382547456909",
+    "next_id": "195815492617804197388867707314",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Being a Keeper is both a privilege and a sacred duty. But even more importantly, it’s honest work. If everybody could say that they’re doing honest work, the world would be a much better place, I think.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "195815492617804197388867707314",
+    "prev_id": "14273190792804478784377194045",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "m'aiq",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "M’Aiq does not want to keep the dead. M’Aiq wants the dead to be as far away from M’Aiq as possible.",
     "filters": [],
     "script_text": ""
   },
@@ -12992,14 +13300,14 @@
         }
       }
     ],
-    "script_text": "RemoveItem \"AV_savel_keepsake\" 1"
+    "script_text": "player->RemoveItem \"AV_savel_keepsake\" 1"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "97777344306170908815905961983",
     "prev_id": "19594230097330464377661410935",
-    "next_id": "153295230415050113636915400988",
+    "next_id": "25428099772282962769682111622",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13037,6 +13345,64 @@
           "type": "Integer",
           "data": 0
         }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "elvas savel",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25428099772282962769682111622",
+    "prev_id": "97777344306170908815905961983",
+    "next_id": "153295230415050113636915400988",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The matter is considered closed, %PCRank.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
       }
     ],
     "script_text": ""
@@ -13045,7 +13411,7 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "153295230415050113636915400988",
-    "prev_id": "97777344306170908815905961983",
+    "prev_id": "25428099772282962769682111622",
     "next_id": "41243892849982752904054954728",
     "data": {
       "dialogue_type": "Topic",
@@ -13645,7 +14011,7 @@
     "flags": "",
     "id": "31152264035687648573108537338",
     "prev_id": "3654921113206318083849070612",
-    "next_id": "405791935915869250728739792814",
+    "next_id": "37843682925689926097628584784",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13690,55 +14056,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "405791935915869250728739792814",
-    "prev_id": "31152264035687648573108537338",
-    "next_id": "37843682925689926097628584784",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "elvas savel",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.\n\nI think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "Equal",
-        "id": "AV_savel_journal",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 3,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 10
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "37843682925689926097628584784",
-    "prev_id": "405791935915869250728739792814",
+    "prev_id": "31152264035687648573108537338",
     "next_id": "1587099478582321045510573637",
     "data": {
       "dialogue_type": "Topic",
@@ -14036,7 +14355,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "What is this nonsense? I had nothing to do wi– Alright, listen. Things didn’t exactly go as planned, but I can still do this. There is a noble in Vivec. Barren Alen, the Treasurer in Hlaalu Canton. I only needed this one final piece to support several claims I’ve made. I know that he has money. I think that he’ll make a deal. We can help each other. You’ll support my story and convince Alen to make the deal. Once this is done, I’ll withdraw all my claims against the Temple. I’ll also give you a cut. 300 gold.",
+    "text": "What is this nonsense? I had nothing to do wi– Alright, listen. Things didn’t exactly go as planned, but I can still do this. There is a noble in Vivec. Barren Alen, the Treasurer in Hlaalu Canton. I only needed this one final piece to support several claims I’ve made. I know he has money. I think that he’ll make a deal. We can help each other. You’ll support my story and convince Alen to make the deal. Once this is done, I’ll withdraw all my claims against the Temple. I’ll also give you a cut. 300 gold.",
     "filters": [
       {
         "index": 1,
@@ -14068,7 +14387,7 @@
     "flags": "",
     "id": "193969472417815577374980504186",
     "prev_id": "295765880111066161873920209976",
-    "next_id": "6798257787385001205",
+    "next_id": "341539799913664045715690007451",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14113,8 +14432,91 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "6798257787385001205",
+    "id": "341539799913664045715690007451",
     "prev_id": "193969472417815577374980504186",
+    "next_id": "405791935915869250728739792814",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I think that the looters were hired by Hlaalu. I’ve made some investigation on my own. Just waiting for the final piece of evidence. My ancestors deserve respect and peaceful rest.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_savel_journal",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "405791935915869250728739792814",
+    "prev_id": "341539799913664045715690007451",
+    "next_id": "6798257787385001205",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elvas savel",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What's weird about them? There was an agreement between my family and the Temple that the tomb would be kept protected, but looters just keep coming. I made many pleas to the Temple and then to the Keepers, but they did nothing. I've been hearing about the Temple's negligence. Seems that it may be true, after all. So formal claims for property damage had to be made.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_savel_journal",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "6798257787385001205",
+    "prev_id": "405791935915869250728739792814",
     "next_id": "6760904308643759029",
     "data": {
       "dialogue_type": "Topic",
@@ -14292,7 +14694,7 @@
     "flags": "",
     "id": "8407203565230413402",
     "prev_id": "2396640897816317176",
-    "next_id": "10618010632429720566",
+    "next_id": "106022153703444022",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14337,55 +14739,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "10618010632429720566",
-    "prev_id": "8407203565230413402",
-    "next_id": "106022153703444022",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "baren alen",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Interesting. Based on what you’re saying, this would put a stop to his claims very soon. I want your cooperation. I offer you 400 drakes.",
-    "filters": [
-      {
-        "index": 1,
-        "filter_type": "Function",
-        "function": "Choice",
-        "comparison": "Equal",
-        "id": "",
-        "value": {
-          "type": "Integer",
-          "data": 2
-        }
-      },
-      {
-        "index": 2,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_mm_savel",
-        "value": {
-          "type": "Integer",
-          "data": 40
-        }
-      }
-    ],
-    "script_text": "Choice \"600. I know you can afford it.\" 4 \"Agreed.\" 5 \"No.\" 6"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "106022153703444022",
-    "prev_id": "10618010632429720566",
+    "prev_id": "8407203565230413402",
     "next_id": "11941420795803473867",
     "data": {
       "dialogue_type": "Topic",
@@ -14401,7 +14756,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "It's a shame we couldn't come to a mutually beneficial understanding.",
+    "text": "I see. Is that all?",
     "filters": [
       {
         "index": 1,
@@ -14448,7 +14803,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Done. I will handle the formalities. Here is the money.",
+    "text": "Done. I will handle the formalities. Here is the money. To be honest, trial disruptions have been such a distraction. I have other business I need to attend to.",
     "filters": [
       {
         "index": 1,
@@ -14473,7 +14828,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 600\n"
+    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 600\nmoddisposition 10\n"
   },
   {
     "type": "DialogueInfo",
@@ -14495,7 +14850,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Done. I will handle the formalities. Here is the money.",
+    "text": "Done. I will handle the formalities. Here is the money. To be honest, trial disruptions have been such a distraction. I have other business I need to attend to.",
     "filters": [
       {
         "index": 1,
@@ -14531,7 +14886,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 600\n"
+    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 600\nmoddisposition 10"
   },
   {
     "type": "DialogueInfo",
@@ -14553,7 +14908,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Done. I will handle the formalities. Here is the money.",
+    "text": "Done. I will handle the formalities. Here is the money. To be honest, trial disruptions have been such a distraction. I have other business I need to attend to.",
     "filters": [
       {
         "index": 1,
@@ -14578,14 +14933,14 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 400\n"
+    "script_text": "Journal \"AV_mm_savel\" 60\nplayer->AddItem \"Gold_001\" 400\nmoddisposition 10\n"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "18153558963377466748",
     "prev_id": "11566545345263317047",
-    "next_id": "9687715880093686842",
+    "next_id": "180343988512397965806014884307",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14630,8 +14985,102 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "9687715880093686842",
+    "id": "180343988512397965806014884307",
     "prev_id": "18153558963377466748",
+    "next_id": "10618010632429720566",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This isn’t how business is done, though. 400.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Choice \"Agreed.\" 5\nChoice \"No.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10618010632429720566",
+    "prev_id": "180343988512397965806014884307",
+    "next_id": "9687715880093686842",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "baren alen",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Interesting. Based on what you’re saying, this would put a stop to his claims very soon. I want your cooperation. I offer you 400 drakes.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Choice \"600. I know you can afford it.\" 4 \"Agreed.\" 5 \"No.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "9687715880093686842",
+    "prev_id": "10618010632429720566",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
@@ -14689,7 +15138,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Tomb guardians are bound by powerful rituals that prevent them from doing harm to family members. The rituals endure for a long time by mortal standard, so even if the tomb is not well-maintained, the tomb guardians don’t suddenly become hostile. Well, at least they shouldn’t. Unfortunately, the guardians sometimes become corrupted by liches, cultists or necromancers. Teris can probably tell you more about this.\n\nIt’s not possible to easily replicate these rituals. However, as the Keepers, we deal with the matters concerning the dead on a daily basis and use sanctified methods to access the tombs we need. A family keepsake is a small trinket crafted with the family’s permission that members of our Order may use for this purpose. Mostly those of lower rank, as senior members of the Order have other means of carrying out their duties. Interestingly, the Savel family keepsake I gave you was crafted a long time ago. I think that Elvas Savel may not even be aware of its existence.\n\nOne more thing. It goes without saying that you are not to take any of the gifts or other family belongings from the tomb. A few months ago some foolish Initiate tried to use a similar keepsake to loot another tomb. We found him dead much later. The keepsake didn’t protect him from the guardians’ wrath.\n",
+    "text": "It should be effective. Based on my experience, the keepsake should pacify the tomb guardians as long as you don’t do anything they view as hostile. Like attacking them or stealing from the tomb. But I know you wouldn’t do that. Only an evil interloper like a lich would resist the keepsake’s influence. I doubt that there is a lich there, though. In case you encounter some angry ghost or a corrupted guardian, you can use Turn Undead or Calm. Might be enough to avoid a fight entirely.",
     "filters": [],
     "script_text": ""
   },
@@ -14698,7 +15147,7 @@
     "flags": "",
     "id": "12055316221832459279415760190",
     "prev_id": "931276804016952233706363351426",
-    "next_id": "29917192107677748685284387551",
+    "next_id": "2482022898710562887429490506",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14736,6 +15185,17 @@
           "type": "Integer",
           "data": 0
         }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_savel",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
       }
     ],
     "script_text": "ModDisposition -10"
@@ -14743,8 +15203,80 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "29917192107677748685284387551",
+    "id": "2482022898710562887429490506",
     "prev_id": "12055316221832459279415760190",
+    "next_id": "29917192107677748685284387551",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "One more thing. It goes without saying that you are not to take any of the gifts or other family belongings from the tomb. A few months ago some foolish Initiate tried to use a similar keepsake to loot another tomb. We found him dead much later. The keepsake didn’t protect him from the guardians’ wrath.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29917192107677748685284387551",
+    "prev_id": "2482022898710562887429490506",
+    "next_id": "264061500814079681601745075394",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It’s not possible to easily replicate these rituals. However, as the Keepers, we deal with the matters concerning the dead on a daily basis and use sanctified methods to access the tombs we need. A family keepsake is a small trinket crafted with the family’s permission that members of our Order may use for this purpose. Mostly those of lower rank, as senior members of the Order have other means of carrying out their duties. Interestingly, the Savel family keepsake I gave you was crafted a long time ago. I think that Elvas Savel may not even be aware of its existence.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "264061500814079681601745075394",
+    "prev_id": "29917192107677748685284387551",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
@@ -14760,7 +15292,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "It should be effective. Based on my experience, the keepsake should pacify the tomb guardians as long as you don’t do anything they view as hostile. Like attacking them or stealing from the tomb. But I know you wouldn’t do that. Only an evil interloper like a lich would resist the keepsake’s influence. I doubt that there is a lich there, though. In case you encounter some angry ghost or a corrupted guardian, you can use Turn Undead or Calm. Might be enough to avoid a fight entirely.",
+    "text": "Tomb guardians are bound by powerful rituals that prevent them from doing harm to family members. The rituals endure for a long time by mortal standard, so even if the tomb is not well-maintained, the tomb guardians don’t suddenly become hostile. Well, at least they shouldn’t. Unfortunately, the guardians sometimes become corrupted by liches, cultists or necromancers. Teris can probably tell you more about this.",
     "filters": [
       {
         "index": 3,
@@ -14785,7 +15317,7 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "Choice \"Continue\" 1"
   },
   {
     "type": "Dialogue",
@@ -16390,7 +16922,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Fantastic news, %PCName! How about a round on me? I had this specially imported from High Rock, and I think completing your first interment counts as a suitable event to celebrate. There’s more pots in the backlog if you have time, but I heard Firsylla has more work for you, too.",
+    "text": "Fantastic news, %PCName! How about a round on me? I had this specially imported from High Rock, and I think completing your first interment counts as a suitable event to celebrate. Oh, and I heard Firsylla has more work for you.",
     "filters": [
       {
         "index": 2,
@@ -16495,7 +17027,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Great, I knew I could count on you. If you don’t know where a tomb is, Nance Bero can usually point you to the right spot. This one is near Lake Nabia. From Suran, just follow the river north until you spot it.\n\nThe tomb’s already been pacified, so the locals shouldn’t bother you so long as you behave yourself. All you need to do is get the urn in the tomb, someplace out of the way, and then leave. The family might show up a couple weeks after interment, so don’t make a mess. The pot’s heavy, so lift with your legs.\n\nOh! And take this lockpick. Sometimes the tombs are locked up tight.",
+    "text": "Great, I knew I could count on you. If you don’t know where a tomb is, Nance Bero can usually point you to the right spot. This one is near Lake Nabia. From Suran, just follow the river north until you spot it.\n\nThe tomb’s already been pacified, so the locals shouldn’t bother you so long as you behave yourself. All you need to do is get the urn in the tomb, someplace out of the way, and then leave. The family might show up a couple weeks after interment, so don’t make a mess.\n\nOh! And take this lockpick. Sometimes the tombs are locked up tight.",
     "filters": [
       {
         "index": 2,
@@ -16748,7 +17280,7 @@
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
-      "disposition": 0,
+      "disposition": 30,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": 0
