@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 470,
+    "num_objects": 472,
     "masters": [
       [
         "Morrowind.esm",
@@ -522,6 +522,39 @@
       "spell_type": "Spell",
       "cost": 0,
       "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "AV_disintegrate",
+    "name": "Disintegrate",
+    "effects": [
+      {
+        "magic_effect": "DisintegrateArmor",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 1,
+        "min_magnitude": 50,
+        "max_magnitude": 50
+      },
+      {
+        "magic_effect": "DisintegrateWeapon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 1,
+        "min_magnitude": 30,
+        "max_magnitude": 30
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 10,
+      "flags": ""
     }
   },
   {
@@ -4093,7 +4126,7 @@
     "inventory": [
       [
         1,
-        "glass tanto"
+        "silver tanto"
       ],
       [
         1,
@@ -4118,13 +4151,25 @@
       [
         3,
         "p_restore_magicka_q"
+      ],
+      [
+        0,
+        "bk_corpsepreperation2_c"
+      ],
+      [
+        0,
+        "misc_skull00"
+      ],
+      [
+        0,
+        "AB_Misc_SoulGemBlack"
       ]
     ],
     "spells": [
+      "AV_disintegrate",
       "Dispel",
       "summon skeletal minion",
-      "summon least bonewalker",
-      "disintegrate weapon"
+      "summon least bonewalker"
     ],
     "ai_data": {
       "hello": 0,
@@ -4162,13 +4207,13 @@
       "level": 10,
       "stats": {
         "attributes": [
+          50,
+          80,
           70,
-          100,
-          100,
-          73,
-          83,
-          86,
-          57,
+          60,
+          75,
+          60,
+          40,
           40
         ],
         "skills": [
@@ -4182,12 +4227,12 @@
           8,
           13,
           80,
-          90,
+          80,
           80,
           65,
           80,
-          85,
-          90,
+          80,
+          80,
           28,
           28,
           8,
@@ -8367,7 +8412,7 @@
     "flags": "",
     "id": "305254786612741214461770969371",
     "prev_id": "18439490606346578255811806185",
-    "next_id": "5911408290107197882501776595",
+    "next_id": "409631429228035116217618048",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -8412,8 +8457,55 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5911408290107197882501776595",
+    "id": "409631429228035116217618048",
     "prev_id": "305254786612741214461770969371",
+    "next_id": "5911408290107197882501776595",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Ondar has more work for you. Check with him.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5911408290107197882501776595",
+    "prev_id": "409631429228035116217618048",
     "next_id": "382474703614209496577415157191",
     "data": {
       "dialogue_type": "Topic",
