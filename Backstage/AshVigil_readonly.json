@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 472,
+    "num_objects": 473,
     "masters": [
       [
         "Morrowind.esm",
@@ -4112,6 +4112,132 @@
       "level": 30,
       "disposition": 50,
       "reputation": 12,
+      "rank": 0,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_armiger",
+    "name": "Tolasie Dalvar",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "p_water_walking_s"
+      ],
+      [
+        1,
+        "torch"
+      ],
+      [
+        1,
+        "T_De_AlitHide_Shield_01"
+      ],
+      [
+        1,
+        "T_Com_Silver_WarAxe_Health"
+      ],
+      [
+        1,
+        "T_De_Chitin_PauldrR_01"
+      ],
+      [
+        1,
+        "T_De_Chitin_PauldrL_01"
+      ],
+      [
+        1,
+        "T_De_Chitin_HelmOpen_01"
+      ],
+      [
+        1,
+        "common_skirt_02"
+      ],
+      [
+        1,
+        "common_shirt_02"
+      ],
+      [
+        1,
+        "netch_leather_boots"
+      ],
+      [
+        1,
+        "netch_leather_greaves"
+      ],
+      [
+        1,
+        "chitin cuirass"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Buoyant Armiger",
+    "faction": "",
+    "head": "b_n_dark elf_f_head_07",
+    "hair": "b_n_dark elf_f_hair_13",
+    "npc_flags": "FEMALE | IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "level": 8,
+      "stats": {
+        "attributes": [
+          50,
+          40,
+          55,
+          65,
+          50,
+          50,
+          40,
+          40
+        ],
+        "skills": [
+          40,
+          0,
+          0,
+          0,
+          0,
+          0,
+          60,
+          0,
+          44,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          25,
+          0,
+          50,
+          30,
+          50,
+          0,
+          0,
+          30,
+          30,
+          0
+        ],
+        "health": 70,
+        "magicka": 80,
+        "fatigue": 390
+      },
+      "disposition": 50,
+      "reputation": 0,
       "rank": 0,
       "gold": 0
     }
