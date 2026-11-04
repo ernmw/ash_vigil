@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 473,
+    "num_objects": 495,
     "masters": [
       [
         "Morrowind.esm",
@@ -6481,6 +6481,183 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "AV_sewer_snoop",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13164923829653087476927321341",
+    "prev_id": "",
+    "next_id": "32453958061380723204632316277",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Sewer Snoop",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32453958061380723204632316277",
+    "prev_id": "13164923829653087476927321341",
+    "next_id": "60497768609870475336436280857",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I agreed to deal with Buoyant Armiger snooping around in the Molag Mar underworks.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "60497768609870475336436280857",
+    "prev_id": "32453958061380723204632316277",
+    "next_id": "35962231792810605775693530044",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35962231792810605775693530044",
+    "prev_id": "60497768609870475336436280857",
+    "next_id": "503688719012758953689085982690",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "503688719012758953689085982690",
+    "prev_id": "35962231792810605775693530044",
+    "next_id": "17569569706912695582319465647",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 40,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I convinced the Buoyant Armiger to leave.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "17569569706912695582319465647",
+    "prev_id": "503688719012758953689085982690",
+    "next_id": "341454097911098623165518291978",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I reported that the Buoyant Armiger has ended their investigation.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "341454097911098623165518291978",
+    "prev_id": "17569569706912695582319465647",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I reported that I killed the Buoyant Armiger.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Tel Branora",
     "dialogue_type": "Topic"
   },
@@ -7515,7 +7692,7 @@
     "flags": "",
     "id": "343458272710788863793636198557",
     "prev_id": "28691779438170525495783640989",
-    "next_id": "",
+    "next_id": "39823654408574712488641132592",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -7567,6 +7744,42 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39823654408574712488641132592",
+    "prev_id": "343458272710788863793636198557",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The underworks are off-limits.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "AddTopic \"underworks\""
   },
   {
     "type": "Dialogue",
@@ -8160,36 +8373,6 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "invitation",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "204493126770781524",
-    "prev_id": "",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "hlireni indavel",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Were you summoned? Or do you come of your own free will? It hardly matters... the party is open to all. But make sure you pay your respects to the host. And grab a drink from Lustidrike, over in the corner. Then feel free to mingle with the other guests, to join the dancing, chancing throng. I believe the ones in the gold masks are party crashers, but all are welcome to the Mad God's Masque and Bellicose Ball.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
     "id": "Background",
     "dialogue_type": "Topic"
   },
@@ -8240,6 +8423,537 @@
     "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
     "filters": [],
     "script_text": "AddTopic \"Nance Bero\"\nAddTopic \"Keerin Meille\"\nAddTopic \"Keepers of the Dead\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "underworks",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14053957895660548635053630981",
+    "prev_id": "412623842663210406",
+    "next_id": "61845500003914801839587388436",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Some smugglers tunneled into the waterworks and have been using the area to move illicit goods. For your own safety, please vacate.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "61845500003914801839587388436",
+    "prev_id": "14053957895660548635053630981",
+    "next_id": "15025449494401536550401362236",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Stay out of the underworks, or I’ll arrest you. I’m feeling kind today, so consider this a warning.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "15025449494401536550401362236",
+    "prev_id": "61845500003914801839587388436",
+    "next_id": "50388672801386430218372329583",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m investigating reports of increased activity down here.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "50388672801386430218372329583",
+    "prev_id": "15025449494401536550401362236",
+    "next_id": "40312172601300799301457428270",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You will regret this!",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nModDisposition -80\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "40312172601300799301457428270",
+    "prev_id": "50388672801386430218372329583",
+    "next_id": "13219062948704649259197104471",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There are much drier places to think, but it has been relatively crowded in Molag Mar lately. Have you noticed anyone else down here?",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "PcSpeechcraft",
+        "comparison": "Greater",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 65
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 20\nAddTopic \"noticed anyone\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13219062948704649259197104471",
+    "prev_id": "40312172601300799301457428270",
+    "next_id": "350477404214134084523894163471",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Do you take me for a fool, outlander?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 30\nModDisposition -30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "350477404214134084523894163471",
+    "prev_id": "13219062948704649259197104471",
+    "next_id": "751221906012372461571859097495",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Fair enough. Everyone has to eat, even if they need to stoop to eating sewer fish. Have you noticed anyone else down here?",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "PcClothingModifier",
+        "comparison": "LessEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 25
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 20\nAddTopic \"noticed anyone\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "751221906012372461571859097495",
+    "prev_id": "350477404214134084523894163471",
+    "next_id": "110199708213481108565755321037",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I have trouble believing that a well-off outlander would spend time in the underworks looking for fish.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 30\nModDisposition -30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "110199708213481108565755321037",
+    "prev_id": "751221906012372461571859097495",
+    "next_id": "39706879946015980344638983749",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Corprus monsters here, so close to the Armigers Stronghold? Don’t be ridiculous.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 30\nModDisposition -30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39706879946015980344638983749",
+    "prev_id": "110199708213481108565755321037",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What are you doing down here, %PCRace? There’s nothing down here for you.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"[Attack.]\" 1 \"[Lie.] I come down here to think. It's quiet.\" 2 \"[Lie.] The fishing is better down here.\" 3 \"[Lie.] There’s a corprus monster down here. I mean to kill it.\" 4"
   },
   {
     "type": "Dialogue",
@@ -18055,5 +18769,141 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "noticed anyone",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2723218262922688774150056782",
+    "prev_id": "",
+    "next_id": "303389153414470650017981965087",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There’s been too much noise down here for just one outlander quietly minding their own business. You must be mistaken.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 30\nModDisposition -30"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "303389153414470650017981965087",
+    "prev_id": "2723218262922688774150056782",
+    "next_id": "685641829012114543170725648022",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You’re talking about Vanjirra? She has a good reputation here, for a Khajiit. It’s no wonder why she hides her habit. Thank you for your assistance. I have enough information for my report.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sewer_snoop\" 40"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "685641829012114543170725648022",
+    "prev_id": "303389153414470650017981965087",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_armiger",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes? Who else has been spending time down here?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Choice \"[Lie.] No one. Just me.\" 1 \"[Lie.] A khajiit comes down here with Skooma.\" 2"
   }
 ]
