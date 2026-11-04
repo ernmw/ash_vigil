@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 496,
+    "num_objects": 495,
     "masters": [
       [
         "Morrowind.esm",
@@ -8369,36 +8369,6 @@
       }
     ],
     "script_text": "AddTopic \"Keepers of the Dead\""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
-    "id": "invitation",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "204493126770781524",
-    "prev_id": "",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "hlireni indavel",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Were you summoned? Or do you come of your own free will? It hardly matters... the party is open to all. But make sure you pay your respects to the host. And grab a drink from Lustidrike, over in the corner. Then feel free to mingle with the other guests, to join the dancing, chancing throng. I believe the ones in the gold masks are party crashers, but all are welcome to the Mad God's Masque and Bellicose Ball.",
-    "filters": [],
-    "script_text": ""
   },
   {
     "type": "Dialogue",
