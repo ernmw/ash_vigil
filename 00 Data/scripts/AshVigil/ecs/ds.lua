@@ -31,7 +31,7 @@ local persist    = {
 }
 
 -- AVblowkiss
-local kiss_anim = "av_ds_blowkiss"
+local kiss_anim = "av_blowkiss_v"
 print("DS has group:", animation.hasGroup(pself, kiss_anim))
 
 local function onKissDone()
