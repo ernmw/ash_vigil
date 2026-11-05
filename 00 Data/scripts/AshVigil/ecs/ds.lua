@@ -30,20 +30,8 @@ local persist    = {
     elapsedDuration = 0
 }
 
-local function calmSelf()
-    pself.type.activeSpells(pself):add({
-        id = const.PEACE_SPELL,
-        effects = { 0 },
-        ignoreResistances = true,
-        ignoreSpellAbsorption = true,
-        ignoreReflect = true
-    })
-end
-
 -- AVblowkiss
-local kiss_anim = "av_ds_blowkiss"
-
-
+local kiss_anim = "av_blowkiss_v"
 print("DS has group:", animation.hasGroup(pself, kiss_anim))
 
 local function onKissDone()
