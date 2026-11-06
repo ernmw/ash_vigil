@@ -38,6 +38,14 @@ local function onKissStart(data)
             player = data.player,
         })
     end
+
+    local recall = core.magic.effects.records[core.magic.EFFECT_TYPE.Recall]
+    local model = types.Static.records[recall.castStatic].model
+    world.vfx.spawn(model, data.actor.position, {
+        particleTextureOverride = recall.particle,
+        loop = true,
+        vfxId = MOD_NAME.."casting"
+    })
 end
 
 ---@param data onKissData
@@ -47,13 +55,9 @@ local function onKissStop(data)
 
     local actorPosition = data.actor.position
 
-    --- play recall VFX
-    local recall = core.magic.effects.records[core.magic.EFFECT_TYPE.Recall]
-    local model = types.Static.records[recall.castStatic].model
-    world.vfx.spawn(model, data.actor.position, {
-        particleTextureOverride = recall.particle,
-        loop = false,
-    })
+    --- finish recall VFX
+    world.vfx.remove(MOD_NAME.."casting")
+
     --- disable the actor
     data.actor:remove()
     --- spawn hostile scamps
