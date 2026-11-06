@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 495,
+    "num_objects": 496,
     "masters": [
       [
         "Morrowind.esm",
@@ -322,6 +322,21 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_TappiusSCript\n\n; template for the ghost script (local flags, disable/enable etc.)\n\nEnd AV_TappiusSCript\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_baguard",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_baguard\n\nshort dead\nif ( OnDeath == 1 )\n\tset dead to 1\nendif\n\nif ( dead == 1)\n\t; do nothing\nelseif ( GetJournalIndex \"AV_sewer_snoop\" > 0 )\n\tEnable\nelseif ( GetJournalIndex \"AV_meet_the_boss\" == 100 )\n\tEnable\nelse\n\tDisable\nendif\n\nEnd AV_baguard\n "
   },
   {
     "type": "Script",
@@ -4121,7 +4136,7 @@
     "flags": "",
     "id": "AV_armiger",
     "name": "Tolasie Dalvar",
-    "script": "",
+    "script": "AV_baguard",
     "mesh": "",
     "inventory": [
       [
@@ -4236,7 +4251,7 @@
         "magicka": 80,
         "fatigue": 390
       },
-      "disposition": 50,
+      "disposition": 60,
       "reputation": 0,
       "rank": 0,
       "gold": 0
