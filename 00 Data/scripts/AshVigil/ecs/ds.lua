@@ -30,8 +30,10 @@ local persist    = {
     elapsedDuration = 0
 }
 
--- AVblowkiss
-local kiss_anim = "av_blowkiss_v"
+-- av_blowkiss_v
+local kiss_anim  = "knockdown"
+local start_key  = "start"
+local stop_key = "stop"
 print("DS has group:", animation.hasGroup(pself, kiss_anim))
 
 local function onKissDone()
@@ -42,12 +44,12 @@ end
 local function start()
     interfaces.AnimationController.addTextKeyHandler(kiss_anim, function(groupname, key)
         print("text key- groupname:"..tostring(groupname)..", key: "..tostring(key))
-        if key == "stop" then
+        if key == stop_key then
             --- all done with kiss!
             onKissDone()
         end
     end)
-    animation.playBlended(pself, kiss_anim, { startkey = "start", stopkey = "stop", priority = animation.PRIORITY.Scripted, autoDisable = true })
+    animation.playQueued(pself, kiss_anim, { startkey = start_key, stopkey = stop_key, priority = animation.PRIORITY.Scripted, autoDisable = true })
 end
 
 
