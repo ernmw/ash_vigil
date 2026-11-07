@@ -1,6 +1,5 @@
 local SloadCells = {
-    --- TODO: replace with sload lair cell name
-    ['savel ancestral tomb'] = true,
+    ['slug tunnels, lair'] = true,
 }
 
 return {
