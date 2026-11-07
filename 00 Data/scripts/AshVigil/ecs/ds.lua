@@ -31,13 +31,15 @@ local persist    = {
     kissFinished = false
 }
 
-local kissAnim   = {
+local kissAnim      = {
+    -- this is the desired animation, but it's not being picked up ever
     group = "av_blowkiss_v",
     start = "start",
     stop = "stop",
 }
-local spellcastAnim   = {
-    group = "idle",
+local spellcastAnim = {
+    -- idle4 is head scratching
+    group = "idle4",
     start = "start",
     stop = "stop",
 }
