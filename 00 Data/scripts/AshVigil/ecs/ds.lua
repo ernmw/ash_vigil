@@ -27,29 +27,44 @@ local SCRIPTS        = require("scripts.AshVigil.ecs.scripts")
 
 local persist    = {
     player = nil,
-    elapsedDuration = 0
+    elapsedDuration = 0,
+    kissFinished = false
 }
 
--- av_blowkiss_v
-local kiss_anim  = "knockdown"
-local start_key  = "start"
-local stop_key = "stop"
-print("DS has group:", animation.hasGroup(pself, kiss_anim))
+local kissAnim   = {
+    group = "av_blowkiss_v",
+    start = "start",
+    stop = "stop",
+}
+local spellcastAnim   = {
+    group = "idle",
+    start = "start",
+    stop = "stop",
+}
+
+local castAnim      = spellcastAnim
+if animation.hasGroup(pself, kissAnim.group) then
+    castAnim = kissAnim
+end
 
 local function onKissDone()
+    if persist.kissFinished then
+        return
+    end
     print("kiss done")
     core.sendGlobalEvent(MOD_NAME .. "onKissStop", { player = persist.player, actor = pself })
+    persist.kissFinished = true
 end
 
 local function start()
-    interfaces.AnimationController.addTextKeyHandler(kiss_anim, function(groupname, key)
+    print("playing animation "..castAnim.group.." from "..castAnim.start.." until "..castAnim.stop)
+    interfaces.AnimationController.addTextKeyHandler(castAnim.group, function(groupname, key)
         print("text key- groupname:"..tostring(groupname)..", key: "..tostring(key))
-        if key == stop_key then
-            --- all done with kiss!
+        if key == castAnim.stop then
             onKissDone()
         end
     end)
-    animation.playQueued(pself, kiss_anim, { startkey = start_key, stopkey = stop_key, priority = animation.PRIORITY.Scripted, autoDisable = true })
+    interfaces.AnimationController.playBlendedAnimation(castAnim.group, { startkey = castAnim.start, stopkey = castAnim.stop, priority = animation.PRIORITY.Scripted})
 end
 
 
@@ -80,6 +95,11 @@ local function onUpdate(dt)
     persist.elapsedDuration = (persist.elapsedDuration or 0) + dt
     healthStart.base = 10000
     healthStart.current = 10000
+
+    --- emergency quit if animation fails
+    if persist.elapsedDuration > 5 then
+        onKissDone()
+    end
 end
 
 return {

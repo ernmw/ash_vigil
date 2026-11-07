@@ -22,5 +22,5 @@ Items marked with `*` have been modified from the original.
 - `00 Data/textures/AshVigil/tr_cr_seducer_head_01.dds` *
 - `00 Data/textures/AshVigil/tr_cr_seducer_attire.dds` *
 - `00 Data/meshes/AshVigil/tr_cr_seducer_01.nif`
-- `00 Data/meshes/AshVigil/xtr_cr_seducer_01.kf` *
+- `00 Data/meshes/AshVigil/xtr_cr_seducer_01.kf`
 - `00 Data/meshes/AshVigil/xtr_cr_seducer_01.nif`
