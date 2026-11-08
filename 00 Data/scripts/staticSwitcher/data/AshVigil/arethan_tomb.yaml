@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Purify Arethan Tomb
+priority: balance
+instances:
+  # respawn and hook up all the critters we need to kill for the quest
+  - conditions:
+      - cell: "arethan ancestral tomb"
+      - has_journal:
+          quest: av_mm_arethan
+          min: 10
+          max: 10
+      - not:
+          global_value:
+          - AV_ArethanPurged: 1
+      - creature_type:
+        - undead
+        - daedra
+      - is_follower: false
+      - not: {record_id: "^AV_"}
+      - not: {has_lua_script: scripts/AshVigil/ecs/interloper.lua}
+    actions:
+      # this respawns everything
+      - replace: self
+      - add_lua_script: scripts/AshVigil/ecs/interloper.lua
+  # place the ghost that pops up at the end of the quest
+  - conditions:
+      - cell: "arethan ancestral tomb"
+      - has_journal:
+          quest: av_mm_arethan
+          min: 10
+          max: 10
+      # Coordinates: 1006.1 2299.04 -117.02
+      # dir: Coordinates: 873.247 2300.87 -121.451
+      - record_id: "in_velothi_ashpit_02"
+    once: true
+    actions:
+      - create:
+          AV_GhostTorosiArethan:
+            position:
+              x: -200

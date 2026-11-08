@@ -146,7 +146,7 @@ local function load()
         end
     end
 
-    settings.debugPrint("Loaded " .. tostring(count) .. " quests.")
+    settings.debugPrint("Loaded " .. tostring(count) .. " interment quests.")
 end
 
 load()

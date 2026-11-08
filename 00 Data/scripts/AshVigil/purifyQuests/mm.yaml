@@ -1,0 +1,6 @@
+# Creatures in the tomb need ecs/interloper.lua added for these to work.
+quests:
+  - id: "av_mm_arethan"
+    destCell: "Arethan Ancestral Tomb"
+    global: "AV_ArethanPurged"
+    startStage: 10
