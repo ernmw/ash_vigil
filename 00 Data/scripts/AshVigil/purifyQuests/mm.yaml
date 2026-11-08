@@ -1,0 +1,8 @@
+# PCRaiseRank "Temple"
+# Journal "av_mm_andas", 10
+# coc "Andas Ancestral Tomb"
+
+quests:
+  - id: "av_mm_arethan"
+    destCell: "Arethan Ancestral Tomb"
+    global: "AV_ArethanPurged"

@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Purify Arethan Tomb
+priority: balance
+
+        #- "aran ancestral tomb"
+        #- "arethan ancestral tomb"
+        # these next two are part of the Tel Branora questline
+        #- "arano ancestral tomb"
+        #- "beran ancestral tomb"
+
+instances:
+  # send event when daedra or undead die in a tomb
+  # this works with player.lua to advance quest stages
+  - conditions:
+      - has_journal:
+          quest: av_mm_arethan
+          min: 10
+          max: 10
+      - not:
+          global_value:
+          - AV_ArethanPurged: 0
+      - cell:
+        - "arethan ancestral tomb"
+      - creature_type:
+        - undead
+        - daedra
+      - not: {has_lua_script: scripts/AshVigil/ecs/interloper.lua}
+    actions:
+      # this respawns everything
+      - replace: self
+      - add_lua_script: scripts/AshVigil/ecs/interloper.lua
