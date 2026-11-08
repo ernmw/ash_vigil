@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 496,
+    "num_objects": 562,
     "masters": [
       [
         "Morrowind.esm",
@@ -26,7 +26,7 @@
       ],
       [
         "OAAB_Data.esm",
-        1733277
+        1713532
       ]
     ]
   },
@@ -291,7 +291,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_HelanNecroScript\n\nshort nolore\n\n; template for the necromancer script (disable/enable, journal entries etc.)\n\nEnd AV_HelanNecroScript\n"
+    "text": "Begin AV_HelanNecroScript\n\nshort nolore\n\nif ( getjournalindex \"AV_mm_helan\" < 10 )\n\tdisable\nelse\n\tenable\nendif\n\nEnd AV_HelanNecroScript\n"
   },
   {
     "type": "Script",
@@ -306,7 +306,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_TaluriScript\n\n; template for the ghost script (local flags, disable/enable etc.)\n\nEnd AV_TaluriScript\n"
+    "text": "Begin AV_TaluriScript\n\nshort AV_Taluri_Flag\nshort AV_Taluri_Flag_Trap\nshort AV_Taluri_Flag_Quest\n\nif ( getjournalindex \"AV_mm_velas\" < 10 )\n\tdisable\nelse\n\tenable\nendif\n\nEnd AV_TaluriScript\n"
   },
   {
     "type": "Script",
@@ -321,7 +321,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_TappiusSCript\n\n; template for the ghost script (local flags, disable/enable etc.)\n\nEnd AV_TappiusSCript\n"
+    "text": "Begin AV_TappiusSCript\n\nshort AV_Tappius_disable\n\nif ( AV_Tappius_disable == 1 )\n\tdisable\n\treturn\nendif\n\nif ( getjournalindex \"AV_mm_velas\" < 10 )\n\tdisable\nelse\n\tenable\nendif\n\nEnd AV_TappiusSCript\n"
   },
   {
     "type": "Script",
@@ -476,6 +476,29 @@
   {
     "type": "Spell",
     "flags": "",
+    "id": "AV_DispelNecro",
+    "name": "Dispel",
+    "effects": [
+      {
+        "magic_effect": "Dispel",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 5,
+        "duration": 1,
+        "min_magnitude": 100,
+        "max_magnitude": 100
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 25,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
     "id": "AV_MadnessCall",
     "name": "Call of Madness",
     "effects": [
@@ -549,7 +572,7 @@
         "magic_effect": "DisintegrateArmor",
         "skill": "None",
         "attribute": "None",
-        "range": "OnTouch",
+        "range": "OnTarget",
         "area": 0,
         "duration": 1,
         "min_magnitude": 50,
@@ -559,7 +582,7 @@
         "magic_effect": "DisintegrateWeapon",
         "skill": "None",
         "attribute": "None",
-        "range": "OnTouch",
+        "range": "OnTarget",
         "area": 0,
         "duration": 1,
         "min_magnitude": 30,
@@ -568,7 +591,40 @@
     ],
     "data": {
       "spell_type": "Spell",
-      "cost": 10,
+      "cost": 15,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "AV_necro skeleton",
+    "name": "Summon Skeletal Minion",
+    "effects": [
+      {
+        "magic_effect": "SummonSkeleton",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "FireShield",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 60,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 39,
       "flags": ""
     }
   },
@@ -2346,6 +2402,10 @@
       [
         1,
         "random_ectoplasm"
+      ],
+      [
+        1,
+        "AV_VelasFamilyAmulet"
       ]
     ],
     "spells": [
@@ -3134,6 +3194,39 @@
     }
   },
   {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "cybVelasAmulet_en",
+    "effects": [
+      {
+        "magic_effect": "Sanctuary",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 10,
+        "max_magnitude": 10
+      },
+      {
+        "magic_effect": "ResistMagicka",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 15,
+        "max_magnitude": 15
+      }
+    ],
+    "data": {
+      "enchant_type": "ConstantEffect",
+      "cost": 1,
+      "max_charge": 1,
+      "flags": ""
+    }
+  },
+  {
     "type": "Npc",
     "flags": "",
     "id": "AV_AngryGhost",
@@ -3863,14 +3956,6 @@
       ],
       [
         1,
-        "T_Com_Ep_GloveL_01"
-      ],
-      [
-        1,
-        "T_Com_Ep_GloveR_01"
-      ],
-      [
-        1,
         "T_De_BonemoldSacred_Boots_01"
       ],
       [
@@ -4262,20 +4347,20 @@
     "flags": "",
     "id": "AV_helan_necro",
     "name": "Caethor",
-    "script": "",
+    "script": "AV_HelanNecroScript",
     "mesh": "",
     "inventory": [
       [
         1,
-        "silver tanto"
+        "T_Com_Steel_Staff_Disorient"
       ],
       [
         1,
-        "expensive_robe_02_a"
+        "T_De_Cm_Robe_01"
       ],
       [
         1,
-        "extravagant_shoes_02"
+        "T_Com_Cm_Shoes_01"
       ],
       [
         1,
@@ -4286,30 +4371,31 @@
         "sc_manarape"
       ],
       [
-        3,
+        1,
         "p_restore_health_q"
       ],
       [
-        3,
+        2,
         "p_restore_magicka_q"
       ],
       [
-        0,
+        1,
         "bk_corpsepreperation2_c"
       ],
       [
-        0,
+        1,
         "misc_skull00"
       ],
       [
-        0,
+        1,
         "AB_Misc_SoulGemBlack"
       ]
     ],
     "spells": [
       "AV_disintegrate",
       "Dispel",
-      "summon skeletal minion",
+      "AV_DispelNecro",
+      "AV_necro skeleton",
       "summon least bonewalker"
     ],
     "ai_data": {
@@ -4322,7 +4408,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 0,
+        "distance": 250,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4338,14 +4424,14 @@
     ],
     "travel_destinations": [],
     "race": "Wood Elf",
-    "class": "Sorcerer",
+    "class": "Necromancer",
     "faction": "",
     "head": "b_n_wood elf_m_head_02",
     "hair": "b_n_wood elf_m_hair_03",
     "npc_flags": "IS_BASE",
     "blood_type": 0,
     "data": {
-      "level": 10,
+      "level": 12,
       "stats": {
         "attributes": [
           50,
@@ -4362,7 +4448,7 @@
           8,
           45,
           45,
-          8,
+          45,
           13,
           8,
           8,
@@ -4375,7 +4461,7 @@
           80,
           80,
           28,
-          28,
+          45,
           8,
           8,
           8,
@@ -4390,82 +4476,27 @@
         "magicka": 200,
         "fatigue": 300
       },
-      "disposition": 5,
+      "disposition": 0,
       "reputation": 0,
       "rank": 0,
       "gold": 0
     }
   },
   {
-    "type": "Npc",
+    "type": "Clothing",
     "flags": "",
-    "id": "AV_necromancerHelan",
-    "name": "Fadren Dalar",
-    "script": "AV_HelanNecroScript",
-    "mesh": "",
-    "inventory": [
-      [
-        1,
-        "T_De_Cm_Robe_01"
-      ],
-      [
-        1,
-        "T_Com_Cm_Shoes_01"
-      ],
-      [
-        1,
-        "p_restore_magicka_s"
-      ],
-      [
-        1,
-        "sc_summonskeletalservant"
-      ],
-      [
-        1,
-        "T_Com_Steel_Staff_Disorient"
-      ]
-    ],
-    "spells": [
-      "summon skeletal minion"
-    ],
-    "ai_data": {
-      "hello": 30,
-      "fight": 90,
-      "flee": 20,
-      "alarm": 0,
-      "services": ""
-    },
-    "ai_packages": [
-      {
-        "type": "Wander",
-        "distance": 500,
-        "duration": 5,
-        "game_hour": 0,
-        "idle2": 60,
-        "idle3": 20,
-        "idle4": 10,
-        "idle5": 0,
-        "idle6": 0,
-        "idle7": 0,
-        "idle8": 0,
-        "idle9": 0,
-        "reset": 1
-      }
-    ],
-    "travel_destinations": [],
-    "race": "Dark Elf",
-    "class": "Necromancer",
-    "faction": "",
-    "head": "b_n_dark elf_m_head_06",
-    "hair": "b_n_dark elf_m_hair_02",
-    "npc_flags": "IS_BASE | AUTO_CALCULATE",
-    "blood_type": 0,
+    "id": "AV_VelasFamilyAmulet",
+    "name": "Velas Family Amulet",
+    "script": "",
+    "mesh": "c\\Amulet_Exquisit_1.NIF",
+    "icon": "c\\tx_amulet_exquisite1.tga",
+    "enchanting": "cybVelasAmulet_en",
+    "biped_objects": [],
     "data": {
-      "level": 13,
-      "disposition": 0,
-      "reputation": 0,
-      "rank": 0,
-      "gold": 0
+      "clothing_type": "Amulet",
+      "weight": 1.0,
+      "value": 3000,
+      "enchantment": 0
     }
   },
   {
@@ -4482,7 +4513,24 @@
       "clothing_type": "Amulet",
       "weight": 1.0,
       "value": 90,
-      "enchantment": 50
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Clothing",
+    "flags": "",
+    "id": "AV_velas_keepsake",
+    "name": "Velas Keepsake",
+    "script": "",
+    "mesh": "c\\C_Ring_expensive_2.NIF",
+    "icon": "c\\tx_ring_expensive02.tga",
+    "enchanting": "",
+    "biped_objects": [],
+    "data": {
+      "clothing_type": "Ring",
+      "weight": 0.1,
+      "value": 60,
+      "enchantment": 0
     }
   },
   {
@@ -6673,6 +6721,134 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "AV_mm_velas",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "703794311016755378222216344095",
+    "prev_id": "",
+    "next_id": "3786308412184158351345296002",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Velas Ancestral Testimony",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3786308412184158351345296002",
+    "prev_id": "703794311016755378222216344095",
+    "next_id": "386891697811768613186290076684",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was asked to investigate Velas Ancestral Tomb and to uncover what happened to a missing Ordinator who was sent to the area.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "386891697811768613186290076684",
+    "prev_id": "3786308412184158351345296002",
+    "next_id": "3849333355583829243117612961",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I collected ancestral testimony from the ghost in Velas Ancestral Tomb and learned the truth about Goron Velas. Apparently, he is now a lich.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3849333355583829243117612961",
+    "prev_id": "386891697811768613186290076684",
+    "next_id": "101622240813955609821613093275",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was tricked by Taluri Velas’ ghost in Velas Ancestral Tomb. I still need to make my report to the Keepers.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "101622240813955609821613093275",
+    "prev_id": "3849333355583829243117612961",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report to Firsylla.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Tel Branora",
     "dialogue_type": "Topic"
   },
@@ -7765,7 +7941,7 @@
     "flags": "",
     "id": "39823654408574712488641132592",
     "prev_id": "343458272710788863793636198557",
-    "next_id": "",
+    "next_id": "249257988917693246366338979417",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -7795,6 +7971,435 @@
       }
     ],
     "script_text": "AddTopic \"underworks\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "249257988917693246366338979417",
+    "prev_id": "39823654408574712488641132592",
+    "next_id": "379771010513298992186695397760",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thank you. Thank you… [Suddenly, the ghost demeanor changes.] You utter, utter fool. I can’t believe this actually worked. Wanted to help a poor soul out? Well then, Keeper. I only needed the amulet. You’ll still have to face this worthless puppet spirit. And everything else that remains in the chamber, for that matter.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_VelasFamilyAmulet",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "MessageBox, \"Velas Family Amulet dematerialized before your eyes!\"\nplayer->removeitem \"AV_VelasFamilyAmulet\" 1\nsetfight 100\nstartcombat player\nif ( getdeadcount \"AV_GhostTappius\" == 0 )\n\"AV_GhostTappius\"->setfight 100\n\"AV_GhostTappius\"->startcombat player\nendif\njournal \"AV_mm_velas\" 30\nset \"AV_Taluri_Flag_Trap\" to 1\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "379771010513298992186695397760",
+    "prev_id": "249257988917693246366338979417",
+    "next_id": "12182450014629182232975858309",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Suddenly, the ghost demeanor changes.] Damn it. To think that you seemed so close to giving me the amulet. Well, let’s see if this worthless puppet spirit can still end your life, Keeper.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_VelasFamilyAmulet",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "setfight 100\nstartcombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12182450014629182232975858309",
+    "prev_id": "379771010513298992186695397760",
+    "next_id": "335536403016134968279652998862",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "No more talking!",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_Taluri_Flag_Trap",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "setfight 100\nstartcombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "335536403016134968279652998862",
+    "prev_id": "12182450014629182232975858309",
+    "next_id": "11630028917783145064494164098",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Do you have the amulet? Perfect. Please, give it to me. That will set me free.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_VelasFamilyAmulet",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_Taluri_Flag_Quest",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Give her the amulet.\" 1\nChoice \"Don’t give her the amulet.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11630028917783145064494164098",
+    "prev_id": "335536403016134968279652998862",
+    "next_id": "310228429013067477207226366890",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You can hear me? That’s a relief. I thought nobody would. I’m %Name. I’ve been trapped here for a long time. I almost lost all hope.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"lost all hope\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "310228429013067477207226366890",
+    "prev_id": "11630028917783145064494164098",
+    "next_id": "31505614323041007975283440306",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I need your help. Please.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31505614323041007975283440306",
+    "prev_id": "310228429013067477207226366890",
+    "next_id": "338669621215846255164421321479",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thank you again.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_GhostTaluriVelas",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "playsound \"mysticism cast\"\nset AV_Tappius_disable to 1\ndisable\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "338669621215846255164421321479",
+    "prev_id": "31505614323041007975283440306",
+    "next_id": "11537209478632185571811850774",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What? After all this… NO! ",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "GreaterEqual",
+        "id": "AV_GhostTaluriVelas",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "LessEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "startcombat player\nsetfight 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11537209478632185571811850774",
+    "prev_id": "338669621215846255164421321479",
+    "next_id": "38758490635472232629734044640",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I feel different. Free. The witch’s ghost is no more. Thank you, stranger. Wait… there is something else. With the curse lifted I can, um, feel my memory returning. Goron Velas. My partner. He killed the Ordinator, and he killed me, too. Then he possessed that witch's spirit. You see, Goron isn’t exactly dead. I think he became something different. A lich, they call it. He really wanted that amulet, but couldn’t get his hands on it for some reason. I’m glad you didn’t fall for his ruse. Now I want to rest.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GhostTaluriVelas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "journal AV_mm_velas 20\n\nChoice \"I won’t let you go. You don’t deserve it.\" 1\nChoice \"I don’t like being lied to. I won’t let you go.\" 2\nChoice \"I see. Farewell.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38758490635472232629734044640",
+    "prev_id": "11537209478632185571811850774",
+    "next_id": "1782507920843580143879708999",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "A living soul? Here? Finally! Truth be told, I lost all hope. Listen, you need to help me. My name is %Name. I’m trapped in this tomb. I just want some rest. I’m dead, after all.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"lost all hope\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1782507920843580143879708999",
+    "prev_id": "38758490635472232629734044640",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Please, help me.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -9190,7 +9795,7 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 0
+      "player_rank": -1
     },
     "speaker_id": "",
     "speaker_race": "",
@@ -9314,7 +9919,7 @@
     "flags": "",
     "id": "409631429228035116217618048",
     "prev_id": "305254786612741214461770969371",
-    "next_id": "5911408290107197882501776595",
+    "next_id": "336631984213134849652383032186",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -9359,8 +9964,55 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5911408290107197882501776595",
+    "id": "336631984213134849652383032186",
     "prev_id": "409631429228035116217618048",
+    "next_id": "5911408290107197882501776595",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Your work in Helan Ancestral Tomb was impressive, %PCName. You can clearly handle yourself. I want to send you a bit farther away this time, though. You’ll collect ancestral testimony in Velas Ancestral Tomb.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"ancestral testimony\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5911408290107197882501776595",
+    "prev_id": "336631984213134849652383032186",
     "next_id": "382474703614209496577415157191",
     "data": {
       "dialogue_type": "Topic",
@@ -9658,7 +10310,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "We received a concerning report regarding Helan Tomb.",
+    "text": "I need you to verify the audit of the Helan Tomb.",
     "filters": [
       {
         "index": 2,
@@ -18920,5 +19572,1595 @@
       }
     ],
     "script_text": "Choice \"[Lie.] No one. Just me.\" 1 \"[Lie.] A khajiit comes down here with Skooma.\" 2"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "ancestral testimony",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "325860462114150316897531875018",
+    "prev_id": "",
+    "next_id": "36975376375355623135121301236",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You've already made your report.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36975376375355623135121301236",
+    "prev_id": "325860462114150316897531875018",
+    "next_id": "454235867016922378910681807390",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Go to Velas Ancestral Tomb. Investigate the area. Gather all the information you can from the ancestral ghosts there. Then return to me. I will give you the family keepsake, but just in case it doesn’t work, here are some scrolls which may help you when you are in the tomb. Collecting ancestral testimony is an important duty. You’re a Keeper, so remember to act like one. Don’t mess this up.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "player->additem \"sc_tevilspeace\" 2\nplayer->additem \"sc_almsiviintervention\" 1\nplayer->additem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "454235867016922378910681807390",
+    "prev_id": "36975376375355623135121301236",
+    "next_id": "271812423416417672011961817990",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The tomb lies far to the west, much closer to Suran than Molag Mar. Truth be told, the Velas family is a strange bunch, but the circumstances surrounding the tomb are stranger still. According to our reports, an Ordinator went missing in the area. Nobody knows what happened to him or whether he even reached the tomb. What’s more, known members of Velas family are tight-lipped. If they even bother to respond, they are usually uncooperative. I want to get to the bottom of this.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_helan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "271812423416417672011961817990",
+    "prev_id": "454235867016922378910681807390",
+    "next_id": "413304483811627147272747465254",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "One moment, %PCRank. I need that keepsake back. Bring it to me and then make your report.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_velas_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "413304483811627147272747465254",
+    "prev_id": "271812423416417672011961817990",
+    "next_id": "28123435812070665547530151774",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "One moment, %PCRank. I need that keepsake back. Bring it to me and then make your report.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_velas_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28123435812070665547530151774",
+    "prev_id": "413304483811627147272747465254",
+    "next_id": "16563181432912794953336665239",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "One moment, %PCRank. I need that keepsake back. Bring it to me and then make your report.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GhostTaluriVelas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GhostTappius",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_velas_keepsake",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "NotEqual",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16563181432912794953336665239",
+    "prev_id": "28123435812070665547530151774",
+    "next_id": "20277294196289092482313071233",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Thank you for your report. Well, this testimony should prove valuable to us. Not only does it contain a lot of important information, but it also protects us against most claims that the Velas family may bring against us. Good work, %PCName. Here is something for you. Seems that we’ll need to be on the lookout for Goron Velas.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nplayer->additem \"gold_001\" 300\nplayer->removeitem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "20277294196289092482313071233",
+    "prev_id": "16563181432912794953336665239",
+    "next_id": "39040885685421658140836138546",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What? You actually assisted some evil spirit? This job was important. I warned you! I don’t have the patience for such gross incompetence. You’re out.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 11
+        }
+      }
+    ],
+    "script_text": "PCExpell \"AV_KOTD\"\nmoddisposition -20\njournal \"AV_mm_velas\" 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39040885685421658140836138546",
+    "prev_id": "20277294196289092482313071233",
+    "next_id": "34741726509537681069116572551",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What? You were supposed to get testimony, not to fight ghosts. This job was important. I warned you! I don’t have the patience for such gross incompetence. You’re out.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "PCExpell \"AV_KOTD\"\nmoddisposition -20\njournal \"AV_mm_velas\" 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "34741726509537681069116572551",
+    "prev_id": "39040885685421658140836138546",
+    "next_id": "589539106012296571782616589352",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Hmm. Well, this isn't what I expected. I'm not sure how much this testimony will help us. Still, you did your job. Here is something for you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "player->additem \"gold_001\" 100\nplayer->removeitem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "589539106012296571782616589352",
+    "prev_id": "34741726509537681069116572551",
+    "next_id": "260405597711743503438084896938",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What do you have to report, %PCRank?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Make a truthful report and admit your failure.\" 11\nChoice \"Make a fake report as a cover up.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "260405597711743503438084896938",
+    "prev_id": "589539106012296571782616589352",
+    "next_id": "13874455828932551976461336685",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What do you have to report, %PCRank?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GhostTaluriVelas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_GhostTappius",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Make a truthful report and admit your failure.\" 3\nChoice \"Make a fake report as a cover up.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13874455828932551976461336685",
+    "prev_id": "260405597711743503438084896938",
+    "next_id": "178165507214742152879148551338",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Go to Velas Ancestral Tomb. Investigate the area. Gather all the information you can from the ancestral ghosts there regarding the missing Ordinator. Then return to me.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "178165507214742152879148551338",
+    "prev_id": "13874455828932551976461336685",
+    "next_id": "873068244016420398007881193163",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I’ve probably spoken to more ancestral ghosts than all of the children here combined. Beware of tricksters and liars. Every family has some, though not all of them will admit it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "873068244016420398007881193163",
+    "prev_id": "178165507214742152879148551338",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Sadly, many ancestral ghosts are in no condition to communicate. And some of them lie, just as the living do. Despite this, ancestral testimony can be an invaluable source of knowledge and serve as important evidence during the trial.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "lost all hope",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "75400078003786612877302916409",
+    "prev_id": "",
+    "next_id": "410429401815520784305288030534",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Well, it all started when that man was killed. I think he was an Ordinator. His skeletal remains are still here in the tomb. I mean, I think they are. Can you see them as well? It’s been so confusing. I don’t know if what I see is real. I don’t know how much time has passed.",
+    "filters": [],
+    "script_text": "addtopic \"man was killed\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "410429401815520784305288030534",
+    "prev_id": "75400078003786612877302916409",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yeah. Hard not to. I regret ever coming here, but it’s too late now. It’s all the witch’s fault.",
+    "filters": [],
+    "script_text": "addtopic \"witch's fault\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "man was killed",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "271267481916214590329105386568",
+    "prev_id": "",
+    "next_id": "33668108887677857457297367292",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thank you. Thank you… [Suddenly, the ghost demeanor changes.] You utter, utter fool. I can’t believe this actually worked. Wanted to help a poor soul out? Well then, Keeper. I only needed the amulet. You’ll still have to face this worthless puppet spirit. And everything else that remains in the chamber, for that matter.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_VelasFamilyAmulet",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "MessageBox, \"Velas Family Amulet dematerialized before your eyes!\"\nplayer->removeitem \"AV_VelasFamilyAmulet\" 1\nsetfight 100\nstartcombat player\nif ( getdeadcount \"AV_GhostTappius\" == 0 )\n\"AV_GhostTappius\"->setfight 100\n\"AV_GhostTappius\"->startcombat player\nendif\njournal \"AV_mm_velas\" 30\nset \"AV_Taluri_Flag_Trap\" to 1\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "33668108887677857457297367292",
+    "prev_id": "271267481916214590329105386568",
+    "next_id": "196590672212289190058533837503",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Please. I need your help. I'll be waiting.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_VelasFamilyAmulet",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "196590672212289190058533837503",
+    "prev_id": "33668108887677857457297367292",
+    "next_id": "88766182704816761956873792975",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes. I saw it all. This is my family’s tomb. I used to visit it to leave gifts and make my prayers here. There was a Dunmer and an Imperial. Tomb robbers, I think. They attacked the Ordinator by surprise. He put up a fight, but was overwhelmed. I tried to run away, but the Imperial caught me. I pleaded for my life, but he just ripped my family amulet from my neck and then stabbed me with a sword. I think I bled to death. I don’t remember much more. I’ve been trapped in this tomb ever since. One of the killers is also here. Or at least his ghost. He must have died some time after me. I need my amulet back. Maybe then I will no longer be trapped here.",
+    "filters": [],
+    "script_text": "set \"AV_Taluri_Flag_Quest\" to 1\n\nif (player->getitemcount \"AV_VelasFamilyAmulet\" > 0 )\nChoice \"Here is the amulet.\" 1\nChoice \"Nevermind.\" 2\nendif"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "88766182704816761956873792975",
+    "prev_id": "196590672212289190058533837503",
+    "next_id": "40751605355807956769432132758",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, you think so? We’ll see about that!",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "StartCombat player\nsetfight 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "40751605355807956769432132758",
+    "prev_id": "88766182704816761956873792975",
+    "next_id": "223575721211815079760828632101",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I still need your help. Please.   ",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "223575721211815079760828632101",
+    "prev_id": "40751605355807956769432132758",
+    "next_id": "584251886013569598684833756073",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That isn’t an Ordinator. It’s the corpse of my partner. He once bragged about killing some Ordinator and getting his hands on Indoril armor.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "584251886013569598684833756073",
+    "prev_id": "223575721211815079760828632101",
+    "next_id": "28691817634821142070468619931",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Goron Velas. A Dark Elf. Nasty piece of work.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28691817634821142070468619931",
+    "prev_id": "584251886013569598684833756073",
+    "next_id": "35152072825813961748823531437",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "She took it first! Then the undead started attacking me. I thought getting the amulet would help to protect me.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35152072825813961748823531437",
+    "prev_id": "28691817634821142070468619931",
+    "next_id": "389915508715259729812084397534",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I didn’t kill her! I wish I did, though. She deserves it.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "389915508715259729812084397534",
+    "prev_id": "35152072825813961748823531437",
+    "next_id": "186678684511936516913921603996",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What else do you want to know?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"Who said anything about giving? I’ll take it from you.\" 1\nChoice \"What happened to the Ordinator? There is a skeletal corpse here.\" 2\nChoice \"Who was your partner?\" 3\nChoice \"Why did you take the amulet from her?\" 4\nChoice \"Why did you kill her?\" 5\nChoice \"Nevermind.\" 6 "
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "186678684511936516913921603996",
+    "prev_id": "389915508715259729812084397534",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What? I killed nobody here. And why should I give her the amulet? She is the reason I’m trapped in the tomb in the first place.",
+    "filters": [],
+    "script_text": "Choice \"Who said anything about giving? I’ll take it from you.\" 1\nChoice \"What happened to the Ordinator? There is a skeletal corpse here.\" 2\nChoice \"Who was your partner?\" 3\nChoice \"Why did you take the amulet from her?\" 4\nChoice \"Why did you kill her?\" 5\nChoice \"Nevermind.\" 6 "
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "witch's fault",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "996193990014499196170877765798",
+    "prev_id": "",
+    "next_id": "92734600505766842670976982888",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTappius",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I don’t know if she was a real witch, but that’s what I’m calling her. She had a plan to rob this tomb. Said she knew how to pacify the undead here so the looting would be easy. She wanted me to act as her guard and promised me most of the spoils as a reward. The witch just wanted to keep one amulet for herself, that’s all. When we came here, she did some magic and the undead couldn’t hurt us. Everything seemed right until she took that damn amulet. I died fighting the undead. The witch’s ghost is still here! She cast some curse on me, I’m sure. Destroy the ghost and I’ll be free. Please.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "92734600505766842670976982888",
+    "prev_id": "996193990014499196170877765798",
+    "next_id": "128414573511029820791187051718",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What? No. NO! It’s you who dies today, Keeper!",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "startcombat player\nsetfight 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "128414573511029820791187051718",
+    "prev_id": "92734600505766842670976982888",
+    "next_id": "86912615709147481905165476113",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Please. You’re a Keeper of the Dead. You must help me.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      }
+    ],
+    "script_text": "set \"AV_Taluri_Flag\" to 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "86912615709147481905165476113",
+    "prev_id": "128414573511029820791187051718",
+    "next_id": "192986105316639618125693392245",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I didn’t. It’s mine. Mine. He took it from me. I need it back!",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "192986105316639618125693392245",
+    "prev_id": "86912615709147481905165476113",
+    "next_id": "106829955214507585903926448817",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "No. The first time I saw him was in the tomb.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "106829955214507585903926448817",
+    "prev_id": "192986105316639618125693392245",
+    "next_id": "219705526711054013184661775628",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Well… yes. I was defending myself. One of my spells must have hit him. Maybe the ancestors helped me? Maybe they strengthened my spells?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "219705526711054013184661775628",
+    "prev_id": "106829955214507585903926448817",
+    "next_id": "265144581712563238612998896976",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Who? Never heard of him.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "265144581712563238612998896976",
+    "prev_id": "219705526711054013184661775628",
+    "next_id": "386226389011772864772224043810",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Is there anything else?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"I think you’re the one who’s lying. I’ll destroy you.\" 1\nChoice \"Did you take the amulet from the tomb?\" 2\nChoice \"Did you know him at all?\" 3\nChoice \"Did you cast a curse on him?\" 4\nChoice \"Who was Goron Velas?\" 5\nChoice \"Nevermind.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "386226389011772864772224043810",
+    "prev_id": "265144581712563238612998896976",
+    "next_id": "32716060381901180888182048357",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh. Oh. [Suddenly, the ghost demeanor changes.] My mistake. I guess I became too excited. To think that you seemed so close to giving me the amulet. Well, let’s see if this worthless puppet spirit can still end your life, Keeper.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 7
+        }
+      }
+    ],
+    "script_text": "startcombat player\nsetfight 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32716060381901180888182048357",
+    "prev_id": "386226389011772864772224043810",
+    "next_id": "10079814901769552707207504136",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Help me.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 8
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10079814901769552707207504136",
+    "prev_id": "32716060381901180888182048357",
+    "next_id": "53255656004988946157053399943",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "We’ve talked about this already. He is lying.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_Taluri_Flag",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Wait, how do you know I’m with the Keepers? I never told you.\" 7 \nChoice \"Nevermind.\" 8\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "53255656004988946157053399943",
+    "prev_id": "10079814901769552707207504136",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTaluriVelas",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Lies. He is hiding his true crime. He killed the Ordinator and then he killed me.",
+    "filters": [],
+    "script_text": "Choice \"I think you’re the one who’s lying. I’ll destroy you.\" 1\nChoice \"Did you take the amulet from the tomb?\" 2\nChoice \"Did you know him at all?\" 3\nChoice \"Did you cast a curse on him?\" 4\nChoice \"Who was Goron Velas?\" 5\nChoice \"Nevermind.\" 6"
   }
 ]
