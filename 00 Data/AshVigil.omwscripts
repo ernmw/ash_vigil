@@ -4,6 +4,7 @@ GLOBAL: scripts/AshVigil/settings/global_settings.lua
 LOAD: scripts/AshVigil/content.lua
 
 PLAYER: scripts/AshVigil/player.lua
+PLAYER: scripts/AshVigil/purify_watcher.lua
 GLOBAL: scripts/AshVigil/sync.lua
 GLOBAL: scripts/AshVigil/interment.lua
 GLOBAL: scripts/AshVigil/peace.lua
