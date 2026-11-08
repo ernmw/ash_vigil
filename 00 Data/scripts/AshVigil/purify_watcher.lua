@@ -19,24 +19,21 @@ local core                  = require('openmw.core')
 local types                 = require('openmw.types')
 local pself                 = require('openmw.self')
 local MOD_NAME              = require("scripts.AshVigil.ns")
-local settings   = require("scripts.AshVigil.settings.settings")
-
-local function onTombInterloperActive(actor)
-    settings.debugPrint("onTombInterloperActive start")
-end
+local settings = require("scripts.AshVigil.settings.settings")
+local purifyQuests             = require("scripts.AshVigil.purifyQuests.load")
 
 local function onTombInterlopersCleared(cellID)
-    settings.debugPrint("onTombInterlopersCleared start")
+    settings.debugPrint("onTombInterlopersCleared start - "..tostring(cellID))
     local currentCell = cellID
     ---@type PurifyQuest|nil
     local purifyQuest = nil
     local quests = types.Player.quests(pself)
 
     for questId, quest in pairs(quests) do
-        if quests[questId] and
-            quests[questId].destCell:lower() == currentCell:lower() and
-            quests[currentCell].startStage == quest.stage then
-            purifyQuest = quests[questId]
+        if purifyQuests[questId] and
+            purifyQuests[questId].destCell:lower() == currentCell:lower() and
+            purifyQuests[questId].startStage == quest.stage then
+            purifyQuest = purifyQuests[questId]
         end
     end
 
@@ -54,7 +51,6 @@ end
 
 return {
     eventHandlers = {
-        [MOD_NAME .. "onTombInterloperActive"] = onTombInterloperActive,
         [MOD_NAME .. "onTombInterlopersCleared"] = onTombInterlopersCleared,
     }
 }
