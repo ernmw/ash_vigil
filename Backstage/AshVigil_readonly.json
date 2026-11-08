@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 562,
+    "num_objects": 649,
     "masters": [
       [
         "Morrowind.esm",
@@ -33,7 +33,25 @@
   {
     "type": "GlobalVariable",
     "flags": "",
+    "id": "AV_ArethanPurged",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
     "id": "AV_InsideTomb",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_RetheranAxeEd",
     "value": {
       "type": "Short",
       "data": 0
@@ -61,6 +79,15 @@
     "type": "GlobalVariable",
     "flags": "",
     "id": "AV_stone_location",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_torosisoul",
     "value": {
       "type": "Short",
       "data": 0
@@ -326,6 +353,36 @@
   {
     "type": "Script",
     "flags": "",
+    "id": "AV_TorosiScript",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_TorosiScript\n\nshort AV_Torosi_Gift\nshort doonce\n\nif ( AV_ArethanPurged == 1 )\n\tenable\nelse\n\tdisable\nendif\n\nif ( GetDisabled == 0 )\n\tif ( doonce == 0 )\n\t\tif ( getdistance player < 300 )\n\t\tForceGreeting\n\t\tset doonce to 1\n\t\tendif\n\tendif\nendif\n\nEnd AV_TorosiScript\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_TorosiSoulS",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_TorosiSoulS\n\nif ( Player->HasSoulGem \"AV_GhostTorosiArethan\" > 0 )\n\tset AV_torosisoul to 1\nelse\n\tset AV_torosisoul to 0\nendif\n\nStopScript AV_TorosiSoulS\n\nEnd AV_TorosiSoulS"
+  },
+  {
+    "type": "Script",
+    "flags": "",
     "id": "AV_baguard",
     "header": {
       "num_shorts": 0,
@@ -427,6 +484,21 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin cybLichFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( getdistance, player < 400 )\n\t\tif ( GetDetected, Player == 1 )\n\t\t\tif ( player->getinvisible == 0 )\n\t\t\t\taddspell \"cybLichSummonAV\"\n\t\t\t\tplaceatpc \"AV_LichPGhost\" 1,128,1\n\t\t\t\tset doonce to 1\n\t\t\tendif\n\t\tendif\n\tendif\nendif\n\nif ( getdistance, player <= 250 )\n\tif ( getspell \"cybLichShieldAV\" == 0 )\n\t\taddspell \"cybLichShieldAV\"\n\tendif\nendif\n\nEnd cybLichFight"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "cybRetheranAxeS",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin cybRetheranAxeS\n\nif ( player->getitemcount \"cyb_RetheranAxe\" > 0 )\n\tset AV_RetheranAxeEd to 0\n\tstopscript cybRetheranAxeS\n\treturn\nendif\n\nif ( getjournalindex \"AV_retheran_apology\" >= 100 )\n\tset AV_RetheranAxeEd to 0\n\tstopscript cybRetheranAxeS\n\treturn\nendif\n\nif ( \"edwinna elbert\"->getitemcount \"cyb_RetheranAxe\" > 0 )\n\tset AV_RetheranAxeEd to 1\nelse\n\tset AV_RetheranAxeEd to 0\nendif\n\nEnd cybRetheranAxeS"
   },
   {
     "type": "Script",
@@ -2003,6 +2075,39 @@
     }
   },
   {
+    "type": "Spell",
+    "flags": "",
+    "id": "cyb_TorosiWrath",
+    "name": "Arethan Wrath",
+    "effects": [
+      {
+        "magic_effect": "Paralyze",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "FrostDamage",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 0,
+        "duration": 10,
+        "min_magnitude": 5,
+        "max_magnitude": 5
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 40,
+      "flags": ""
+    }
+  },
+  {
     "type": "MiscItem",
     "flags": "",
     "id": "AV_helan_keepsake",
@@ -2231,6 +2336,32 @@
       "slash_max": 32,
       "thrust_min": 1,
       "thrust_max": 14,
+      "flags": "IGNORES_NORMAL_WEAPON_RESISTANCE"
+    }
+  },
+  {
+    "type": "Weapon",
+    "flags": "",
+    "id": "cyb_RetheranAxe",
+    "name": "Dwemer War Axe of Vengeance",
+    "script": "cybRetheranAxeS",
+    "mesh": "w\\W_Dwemer_waraxe.nif",
+    "icon": "w\\Tx_Dwemer_waraxe.tga",
+    "enchanting": "cyb_RetheranAxe_en",
+    "data": {
+      "weight": 24.0,
+      "value": 2000,
+      "weapon_type": "AxeOneHand",
+      "health": 2000,
+      "speed": 1.25,
+      "reach": 1.0,
+      "enchantment": 50,
+      "chop_min": 1,
+      "chop_max": 24,
+      "slash_min": 1,
+      "slash_max": 13,
+      "thrust_min": 1,
+      "thrust_max": 3,
       "flags": "IGNORES_NORMAL_WEAPON_RESISTANCE"
     }
   },
@@ -2476,6 +2607,72 @@
       "attack3": [
         21,
         45
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "",
+    "id": "AV_GhostTorosiArethan",
+    "name": "Torosi Arethan",
+    "script": "AV_TorosiScript",
+    "mesh": "r\\AncestorGhost.NIF",
+    "inventory": [
+      [
+        1,
+        "random_ectoplasm"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to frost",
+      "immune to disease",
+      "immune to normal weapons",
+      "ghost ability",
+      "cyb_TorosiWrath"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [],
+    "travel_destinations": [],
+    "sound": "ancestor_ghost",
+    "creature_flags": "IS_BASE | WALKS",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 10,
+      "strength": 50,
+      "intelligence": 100,
+      "willpower": 100,
+      "agility": 70,
+      "speed": 23,
+      "endurance": 70,
+      "personality": 50,
+      "luck": 50,
+      "health": 100,
+      "magicka": 120,
+      "fatigue": 400,
+      "soul": 120,
+      "combat": 50,
+      "magic": 90,
+      "stealth": 30,
+      "attack1": [
+        15,
+        25
+      ],
+      "attack2": [
+        15,
+        25
+      ],
+      "attack3": [
+        15,
+        25
       ],
       "gold": 0
     }
@@ -3223,6 +3420,39 @@
       "enchant_type": "ConstantEffect",
       "cost": 1,
       "max_charge": 1,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "cyb_RetheranAxe_en",
+    "effects": [
+      {
+        "magic_effect": "DrainFatigue",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 60,
+        "max_magnitude": 80
+      },
+      {
+        "magic_effect": "DrainHealth",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTouch",
+        "area": 0,
+        "duration": 15,
+        "min_magnitude": 40,
+        "max_magnitude": 50
+      }
+    ],
+    "data": {
+      "enchant_type": "CastOnStrike",
+      "cost": 10,
+      "max_charge": 350,
       "flags": ""
     }
   },
@@ -4821,7 +5051,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Inter Arvethi Arethan",
+    "text": "Arethan Tomb Purification",
     "quest_state": "Name",
     "filters": [],
     "script_text": ""
@@ -4831,7 +5061,7 @@
     "flags": "",
     "id": "1938868551477460",
     "prev_id": "3026377260192459",
-    "next_id": "6460251496619971",
+    "next_id": "3258556023366595",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -4846,103 +5076,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I picked up the remains of Arvethi Arethan I should deliver them to the Aran Ancestral Tomb, east of Nchuleftingth.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "6460251496619971",
-    "prev_id": "1938868551477460",
-    "next_id": "6955872895450950",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 39,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The tomb has been defiled by daedra. I'll need to purge it of the mad dead and interlopers before I can inter Fendrath's remains.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "6955872895450950",
-    "prev_id": "6460251496619971",
-    "next_id": "4195103155552423",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 40,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Arethan tomb is now at peace once again.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "4195103155552423",
-    "prev_id": "6955872895450950",
-    "next_id": "6581071000401768",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 49,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I interred Arvethi Arethan in the tomb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "6581071000401768",
-    "prev_id": "4195103155552423",
-    "next_id": "3258556023366595",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 50,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "",
+    "text": "I was asked to purge the Arethan Tomb of Daedra and corrupted tomb guardians.",
     "filters": [],
     "script_text": ""
   },
@@ -4950,8 +5084,8 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "3258556023366595",
-    "prev_id": "6581071000401768",
-    "next_id": "9355457607177776",
+    "prev_id": "1938868551477460",
+    "next_id": "656406690010692268633611685277",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -4966,7 +5100,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I received payment from the Keepers.",
+    "text": "I performed the purification duty in the Arethan Tomb and made my report to the Keepers.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -4974,12 +5108,12 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "9355457607177776",
+    "id": "656406690010692268633611685277",
     "prev_id": "3258556023366595",
     "next_id": "",
     "data": {
       "dialogue_type": "Journal",
-      "disposition": 200,
+      "disposition": 20,
       "speaker_rank": -1,
       "speaker_sex": "Any",
       "player_rank": -1
@@ -4991,8 +5125,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I failed to deliver the remains.",
-    "quest_state": "Finished",
+    "text": "",
     "filters": [],
     "script_text": ""
   },
@@ -6849,6 +6982,312 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "AV_mm_arethanTorosi",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "384927450210840161604031425568",
+    "prev_id": "",
+    "next_id": "274998605410206489174847041839",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Arethan Family Revenge",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "274998605410206489174847041839",
+    "prev_id": "384927450210840161604031425568",
+    "next_id": "34554767495181587652695821985",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I met the ghost of Torosi Arethan in the Arethan Tomb. She said she was trapped in the tomb with “pests” due to the schemes of her own family. She wants to imprison Elo Arethan and asked me to expose his involvement in a smuggling ring to Ordinators in Vivec.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "34554767495181587652695821985",
+    "prev_id": "274998605410206489174847041839",
+    "next_id": "36402399475457080654938767774",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I contacted Elo Arethan. He proposed a deal. He wants me to bring him the soul of Torosi Arethan in return for a book from his collection and Telvanni bug musk.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36402399475457080654938767774",
+    "prev_id": "34554767495181587652695821985",
+    "next_id": "131672990418324975304034915969",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I revealed Elo Arethan’s schemes.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "131672990418324975304034915969",
+    "prev_id": "36402399475457080654938767774",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I brought a soul gem with Torosi Arethan’s soul to Elo Arethan.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_retheran_apology",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "207071748012623320360610326288",
+    "prev_id": "",
+    "next_id": "201881615017126322657307850056",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Retheran Apology",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "201881615017126322657307850056",
+    "prev_id": "207071748012623320360610326288",
+    "next_id": "41438539513696281808687037219",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was asked to apologize to Fonas Retheran on behalf of the Keepers of the Dead for misplacing the remains of her close relative and negotiate recompense, should she demand it.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41438539513696281808687037219",
+    "prev_id": "201881615017126322657307850056",
+    "next_id": "234343748315580331794031218038",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 95,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Fonas Retheran told me that she would lower her demand for recompense if I returned her lost family relic. She said that it’s a war axe and that Edwinna Elbert of the Mages Guild in Ald’ruhn has it now.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "234343748315580331794031218038",
+    "prev_id": "41438539513696281808687037219",
+    "next_id": "11070943392665694640453970613",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 94,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Fonas Retheran demanded a formal apology and 8000 gold as recompense.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "11070943392665694640453970613",
+    "prev_id": "234343748315580331794031218038",
+    "next_id": "68698464101699654591650776964",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 96,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I managed to convince Fonas Retheran to accept a formal apology and 1000 gold as recompense.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "68698464101699654591650776964",
+    "prev_id": "11070943392665694640453970613",
+    "next_id": "405440258112890856888141760793",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "405440258112890856888141760793",
+    "prev_id": "68698464101699654591650776964",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Firsylla was surprised to learn of Fonas Retheran’s death.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Tel Branora",
     "dialogue_type": "Topic"
   },
@@ -8370,7 +8809,7 @@
     "flags": "",
     "id": "1782507920843580143879708999",
     "prev_id": "38758490635472232629734044640",
-    "next_id": "",
+    "next_id": "263479148811725462282985783882",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -8386,6 +8825,161 @@
     "player_faction": "",
     "sound_path": "",
     "text": "Please, help me.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "263479148811725462282985783882",
+    "prev_id": "1782507920843580143879708999",
+    "next_id": "40186561205195421600684340876",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, it’s my favorite stranger again.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_Torosi_Gift",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "40186561205195421600684340876",
+    "prev_id": "263479148811725462282985783882",
+    "next_id": "20029295039707991184463822662",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Have you brought Elo Arethan to justice?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "20029295039707991184463822662",
+    "prev_id": "40186561205195421600684340876",
+    "next_id": "19072203543552639118761036474",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Ah! I don’t know who you are, but you got rid of my dear family’s pests quick enough. For that, you have my thanks. I like you already! Would you be willing to assist me in some little revenge?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"my dear family’s pests\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19072203543552639118761036474",
+    "prev_id": "20029295039707991184463822662",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hello? Can you help me?",
     "filters": [
       {
         "index": 0,
@@ -9782,7 +10376,7 @@
     "sound_path": "",
     "text": "KOTD WORK",
     "filters": [],
-    "script_text": ";Turedus Talanian; \r\nChoice \"I'll take the job.\" 1 \"No thanks.\" 2"
+    "script_text": ""
   },
   {
     "type": "DialogueInfo",
@@ -9966,7 +10560,7 @@
     "flags": "",
     "id": "336631984213134849652383032186",
     "prev_id": "409631429228035116217618048",
-    "next_id": "5911408290107197882501776595",
+    "next_id": "18937357865502748946948414731",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -9995,6 +10589,17 @@
         }
       },
       {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
         "index": 1,
         "filter_type": "Function",
         "function": "PcExpelled",
@@ -10011,8 +10616,124 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5911408290107197882501776595",
+    "id": "18937357865502748946948414731",
     "prev_id": "336631984213134849652383032186",
+    "next_id": "216499907610034215612129499422",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I’ve received a report of Daedra and corrupted tomb guardians in the Arethan Tomb.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"Arethan Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "216499907610034215612129499422",
+    "prev_id": "18937357865502748946948414731",
+    "next_id": "5911408290107197882501776595",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I want you to go to the Ghostgate and apologize to Retheran in the name of our Order.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"apologize to Retheran\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5911408290107197882501776595",
+    "prev_id": "216499907610034215612129499422",
     "next_id": "382474703614209496577415157191",
     "data": {
       "dialogue_type": "Topic",
@@ -12640,7 +13361,7 @@
     "flags": "",
     "id": "72190245405864450458251863795",
     "prev_id": "354721858016862464254862128162",
-    "next_id": "",
+    "next_id": "28815107205181656197885319199",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -12657,6 +13378,42 @@
     "sound_path": "",
     "text": "It’s been keeping us on edge. Well, not Nance, but she is special like that. It’s so crowded here. Quite different from Necrom, that’s for sure. And I’ve never seen the Vicar so overworked and impatient. I just try not to get in her way.",
     "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28815107205181656197885319199",
+    "prev_id": "72190245405864450458251863795",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The trial certainly inflamed tensions between the Great Houses and the Temple. It looked bad from the very beginning. Many Redoran, Dres, and Indoril nobles took offence when they were seated in the wrong order, and several challenges were issued that day. Let's be honest. It was little more than a pretext for settling old grudges. I must admit, though, that seeing some smug Dres noble back down the moment Bolvyn Venim announced his intention to face him in a duel was immensely satisfying. Still, I'm not surprised that Archanon invoked Delyn's Doctrine. It was probably the only way to prevent things from escalating further.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 95
+        }
+      }
+    ],
     "script_text": ""
   },
   {
@@ -19961,7 +20718,7 @@
         }
       }
     ],
-    "script_text": "moddisposition 10\nplayer->additem \"gold_001\" 300\nplayer->removeitem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 100"
+    "script_text": "moddisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nplayer->additem \"gold_001\" 300\nplayer->removeitem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 100"
   },
   {
     "type": "DialogueInfo",
@@ -20069,7 +20826,7 @@
         }
       }
     ],
-    "script_text": "player->additem \"gold_001\" 100\nplayer->removeitem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 100"
+    "script_text": "ModPCFacRep 5 \"AV_KOTD\"\nplayer->additem \"gold_001\" 100\nplayer->removeitem \"AV_velas_keepsake\" 1\njournal \"AV_mm_velas\" 100"
   },
   {
     "type": "DialogueInfo",
@@ -21162,5 +21919,2553 @@
     "text": "Lies. He is hiding his true crime. He killed the Ordinator and then he killed me.",
     "filters": [],
     "script_text": "Choice \"I think you’re the one who’s lying. I’ll destroy you.\" 1\nChoice \"Did you take the amulet from the tomb?\" 2\nChoice \"Did you know him at all?\" 3\nChoice \"Did you cast a curse on him?\" 4\nChoice \"Who was Goron Velas?\" 5\nChoice \"Nevermind.\" 6"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Arethan Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13146515473598936954580898357",
+    "prev_id": "",
+    "next_id": "173153065714477194554567862717",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Well done, %PCRank. Tomb purification can be a challenging task. I’m glad I wasn’t wrong about your capabilities. I want you to have this cuirass. It belonged to a Keeper who died on duty. She had no living relatives, so I think it’s best if you make use of it. If you want more work, I have it. ",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_ArethanPurged",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "player->additem \"T_De_BonemoldSacred_Cuirass_01\" 1\njournal \"AV_mm_arethan\" 100\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "173153065714477194554567862717",
+    "prev_id": "13146515473598936954580898357",
+    "next_id": "18918549201692761207174215413",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Before you leave for the tomb, speak to Keerin Meille. He provided the initial report after receiving a tip from a scout. He may have useful information for you. And tell him that he ought to come here more often. I know that Meille handles ash interments, but he can be hard to reach even when he’s in town. That needs to change.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18918549201692761207174215413",
+    "prev_id": "173153065714477194554567862717",
+    "next_id": "372399652314710406829916775310",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The corrupted tomb is far to the north-west of Molag Mar. It must be purified. I believe you can handle it. The terrain will be difficult to traverse, so it may be best to ask Nance Bero for detailed directions.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_velas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_mm_arethan\" 10\n\nif ( getjournalindex \"AV_meet_the_boss\" != 100 )\nif ( getdeadcount \"AV_KOTDLPP\" == 0 )\nChoice \"Continue\" 1\nendif\nendif"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "372399652314710406829916775310",
+    "prev_id": "18918549201692761207174215413",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Of course Firsylla wants me up there, with the rest of the Keepers. Can’t lose sight of her flock, can she? Now, about that tomb. I heard that there is a Hunger there. Nasty creatures. Here, take these potions. They should come in handy. I also have a little piece of advice, %PCName. I’ve had dealings with the Arethan family before. They like their surprises, but are quite businesslike. If you stumble upon something interesting in the tomb, maybe some of them will want to hear about it. Just a thought.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "NotEqual",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_mm_arethan\" 20\nplayer->additem \"T_Com_Potion_ResistParalysis_Q\" 1\nplayer->additem \"p_reflection_q\" 1"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "my dear family’s pests",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42825460892846557336757281172",
+    "prev_id": "",
+    "next_id": "21320728994650615579521400472",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You… are? Thank you. I could kiss you! You are the best stranger I’ve ever met! Thank you again.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_Torosi_Gift",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21320728994650615579521400472",
+    "prev_id": "42825460892846557336757281172",
+    "next_id": "26394666609520555757640225066",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m sorry! I’m so, so sorry. You see, I was afraid that you wouldn’t do anything if I didn’t promise you a reward. I have nothing else to give you. Please, forgive me.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_Torosi_Gift",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "26394666609520555757640225066",
+    "prev_id": "21320728994650615579521400472",
+    "next_id": "18263096965369212096097992623",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thanks again, stranger!",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_Torosi_Gift",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18263096965369212096097992623",
+    "prev_id": "26394666609520555757640225066",
+    "next_id": "1694945981334878272122026106",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You did it! Thank you. Thank you so much! I’m as happy as a ghost can be. Yes. Yes. So I, ummmm, have your reward right here. Not one trinket, but two!",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_Torosi_Gift",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "player->additem \"common_amulet_04\" 1\nplayer->additem \"common_ring_05\" 1\nset \"AV_Torosi_Gift\" to 1\n\nChoice \"Is this your idea of 'valuable'?\" 2\nChoice \"I’m glad that I could help.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1694945981334878272122026106",
+    "prev_id": "18263096965369212096097992623",
+    "next_id": "30630967199412050681200929526",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I don’t really care about Rilas, but Elo needs to pay for his crimes. Not with his life. I’m not bloodthirsty. I want him to pay with his freedom. I’m prepared to give testimony. Go to the Ordinators in Vivec, where he lives. Reveal Elo’s schemes. As you can see, I’m a little indisposed, but I still know how to reward you. There is a valuable family trinket which you’ll never find on your own. If you help me, it’ll be yours.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal \"AV_mm_arethanTorosi\" 10\naddtopic \"Elo Arethan \""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "30630967199412050681200929526",
+    "prev_id": "1694945981334878272122026106",
+    "next_id": "18361538905541775909739860158",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes. This was no work of cultists or necromancers, but my own dear family. Elo Arethan and Rilas Arethan, specifically. I know they’re involved in a smuggling ring. They’ve trapped me here with the pests to keep me from telling anyone. Well, now you know, and I want everyone else to know as well. Rilas is just the muscle. He never had an original thought in his life. Elo sure loves to play the saint. In the eyes of the world, he is blameless. A respected, learned man.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18361538905541775909739860158",
+    "prev_id": "30630967199412050681200929526",
+    "next_id": "557020359017375318227563912526",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_GhostTorosiArethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Dead? What? How? No… No, no, no. I didn’t want him DEAD. He is still my kin. What have you done? It must’ve been you. You’re here. I won’t let you leave!",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "StartCombat player\nsetfight 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "557020359017375318227563912526",
+    "prev_id": "18361538905541775909739860158",
+    "next_id": "4956259270323737760964089585",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elo arethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Perfect. I am a man of my word. Here is what I promised.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_torosisoul",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Player->RemoveSoulGem, \"AV_GhostTorosiArethan\"\njournal \"AV_mm_arethanTorosi\" 110\nset AV_torosisoul to 0\nmoddisposition 10\nplayer->additem \"bookskill_mercantile2\" 1\nplayer->additem \"potion_t_bug_musk_01\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "4956259270323737760964089585",
+    "prev_id": "557020359017375318227563912526",
+    "next_id": "12820166623791488528079163873",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elo arethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That’s not the right soul, though.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_torosisoul",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12820166623791488528079163873",
+    "prev_id": "4956259270323737760964089585",
+    "next_id": "33676597716392771278006026673",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elo arethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "My offer stands.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "33676597716392771278006026673",
+    "prev_id": "12820166623791488528079163873",
+    "next_id": "21406714013764434585912376900",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elo arethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Do you have it?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "startscript \"AV_TorosiSoulS\"\n\nChoice \"Give him the soulgem.\" 1\nChoice \"Don’t give him the soulgem.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21406714013764434585912376900",
+    "prev_id": "33676597716392771278006026673",
+    "next_id": "286590423311325053825383552727",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elo arethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That fetcher. She wants you to turn me in? And what did she promise you? I have a real offer. I thought trapping her in the tomb would be good enough, but I was mistaken. Bring me her soul. That will teach her to keep her mouth shut. If you do what I want, I will give you a book from my collection and some Telvanni bug musk as well. This is the best deal you can get, I assure you of that. She has nothing of value. If she told you otherwise, she was lying.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "journal \"AV_mm_arethanTorosi\" 20\nplayer->additem \"Misc_SoulGem_Common\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "286590423311325053825383552727",
+    "prev_id": "21406714013764434585912376900",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Well, I didn’t expect THAT. So the Arethan family is truly full of surprises. I trust your judgement on this, %PCName. You know what you’re doing.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Elo Arethan ",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "341314225514512693309028307294",
+    "prev_id": "",
+    "next_id": "19729523034941751607073942199",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "elo arethan",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Speaking.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19729523034941751607073942199",
+    "prev_id": "341314225514512693309028307294",
+    "next_id": "292323279515575300653611611705",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Vivec",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This is quite a story. There is evidence for these accusations, though. We will verify it. If it proves true, he will be imprisoned for that.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal AV_mm_arethanTorosi 100\n\"elo arethan\"->disable"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "292323279515575300653611611705",
+    "prev_id": "19729523034941751607073942199",
+    "next_id": "17266063643184093699286921913",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Vivec",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "He lives in Vivec. Hlaalu Canton, I think. Why are you asking me?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "17266063643184093699286921913",
+    "prev_id": "292323279515575300653611611705",
+    "next_id": "106581585710332230116460492352",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "Guard",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Vivec",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What about him?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"[Reveal Elo Arethan’s schemes.]\" 1\nChoice \"Where is he?\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "106581585710332230116460492352",
+    "prev_id": "17266063643184093699286921913",
+    "next_id": "315975280012775879909386170732",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Vivec, Office of the Watch",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What about him?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"[Reveal Elo Arethan’s schemes.]\" 1\nChoice \"Where is he?\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "315975280012775879909386170732",
+    "prev_id": "106581585710332230116460492352",
+    "next_id": "127928571412410442955644098276",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "Vivec, Justice Offices",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What about him?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"[Reveal Elo Arethan’s schemes.]\" 1\nChoice \"Where is he?\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "127928571412410442955644098276",
+    "prev_id": "315975280012775879909386170732",
+    "next_id": "3479107731354008798347380047",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Vivec",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "He’s a savant who usually stays in the Hlaalu Canton.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "NotLocal",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3479107731354008798347380047",
+    "prev_id": "127928571412410442955644098276",
+    "next_id": "397870335912980125353232423572",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thank you for sharing this with me. I'll personally inform the Ordinators about Elo Arethan’s schemes, so you no longer have to worry about that. He’ll get what he deserves, I’m sure.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\njournal AV_mm_arethanTorosi 100\n\"elo arethan\"->disable"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "397870335912980125353232423572",
+    "prev_id": "3479107731354008798347380047",
+    "next_id": "114851484812543904147895032723",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hm. I see.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "114851484812543904147895032723",
+    "prev_id": "397870335912980125353232423572",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "One of the Arethan family members? What about him?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_arethanTorosi",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "elo arethan",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"[Reveal Elo Arethan’s schemes.]\" 1\nChoice \"Nevermind\" 2"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "apologize to Retheran",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "397582463412543752542057769787",
+    "prev_id": "",
+    "next_id": "25255437333371272825513440384",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You know our current situation. The trial made everything difficult. We want to handle this matter quietly before some opportunists turn it into a scandal. I don’t think Fonas Retheran wants that, so I think she should be cooperative. It might take a bit more than an apology, though. Retheran may demand recompense. We’ll accept her demands if they are deemed reasonable, but there can be no further claims against the Keepers or the Temple.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25255437333371272825513440384",
+    "prev_id": "397582463412543752542057769787",
+    "next_id": "15174980007385490907820478572",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Your next task is not a pleasant one, but it has to be done. Some of the Keepers misplaced the remains of a close relative of Fonas Retheran, a Redoran trader usually found at the Ghostgate. I know for a fact that they failed at their duty, so there is no use denying it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_arethan",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "15174980007385490907820478572",
+    "prev_id": "25255437333371272825513440384",
+    "next_id": "19846712107524090092945884454",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Wait, Fonas Retheran is dead? I’m surprised. The last I heard, she was in good health. Strange. Nothing to be done about it now, though. No work for you there, %PCRank.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "fonas retheran",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 110"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19846712107524090092945884454",
+    "prev_id": "15174980007385490907820478572",
+    "next_id": "395747716112625305706380138461",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A formal apology and 1000 gold as recompense, you say? I find that reasonable. Well done, %PCRank. Given the circumstances, I don’t think it was possible to negotiate a better deal. We certainly don’t need more enemies right now, so I’m glad that I assigned you to the job.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 96
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 100\nmoddisposition 10\nplayer->additem \"gold_001\" 600\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "395747716112625305706380138461",
+    "prev_id": "19846712107524090092945884454",
+    "next_id": "243555177416032764574323454891",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A formal apology and 8000 gold as recompense, you say? Quite a lot, but I guess I shouldn’t be surprised. We certainly don’t need more enemies right now, so we’ll have to accept her terms. Still better than the alternative.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 94
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 95
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 100\nmoddisposition 5\nplayer->additem \"gold_001\" 100\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "243555177416032764574323454891",
+    "prev_id": "395747716112625305706380138461",
+    "next_id": "61561608601411306605847437859",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 5
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Redoran",
+    "sound_path": "",
+    "text": "It means a lot, coming from %PCRank of House Redoran. Thank you. I still want a formal apology and a symbolic recompense. 1000 gold. I will not push the matter further. The trial disruptions are severe enough. Perhaps it’s best if I don’t make them worse.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 96"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "61561608601411306605847437859",
+    "prev_id": "243555177416032764574323454891",
+    "next_id": "149366422013864785835694232680",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 5
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Redoran",
+    "sound_path": "",
+    "text": "I recognize and respect you as %PCRank of House Redoran. However, I don’t think you fully understand the gravity of the situation. The matter is personal. I want a formal apology and demand recompense. 8000 gold. You can tell your superiors that. But if you want to help, there is a lost family relic I would like to get back.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 94\naddtopic \"lost family relic\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "149366422013864785835694232680",
+    "prev_id": "61561608601411306605847437859",
+    "next_id": "24187245462649059290987988156",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Redoran",
+    "sound_path": "",
+    "text": "You are only %PCRank and an outlander. I don’t think you fully understand the gravity of the situation. I want a formal apology and demand recompense. 8000 gold. You can tell your superiors that. But if you want to help, there is a lost family relic I would like to get back.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 94\naddtopic \"lost family relic\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "24187245462649059290987988156",
+    "prev_id": "149366422013864785835694232680",
+    "next_id": "24186472931827672497204819163",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You are an outlander. I don’t think you fully understand the gravity of the situation. I want a formal apology and demand recompense. 8000 gold. You can tell your superiors that. But if you want to help, there is a lost family relic I would like to get back.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 94\naddtopic \"lost family relic\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "24186472931827672497204819163",
+    "prev_id": "24187245462649059290987988156",
+    "next_id": "261757937313128123000996731085",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 90,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thank you. It means a lot to me, %PCName. I respect you. I still want a formal apology and a symbolic recompense. 1000 gold. I will not push the matter further. The trial disruptions are severe enough. Perhaps it’s best if I don’t make them worse.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcSpeechcraft",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 96"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "261757937313128123000996731085",
+    "prev_id": "24186472931827672497204819163",
+    "next_id": "215314003315030442378743765439",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You have my thanks for this. However, as an outlander, I don’t think you fully understand the gravity of the situation. I want a formal apology and demand recompense. 8000 gold. You can tell your superiors that. But if you want to help, there is a lost family relic I would like to get back.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 94\naddtopic \"lost family relic\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "215314003315030442378743765439",
+    "prev_id": "261757937313128123000996731085",
+    "next_id": "1851032589745153339827348773",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "My family has always supported the Temple. To learn that someone dear to me was treated in such a manner was a terrible disappointment. I didn’t believe the accusations made by the nobles against the Temple, but now I’m beginning to understand them. House Redoran made great sacrifices protecting the Ghostfence. I suffered a personal loss because of it. Is this how I am being repaid? With mockery and dishonor?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "if ( samefaction == 1 )\nif ( PCExpelled == 0)\nChoice \"Apologize in the name of the Keepers of the Dead and offer sympathies as a fellow Redoran.\" 1\nendif\nendif\n\nChoice \"Apologize in the name of the Keepers of the Dead.\" 2\nChoice \"Apologize in the name of the Keepers of the Dead and offer your sympathies.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1851032589745153339827348773",
+    "prev_id": "215314003315030442378743765439",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Where are your manners? If you wish to discuss something so important to me, you would do well to learn how to conduct yourself.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 95
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "lost family relic",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28278327638083806124937657000",
+    "prev_id": "",
+    "next_id": "37914015213335884330653410510",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Impressive work, %PCName. Thank you for returning the relic to me. I will make sure to secure it. I don’t want to lose it again. As agreed, a formal apology and a symbolic recompense of 1000 gold will be sufficient. I will not push this matter further. The trial disruptions are severe enough. Perhaps it’s best if I don’t make them worse.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 95
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "cyb_RetheranAxe",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nplayer->removeitem \"cyb_RetheranAxe\" 1\njournal \"AV_retheran_apology\" 96"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37914015213335884330653410510",
+    "prev_id": "28278327638083806124937657000",
+    "next_id": "322719685112753589853487895504",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "fonas retheran",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A formal apology is non-negotiable, but I am willing to reduce the recompense to 1000 gold. There is a war axe that rightfully belongs to my family. We discovered it during an expedition inside the Ghostfence many years ago. It was stolen from us. Unfortunately, I don’t really have the evidence to prove it. Recently, however, I learned that Edwinna Elbert of the Mages Guild in Ald’ruhn came into possession of my family’s relic. She refuses to either give or sell me the axe. Perhaps you will have better luck.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 94
+        }
+      }
+    ],
+    "script_text": "journal \"AV_retheran_apology\" 95\n\"edwinna elbert\"->additem \"cyb_RetheranAxe\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "322719685112753589853487895504",
+    "prev_id": "37914015213335884330653410510",
+    "next_id": "25005466862322175690608118342",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Fine. You convinced me. Truth be told, I’ve already studied it. They think the axe was stolen? Perhaps I should’ve known this, as the price was rather low. I’ve never seen the elf who sold it to me again, though. Anyway, it doesn’t matter now. I don’t really need that item anymore, so let the family have it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "PcSpeechcraft",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "removeitem \"cyb_RetheranAxe\" 1\nplayer->additem \"cyb_RetheranAxe\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25005466862322175690608118342",
+    "prev_id": "322719685112753589853487895504",
+    "next_id": "381918044518257999930170761290",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Here is the axe, then. Truth be told, I’ve already studied it. They think the axe was stolen? Perhaps I should’ve known this, as the price was rather low. I’ve never seen the elf who sold it to me again, though. Anyway, it doesn’t matter now. I don’t really need that item anymore, so let the family have it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "Gold_001",
+        "value": {
+          "type": "Integer",
+          "data": 1000
+        }
+      }
+    ],
+    "script_text": "removeitem \"cyb_RetheranAxe\" 1\nplayer->additem \"cyb_RetheranAxe\" 1\nplayer->removeitem \"gold_001\" 1000\nadditem \"gold_001\" 1000"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "381918044518257999930170761290",
+    "prev_id": "25005466862322175690608118342",
+    "next_id": "786201492013638608041330816937",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Here is the axe, then. Truth be told, I’ve already studied it. They think the axe was stolen? Perhaps I should’ve known this, as the price was rather low. I’ve never seen the elf who sold it to me again, though. Anyway, it doesn’t matter now. I don’t really need that item anymore, so let the family have it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 7
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "Gold_001",
+        "value": {
+          "type": "Integer",
+          "data": 500
+        }
+      }
+    ],
+    "script_text": "removeitem \"cyb_RetheranAxe\" 1\nplayer->additem \"cyb_RetheranAxe\" 1\nplayer->removeitem \"gold_001\" 500\nadditem \"gold_001\" 500"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "786201492013638608041330816937",
+    "prev_id": "381918044518257999930170761290",
+    "next_id": "263687227312024130461867832145",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You don't have the money, though. Please don’t waste my time if you’re not serious.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      }
+    ],
+    "script_text": "moddisposition -5"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "263687227312024130461867832145",
+    "prev_id": "786201492013638608041330816937",
+    "next_id": "34847311962896866993335993103",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You don't have the money, though. Please don’t waste my time if you’re not serious.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 7
+        }
+      }
+    ],
+    "script_text": "moddisposition -5"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "34847311962896866993335993103",
+    "prev_id": "263687227312024130461867832145",
+    "next_id": "656863582015783745582431702997",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I have to refuse. My research is more important.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "656863582015783745582431702997",
+    "prev_id": "34847311962896866993335993103",
+    "next_id": "14465991046949763839437137473",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I see. If that is all, then I would like to focus on my research.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14465991046949763839437137473",
+    "prev_id": "656863582015783745582431702997",
+    "next_id": "33547800911527984049643316082",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I see. If that is all, then I would like to focus on my research.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "33547800911527984049643316082",
+    "prev_id": "14465991046949763839437137473",
+    "next_id": "42544540427106300019476480378",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Let it be my loss. 500 septims, then.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcMercantile",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 70
+        }
+      }
+    ],
+    "script_text": "Choice \"Here is the money.\" 7\nChoice \"I'll get back to you.\" 8"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42544540427106300019476480378",
+    "prev_id": "33547800911527984049643316082",
+    "next_id": "28244578499788260710345532040",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I don’t think that’s an unreasonable price, %PCName.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      }
+    ],
+    "script_text": "Choice \"Fine. 1000 septims.\" 5\nChoice \"No.\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28244578499788260710345532040",
+    "prev_id": "42544540427106300019476480378",
+    "next_id": "2843539951389033644517643897",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Perhaps I can be convinced to sell you the axe. My price is 1000 septims.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "Choice \"I can give you 500 septims for the axe.\" 4\nChoice \"Fine.\" 5\nChoice \"No.\" 6 "
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2843539951389033644517643897",
+    "prev_id": "28244578499788260710345532040",
+    "next_id": "3554513737263466595497804379",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 60,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Yes, I have a Dwemer axe. Fascinating item, with some interesting enchantments. I acquired it for my studies. So you’re saying it’s a family relic. Why would I give it to someone else?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 95
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "cyb_RetheranAxe",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_RetheranAxeEd",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Try to convince her to give you the axe.\" 1\nChoice \"Try to convince her to sell you the axe.\" 2\nChoice \"Nevermind.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3554513737263466595497804379",
+    "prev_id": "2843539951389033644517643897",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "edwinna elbert",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I have a Dwemer axe. Fascinating item, with some interesting enchantments. I acquired it for my studies. I know nothing about it being a family relic. I don’t see a reason for giving it to someone else. My research is more important.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 95
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "cyb_RetheranAxe",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_RetheranAxeEd",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
   }
 ]
