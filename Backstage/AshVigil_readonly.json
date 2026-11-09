@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 649,
+    "num_objects": 728,
     "masters": [
       [
         "Morrowind.esm",
@@ -22,11 +22,11 @@
       ],
       [
         "Tamriel_Data.esm",
-        17199325
+        16455350
       ],
       [
         "OAAB_Data.esm",
-        1713532
+        1733474
       ]
     ]
   },
@@ -308,6 +308,21 @@
   {
     "type": "Script",
     "flags": "",
+    "id": "AV_FirsyllaS",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_FirsyllaS\n\nshort nolore\nshort AV_FirsyllaCinia\nshort AV_FirsyllaCiniaCC\n\nif ( AV_FirsyllaCinia == 1 )\n\tif ( AV_FirsyllaCiniaCC == 0 )\n\tif ( CellChanged == 1 )\n\t\tset AV_FirsyllaCiniaCC to 1\n\tendif\n\tendif\nendif\n\nEnd AV_FirsyllaS\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
     "id": "AV_HelanNecroScript",
     "header": {
       "num_shorts": 0,
@@ -319,6 +334,21 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_HelanNecroScript\n\nshort nolore\n\nif ( getjournalindex \"AV_mm_helan\" < 10 )\n\tdisable\nelse\n\tenable\nendif\n\nEnd AV_HelanNecroScript\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_RolasaFatherS",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_RolasaFatherS\n\nshort nolore\n\nif ( getjournalindex \"AV_Rolasa_Deleth\" < 10 )\n\tdisable\n\treturn\nendif\n\nif ( getjournalindex \"AV_Rolasa_Deleth\" >= 10 )\n\tif ( getjournalindex \"AV_Rolasa_Deleth\" < 19 )\n\t\tenable\n\tendif\nendif\n\n\nif ( getjournalindex \"AV_Rolasa_Deleth\" >= 19 )\n\tif ( GetDisabled == 0 )\n\t\tif ( CellChanged == 1 )\n\t\t\tdisable\n\t\tendif\n\tendif\nendif\n\nEnd AV_RolasaFatherS"
   },
   {
     "type": "Script",
@@ -2108,6 +2138,66 @@
     }
   },
   {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_ABvel_ruin1",
+    "mesh": "ashvigil/av_ab_ruin1.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_ABvel_ruin2",
+    "mesh": "ashvigil/av_ab_ruin2.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_ABvel_ruin3",
+    "mesh": "ashvigil/av_ab_ruin3.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_in_cavepit",
+    "mesh": "ashvigil/av_in_cavepit1.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_in_v_floor1",
+    "mesh": "ashvigil/av_in_v_floor.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_in_v_floor2",
+    "mesh": "ashvigil/av_in_v_floorh.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_lavacave_00",
+    "mesh": "ashvigil/av_lavacave_00.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_lavacave_01",
+    "mesh": "ashvigil/av_lavacave_01.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_tpit_steps",
+    "mesh": "ashvigil/av_ashpit_hsteps.nif"
+  },
+  {
+    "type": "Static",
+    "flags": "",
+    "id": "AV_velothismall_curve_01",
+    "mesh": "ashvigil/av_velothismall_curve_01.nif"
+  },
+  {
     "type": "MiscItem",
     "flags": "",
     "id": "AV_helan_keepsake",
@@ -3070,23 +3160,7 @@
       "alarm": 0,
       "services": ""
     },
-    "ai_packages": [
-      {
-        "type": "Wander",
-        "distance": 1000,
-        "duration": 5,
-        "game_hour": 0,
-        "idle2": 60,
-        "idle3": 20,
-        "idle4": 10,
-        "idle5": 0,
-        "idle6": 0,
-        "idle7": 0,
-        "idle8": 0,
-        "idle9": 0,
-        "reset": 1
-      }
-    ],
+    "ai_packages": [],
     "travel_destinations": [],
     "sound": "skeleton",
     "scale": 1.1,
@@ -3769,7 +3843,7 @@
       "cybCiniaSpellDev"
     ],
     "ai_data": {
-      "hello": 30,
+      "hello": 20,
       "fight": 30,
       "flee": 10,
       "alarm": 0,
@@ -3888,7 +3962,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 300,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -3950,7 +4024,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 300,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4052,7 +4126,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 300,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4142,7 +4216,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 300,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4177,7 +4251,7 @@
     "flags": "",
     "id": "AV_KOTDLeader",
     "name": "Firsylla Dulo",
-    "script": "nolore",
+    "script": "AV_FirsyllaS",
     "mesh": "",
     "inventory": [
       [
@@ -4224,7 +4298,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 300,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4298,7 +4372,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 300,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4325,6 +4399,68 @@
       "disposition": 50,
       "reputation": 14,
       "rank": 5,
+      "gold": 0
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_RolasaFather",
+    "name": "Elislas",
+    "script": "AV_RolasaFatherS",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "T_De_Cm_Shirt_04"
+      ],
+      [
+        1,
+        "T_De_Cm_Pants_12"
+      ],
+      [
+        1,
+        "T_De_Cm_Shoes_03"
+      ]
+    ],
+    "spells": [],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 100,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 128,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 10,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 10,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Wood Elf",
+    "class": "Herder",
+    "faction": "",
+    "head": "b_n_wood elf_m_head_04",
+    "hair": "b_n_wood elf_m_hair_01",
+    "npc_flags": "IS_BASE | AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 5,
+      "disposition": 40,
+      "reputation": 0,
+      "rank": 0,
       "gold": 0
     }
   },
@@ -4416,7 +4552,7 @@
     "ai_packages": [
       {
         "type": "Wander",
-        "distance": 2000,
+        "distance": 400,
         "duration": 5,
         "game_hour": 0,
         "idle2": 60,
@@ -4732,6 +4868,23 @@
   {
     "type": "Clothing",
     "flags": "",
+    "id": "AV_hlervu_keepsake",
+    "name": "Hlervu Keepsake",
+    "script": "",
+    "mesh": "c\\Amulet_Extravagant_2.NIF",
+    "icon": "c\\tx_amulet_extrav2.tga",
+    "enchanting": "",
+    "biped_objects": [],
+    "data": {
+      "clothing_type": "Amulet",
+      "weight": 1.0,
+      "value": 90,
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Clothing",
+    "flags": "",
     "id": "AV_savel_keepsake",
     "name": "Savel Keepsake",
     "script": "",
@@ -4783,10 +4936,26 @@
   {
     "type": "Activator",
     "flags": "",
+    "id": "AV_AB_OilSeep",
+    "name": "",
+    "script": "",
+    "mesh": "ashvigil/av_tar_seep.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
     "id": "AV_disturbed_mucksponge",
     "name": "Disturbed Mucksponge",
     "script": "AV_disturbed_mucksponge_script",
     "mesh": "f\\Flora_muckspunge_03.NIF"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AV_tarpit_S_R",
+    "name": "",
+    "script": "",
+    "mesh": "ashvigil/av_tarpit_small_r.nif"
   },
   {
     "type": "Book",
@@ -5562,153 +5731,6 @@
     "flags": "",
     "id": "AV_mm_hlervu",
     "dialogue_type": "Journal"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "5716960958801965",
-    "prev_id": "",
-    "next_id": "6792108664431483",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Inter Bralvyn Hlervu",
-    "quest_state": "Name",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "6792108664431483",
-    "prev_id": "5716960958801965",
-    "next_id": "9033616327501952",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 10,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I picked up the remains of Bralvyn Hlervu. I should deliver them to the Hlervu Ancestral Tomb, north of Azura's Shrine.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "9033616327501952",
-    "prev_id": "6792108664431483",
-    "next_id": "8313445155457558",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 49,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I interred Bralvyn Hlervu in the tomb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "8313445155457558",
-    "prev_id": "9033616327501952",
-    "next_id": "3535750467558879",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 50,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3535750467558879",
-    "prev_id": "8313445155457558",
-    "next_id": "5642340799080875",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 100,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I received payment from the Keepers.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "5642340799080875",
-    "prev_id": "3535750467558879",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 200,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I failed to deliver the remains.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -7281,6 +7303,287 @@
     "player_faction": "",
     "sound_path": "",
     "text": "Firsylla was surprised to learn of Fonas Retheran’s death.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_hlervu_haunt",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12530749041428655163966445692",
+    "prev_id": "",
+    "next_id": "35011047983063140604235821597",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hlervu Tomb Hauntings",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35011047983063140604235821597",
+    "prev_id": "12530749041428655163966445692",
+    "next_id": "4051045221211092648122154743",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was asked to investigate Hlervu Tomb as the potential source of recent hauntings.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "4051045221211092648122154743",
+    "prev_id": "35011047983063140604235821597",
+    "next_id": "39734573249738638023665501615",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I went to Hlervu Tomb and met a woman there who called herself Cinia Carrus. Apparently, she is responsible for the hauntings. She is looking for the staff of the lich Goron Velas. She said she would stop the hauntings for now, but wants me to bring her the staff.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39734573249738638023665501615",
+    "prev_id": "4051045221211092648122154743",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report about Hlervu Tomb hauntings to the Keepers.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_Rolasa_Deleth",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "113847219017847890474781230208",
+    "prev_id": "",
+    "next_id": "15731593125878944393537434503",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Rolasa Deleth's Case",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "15731593125878944393537434503",
+    "prev_id": "113847219017847890474781230208",
+    "next_id": "13799084739582131520296077499",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I was asked to negotiate with Elislas, the father of Rolasa Deleth, a Dunmer who was wounded while performing her duties as the messenger. Elislas is staying in Pilgrim’s Rest.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13799084739582131520296077499",
+    "prev_id": "15731593125878944393537434503",
+    "next_id": "303256320013161475439073788293",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 19,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told Elislas that the Keepers would not provide any additional compensation.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "303256320013161475439073788293",
+    "prev_id": "13799084739582131520296077499",
+    "next_id": "37659731225325864497355102527",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told Elislas that the Keepers would provide some additional compensation.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37659731225325864497355102527",
+    "prev_id": "303256320013161475439073788293",
+    "next_id": "86008642109824679030585244904",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told Elislas that the Keepers would provide substantial additional compensation.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "86008642109824679030585244904",
+    "prev_id": "37659731225325864497355102527",
+    "next_id": "63820049801668799802995585494",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report to the Keepers about Rolasa Deleth's case.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "63820049801668799802995585494",
+    "prev_id": "86008642109824679030585244904",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I informed the Keepers about Elislas' death.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -8964,7 +9267,7 @@
     "flags": "",
     "id": "19072203543552639118761036474",
     "prev_id": "20029295039707991184463822662",
-    "next_id": "",
+    "next_id": "323772855810399274797252331014",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -8987,6 +9290,78 @@
         "function": "TalkedToPc",
         "comparison": "Equal",
         "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "323772855810399274797252331014",
+    "prev_id": "19072203543552639118761036474",
+    "next_id": "10687709343278142182105542611",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hello there. Nice day for a walk, isn’t it? Just right for a little tomb visit. [Woman grins widely] I’m Cinia. Cinia Carrus. What can I do for you, %PCRace?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10687709343278142182105542611",
+    "prev_id": "323772855810399274797252331014",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "We meet again, %PCRace.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "",
         "value": {
           "type": "Integer",
           "data": 1
@@ -9553,7 +9928,7 @@
     "flags": "",
     "id": "42221794539645380474255926737",
     "prev_id": "211163172014069366363629221437",
-    "next_id": "",
+    "next_id": "273216424114756413331446911455",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -9583,6 +9958,78 @@
       }
     ],
     "script_text": "AddTopic \"Keepers of the Dead\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "273216424114756413331446911455",
+    "prev_id": "42221794539645380474255926737",
+    "next_id": "36352591013713025794076436753",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’ll be leaving shortly.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 19
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36352591013713025794076436753",
+    "prev_id": "273216424114756413331446911455",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, %PCRace? Do you plan on staying here for long? I wish I didn’t have to come to this place at all.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -9619,7 +10066,7 @@
     "flags": "",
     "id": "337955965418432338612866061790",
     "prev_id": "540031653016613495292009948930",
-    "next_id": "",
+    "next_id": "217247185712473405266953982023",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -9637,6 +10084,54 @@
     "text": "Did my red hair give it away? Yes, I’m Shinathi. It’s not typical for my people to work so closely with the Temple, but I moved to Narsis when I was a child and they were so kind to me. I joined the Temple, and then eventually found my way to Necrom with the Keepers. Nance Bero has been a wonderful mentor, and I’m fortunate that Keerin Meille could join me here.",
     "filters": [],
     "script_text": "AddTopic \"Nance Bero\"\nAddTopic \"Keerin Meille\"\nAddTopic \"Keepers of the Dead\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "217247185712473405266953982023",
+    "prev_id": "337955965418432338612866061790",
+    "next_id": "278907220517288725961748908160",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Isn’t it obvious? I’m an Imperial officer! Why would you doubt me?",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "278907220517288725961748908160",
+    "prev_id": "217247185712473405266953982023",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m %Name. A netch herder. Currently far from home and far from work.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -10676,7 +11171,7 @@
     "flags": "",
     "id": "216499907610034215612129499422",
     "prev_id": "18937357865502748946948414731",
-    "next_id": "5911408290107197882501776595",
+    "next_id": "143112791615368858299449131807",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -10732,8 +11227,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5911408290107197882501776595",
+    "id": "143112791615368858299449131807",
     "prev_id": "216499907610034215612129499422",
+    "next_id": "5911408290107197882501776595",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "There’ve been several reports about hauntings recently. Reports I received indicate that they may have their source in the Hlervu Tomb.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "addtopic \"Hlervu Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5911408290107197882501776595",
+    "prev_id": "143112791615368858299449131807",
     "next_id": "382474703614209496577415157191",
     "data": {
       "dialogue_type": "Topic",
@@ -11016,7 +11569,7 @@
     "flags": "",
     "id": "27589280702243398254510023803",
     "prev_id": "370480278314309535699323891736",
-    "next_id": "",
+    "next_id": "151261802016425798692272289264",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -11068,6 +11621,64 @@
       }
     ],
     "script_text": "AddTopic \"Helan Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "151261802016425798692272289264",
+    "prev_id": "27589280702243398254510023803",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "%PCRank, there is something I want you to help me with. It concerns Rolasa Deleth’s case.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Rolasa Deleth\""
   },
   {
     "type": "Dialogue",
@@ -13385,7 +13996,7 @@
     "flags": "",
     "id": "28815107205181656197885319199",
     "prev_id": "72190245405864450458251863795",
-    "next_id": "",
+    "next_id": "403788061910180778703904959578",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -13414,6 +14025,30 @@
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "403788061910180778703904959578",
+    "prev_id": "28815107205181656197885319199",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Not my problem.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -24463,6 +25098,1882 @@
         "value": {
           "type": "Integer",
           "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Hlervu Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39243714965943275580488576265",
+    "prev_id": "",
+    "next_id": "360350563114294928390525882012",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[She grins again] Sorry, I just couldn't resist. Yes, I know something about the hauntings. They're a side effect of some important work I'm doing. Have you heard of Goron Velas, %PCRace? I'm looking for him.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "addtopic \"Goron Velas\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "360350563114294928390525882012",
+    "prev_id": "39243714965943275580488576265",
+    "next_id": "427675310011125471126444780433",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Hauntings? Really? Where? [Cinia looks around as if searching for someone]",
+    "filters": [],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "427675310011125471126444780433",
+    "prev_id": "360350563114294928390525882012",
+    "next_id": "3134324128153844392559183589",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Take this keepsake. I’m not sure if it still works, but you’ll see for yourself. I want you to investigate the tomb. It’s far east of Molag Mar, in a remote location near the coast. It took some effort to determine the possible source of the hauntings, but I need confirmation. Find that source. It may be some curse. The last thing we need right now is noble families accusing us of “further negligence” when “honest citizens” are haunted by mad ghosts. They find it so easy to blame us for everything these days.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_retheran_apology",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_hlervu_haunt\" 10\nplayer->additem \"AV_hlervu_keepsake\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3134324128153844392559183589",
+    "prev_id": "427675310011125471126444780433",
+    "next_id": "156582172215422626245090760174",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I see. Clearly a shady character. Why did the tomb guardians ignore her? Hlervu family keepsake clearly can’t be relied upon. We’ll have to create a new one. I’m glad that the hauntings will no longer be a problem. Here is something for you, %PCRank. Talk to Ondar for more work.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nModPCFacRep, 5, \"AV_KOTD\"\nplayer->additem \"T_Com_Potion_ReflectDamage_E\" 1\nplayer->additem \"gold_001\" 300\njournal \"AV_hlervu_haunt\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "156582172215422626245090760174",
+    "prev_id": "3134324128153844392559183589",
+    "next_id": "717860923016382270169740332426",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What? We can’t tolerate interlopers in our tombs, %PCRank! This Cinia seems like a shady character. Why did the tomb guardians ignore her? Hlervu family keepsake clearly can’t be relied upon. We’ll have to create a new one. Make her leave.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "moddisposition -10\nset AV_FirsyllaCinia to 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "717860923016382270169740332426",
+    "prev_id": "156582172215422626245090760174",
+    "next_id": "310704494913934586522684793278",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Good. Here is something for you, %PCRank. Talk to Teris for more work.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nModPCFacRep, 5, \"AV_KOTD\"\nplayer->additem \"T_Com_Potion_ReflectDamage_E\" 1\nplayer->additem \"gold_001\" 300\njournal \"AV_hlervu_haunt\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "310704494913934586522684793278",
+    "prev_id": "717860923016382270169740332426",
+    "next_id": "260803494710805562568610570872",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Then get to it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "260803494710805562568610570872",
+    "prev_id": "310704494913934586522684793278",
+    "next_id": "316643567017694200317977640866",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I made myself clear, %PCRank. Make her leave.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_FirsyllaCinia",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_FirsyllaCiniaCC",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "316643567017694200317977640866",
+    "prev_id": "260803494710805562568610570872",
+    "next_id": "78683995008689086834409586607",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Have you finished your task?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_FirsyllaCinia",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "if ( getdeadcount \"AV_Cinia\" > 0 )\nChoice \"Yes\" 3\nelse\nChoice \"[Lie] Yes.\" 3\nendif\nChoice \"No.\" 4"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "78683995008689086834409586607",
+    "prev_id": "316643567017694200317977640866",
+    "next_id": "288135521410992510952477066209",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I see. Clearly a shady character. Why did the tomb guardians ignore her? Hlervu family keepsake clearly can’t be relied upon. We’ll have to create a new one. I’m glad that the hauntings will no longer be a problem. Here is something for you, %PCRank. Talk to Ondar for more work.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_FirsyllaCinia",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_Cinia",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nModPCFacRep, 5, \"AV_KOTD\"\nplayer->additem \"T_Com_Potion_ReflectDamage_E\" 1\nplayer->additem \"gold_001\" 300\njournal \"AV_hlervu_haunt\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "288135521410992510952477066209",
+    "prev_id": "78683995008689086834409586607",
+    "next_id": "262620646812281595518584622669",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What did you find in the tomb?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_FirsyllaCinia",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Lie about killing the interloper.\" 1\nChoice \"Tell the truth about your deal with Cinia.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "262620646812281595518584622669",
+    "prev_id": "288135521410992510952477066209",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I see. Clearly a shady character. Why did the tomb guardians ignore her? Hlervu family keepsake clearly can’t be relied upon. We’ll have to create a new one. I’m glad that the hauntings will no longer be a problem. Here is something for you, %PCRank. Talk to Ondar for more work.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_Cinia",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nModPCFacRep, 5, \"AV_KOTD\"\nplayer->additem \"T_Com_Potion_ReflectDamage_E\" 1\nplayer->additem \"gold_001\" 300\njournal \"AV_hlervu_haunt\" 100"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Goron Velas",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "392930845813714559371693561482",
+    "prev_id": "",
+    "next_id": "2288838520682953197202566783",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 75,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You want to help? Very well, %PCRace. Let’s make a deal. I’ll stop the “hauntings”, as you call them. For now. Consider this a gesture of good faith. Bring me the lich’s staff and I’ll leave this place and never return. I might even give you my axe as a bonus. Just to keep you motivated. ",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "journal \"AV_hlervu_haunt\" 50"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2288838520682953197202566783",
+    "prev_id": "392930845813714559371693561482",
+    "next_id": "14232675903939728279806120125",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Sorry, %PCRace. I don’t trust you enough.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14232675903939728279806120125",
+    "prev_id": "2288838520682953197202566783",
+    "next_id": "374033874012971269009143568603",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m fine here. I don’t plan on leaving. Want to make me leave, %PCRace?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "374033874012971269009143568603",
+    "prev_id": "14232675903939728279806120125",
+    "next_id": "42132419147380185359608406108",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "“Him” might not even be the best word here. It’s a lich. Hard to call it a man. And to be honest, it’s not the creature which interests me, but the enchanted staff it carries. This is why I came to this stinking rock pile called Vvardenfell. The lich fancies itself a puppeteer, a conjurer and gods know what else. I know it likes to play around with ghosts, so I laid out a trap of my own. If it touches one of my ghosts, I’ll know where it is. Then I can get the staff. And if some of the ghosts “haunt” people in the meantime, well, it’s not really a big problem. I’ll stop when I get what I want.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": "Choice \"I can help you, but you need to stop the hauntings.\" 1\nChoice \"You’re an interloper here. You need to stop the hauntings and leave.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42132419147380185359608406108",
+    "prev_id": "374033874012971269009143568603",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You know the deal.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Rolasa Deleth",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16802714454453240459012384745",
+    "prev_id": "",
+    "next_id": "351625594410136840723247603480",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Much time has passed since then, but some matters remain unresolved. The girl received all the help that Temple healers could provide, but her father insists on additional compensation. He is an outlander. A Bosmer named Elislas. It’s Rolasa Deleth’s mother who is a Dunmer. As an outlander yourself, I think that you may find it easier to negotiate with him than many other members of our Order. Keep in mind that you are acting as the Keeper of the Dead. The girl’s fate makes for a sad tale, but we did not cause her any harm. The Bosmer is currently staying in Pilgrim’s Rest.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "journal \"AV_Rolasa_Deleth\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "351625594410136840723247603480",
+    "prev_id": "16802714454453240459012384745",
+    "next_id": "1051221203379889670102312394",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Sadly, this was probably the worst decision she could have made. Master Vaerin has never been known for his fondness of the Tribunal Temple. The message concerned a purely formal matter which he was likely to ignore. Something about the messenger’s insistence must have angered him greatly. Eventually, he decided to face Rolasa Deleth directly and greeted her with a destructive spell instead of words. The girl survived, but was deeply wounded.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1051221203379889670102312394",
+    "prev_id": "351625594410136840723247603480",
+    "next_id": "357220084610340920994049717365",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "As you well know by now, we had our share of organizational failures surrounding the trial. Due to one such unfortunate failure, a messenger named Rolasa Deleth was sent directly to Tel Vaerin in Alt Bosara on the mainland, where Master Vaerin of House Telvanni resided. Usually, the messengers are only supposed to make contact with Telvanni Mouths. It’s both safer and more productive that way. This messenger certainly lacked experience, but not determination. Despite being rebuffed several times, she insisted on delivering the letter personally to Master Vaerin.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "357220084610340920994049717365",
+    "prev_id": "1051221203379889670102312394",
+    "next_id": "16044709054055039153153404034",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Dead? That’s an unexpected development. I know that he was in Molag Mar. Well, there isn’t anything I can do about it now.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_RolasaFather",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "journal \"AV_Rolasa_Deleth\" 110"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16044709054055039153153404034",
+    "prev_id": "357220084610340920994049717365",
+    "next_id": "3308931257744292455141937077",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You promised them too much, %PCRank. This is no noble family and they’ve already been provided with assistance. The local Temple wouldn’t allow them to starve. We can’t be expected to cover such expenses. I guess that now we’ll have to keep the promise you made, but I’m disappointed in you. ",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "moddisposition -15\n\"AV_KOTDLeader\"->moddisposition -10\njournal \"AV_Rolasa_Deleth\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3308931257744292455141937077",
+    "prev_id": "16044709054055039153153404034",
+    "next_id": "357248637013496368800679823960",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You handled the case well, %PCRank. This isn’t a noble family and they’ve already been provided with assistance. The local Temple won’t allow them to starve. We can’t be expected to meet their full demands. Thank you for your help. Take this book. I’ve always found the guidance it offers most valuable.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "LessEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 19
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\nplayer->additem \"bookskill_speechcraft5\" 1\njournal \"AV_Rolasa_Deleth\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "357248637013496368800679823960",
+    "prev_id": "3308931257744292455141937077",
+    "next_id": "307149577613211622569687193231",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Wha— Now I don’t know what to say. You’re saving my family, %PCName. I can’t thank you enough.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      }
+    ],
+    "script_text": "moddisposition 30\n\nplayer->removeitem \"gold_001\" 800\nadditem \"gold_001\" 800"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "307149577613211622569687193231",
+    "prev_id": "357248637013496368800679823960",
+    "next_id": "13153088802552236017408103637",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Wha— Now I don’t know what to say. You’re saving my family, %PCName. I can’t thank you enough.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      }
+    ],
+    "script_text": "moddisposition 30\n\nplayer->removeitem \"gold_001\" 600\nadditem \"gold_001\" 600"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13153088802552236017408103637",
+    "prev_id": "307149577613211622569687193231",
+    "next_id": "41962756494513730739906813741",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Wha— Now I don’t know what to say. You’re saving my family, %PCName. I can’t thank you enough.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 7
+        }
+      }
+    ],
+    "script_text": "moddisposition 30\n\nplayer->removeitem \"gold_001\" 200\nadditem \"gold_001\" 200"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "41962756494513730739906813741",
+    "prev_id": "13153088802552236017408103637",
+    "next_id": "424972452311993273018615424150",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Yes. It appears so.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 13
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "424972452311993273018615424150",
+    "prev_id": "41962756494513730739906813741",
+    "next_id": "20702293904501394929119037751",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Really? Thank you, %PCName. I’m really grateful for the assistance. Even if it’s not enough, it’ll certainly help us. Thank you.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 12
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\n\nplayer->removeitem \"gold_001\" 200\nadditem \"gold_001\" 200"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "20702293904501394929119037751",
+    "prev_id": "424972452311993273018615424150",
+    "next_id": "54348348601109350992832063939",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Really? Thank you, %PCName. I’m really grateful for the assistance. Even if it’s not enough, it’ll certainly help us. Thank you.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 11
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\n\nplayer->removeitem \"gold_001\" 400\nadditem \"gold_001\" 400"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "54348348601109350992832063939",
+    "prev_id": "20702293904501394929119037751",
+    "next_id": "21890168206303927723468143365",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Yes, I wouldn’t want to take more of your time.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 8
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21890168206303927723468143365",
+    "prev_id": "54348348601109350992832063939",
+    "next_id": "318215764410642516290033639560",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Really? I had barely any hope left. Thank you!",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "moddisposition 30\njournal \"AV_Rolasa_Deleth\" 30\n\nif (player->getitemcount \"gold_001\" >= 800)\nChoice \"I’ll also give you 800 gold myself.\" 5\nendif\nif (player->getitemcount \"gold_001\" >= 400)\nChoice \"I’ll also give you 400 gold myself.\" 6\nendif\nif (player->getitemcount \"gold_001\" >= 200)\nChoice \"I’ll also give you 200 gold myself.\" 7\nendif\nChoice \"That will be all, then.\" 8"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "318215764410642516290033639560",
+    "prev_id": "21890168206303927723468143365",
+    "next_id": "22299822306376792769436378428",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Oh. I’m grateful for the assistance, then. Even if it’s not enough, it’ll certainly help us. Thank you. ",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "GreaterEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "LessEqual",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 30
+        }
+      }
+    ],
+    "script_text": "moddisposition 10\njournal \"AV_Rolasa_Deleth\" 20\n\nif (player->getitemcount \"gold_001\" >= 800)\nChoice \"I’ll also give you 800 gold myself.\" 5\nendif\nif (player->getitemcount \"gold_001\" >= 400)\nChoice \"I’ll also give you 400 gold myself.\" 6\nendif\nif (player->getitemcount \"gold_001\" >= 200)\nChoice \"I’ll also give you 200 gold myself.\" 7\nendif\nChoice \"That will be all, then.\" 8"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22299822306376792769436378428",
+    "prev_id": "318215764410642516290033639560",
+    "next_id": "277444310412740110036117709886",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I... I guess that I expected that.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "journal \"AV_Rolasa_Deleth\" 19\n\nif (player->getitemcount \"gold_001\" >= 800)\nChoice \"However, I’ll give you 800 gold myself.\" 5\nendif\nif (player->getitemcount \"gold_001\" >= 400)\nChoice \"However, I’ll give you 400 gold myself.\" 11\nendif\nif (player->getitemcount \"gold_001\" >= 200)\nChoice \"However, I’ll give you 200 gold myself.\" 12\nendif\nChoice \"That will be all, then.\" 13"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "277444310412740110036117709886",
+    "prev_id": "22299822306376792769436378428",
+    "next_id": "391112547415786943594009774334",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I’ve been trying all over. Visited so many Temples. Talked with priests. Made requests. Filled forms. Then talked more and filled even more forms. I know it’s not truly the Temple’s fault, but by the Three, you’re my only chance. I don’t want to lose whatever we still have left. I humbly ask, no, I beg for 800 gold.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      }
+    ],
+    "script_text": "Choice \"The Order will provide you with 800 gold.\" 10\nChoice \"The Order can provide you with 400 gold.\" 20\nChoice \"The Order can provide you with 200 gold.\" 30\nChoice \"The Order can’t provide any additional compensation.\" 40"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "391112547415786943594009774334",
+    "prev_id": "277444310412740110036117709886",
+    "next_id": "464194160010851581742611737414",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "It hit us hard. Fevila took it even harder than me, and I feel devastated. I’m grateful for all the hard work Temple healers have done. I really am. If it were not for them, my Rolasa wouldn’t be with us anymore. But you have to understand, %PCName. She’s been badly burned. Her, a Dunmer. Her face, her eyes, her long hair, her neck… I love her just as much as I always have, but she will never be the same. My family is struggling. Even after all this time, Rolasa is still recovering and can’t work. My wife is not well and can only work occasionally. As for me, I’m now deep in debt.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "464194160010851581742611737414",
+    "prev_id": "391112547415786943594009774334",
+    "next_id": "30546377579825844318995971736",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Well. Well… %PCName, is that it? I doubt you ever saw my daughter in your life. Before or after her “incident”, as I’ve heard it being called. So let me tell you this. My dear Rolasa is a Dunmer, proud and beautiful like her mother, Fevila. I’ve no idea how a wretch like me ended up with not one, but two great women like that. I certainly don’t deserve them. For that, I consider myself the luckiest man alive. They’re the dearest things to me. But I don’t know what I’m supposed to do since the… the incident.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "30546377579825844318995971736",
+    "prev_id": "464194160010851581742611737414",
+    "next_id": "27720724263904748075439538456",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_RolasaFather",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Ah, so you’re the one who was sent by the Temple. Or the Keepers. Sorry, it can get confusing sometimes. I’m ALMSIVI faithful, but I would lie if I said I understood all the complexities of the Temple hierarchy. I’ve learned a lot from my wife and daughter, you know.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "MessageBox, \"The man’s tone appears conversational, but you can sense a deep sadness and a hint of anger behind his words.\"\n\nChoice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "27720724263904748075439538456",
+    "prev_id": "30546377579825844318995971736",
+    "next_id": "99712797902170262575400554723",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Poor girl. Sadly, I think the fault is largely with the Keepers. They should’ve been more careful with an inexperienced messenger.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "99712797902170262575400554723",
+    "prev_id": "27720724263904748075439538456",
+    "next_id": "39982641707710412279836070848",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I wonder about her sometimes. I also wonder if it could’ve been me.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "39982641707710412279836070848",
+    "prev_id": "99712797902170262575400554723",
+    "next_id": "38151880016716068240047137822",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "You don’t have to remind me, %PCRank. I know her case well.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38151880016716068240047137822",
+    "prev_id": "39982641707710412279836070848",
+    "next_id": "34984903358904638295919532396",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, I’ve heard about her. We all serve the Order and the Temple. Each in their own way. It's unfortunate, but the risk of injury is something that comes with the job, even when you least expect it.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "34984903358904638295919532396",
+    "prev_id": "38151880016716068240047137822",
+    "next_id": "203385593418385169652173281081",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This was all for naught. If anything, being seen a coward made the others keep their silence. I wasn’t there, deary, but what a farce it must’ve been. The noble in his ornate armor and with an ebony mace, and that poor boy who could barely hold a sword. It still lasted longer than expected, as the boy was running away and— Oh, I’m sorry, child. That’s enough. I think I got carried away. I’m sure you’ve other things to do.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "203385593418385169652173281081",
+    "prev_id": "34984903358904638295919532396",
+    "next_id": "31013945236956225430726377151",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Was it Rilasa? Oh, Rolasa. Yes. I find it truly tragic, child. I wish her well. I remember something similar happening a few decades ago. In fact, it was worse. An elderly Redoran noble didn’t like the content of the message he received and demanded a duel. His true “challengers” were many miles away, but he would have none of it. The messenger was the only one within the Redoran’s grasp. Deep in his stronghold, none of the spineless retainers and servants opposed him. I’ve heard the Redoran was being dressed for the duel while the messenger begged for his life. ",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31013945236956225430726377151",
+    "prev_id": "203385593418385169652173281081",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": 7,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Telvanni",
+    "speaker_cell": "Alt Bosara, Tel Vaerin",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Who? I do not recognize that name, so it is not important. Do not bother me with this.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_Rolasa_Deleth",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "GreaterEqual",
+        "id": "T_Local_NoLore",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "TR_Map",
+        "value": {
+          "type": "Integer",
+          "data": 2
         }
       }
     ],
