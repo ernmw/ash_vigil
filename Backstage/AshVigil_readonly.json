@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 730,
+    "num_objects": 738,
     "masters": [
       [
         "Morrowind.esm",
@@ -438,7 +438,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_clatterbones_script\n\nshort companion\nshort dead\n\nif ( onDeath == 1 )\n\tset dead to 1\nendif\n\nif ( dead == 1 )\nif ( CellChanged )\n\tif ( GetInterior )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\telseif ( GetDistance player > 5000 )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\tendif\nendif\nendif\n\nEnd AV_clatterbones_script"
+    "text": "Begin AV_clatterbones_script\n\nshort companion\nshort dead\nshort gotomm\n\nif ( onDeath == 1 )\n\tset dead to 1\nendif\n\nif ( companion == 1 )\n\nif ( dead == 1 )\nif ( CellChanged )\n\tif ( GetInterior )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\telseif ( GetDistance player > 5000 )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\tendif\nendif\nendif\n\nif ( gotomm == 1 )\nif ( CellChanged )\n\tif ( GetInterior )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\telseif ( GetDistance player > 5000 )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\tendif\nendif\nendif\n\nendif\n\nEnd AV_clatterbones_script"
   },
   {
     "type": "Script",
@@ -9422,7 +9422,7 @@
     "flags": "",
     "id": "10687709343278142182105542611",
     "prev_id": "323772855810399274797252331014",
-    "next_id": "",
+    "next_id": "38462665907015452242757453522",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -9452,6 +9452,371 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38462665907015452242757453522",
+    "prev_id": "10687709343278142182105542611",
+    "next_id": "393653531714545882550910553566",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones still.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "set \"av_clatterbones\".gotomm to 0\nAiWander 0 0 0 0 0 0 0 0 0 0 0 0\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "393653531714545882550910553566",
+    "prev_id": "38462665907015452242757453522",
+    "next_id": "2900467181214691881686500009",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones chitter.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "set \"av_clatterbones\".gotomm to 0\nAiFollow Player 0 0 0 0\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2900467181214691881686500009",
+    "prev_id": "393653531714545882550910553566",
+    "next_id": "28131886973000171120216248196",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones slump.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "set \"av_clatterbones\".gotomm to 1\nAiWander 0 0 0 0 0 0 0 0 0 0 0 0\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28131886973000171120216248196",
+    "prev_id": "2900467181214691881686500009",
+    "next_id": "37280091476733120121400722697",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones clatter some more.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37280091476733120121400722697",
+    "prev_id": "28131886973000171120216248196",
+    "next_id": "35764154807048341548603710906",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones clatter.]",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "Choice \"Stay here.\" 1 \"Follow me.\" 2 \"Meet me back in the Molag Mar Underworks.\" 3 \"Nevermind.\" 4"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35764154807048341548603710906",
+    "prev_id": "37280091476733120121400722697",
+    "next_id": "16885448145708650668054627026",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones chitter.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "set \"av_clatterbones\".companion to 1\nAiFollow Player 0 0 0 0\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16885448145708650668054627026",
+    "prev_id": "35764154807048341548603710906",
+    "next_id": "28256081799002078029215508702",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones clatter some more.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 11
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28256081799002078029215508702",
+    "prev_id": "16885448145708650668054627026",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "av_clatterbones",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Bones clatter.]",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 110
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "companion",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Attend me.\" 10 \"Nevermind.\" 11"
   },
   {
     "type": "Dialogue",
