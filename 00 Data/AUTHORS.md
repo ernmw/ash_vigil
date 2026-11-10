@@ -24,3 +24,9 @@ Items marked with `*` have been modified from the original.
 - `00 Data/meshes/AshVigil/tr_cr_seducer_01.nif`
 - `00 Data/meshes/AshVigil/xtr_cr_seducer_01.kf`
 - `00 Data/meshes/AshVigil/xtr_cr_seducer_01.nif`
+
+### Axeljk
+
+(Cloth Helm)[https://www.nexusmods.com/morrowind/mods/47783]
+
+Used as part of the skeletal minion model.
