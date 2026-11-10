@@ -29,4 +29,4 @@ Items marked with `*` have been modified from the original.
 
 (Cloth Helm)[https://www.nexusmods.com/morrowind/mods/47783]
 
-Used as part of the skeletal minion model.
+Used as part of `00 Data/meshes/AshVigil/xav_skeletonscarf.nif`

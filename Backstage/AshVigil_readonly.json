@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 728,
+    "num_objects": 730,
     "masters": [
       [
         "Morrowind.esm",
@@ -22,11 +22,11 @@
       ],
       [
         "Tamriel_Data.esm",
-        16455350
+        17199325
       ],
       [
         "OAAB_Data.esm",
-        1733474
+        1733277
       ]
     ]
   },
@@ -424,6 +424,21 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_baguard\n\nshort dead\nif ( OnDeath == 1 )\n\tset dead to 1\nendif\n\nif ( dead == 1)\n\t; do nothing\nelseif ( GetJournalIndex \"AV_sewer_snoop\" > 0 )\n\tEnable\nelseif ( GetJournalIndex \"AV_meet_the_boss\" == 100 )\n\tEnable\nelse\n\tDisable\nendif\n\nEnd AV_baguard\n "
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_clatterbones_script",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_clatterbones_script\n\nshort companion\nshort dead\n\nif ( onDeath == 1 )\n\tset dead to 1\nendif\n\nif ( dead == 1 )\nif ( CellChanged )\n\tif ( GetInterior )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\telseif ( GetDistance player > 5000 )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\tendif\nendif\nendif\n\nEnd AV_clatterbones_script"
   },
   {
     "type": "Script",
@@ -3195,6 +3210,74 @@
       "attack3": [
         20,
         40
+      ],
+      "gold": 0
+    }
+  },
+  {
+    "type": "Creature",
+    "flags": "PERSISTENT",
+    "id": "av_clatterbones",
+    "name": "Clatterbones",
+    "script": "AV_clatterbones_script",
+    "mesh": "AshVigil\\xav_skeletonscarf.nif",
+    "inventory": [
+      [
+        1,
+        "bonemold_shield"
+      ],
+      [
+        1,
+        "silver longsword"
+      ]
+    ],
+    "spells": [
+      "immune to poison",
+      "immune to disease",
+      "immune to frost",
+      "resist shock_50"
+    ],
+    "ai_data": {
+      "hello": 0,
+      "fight": 30,
+      "flee": 0,
+      "alarm": 0,
+      "services": ""
+    },
+    "ai_packages": [],
+    "travel_destinations": [],
+    "sound": "skeleton",
+    "creature_flags": "BIPED | WEAPON_AND_SHIELD | IS_BASE",
+    "blood_type": 1,
+    "data": {
+      "creature_type": "Undead",
+      "level": 7,
+      "strength": 50,
+      "intelligence": 50,
+      "willpower": 40,
+      "agility": 50,
+      "speed": 50,
+      "endurance": 50,
+      "personality": 50,
+      "luck": 50,
+      "health": 80,
+      "magicka": 30,
+      "fatigue": 1000,
+      "soul": 30,
+      "combat": 70,
+      "magic": 80,
+      "stealth": 20,
+      "attack1": [
+        7,
+        21
+      ],
+      "attack2": [
+        7,
+        21
+      ],
+      "attack3": [
+        7,
+        21
       ],
       "gold": 0
     }
