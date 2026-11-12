@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 740,
+    "num_objects": 742,
     "masters": [
       [
         "Morrowind.esm",
@@ -438,7 +438,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_clatterbones_script\n\nshort companion\nshort dead\nshort gotomm\n\nif ( onDeath == 1 )\n\tset dead to 1\nendif\n\nif ( companion == 1 )\n\nif ( dead == 1 )\nif ( CellChanged )\n\tif ( GetInterior )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\telseif ( GetDistance player > 5000 )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\tendif\nendif\nendif\n\nif ( gotomm == 1 )\nif ( CellChanged )\n\tif ( GetInterior )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\telseif ( GetDistance player > 5000 )\n\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\tResurrect\n\t\tset dead to 0\n\t\treturn\n\tendif\nendif\nendif\n\nendif\n\nEnd AV_clatterbones_script"
+    "text": "Begin AV_clatterbones_script\n\nshort companion\nshort dead\nshort gotomm\nshort isInvisible\n\nif ( onDeath == 1 )\n\tset dead to 1\nendif\n\nif ( companion == 1 )\n; teleport and resurrect if dead\nif ( dead == 1 )\n\tif ( CellChanged )\n\t\tif ( GetInterior )\n\t\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\t\tResurrect\n\t\t\tset dead to 0\n\t\t\treturn\n\t\telseif ( GetDistance player > 5000 )\n\t\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\t\tResurrect\n\t\t\tset dead to 0\n\t\t\treturn\n\t\tendif\n\tendif\nendif\n; teleport if commanded to do so\nif ( gotomm == 1 )\n\tif ( CellChanged )\n\t\tif ( GetInterior )\n\t\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\t\tset gotomm to 0\n\t\t\treturn\n\t\telseif ( GetDistance player > 5000 )\n\t\t\tPositionCell 2127, -3878, 3, 0, \"Molag Mar, Underworks\"\n\t\t\tset gotomm to 0\n\t\t\treturn\n\t\tendif\n\tendif\nendif\n; don't mess up player's sneaking\nif ( GetPCSneaking == 1 )\n    if ( isInvisible == 0 )\n        AddSpell \"AV_clatterbones_invis\"\n        set isInvisible to 1\n    endif\nelse\n    if ( isInvisible == 1 )\n        RemoveSpell \"AV_clatterbones_invis\"\n        set isInvisible to 0\n    endif\nendif\n\nendif\n\nEnd AV_clatterbones_script"
   },
   {
     "type": "Script",
@@ -682,6 +682,29 @@
   {
     "type": "Spell",
     "flags": "",
+    "id": "AV_clatterbones_invis",
+    "name": "Clatterbones Sneaking",
+    "effects": [
+      {
+        "magic_effect": "Chameleon",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 95,
+        "max_magnitude": 100
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
     "id": "AV_disintegrate",
     "name": "Disintegrate",
     "effects": [
@@ -743,6 +766,79 @@
       "spell_type": "Spell",
       "cost": 39,
       "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "av_clatterbones_heal",
+    "name": "Clatterbones Abilities",
+    "effects": [
+      {
+        "magic_effect": "Burden",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 150,
+        "max_magnitude": 150
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Agility",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Endurance",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Strength",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Speed",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      },
+      {
+        "magic_effect": "RestoreAttribute",
+        "skill": "None",
+        "attribute": "Willpower",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 1,
+        "max_magnitude": 1
+      }
+    ],
+    "data": {
+      "spell_type": "Ability",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
     }
   },
   {
@@ -3232,6 +3328,7 @@
       ]
     ],
     "spells": [
+      "av_clatterbones_heal",
       "immune to poison",
       "immune to disease",
       "immune to frost",
@@ -3256,7 +3353,7 @@
       "intelligence": 50,
       "willpower": 40,
       "agility": 50,
-      "speed": 50,
+      "speed": 60,
       "endurance": 50,
       "personality": 50,
       "luck": 50,
