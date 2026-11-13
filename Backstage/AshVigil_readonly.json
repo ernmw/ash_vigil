@@ -7771,48 +7771,6 @@
   {
     "type": "Dialogue",
     "flags": "",
-    "id": "forged land deed",
-    "dialogue_type": "Topic"
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "2535878202473527910",
-    "prev_id": "10622994875827021",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "velanda omani",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I believe you have something that belongs to me. If you give it back to me and leave quietly, I will forget this ever happened.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Item",
-        "function": "ItemType",
-        "comparison": "GreaterEqual",
-        "id": "bk_indreledeed",
-        "value": {
-          "type": "Integer",
-          "data": 1
-        }
-      }
-    ],
-    "script_text": "AddTopic \"the bigger plan\""
-  },
-  {
-    "type": "Dialogue",
-    "flags": "",
     "id": "Tel Branora",
     "dialogue_type": "Topic"
   },
