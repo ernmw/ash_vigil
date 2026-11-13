@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 742,
+    "num_objects": 768,
     "masters": [
       [
         "Morrowind.esm",
@@ -7771,8 +7771,80 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "forged land deed",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2535878202473527910",
+    "prev_id": "10622994875827021",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "velanda omani",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I believe you have something that belongs to me. If you give it back to me and leave quietly, I will forget this ever happened.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "bk_indreledeed",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "AddTopic \"the bigger plan\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Tel Branora",
     "dialogue_type": "Topic"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Vvardenfell",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31932555244815969455051519583",
+    "prev_id": "82982004913638366",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Worms like this one are usually not welcome here. This is not true for the entirety of Morrowind, though. There are places where much business is done between the worms and the Dunmer. We are very far from the fields of Deshaan, but it suits this one’s plans just fine.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -9696,7 +9768,7 @@
     "flags": "",
     "id": "17030303937182977263769921704",
     "prev_id": "28256081799002078029215508702",
-    "next_id": "",
+    "next_id": "145970455015879219295186485054",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -9712,6 +9784,254 @@
     "player_faction": "",
     "sound_path": "",
     "text": "[Bones clatter.]",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "145970455015879219295186485054",
+    "prev_id": "17030303937182977263769921704",
+    "next_id": "15003719794033150103444929890",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Good. Here is something to cover... initial expenses. For simple work, you should contact another of this one’s agents. Keerin Meille, a Breton in Molag Mar. For other information and job details, you can talk with Velsa Sendu here. In time, you and this one will discuss the bigger plan.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "AddTopic \"the bigger plan\"\nJournal \"AV_meet_the_boss\" 110\nplayer->AddItem \"Gold_001\" 400"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "15003719794033150103444929890",
+    "prev_id": "145970455015879219295186485054",
+    "next_id": "129154290114261916166116209586",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What a disappointment. This one hoped to employ you. Fortunately, this one came prepared. If you will not serve in life, then you will serve in death.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 11
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "129154290114261916166116209586",
+    "prev_id": "15003719794033150103444929890",
+    "next_id": "19286683222809976609794346131",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one has a proposal. A job opportunity for someone with your adventurous spirit. This one wants to employ you as an agent. Local Dunmer are superstitious, wasting the potential offered by the land, and it saddens this one greatly. If you work with this one and infiltrate the Keepers of the Dead, many opportunities will present themselves. The rules are simple. Do not try to deceive or betray this one. Prove yourself capable and there will be many benefits of this business arrangement.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 12
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Choice \"I accept.\" 10 \"No.\" 11"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19286683222809976609794346131",
+    "prev_id": "129154290114261916166116209586",
+    "next_id": "2199004219956594226769770061",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is surprised to see you here. You have not been invited. Yet this one understands the value of skill and initiative. You have made a good first impression. This one is D'lgotha and greets you warmly in his humble abode. You will have to forgive the humbleness. Consider the accommodations temporary.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "AddTopic \"forgive the humbleness\"\nAddTopic \"D'lgotha\"\nChoice \"Continue\" 12"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2199004219956594226769770061",
+    "prev_id": "19286683222809976609794346131",
+    "next_id": "21203421381827130230675188951",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one greets you warmly in his humble abode. You will have to forgive the humbleness. Consider the accommodations temporary. This one is D'lgotha and knew you would come. %PCName, is that it? This one thinks you are here about work.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"work\"\nAddTopic \"forgive the humbleness\"\nAddTopic \"D'lgotha\"\n\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21203421381827130230675188951",
+    "prev_id": "2199004219956594226769770061",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one greets you warmly.",
     "filters": [],
     "script_text": ""
   },
@@ -10379,6 +10699,36 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "necromancy",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "260049922017637002423992704572",
+    "prev_id": "8824317432448917152",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It is this one’s vocation, yes. Necromancy offers so many opportunities. A necromancer may find servants even in places which the others would ignore, and the loyalty of revenants is easily secured by skill and will alone. That makes matters so much simpler than in the case of mortal servants. Do not take this the wrong way, for this one meant no offence. In fact, this one values mortals with proven loyalty and skill highly. It is just unfortunate that even some skilled individuals are unable to overcome superstition. So much wasted potential.",
+    "filters": [],
+    "script_text": "AddTopic \"necromancy\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Background",
     "dialogue_type": "Topic"
   },
@@ -10459,7 +10809,7 @@
     "flags": "",
     "id": "278907220517288725961748908160",
     "prev_id": "217247185712473405266953982023",
-    "next_id": "",
+    "next_id": "404202679516011295601271152245",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -10477,6 +10827,30 @@
     "text": "I’m %Name. A netch herder. Currently far from home and far from work.",
     "filters": [],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "404202679516011295601271152245",
+    "prev_id": "278907220517288725961748908160",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is a worm called %Name. Pleasure to meet you. As many other worms, this one is a practitioner of necromancy.",
+    "filters": [],
+    "script_text": "AddTopic \"necromancy\"\nAddTopic \"D'lgotha\""
   },
   {
     "type": "Dialogue",
@@ -11972,7 +12346,7 @@
     "flags": "",
     "id": "151261802016425798692272289264",
     "prev_id": "27589280702243398254510023803",
-    "next_id": "",
+    "next_id": "13190006424932186383398965681",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -12024,6 +12398,411 @@
       }
     ],
     "script_text": "AddTopic \"Rolasa Deleth\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13190006424932186383398965681",
+    "prev_id": "151261802016425798692272289264",
+    "next_id": "270177171016360501284117749139",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Good. If you prove capable, you may receive other lucrative job opportunities in the future. The rules are simple. Do not try to deceive or betray this one. But you would not do that, for you are smart. This one has a good feeling about this business arrangement.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Player->RemoveItem \"AV_mm_stolen_remains\" 1\nplayer->AddItem \"Gold_001\" 400\nChoice \"Continue\" 4"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "270177171016360501284117749139",
+    "prev_id": "13190006424932186383398965681",
+    "next_id": "421448055310170762304160342124",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You must have misspoken. This is not how the arrangement works. You leave the pot and you receive the reward. There is no other way.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Choice \"[Hand over the urn.]\" 1 \"No.\" 3\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "421448055310170762304160342124",
+    "prev_id": "270177171016360501284117749139",
+    "next_id": "190021804416910953827114361648",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What a disappointment. This one hoped to employ you. Fortunately, this one came prepared. If you will not serve in life, then you will serve in death.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "190021804416910953827114361648",
+    "prev_id": "421448055310170762304160342124",
+    "next_id": "176962617017137469930958599410",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one wants to employ %PCName as an agent. Since %PCName is already a Keeper, many opportunities will present themselves. Local Dunmer are superstitious, wasting the potential offered by the land, and it saddens this one greatly. For simple work, you should contact another of this one’s agents. Keerin Meille, as you are well aware. For other information and job details, you can talk with Velsa Sendu here. In time, you and this one will discuss the bigger plan.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_meet_the_boss\" 120\nAddTopic \"the bigger plan\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "176962617017137469930958599410",
+    "prev_id": "190021804416910953827114361648",
+    "next_id": "29063269419791312630356604763",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, this one sees that you have the pot. Very good. Leave it in this one’s care and you will receive your reward. Simple business arrangement.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Choice \"[Hand over the urn.]\" 1 \"No.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "29063269419791312630356604763",
+    "prev_id": "176962617017137469930958599410",
+    "next_id": "166493987713325475593554667039",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one knows that you were supposed to bring the pot. This one can be patient, but needs to know that you are capable of doing the job. Bring the pot.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_mm_stolen_remains",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 20
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "166493987713325475593554667039",
+    "prev_id": "29063269419791312630356604763",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one admires your desire to serve.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -14377,7 +15156,7 @@
     "flags": "",
     "id": "403788061910180778703904959578",
     "prev_id": "28815107205181656197885319199",
-    "next_id": "",
+    "next_id": "224264032713778372375473578090",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14393,6 +15172,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "Not my problem.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "224264032713778372375473578090",
+    "prev_id": "403788061910180778703904959578",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is aware of the trial and its consequences. There are no disruptions here. These are opportunities, but only for those whose judgement is not impaired.",
     "filters": [],
     "script_text": ""
   },
@@ -27553,5 +28356,71 @@
       }
     ],
     "script_text": "Choice \"Stay here.\" 1 \"Follow me.\" 2 \"Meet me back in the Molag Mar Underworks.\" 3 \"Nevermind.\" 4"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "forgive the humbleness",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "27656486838533561694814006054",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It may feel cozy, but this place is not a permanent residence. This one stays here for work purposes. When work is done, this one will move to much more suitable accommodations. All part of the bigger plan.",
+    "filters": [],
+    "script_text": "AddTopic \"the bigger plan\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "the bigger plan",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "268675415310694921269002298765",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one always has a plan. Often more than one. For now, it is best to focus on our current arrangements.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "D'lgotha",
+    "dialogue_type": "Topic"
   }
 ]
