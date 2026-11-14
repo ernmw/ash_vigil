@@ -477,7 +477,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin AV_interment_register_wait_script\n\nif ( DaysPassed > AV_interment_register_target )\n    Journal AV_interment_register 45\n    StopScript AV_interment_register_wait_script\nendif\n\nEnd AV_interment_register_wait_script\n"
+    "text": "Begin AV_interment_register_script\n\nif ( AV_interment_register_target > 0 )\nif ( DaysPassed > AV_interment_register_target )\n    Journal AV_interment_register 45\n    StopScript AV_interment_register_script\nendif\nendif\n\nEnd AV_interment_register_script\n"
   },
   {
     "type": "Script",
@@ -29110,7 +29110,7 @@
         }
       }
     ],
-    "script_text": "if ( GetJournalIndex \"AV_interment_register\" == 81 )\nJournal AV_interment_register 101\nelseif\nJournal AV_interment_register 80\nendif\nPlayer->RemoveItem \"AV_interment_register_vol1c\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2c\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3c\" 1\nPlayer->AddItem \"T_EnSc_Com_SummonSkeletonChamp\" 1"
+    "script_text": "if ( GetJournalIndex AV_interment_register == 81 )\nJournal AV_interment_register 101\nelse\nJournal AV_interment_register 80\nendif\nPlayer->RemoveItem \"AV_interment_register_vol1c\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2c\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3c\" 1\nPlayer->AddItem \"T_EnSc_Com_SummonSkeletonChamp\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -29270,7 +29270,7 @@
         }
       }
     ],
-    "script_text": "if ( GetJournalIndex \"AV_interment_register\" == 80 )\nJournal AV_interment_register 100\nelseif\nJournal AV_interment_register 81\nendif\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nModDisposition 15"
+    "script_text": "if ( GetJournalIndex AV_interment_register == 80 )\nJournal AV_interment_register 100\nelse\nJournal AV_interment_register 81\nendif\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nModDisposition 15"
   },
   {
     "type": "DialogueInfo",
@@ -29621,7 +29621,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Come back in a couple days. That will be enough time.",
+    "text": "Come back in a few days. That will be enough time.",
     "filters": [
       {
         "index": 5,
@@ -29701,7 +29701,7 @@
         }
       }
     ],
-    "script_text": "Journal AV_interment_register 40\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nPlayer->RemoveItem \"Gold_001\" 500\n\nSet AV_interment_register_target to ( DaysPassed + 2 )\nStartScript AV_interment_register_wait_script"
+    "script_text": "Journal AV_interment_register 40\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nPlayer->RemoveItem \"Gold_001\" 500\n\nSet AV_interment_register_target to ( DaysPassed + 2 )\nStartScript AV_interment_register_script"
   },
   {
     "type": "DialogueInfo",
