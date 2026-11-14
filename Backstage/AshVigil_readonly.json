@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 768,
+    "num_objects": 799,
     "masters": [
       [
         "Morrowind.esm",
@@ -5158,6 +5158,114 @@
   {
     "type": "Book",
     "flags": "",
+    "id": "AV_interment_register_vol1",
+    "name": "Interment Register Vol. 1",
+    "script": "",
+    "mesh": "m\\Text_Folio_01.NIF",
+    "icon": "m\\Tx_folio_01.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
+    "data": {
+      "weight": 4.0,
+      "value": 200,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AV_interment_register_vol1c",
+    "name": "Interment Register Vol. 1",
+    "script": "",
+    "mesh": "m\\Text_Octavo_02.NIF",
+    "icon": "m\\Tx_octavo_02.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
+    "data": {
+      "weight": 4.0,
+      "value": 200,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AV_interment_register_vol2",
+    "name": "Interment Register Vol. 2",
+    "script": "",
+    "mesh": "m\\Text_Folio_01.NIF",
+    "icon": "m\\Tx_folio_01.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
+    "data": {
+      "weight": 4.0,
+      "value": 200,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AV_interment_register_vol2c",
+    "name": "Interment Register Vol. 2",
+    "script": "",
+    "mesh": "m\\Text_Octavo_02.NIF",
+    "icon": "m\\Tx_octavo_02.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
+    "data": {
+      "weight": 4.0,
+      "value": 200,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AV_interment_register_vol3",
+    "name": "Interment Register Vol. 3",
+    "script": "",
+    "mesh": "m\\Text_Folio_01.NIF",
+    "icon": "m\\Tx_folio_01.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
+    "data": {
+      "weight": 4.0,
+      "value": 200,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AV_interment_register_vol3c",
+    "name": "Interment Register Vol. 3",
+    "script": "",
+    "mesh": "m\\Text_Octavo_02.NIF",
+    "icon": "m\\Tx_octavo_02.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
+    "data": {
+      "weight": 4.0,
+      "value": 200,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
     "id": "AV_savel_journal",
     "name": "Thief's Journal",
     "script": "cybGhostSpawn",
@@ -7771,6 +7879,304 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "AV_interment_register",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16506040008352052692224966998",
+    "prev_id": "",
+    "next_id": "388943685112548879358810170379",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Steal the Interment Register",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "388943685112548879358810170379",
+    "prev_id": "16506040008352052692224966998",
+    "next_id": "301888674011928687632857080961",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "D'lgotha has asked me to steal the Keepers’ Interment Register.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "301888674011928687632857080961",
+    "prev_id": "388943685112548879358810170379",
+    "next_id": "22078327705559448085642334576",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 40,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I handed the books over to Jobasha to be copied. They will be ready in a day.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22078327705559448085642334576",
+    "prev_id": "301888674011928687632857080961",
+    "next_id": "36934545232937143824541667630",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I received the books from Jobasha.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36934545232937143824541667630",
+    "prev_id": "22078327705559448085642334576",
+    "next_id": "21462988854946719466326072093",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 80,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave the copied books to D’lgotha. I still need to return the originals to Jilammu.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21462988854946719466326072093",
+    "prev_id": "36934545232937143824541667630",
+    "next_id": "33393685266183086539779231014",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 81,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I returned the original books to Jilammu. I still need to return the copies to D’lgotha.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "33393685266183086539779231014",
+    "prev_id": "21462988854946719466326072093",
+    "next_id": "106435422414471154968630538082",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I returned the books to Jilammu.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "106435422414471154968630538082",
+    "prev_id": "33393685266183086539779231014",
+    "next_id": "381279396016625314878478254862",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 101,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave D’lgotha the copied books.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "381279396016625314878478254862",
+    "prev_id": "106435422414471154968630538082",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 120,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave D’lgotha the books.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "forged land deed",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2535878202473527910",
+    "prev_id": "10622994875827021",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "velanda omani",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I believe you have something that belongs to me. If you give it back to me and leave quietly, I will forget this ever happened.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "bk_indreledeed",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "AddTopic \"the bigger plan\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "intelligence",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10219168812408123677",
+    "prev_id": "30197102241227627252",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "estirdalin",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "A creature's intelligence is its property of reasoning, analysis, and retention of facts and experience. Other than its critical utility in problem-solving, this property is most important for the comprehension and manipulation of the arcane forces associated with magic, and creatures with high intelligence are proven to have greater capacity to cast larger and more powerful spell effects.",
+    "filters": [],
+    "script_text": "Journal AV_interment_register 10"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "Tel Branora",
     "dialogue_type": "Topic"
   },
@@ -9974,7 +10380,7 @@
     "flags": "",
     "id": "21203421381827130230675188951",
     "prev_id": "2199004219956594226769770061",
-    "next_id": "",
+    "next_id": "273835879314725411237762587779",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -9991,6 +10397,161 @@
     "sound_path": "",
     "text": "This one greets you warmly.",
     "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "273835879314725411237762587779",
+    "prev_id": "21203421381827130230675188951",
+    "next_id": "286466645714493856660414881399",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "And who are you? Well, the boss is here. Speak with him first. We’ll see what happens next.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "286466645714493856660414881399",
+    "prev_id": "273835879314725411237762587779",
+    "next_id": "375392225813866014396848509296",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The boss is here. Speak with him first.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 110
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "375392225813866014396848509296",
+    "prev_id": "286466645714493856660414881399",
+    "next_id": "199489692416031408003056292237",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Welcome, %PCName. Now that you’ve properly introduced yourself to the boss, we can talk as well. I’m %Name.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 110
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "199489692416031408003056292237",
+    "prev_id": "375392225813866014396848509296",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, %PCName?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 110
+        }
+      }
+    ],
     "script_text": ""
   },
   {
@@ -28380,5 +28941,544 @@
     "flags": "",
     "id": "D'lgotha",
     "dialogue_type": "Topic"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "interment register",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "344591633212130112248884958138",
+    "prev_id": "",
+    "next_id": "22310625221287436287374846430",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The boss needs the interment register that the Keepers of the Dead maintain. Something about cross-referencing. Steal it, then hand it over to the boss.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 80
+        }
+      }
+    ],
+    "script_text": "Journal AV_interment_register 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22310625221287436287374846430",
+    "prev_id": "344591633212130112248884958138",
+    "next_id": "221359552211563008999509208557",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is pleased with your resourcefulness, %PCRace. This trinket should be ample payment. Now this one must study.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1c",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2c",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3c",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "if ( GetJournalIndex \"AV_interment_register\" == 81 )\nJournal AV_interment_register 101\nelseif\nJournal AV_interment_register 80\nendif\nPlayer->RemoveItem \"AV_interment_register_vol1c\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2c\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3c\" 1\nPlayer->AddItem \"T_EnSc_Com_SummonSkeletonChamp\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "221359552211563008999509208557",
+    "prev_id": "22310625221287436287374846430",
+    "next_id": "16137507091798530318287281045",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is pleased with your resourcefulness, %PCRace. This trinket should be ample payment. Now this one must study.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "; bad ending\nJournal AV_interment_register 120\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nPlayer->AddItem \"T_EnSc_Com_SummonSkeletonChamp\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16137507091798530318287281045",
+    "prev_id": "221359552211563008999509208557",
+    "next_id": "625348089010760300719246059512",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, thank you %PCName. Nance is always misplacing these.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": "if ( GetJournalIndex \"AV_interment_register\" == 80 )\nJournal AV_interment_register 100\nelseif\nJournal AV_interment_register 81\nendif\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nModDisposition 15"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "625348089010760300719246059512",
+    "prev_id": "16137507091798530318287281045",
+    "next_id": "241514008617565000283541842369",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh? Yes, I maintain the register for Nance Bero, at times. It’s absolutely vital for navigating funerary bureaucracy. Nance is using them right now, so if you have anything needing to be looked up, check with her.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 80
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "241514008617565000283541842369",
+    "prev_id": "625348089010760300719246059512",
+    "next_id": "394990929218328062479978932757",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "B- Borrow them? No, I’m sorry child, they are too precious.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 80
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "394990929218328062479978932757",
+    "prev_id": "241514008617565000283541842369",
+    "next_id": "204221896411581391849293921029",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You are ever the curious one! When I’m not using them, I keep them in my desk, but Jilammu keeps moving them around and I have trouble finding them.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 80
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "204221896411581391849293921029",
+    "prev_id": "394990929218328062479978932757",
+    "next_id": "316686910496931530864561136",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "It warms my old heart when children express such a desire for learning. The interment register for Vvardenfell is ancient, and has been maintained and rewritten many times over the decades to ensure we have the most accurate and up-to-date catalogue of who is buried where. In fact, it’s so detailed that it requires three bound volumes to contain it all. As the lead archivist assigned to Vvardenfell, it’s my duty and joy to continue to annotate and update the register. Jilammu helps me maneuver it and takes over pen duties when my hands start to cramp.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 80
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "choice \"Can I borrow them?\" 1 \"Where are they kept?\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "316686910496931530864561136",
+    "prev_id": "204221896411581391849293921029",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m not going to lie, this puts us in a rough situation, %PCName. If the Keepers lose the register, it will cause all sorts of trouble. On top of that, they will probably be able to trace the theft to you eventually. The boss only needs the information in the register, not the register itself. If you get them to Jobasha’s book store in Vivec, he’ll be able to make copies of the originals. Then you can hand the originals back to Jilammu, and everyone wins.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
   }
 ]
