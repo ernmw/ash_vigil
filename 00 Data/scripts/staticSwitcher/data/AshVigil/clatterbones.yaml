@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Clatterbones
+instances:
+  - conditions:
+      - record_id: "av_clatterbones"
+    once: true
+    actions:
+      - send_global_event:
+          name: AshVigilonClatterbonesActive
