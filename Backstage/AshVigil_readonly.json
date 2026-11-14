@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 815,
+    "num_objects": 824,
     "masters": [
       [
         "Morrowind.esm",
@@ -11274,7 +11274,7 @@
     "flags": "",
     "id": "260049922017637002423992704572",
     "prev_id": "8824317432448917152",
-    "next_id": "",
+    "next_id": "3761222611292882436717959737",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -11292,6 +11292,30 @@
     "text": "It is this one’s vocation, yes. Necromancy offers so many opportunities. A necromancer may find servants even in places which the others would ignore, and the loyalty of revenants is easily secured by skill and will alone. That makes matters so much simpler than in the case of mortal servants. Do not take this the wrong way, for this one meant no offence. In fact, this one values mortals with proven loyalty and skill highly. It is just unfortunate that even some skilled individuals are unable to overcome superstition. So much wasted potential.",
     "filters": [],
     "script_text": "AddTopic \"necromancy\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3761222611292882436717959737",
+    "prev_id": "260049922017637002423992704572",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m not a necromancer. The boss does all these weird things. The skeletons give me the creeps sometimes, but they don’t touch me, so I don’t touch them. This works for me. I’ve seen enough tomb guardians in my life to know that they can be effective, but they don’t replace us, mortals. The skeletons here seem to be the same. I don’t get why so many Dunmer insist that the tomb guardians in Morrowind are somehow different from the minions that the necromancers control. It boils down to this: it’s fine when the Temple says so.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -11400,7 +11424,7 @@
     "flags": "",
     "id": "404202679516011295601271152245",
     "prev_id": "278907220517288725961748908160",
-    "next_id": "",
+    "next_id": "37129208487633119977407886273",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -11418,6 +11442,30 @@
     "text": "This one is a worm called %Name. Pleasure to meet you. As many other worms, this one is a practitioner of necromancy.",
     "filters": [],
     "script_text": "AddTopic \"necromancy\"\nAddTopic \"D'lgotha\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37129208487633119977407886273",
+    "prev_id": "404202679516011295601271152245",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There is not that much to say, really. I’m just a woman who learned how business is done. It changes your perspective. Makes you waste less time.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -12080,7 +12128,7 @@
     "flags": "",
     "id": "51377769602995045876711883084",
     "prev_id": "172441041297037182",
-    "next_id": "",
+    "next_id": "35203748802877973367976837827",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -12096,6 +12144,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "It’s a well-positioned fortress. Might not have much in terms of services, but it’s sufficient for pilgrims and warriors who come here. If you need combat training, make sure to visit the Armigers Stronghold. I’ve worked with them before. They know how to handle the blade.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35203748802877973367976837827",
+    "prev_id": "51377769602995045876711883084",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "We’re not exactly in Molag Mar, but it’s not far away. Let’s face it: there is barely anything of note there. At least for people like us. It’s hard to even get a good drink and the locals are no fun at all. A run-down fortress surrounded by hostile wilderness. But this works for the boss. The remote location is actually an advantage for our business.",
     "filters": [],
     "script_text": ""
   },
@@ -12216,6 +12288,60 @@
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Temple",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22916251742595225853",
+    "prev_id": "2980930061296411993",
+    "next_id": "25976061017330228433326485024",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "Healer",
+    "speaker_faction": "Temple",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The Tribunal Temple is the native religion of civilized Morrowind. They worship three God-Kings, Almalexia, Sotha Sil, and Vivec, who are known together as the Tribunal. We usually just call it 'The Temple.'",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25976061017330228433326485024",
+    "prev_id": "22916251742595225853",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Ah, yes. How I adore these sanctimonious priests. I’ve been hearing their preaching for half my life. Many of my friends got in trouble for voicing the slightest disagreement, so forgive me if I don’t treat the Temple \"teachings\" seriously. Justice, courtesy, generosity, humility — all those fine words in Saryoni's Sermons reek of hypocrisy when they’re coming from the Temple priests. They think it’s justice when it suits them, and then they throw you in the Ministry of Truth if you say something they don’t like. I’ve never met a courteous Ordinator in my life. Generosity? Well, they certainly ask for generous donations, but that’s about it. Humility is something they need to learn, but I’ve lost hope that it’ll ever happen. The Temple is holding us back because it wants to maintain the old order. The one that suits them and only them. Maybe someday more Dunmer will understand it. Then the days of the Temple will be numbered.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -13501,14 +13627,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": -1
+      "player_rank": 1
     },
     "speaker_id": "AV_SloadRHH",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "",
+    "player_faction": "AV_KOTD",
     "sound_path": "",
     "text": "The boss needs the Keepers' interment register.",
     "filters": [
@@ -13537,14 +13663,14 @@
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": -1
+      "player_rank": 1
     },
     "speaker_id": "AV_SloadRHH",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "",
+    "player_faction": "AV_KOTD",
     "sound_path": "",
     "text": "I need you to secure the underworks in Molag Mar.",
     "filters": [
@@ -13567,6 +13693,30 @@
     "flags": "",
     "id": "308550884916696367203214585649",
     "prev_id": "72367116001801954939693483418",
+    "next_id": "37962848971929338743632801219",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "There's no new work for you right now. Just stay out of trouble.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37962848971929338743632801219",
+    "prev_id": "308550884916696367203214585649",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
@@ -13582,9 +13732,9 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "There's no new work for you right now. Just stay out of trouble.",
+    "text": "Your usefulness is only measured in what one of the boss’s undead minions can’t do. And what they can’t do is infiltrate the Keepers of the Dead, gain their trust, and then exploit that trust. Get hired and ingratiate yourself. Get promoted so you’re not just one of the grunts, we don’t need another of those. They’re holed up in Molag Mar.",
     "filters": [],
-    "script_text": ""
+    "script_text": "AddTopic \"Keepers of the Dead\""
   },
   {
     "type": "Dialogue",
@@ -15962,7 +16112,7 @@
     "flags": "",
     "id": "224264032713778372375473578090",
     "prev_id": "403788061910180778703904959578",
-    "next_id": "",
+    "next_id": "36352225244957062486886159221",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -15978,6 +16128,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "This one is aware of the trial and its consequences. There are no disruptions here. These are opportunities, but only for those whose judgement is not impaired.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36352225244957062486886159221",
+    "prev_id": "224264032713778372375473578090",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I treat it all as a power play between the Temple and various Great Houses. From what I’ve heard, they even argued about ebony trade and colonization during the trial. No wonder it had to be stopped, hah. A lot has been happening on Vvardenfell recently. It changed a lot in the last 20 years or so. I guess that the trial is just one of many ways to fight for influence here.",
     "filters": [],
     "script_text": ""
   },
@@ -17561,7 +17735,7 @@
     "flags": "",
     "id": "195815492617804197388867707314",
     "prev_id": "14273190792804478784377194045",
-    "next_id": "",
+    "next_id": "89612249602956360395144779618",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -17577,6 +17751,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "M’Aiq does not want to keep the dead. M’Aiq wants the dead to be as far away from M’Aiq as possible.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "89612249602956360395144779618",
+    "prev_id": "195815492617804197388867707314",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "They’re just the Temple under a different name, as far as I’m concerned. Hard to see the difference.",
     "filters": [],
     "script_text": ""
   },
@@ -29204,6 +29402,30 @@
     "flags": "",
     "id": "D'lgotha",
     "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "177880070711976874880088489029",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That’s the boss. Surprised? I was. But once the initial shock was gone, it turned out that he had much to offer me. No nonsense. Just business. I earned more in a month than I got in a year. Amazing, really. So why not use the opportunity? Because the Temple doesn’t like it? Or the Keepers? Pfff. I’ll be honest, though. It took me a lot of time to get used to the smell.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
