@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 799,
+    "num_objects": 809,
     "masters": [
       [
         "Morrowind.esm",
@@ -70,6 +70,15 @@
     "type": "GlobalVariable",
     "flags": "",
     "id": "AV_ds_soul",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_interment_register_target",
     "value": {
       "type": "Short",
       "data": 0
@@ -454,6 +463,21 @@
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
     "text": "Begin AV_disturbed_mucksponge_script\n\n    if ( OnActivate == 1 )\n        if ( GetJournalIndex \"AV_daedric_detective\" == 50 )\n            Journal \"AV_daedric_detective\" 60\n        endif\n\n        MessageBox \"There's nothing in this ruined muckspunge.\"\n    endif\n\nEnd"
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_interment_register_script",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_interment_register_wait_script\n\nif ( DaysPassed > AV_interment_register_target )\n    Journal AV_interment_register 45\n    StopScript AV_interment_register_wait_script\nendif\n\nEnd AV_interment_register_wait_script\n"
   },
   {
     "type": "Script",
@@ -5185,7 +5209,7 @@
     "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
     "data": {
       "weight": 4.0,
-      "value": 200,
+      "value": 50,
       "book_type": "Book",
       "skill": "None",
       "enchantment": 0
@@ -5221,7 +5245,7 @@
     "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
     "data": {
       "weight": 4.0,
-      "value": 200,
+      "value": 50,
       "book_type": "Book",
       "skill": "None",
       "enchantment": 0
@@ -5257,7 +5281,7 @@
     "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This is a ledger containing a multitude of burials in ancestral tombs and Necrom, including dates of interments and remains relocations.]<BR>\n<BR>\n",
     "data": {
       "weight": 4.0,
-      "value": 200,
+      "value": 50,
       "book_type": "Book",
       "skill": "None",
       "enchantment": 0
@@ -7936,7 +7960,7 @@
     "flags": "",
     "id": "301888674011928687632857080961",
     "prev_id": "388943685112548879358810170379",
-    "next_id": "22078327705559448085642334576",
+    "next_id": "1974728584117638815425903792",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 40,
@@ -7958,8 +7982,32 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "22078327705559448085642334576",
+    "id": "1974728584117638815425903792",
     "prev_id": "301888674011928687632857080961",
+    "next_id": "22078327705559448085642334576",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 45,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The copied books should be ready now.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22078327705559448085642334576",
+    "prev_id": "1974728584117638815425903792",
     "next_id": "36934545232937143824541667630",
     "data": {
       "dialogue_type": "Journal",
@@ -11817,7 +11865,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Corprus monsters here, so close to the Armigers Stronghold? Don’t be ridiculous.",
+    "text": "Corprus monsters here, in Molag Mar itself? If what you say is true, we'll need to double our patrols down here.",
     "filters": [
       {
         "index": 2,
@@ -11853,7 +11901,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_sewer_snoop\" 30\nModDisposition -30"
+    "script_text": "Journal \"AV_sewer_snoop\" 30\nModDisposition -5"
   },
   {
     "type": "DialogueInfo",
@@ -29439,7 +29487,7 @@
     "flags": "",
     "id": "316686910496931530864561136",
     "prev_id": "204221896411581391849293921029",
-    "next_id": "",
+    "next_id": "31758400007090817241198183926",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -29480,5 +29528,441 @@
       }
     ],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31758400007090817241198183926",
+    "prev_id": "316686910496931530864561136",
+    "next_id": "326075212717542992388036289682",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "jobasha",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Your books are not ready. Be patient, friend.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "326075212717542992388036289682",
+    "prev_id": "31758400007090817241198183926",
+    "next_id": "21870695092923176735835913213",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "jobasha",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Your books are here. Jobasha is pleased with the quality.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 45
+        }
+      }
+    ],
+    "script_text": "Player->AddItem \"AV_interment_register_vol1\" 1\nPlayer->AddItem \"AV_interment_register_vol2\" 1\nPlayer->AddItem \"AV_interment_register_vol3\" 1\nPlayer->AddItem \"AV_interment_register_vol1c\" 1\nPlayer->AddItem \"AV_interment_register_vol2c\" 1\nPlayer->AddItem \"AV_interment_register_vol3c\" 1\nJournal AV_interment_register 50"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21870695092923176735835913213",
+    "prev_id": "326075212717542992388036289682",
+    "next_id": "297817694411043472249689583050",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "jobasha",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Come back in a couple days. That will be enough time.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 6,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "GreaterEqual",
+        "id": "Gold_001",
+        "value": {
+          "type": "Integer",
+          "data": 500
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Journal AV_interment_register 40\nPlayer->RemoveItem \"AV_interment_register_vol1\" 1\nPlayer->RemoveItem \"AV_interment_register_vol2\" 1\nPlayer->RemoveItem \"AV_interment_register_vol3\" 1\nPlayer->RemoveItem \"Gold_001\" 500\n\nSet AV_interment_register_target to ( DaysPassed + 2 )\nStartScript AV_interment_register_wait_script"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "297817694411043472249689583050",
+    "prev_id": "21870695092923176735835913213",
+    "next_id": "608477788015646101009887302044",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "jobasha",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Jobasha does not work for free.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "608477788015646101009887302044",
+    "prev_id": "297817694411043472249689583050",
+    "next_id": "403463730015103860537750874665",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "jobasha",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Jobasha is patient.",
+    "filters": [
+      {
+        "index": 5,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "403463730015103860537750874665",
+    "prev_id": "608477788015646101009887302044",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "jobasha",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Jobasha can have these duplicated. An expedited job costs extra.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol1",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol2",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_interment_register_vol3",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 40
+        }
+      }
+    ],
+    "script_text": "Choice \"[Pay 500 gold.]\" 1 \"Nevermind.\" 2"
   }
 ]
