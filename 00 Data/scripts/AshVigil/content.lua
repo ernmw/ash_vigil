@@ -15,9 +15,11 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
-local MOD_NAME                     = require("scripts.AshVigil.ns")
-local content                      = require('openmw.content')
-local const                     = require("scripts.AshVigil.const")
+local content = require("openmw.content")
+local MOD_NAME = require("scripts.AshVigil.ns")
+local const = require("scripts.AshVigil.const")
+local core = require("openmw.core")
+local localization = core.l10n(MOD_NAME)
 
 content.globals.records[const.URNS_LOST_GVAR] = 0
 content.globals.records[const.URNS_DELIVERED_GVAR]      = 0
@@ -28,7 +30,30 @@ content.globals.records[const.KOTD_RANK_GVAR]      = -1
 content.globals.records[const.KOTD_REPUTATION_GVAR] = 0
 content.globals.records[const.KOTD_EXPELLED_GVAR] = 0
 
--- these are added in the omwaddon.
---content.globals.records[const.INSIDE_TOMB_GVAR] = 0
---content.globals.records[const.ELVAS_SAVEL_DEAD_GVAR]    = 0
---content.globals.records[const.BAREN_ALEN_DEAD_GVAR]     = 0
+local function onContentFilesLoaded()
+    content.magicEffects.records[const.SUMMON_CLATTERBONES_EFFECT] = {
+        template    = content.magicEffects.records["summonskeletalminion"],
+        name        = localization("AV_summon_clatterbones_effect_name"),
+        description = localization("AV_summon_clatterbones_effect_description"),
+        icon        = "icons/s/b_tx_s_smmn_skltlmnn.dds",
+        baseCost    = 30,
+        casterLinked = false,
+        allowsEnchanting = false,
+        allowsSpellmaking = false,
+    }
+
+    content.spells.records[const.SUMMON_CLATTERBONES_SPELL] = {
+        name    = localization("AV_summon_clatterbones_effect_name"),
+        cost    = 30,
+        effects = {
+            { id = const.SUMMON_CLATTERBONES_EFFECT, range = 0, duration = 0, area = 0,
+              magnitudeMin = 1, magnitudeMax = 1 },
+        },
+    }
+end
+
+return {
+    engineHandlers = {
+        onContentFilesLoaded = onContentFilesLoaded,
+    },
+}

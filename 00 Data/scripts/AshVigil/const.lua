@@ -56,4 +56,7 @@ return {
     KOTD_NAME = "AV_KOTD",
     PEACE_SPELL = "av_calmtomb",
     INSIDE_TOMB_GVAR = "AV_InsideTomb",
+    SUMMON_CLATTERBONES_EFFECT = "AV_summon_clatterbones_effect",
+    SUMMON_CLATTERBONES_SPELL = "AV_summon_clatterbones_spell",
+    CLATTERBONES_MWSCRIPT = "AV_clatterbones_script"
 }

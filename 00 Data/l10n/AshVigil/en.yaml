@@ -12,3 +12,7 @@ hardMode_name: "Hard Mode"
 hardMode_description: "Enable urn carrying."
 
 sssTooOld: "Ash Vigil: You need to update Static Switching System (SSS)."
+
+AV_summon_clatterbones_effect_fail: "Clatterbones does not arrive."
+AV_summon_clatterbones_effect_name: "Summon Clatterbones"
+AV_summon_clatterbones_effect_description: "Summon Clatterbones to your location."
