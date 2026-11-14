@@ -4,6 +4,11 @@ priority: polish
 
 instances:
   - conditions:
+      - global_value:
+          # stone location 2 is DS
+        - AV_stone_location:
+            min: 2
+            max: 2
       - cell:
           # these are tombs in Molag Amur and Azura's Coast
         - "Hlervi Ancestral Tomb"
@@ -37,11 +42,6 @@ instances:
         - "Arethan Ancestral Tomb"
         - "Dulo Ancestral Tomb"
         - "Hlaalu Ancestral Tomb"
-      - global_value:
-          # stone location 2 is DS
-        - AV_stone_location:
-            min: 2
-            max: 2
       - is_dead: false
       - creature_type: undead
       - is_follower: false

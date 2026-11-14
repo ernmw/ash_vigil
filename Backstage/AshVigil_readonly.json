@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 809,
+    "num_objects": 815,
     "masters": [
       [
         "Morrowind.esm",
@@ -11908,7 +11908,7 @@
     "flags": "",
     "id": "39706879946015980344638983749",
     "prev_id": "110199708213481108565755321037",
-    "next_id": "",
+    "next_id": "182389942311089502467348510309",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -11949,6 +11949,125 @@
       }
     ],
     "script_text": "Choice \"[Attack.]\" 1 \"[Lie.] I come down here to think. It's quiet.\" 2 \"[Lie.] The fishing is better down here.\" 3 \"[Lie.] There’s a corprus monster down here. I mean to kill it.\" 4"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "182389942311089502467348510309",
+    "prev_id": "39706879946015980344638983749",
+    "next_id": "168287102515534371563830592581",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There’s been a Buoyant Armiger snooping around in the Molag Mar underworks. Deal with her. It doesn’t really matter how. The boss just needs her gone.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal AV_sewer_snoop 10\n\"AV_armiger\"->Enable"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "168287102515534371563830592581",
+    "prev_id": "182389942311089502467348510309",
+    "next_id": "24651852123656491995532321326",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You have a subtle approach, %PCRace.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal AV_sewer_snoop 40\nPlayer->AddItem \"Gold_001\" 700\n\"AV_armiger\"->Disable"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "24651852123656491995532321326",
+    "prev_id": "168287102515534371563830592581",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Good, clean work. That should buy us some time.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_armiger",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sewer_snoop 110\nPlayer->AddItem \"Gold_001\" 700"
   },
   {
     "type": "Dialogue",
@@ -13352,7 +13471,7 @@
     "flags": "",
     "id": "166493987713325475593554667039",
     "prev_id": "29063269419791312630356604763",
-    "next_id": "",
+    "next_id": "58310516103389604924898081769",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13368,6 +13487,102 @@
     "player_faction": "",
     "sound_path": "",
     "text": "This one admires your desire to serve.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "58310516103389604924898081769",
+    "prev_id": "166493987713325475593554667039",
+    "next_id": "72367116001801954939693483418",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The boss needs the Keepers' interment register.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_interment_register",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "AddTopic \"interment register\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "72367116001801954939693483418",
+    "prev_id": "58310516103389604924898081769",
+    "next_id": "308550884916696367203214585649",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I need you to secure the underworks in Molag Mar.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sewer_snoop",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "AddTopic \"underworks\"\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "308550884916696367203214585649",
+    "prev_id": "72367116001801954939693483418",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There's no new work for you right now. Just stay out of trouble.",
     "filters": [],
     "script_text": ""
   },
