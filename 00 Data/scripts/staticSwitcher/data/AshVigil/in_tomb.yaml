@@ -4,12 +4,14 @@ log_name: Set In-Tomb Global Variable
 instances:
   - conditions:
       - cell_match: tomb
+    trigger: cell_enter
     actions:
       - global_set:
           name: "AV_InsideTomb"
           value: 1
   - conditions:
       - not: {cell_match: tomb}
+    trigger: cell_enter
     actions:
       - global_set:
           name: "AV_InsideTomb"

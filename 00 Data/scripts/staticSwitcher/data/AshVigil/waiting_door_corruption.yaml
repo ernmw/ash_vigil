@@ -49,6 +49,7 @@ instances:
       - not: {record_id: lich}
       - not: {record_id: summon}
       - not: {record_id: "^AV_"}
+      - not: {record_id: "^av_"}
     actions:
       - replace:
           scamp: 0.06

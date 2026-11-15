@@ -6,29 +6,28 @@ instances:
       - has_journal:
           quest: av_mm_savel
           min: 10
-      # Coordinates: 410.258 -531.44 376.753
-      # toward center: Coordinates: -127.973 34.0702 384
-      - record_id: "Furn_shrine_Veloth_cure_01"
     once: true
+    trigger: cell_enter
     actions:
       - create:
           AV_AngryGhostBody:
+            transform_type: absolute
             position:
-              x: -350
-              y: 470
+              x: -688.78
+              y: 2062.82
+              z: -124.992
   - conditions:
       - cell: Savel Ancestral Tomb
       - has_journal:
           quest: av_mm_savel
           min: 10
-      # Coordinates: 410.258 -531.44 376.753
-      # toward center: Coordinates: -127.973 34.0702 384
-      - record_id: "Furn_shrine_Veloth_cure_01"
     once: true
+    trigger: cell_enter
     actions:
       - create:
           AV_savel_journal:
+            transform_type: absolute
             position:
-              x: -320
-              y: 500
-              z: 13
+              x: -674.88
+              y: 2208.17
+              z: -128

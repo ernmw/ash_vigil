@@ -29,12 +29,13 @@ instances:
           quest: av_mm_arethan
           min: 10
           max: 10
-      # Coordinates: 1006.1 2299.04 -117.02
-      # dir: Coordinates: 873.247 2300.87 -121.451
-      - record_id: "in_velothi_ashpit_02"
     once: true
+    trigger: cell_enter
     actions:
       - create:
           AV_GhostTorosiArethan:
+            transform_type: absolute
             position:
-              x: -200
+              x: 692.118
+              y: 2285.89
+              z: -159.973

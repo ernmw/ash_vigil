@@ -8,17 +8,16 @@ instances:
           quest: av_audit_beran
           min: 10
           max: 10
-      # Coordinates: -753.708 10506.6 -1181.4
-      # scamp: Coordinates: -801.362 10266.4 -1133.69
-      - record_id: "Furn_shrine_Tribunal_cure_01"
     once: true
+    trigger: cell_enter
     actions:
       - create:
           AV_GoldenSaintD:
+            transform_type: absolute
             position:
-              x: -25
-              y: -120
-              z: 50
+              x: -852.82
+              y: 9545.84
+              z: -1407
   - conditions:
       # needed for daedric detective
       - has_journal:

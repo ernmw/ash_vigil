@@ -9,7 +9,7 @@ local function onPlayerAdded(player)
 end
 
 local SSS = I.StaticSwitcher_G
-if not SSS or SSS.version < 5 then
+if not SSS or SSS.version < 6 then
     print("Version of Static Switching System is too old")
     return {
         engineHandlers = {
