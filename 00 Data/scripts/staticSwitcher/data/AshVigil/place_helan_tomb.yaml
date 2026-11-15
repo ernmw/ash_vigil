@@ -7,14 +7,13 @@ instances:
           quest: av_mm_helan
           min: 10
           max: 10
-      # Coordinates: -383.466 1802.04 151.488
-      # other: -688 1728 144
-      - record_id: "chest_tomb_large00"
     once: true
+    trigger: cell_enter
     actions:
       - create:
           AV_helan_necro:
+            transform_type: absolute
             position:
-              x: -150
-              y: -30
-              z: 10
+              x: -533.466
+              y: 1772.04
+              z: 145.796

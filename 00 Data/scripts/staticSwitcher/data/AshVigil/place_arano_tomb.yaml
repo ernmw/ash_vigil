@@ -7,13 +7,13 @@ instances:
           quest: av_audit_arano
           min: 10
           max: 10
-      # Coordinates: 1170.52 -424.978 -919.997
-      # other: Coordinates: 1584 144 -960
-      - record_id: "furn_firepit00"
     once: true
+    trigger: cell_enter
     actions:
       - create:
           AV_DarkSeducerV:
+            transform_type: absolute
             position:
-              x: 200
-              y: 275
+              x: 1370.52
+              y: -149.978
+              z: -959

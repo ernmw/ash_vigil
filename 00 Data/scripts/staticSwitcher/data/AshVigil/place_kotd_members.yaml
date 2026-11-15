@@ -1,4 +1,6 @@
 # yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+
+# this file will be deleted; these are placed in the ESP
 log_name: Place KOTD Members
 instances:
   # pilgrim's rest
