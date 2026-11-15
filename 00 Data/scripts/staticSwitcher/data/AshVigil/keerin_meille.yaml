@@ -8,3 +8,15 @@ instances:
       - record_id: "AV_KOTDLPP"
     actions:
       - disable: true
+  - conditions:
+      - cell: "Molag Mar, The Pilgrim's Rest"
+    once: true
+    trigger: cell_enter
+    actions:
+      - create:
+          AV_KOTDLPP:
+            transform_type: absolute
+            position:
+              x: -504.313
+              y: -439.532
+              z: 1

@@ -9,19 +9,53 @@ instances:
       - cell:
         # first quest, deliver urn
         - "vandus ancestral tomb"
-        # investigate weird reports, find body
-        - "savel ancestral tomb"
-        #- "andas ancestral tomb"
-        #- "releth ancestral tomb"
-        #- "hlervu ancestral tomb"
-        #- "velas ancestral tomb"
       - global_value:
           # stone locations 0 and 1 are safe
+        # TODO: there's no vandus keepsake!
         - AV_stone_location:
             max: 1
       - player_faction:
           faction: "AV_KOTD"
           min: 1
+      - is_dead: false
+      - creature_type: undead
+      - is_follower: false
+      - not: {record_id: Lich}
+      - not: {record_id: lich}
+      - not: {record_id: summon}
+      - not: {record_id: "^AV_"}
+      - not: {record_id: "^av_"}
+      - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
+    actions:
+      - add_lua_script: scripts/AshVigil/ecs/peaceful.lua
+  - conditions:
+      - cell:
+        # investigate weird reports, find body
+        - "savel ancestral tomb"
+      - global_value:
+          # stone locations 0 and 1 are safe
+        - AV_stone_location:
+            max: 1
+      - carrying: "AV_savel_keepsake"
+      - is_dead: false
+      - creature_type: undead
+      - is_follower: false
+      - not: {record_id: Lich}
+      - not: {record_id: lich}
+      - not: {record_id: summon}
+      - not: {record_id: "^AV_"}
+      - not: {record_id: "^av_"}
+      - not: {has_lua_script: scripts/AshVigil/ecs/peaceful.lua}
+    actions:
+      - add_lua_script: scripts/AshVigil/ecs/peaceful.lua
+  - conditions:
+      - cell:
+        - "velas ancestral tomb"
+      - global_value:
+          # stone locations 0 and 1 are safe
+        - AV_stone_location:
+            max: 1
+      - carrying: "AV_velas_keepsake"
       - is_dead: false
       - creature_type: undead
       - is_follower: false
