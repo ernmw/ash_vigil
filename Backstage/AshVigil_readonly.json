@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 835,
+    "num_objects": 837,
     "masters": [
       [
         "Morrowind.esm",
@@ -64,6 +64,15 @@
     "value": {
       "type": "Short",
       "data": 0
+    }
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_cinia_hostile",
+    "value": {
+      "type": "Float",
+      "data": 0.0
     }
   },
   {
@@ -313,6 +322,21 @@
       ],
       "flags": ""
     }
+  },
+  {
+    "type": "Script",
+    "flags": "",
+    "id": "AV_Cinia_script",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_Cinia_script\n\nshort NoLore\n\nif ( AV_cinia_hostile == 0 )\n\tif ( GetCurrentAIPackage == 5 )\n    \tset AV_cinia_hostile to 1\n\tendif\nendif\n\nEnd AV_Cinia_script\n"
   },
   {
     "type": "Script",
@@ -3985,7 +4009,7 @@
     "flags": "",
     "id": "AV_Cinia",
     "name": "Cinia Carrus",
-    "script": "nolore",
+    "script": "AV_Cinia_script",
     "mesh": "",
     "inventory": [
       [

@@ -25,7 +25,10 @@ local settings   = require("scripts.AshVigil.settings.settings")
 
 
 local function summonClatterbonesHandler(application)
-    for _, spellEffect in pairs(core.magic.spells.records[application.id].effects) do
+    if core.magic.spells.records[application.id] == nil then
+        return
+    end
+    for _, spellEffect in pairs(core.magic.spells.records[application.id].effects or {}) do
         if spellEffect.id == string.lower(const.SUMMON_CLATTERBONES_EFFECT) then
             -- summon clatterbones
             settings.debugPrint("summoning clatterbones")

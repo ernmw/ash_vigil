@@ -34,6 +34,17 @@ local sacred_item_types = {
     [types.Weapon] = true,
 }
 
+local function disturbInCell(cell)
+    for _, other in pairs(cell:getAll(types.NPC)) do
+        if not types.Player.objectIsInstance(other) then
+            other:sendEvent(MOD_NAME .. "onDisturb")
+        end
+    end
+    for _, other in pairs(cell:getAll(types.Creature)) do
+        other:sendEvent(MOD_NAME .. "onDisturb")
+    end
+end
+
 local function onActivate(object, actor)
     if not sacred_item_types[object.type] then
         return
@@ -41,17 +52,18 @@ local function onActivate(object, actor)
     if not types.Player.objectIsInstance(actor) then
         return
     end
-    for _, other in pairs(object.cell:getAll(types.NPC)) do
-        if not types.Player.objectIsInstance(other) then
-            other:sendEvent(MOD_NAME .. "onDisturb")
-        end
-    end
-    for _, other in pairs(object.cell:getAll(types.Creature)) do
-        other:sendEvent(MOD_NAME .. "onDisturb")
-    end
+    disturbInCell(object.cell)
+end
+
+local function onDisturbAll(data)
+    print("disturbing all in "..tostring(data.actor.cell.id))
+    disturbInCell(data.actor.cell)
 end
 
 return {
+    eventHandlers = {
+        [MOD_NAME .. "onDisturbAll"] = onDisturbAll,
+    },
     engineHandlers = {
         onActivate = onActivate
     }

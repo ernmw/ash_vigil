@@ -78,9 +78,9 @@ end
 
 local function onHit()
     onDisturb()
-    for _, actor in pairs(nearby.actors) do
-        actor:sendEvent(MOD_NAME .. "onDisturb")
-    end
+    core.sendGlobalEvent(MOD_NAME .. "onDisturbAll", {
+        actor = pself,
+    })
 end
 
 local function onInactive()
@@ -89,6 +89,27 @@ local function onInactive()
         script = SCRIPTS.peaceful
     })
 end
+
+local function hostileSpell(spellRecordID)
+    local spellRecord = core.magic.spells.records[spellRecordID] or core.magic.enchantments.records[spellRecordID]
+    for _, effect in ipairs(spellRecord.effects or {}) do
+        local magicEffect = core.magic.effects.records[effect.id]
+        if magicEffect and magicEffect.harmful then return true end
+    end
+    return false
+end
+
+interfaces.SpellCasting.addApplyMagicEffectsHandler(function(options)
+    local caster = options.caster
+    if caster == pself.object then return end
+
+    if hostileSpell(options.id) then
+        onDisturb()
+        core.sendGlobalEvent(MOD_NAME .. "onDisturbAll", {
+            actor = pself,
+        })
+    end
+end)
 
 return {
     eventHandlers = {
