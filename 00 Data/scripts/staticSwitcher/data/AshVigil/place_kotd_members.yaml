@@ -3,16 +3,6 @@
 # this file will be deleted; these are placed in the ESP
 log_name: Place KOTD Members
 instances:
-  # pilgrim's rest
-  - conditions:
-      - record_id: "mundrila ienith"
-    once: true
-    actions:
-      - create:
-          AV_KOTDLPP:
-            position:
-              x: 100
-              y: 100
   # st veloth's hostel
   - conditions:
       # Coordinates: 3904 4032 15680
