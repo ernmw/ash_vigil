@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 825,
+    "num_objects": 835,
     "masters": [
       [
         "Morrowind.esm",
@@ -8153,6 +8153,86 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "AV_bloodworm",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13904277695556932302953847945",
+    "prev_id": "",
+    "next_id": "162501537511965315219295513378",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Blood for the Worm",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "162501537511965315219295513378",
+    "prev_id": "13904277695556932302953847945",
+    "next_id": "21314123106624999263549826142",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’m to retrieve the Bloodworm Helm from the Maren Ancestral Tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21314123106624999263549826142",
+    "prev_id": "162501537511965315219295513378",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave the Bloodworm Helm to D’lgotha. In return, he gave me an undead servant.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "forged land deed",
     "dialogue_type": "Topic"
   },
@@ -10155,7 +10235,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_meet_the_boss",
+        "id": "AV_bloodworm",
         "value": {
           "type": "Integer",
           "data": 110
@@ -13657,7 +13737,7 @@
     "flags": "",
     "id": "72367116001801954939693483418",
     "prev_id": "58310516103389604924898081769",
-    "next_id": "308550884916696367203214585649",
+    "next_id": "28716253087504331358385784527",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13686,13 +13766,49 @@
         }
       }
     ],
-    "script_text": "AddTopic \"underworks\"\n"
+    "script_text": "AddTopic \"Bloodworm Helm\"\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28716253087504331358385784527",
+    "prev_id": "72367116001801954939693483418",
+    "next_id": "308550884916696367203214585649",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The boss tracked down where the Bloodworm Helm is. You’re going to bring it to him.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_bloodworm",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Bloodworm Helm\"\n"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "308550884916696367203214585649",
-    "prev_id": "72367116001801954939693483418",
+    "prev_id": "28716253087504331358385784527",
     "next_id": "37962848971929338743632801219",
     "data": {
       "dialogue_type": "Topic",
@@ -13735,6 +13851,189 @@
     "text": "Your usefulness is only measured in what one of the boss’s undead minions can’t do. And what they can’t do is infiltrate the Keepers of the Dead, gain their trust, and then exploit that trust. Get hired and ingratiate yourself. Get promoted so you’re not just one of the grunts, we don’t need another of those. They’re holed up in Molag Mar.",
     "filters": [],
     "script_text": "AddTopic \"Keepers of the Dead\""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Bloodworm Helm",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "22401423106419592921699405231",
+    "prev_id": "206496815456219464",
+    "next_id": "35381114117631572015105680072",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Take it to the boss.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "bloodworm_helm_unique",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_bloodworm",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35381114117631572015105680072",
+    "prev_id": "22401423106419592921699405231",
+    "next_id": "342758950811480525044337627818",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_SloadRHH",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The helm is in the Maren Ancestral Tomb, which is near the Erabenimsun Camp in Molag Amur. Go get it. Simple.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_bloodworm",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal AV_bloodworm 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "342758950811480525044337627818",
+    "prev_id": "35381114117631572015105680072",
+    "next_id": "267083873051833862175595408",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "This one is very pleased. As a reward, this one has prepared an undead servant of your very own. This one raised the servant through necromancy, a more permanent and reliable art than mere conjuration. Should it fall in combat, it will eventually return to the underworks in Molag Mar and await your return. This one will teach you how to summon it.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "bloodworm_helm_unique",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_bloodworm",
+        "value": {
+          "type": "Integer",
+          "data": 10
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_bloodworm\" 100\nRemoveItem \"bloodworm_helm_unique\" 1\n; give the player a boost in conjuration\nif ( player->GetConjuration < 15 )\n    player->SetConjuration 15\nendif\n; this spell is defined in lua\nplayer->AddSpell \"AV_summon_clatterbones_spell\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "267083873051833862175595408",
+    "prev_id": "342758950811480525044337627818",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The interment registry aided this one in locating the Bloodworm Helm. The helm is attuned to the Worm King, and with the proper coaxing, this one can use it as a ritual focus.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "bloodworm_helm_unique",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_bloodworm",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
