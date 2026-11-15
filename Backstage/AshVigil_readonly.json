@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 824,
+    "num_objects": 825,
     "masters": [
       [
         "Morrowind.esm",
@@ -12032,7 +12032,7 @@
         }
       }
     ],
-    "script_text": "Journal AV_sewer_snoop 10\n\"AV_armiger\"->Enable"
+    "script_text": "Journal AV_sewer_snoop 10\n"
   },
   {
     "type": "DialogueInfo",

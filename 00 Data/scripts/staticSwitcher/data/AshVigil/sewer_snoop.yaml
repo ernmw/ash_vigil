@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Sewer Snoop
+instances:
+  - conditions:
+      - has_journal:
+          quest: av_sewer_snoop
+          min: 10
+          max: 10
+      - cell:
+        - "Molag Mar, Underworks"
+    once: true
+    trigger: cell_enter
+    actions:
+      - create:
+          AV_armiger:
+            transform_type: absolute
+            position:
+              x: 1727.05
+              y: -3625.36
+              z: -0.87704
