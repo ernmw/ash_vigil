@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 837,
+    "num_objects": 854,
     "masters": [
       [
         "Morrowind.esm",
@@ -8257,6 +8257,110 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "AV_sload_orb",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "30521973481323988870772576806",
+    "prev_id": "",
+    "next_id": "27539711658719885384750429267",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The Worm's Jewel",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "27539711658719885384750429267",
+    "prev_id": "30521973481323988870772576806",
+    "next_id": "684714287012266507726789423283",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Meille mentioned that D’lgotha wants to see me.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "684714287012266507726789423283",
+    "prev_id": "27539711658719885384750429267",
+    "next_id": "222028080710151639397740162581",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "D’lgotha is searching for some artifact that the Daedra of Tel Branora are involved with. If I bring it to him, he will reward me.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "222028080710151639397740162581",
+    "prev_id": "684714287012266507726789423283",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "forged land deed",
     "dialogue_type": "Topic"
   },
@@ -10675,7 +10779,7 @@
     "flags": "",
     "id": "199489692416031408003056292237",
     "prev_id": "375392225813866014396848509296",
-    "next_id": "",
+    "next_id": "425934351217462441386951079136",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -10704,7 +10808,65 @@
         }
       }
     ],
-    "script_text": ""
+    "script_text": "AddTopic \"Beran Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "425934351217462441386951079136",
+    "prev_id": "199489692416031408003056292237",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "%PCName! Just who I wanted to see. I heard you were heading to Beran Tomb?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Beran Tomb\""
   },
   {
     "type": "Dialogue",
@@ -12459,7 +12621,7 @@
     "flags": "",
     "id": "32670005997779844173913869898",
     "prev_id": "75387871729862",
-    "next_id": "",
+    "next_id": "25745319153853095971394708133",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -12475,6 +12637,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "When you see them, it means the job is hard. Well, maybe not the scamps. Everything else can be pretty mean. A clannfear will sense you from miles away, so don’t rely on stealth. An ogrim can kill you quickly if it gets close, so don’t let it. Flame and frost atronachs have predictable weaknesses to the opposing elements, so use that to your advantage. Don’t get too confident, though. Their magicka reflection abilities can cause you great harm, or even your death. That goes for most Daedric minions, actually. Never use a spell which will instantly kill you if reflected, as it will simply be your last one. And don’t hesitate to use Almsivi Intervention if you get in too much trouble. Yes, it may not be the most heroic act, but it will keep you alive.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25745319153853095971394708133",
+    "prev_id": "32670005997779844173913869898",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The lesser minions are but pawns. The greater Daedra are powerful beings that cannot be trusted. Their ways are never clear, but this one is old enough to know that Daedra give with one hand and take with the other. Their boons are fleeting, but their curses last longer than most mortals can even comprehend. Dunmer veneration of the Daedra is a trap, and none fall into that trap more readily than the Dunmer of Deshaan. House Dres is full of entrepreneurs who know how to make beneficial deals with worms and their fellow Dunmer alike. For that, they deserve praise. For their Daedra worship, they deserve mockery. This one believes that the slavers will become the slaves. They are blind not to see it.   ",
     "filters": [],
     "script_text": ""
   },
@@ -15026,7 +15212,7 @@
     "flags": "",
     "id": "10159523021908703633798519245",
     "prev_id": "27948504948114904701818150390",
-    "next_id": "",
+    "next_id": "3779696482294457973980227132",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -15044,6 +15230,89 @@
     "text": "The Beran Ancestral Tomb is near Tel Branora, along the eastern coast. It's really quite a marvelous construction, from what I can gather.",
     "filters": [],
     "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3779696482294457973980227132",
+    "prev_id": "10159523021908703633798519245",
+    "next_id": "30960102093135905326608321417",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Oh, yes, of course. I have something which may come in handy. Take this… Psst, %PCName. There's something else. You should really speak with the boss. It’s related to this audit and it’s quite important.   ",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sload_orb 10\nplayer->additem \"p_night-eye_e\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "30960102093135905326608321417",
+    "prev_id": "3779696482294457973980227132",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one already knows you are going to inspect the tomb. However, it’s not the place that this one seeks, but an object. The area around the tomb and the town the locals call Tel Branora radiates with power. The uninitiated would mistake this for yet another display of House Telvanni’s magical might. This one recognizes the truth. This is the work of Daedra. They are either searching for some object of power or guarding one. As this one’s agent, %PCName will locate that object and bring it to this one. Failure will not be tolerated. Should you succeed, you will become an integral part of the bigger plan, %PCName. The task will not be easy, but the rewards will be great.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sload_orb 20\nAddTopic \"Daedra\"\nAddTopic \"the bigger plan\""
   },
   {
     "type": "Dialogue",
@@ -15742,7 +16011,7 @@
     "flags": "",
     "id": "236659334315929921968892791105",
     "prev_id": "724372167012113877046267435160",
-    "next_id": "",
+    "next_id": "84638022005688259829560775703",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -15768,6 +16037,288 @@
         "value": {
           "type": "Integer",
           "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "84638022005688259829560775703",
+    "prev_id": "236659334315929921968892791105",
+    "next_id": "364674312710921953140967076687",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "<<placeholder dialogue. sload gives reward>>",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_sload_orb\" 100\nJournal \"AV_daedric_detective\" 90\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "364674312710921953140967076687",
+    "prev_id": "84638022005688259829560775703",
+    "next_id": "331765281910320611197754736099",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one had hoped to keep you as a living agent.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "331765281910320611197754736099",
+    "prev_id": "364674312710921953140967076687",
+    "next_id": "31728526609455159552932500397",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The orb is exquisite. Now give it to this one, and you will be rewarded greatly.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_obsidian_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"[Hand over the orb.]\" 1\nChoice \"No.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31728526609455159552932500397",
+    "prev_id": "331765281910320611197754736099",
+    "next_id": "314222137114642928837002222190",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is pleased you were able to identify the artifact. Now bring it this one, and be rewarded.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sload_orb 20"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "314222137114642928837002222190",
+    "prev_id": "31728526609455159552932500397",
+    "next_id": "36301954052267309888096870930",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is most displeased. You were told that failure would not be tolerated.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "SetFight 100\nStartCombat player\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36301954052267309888096870930",
+    "prev_id": "314222137114642928837002222190",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "<<placeholder dialogue. sload talks about the nature of the orb>>",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 3
         }
       }
     ],
@@ -21214,7 +21765,7 @@
     "flags": "",
     "id": "117935262414207342556185790159",
     "prev_id": "17883835706276754588314624815",
-    "next_id": "76856067001473645283587687608",
+    "next_id": "323894392915842113519271360189",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -21236,6 +21787,17 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
         "id": "AV_therana_permission",
         "value": {
           "type": "Integer",
@@ -21243,13 +21805,49 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_therana_permission\" 100\nAddTopic \"Beran Tomb\"\nAddTopic \"Arano Tomb\"\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\""
+    "script_text": "Journal \"AV_therana_permission\" 100\nAddTopic \"Beran Tomb\"\nAddTopic \"Arano Tomb\"\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "323894392915842113519271360189",
+    "prev_id": "117935262414207342556185790159",
+    "next_id": "76856067001473645283587687608",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs. By the way, Meille mentioned he has something for you. He's down at the Pilgrim's Rest.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_therana_permission",
+        "value": {
+          "type": "Integer",
+          "data": 90
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_therana_permission\" 100\nAddTopic \"Beran Tomb\"\nAddTopic \"Arano Tomb\"\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\"\nplayer->AddItem \"Gold_001\" 400"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "76856067001473645283587687608",
-    "prev_id": "117935262414207342556185790159",
+    "prev_id": "323894392915842113519271360189",
     "next_id": "17459476118730801584888650065",
     "data": {
       "dialogue_type": "Topic",
@@ -29701,6 +30299,53 @@
     "flags": "",
     "id": "268675415310694921269002298765",
     "prev_id": "",
+    "next_id": "12401971815407311238616664801",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Perform this task for me, and all will be revealed to you.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_orb",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12401971815407311238616664801",
+    "prev_id": "268675415310694921269002298765",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
