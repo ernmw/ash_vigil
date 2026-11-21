@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 867,
+    "num_objects": 869,
     "masters": [
       [
         "Morrowind.esm",
@@ -3453,6 +3453,39 @@
   {
     "type": "Enchanting",
     "flags": "",
+    "id": "AV_snare_en",
+    "effects": [
+      {
+        "magic_effect": "Paralyze",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 0,
+        "duration": 5,
+        "min_magnitude": 0,
+        "max_magnitude": 0
+      },
+      {
+        "magic_effect": "SoulTrap",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnTarget",
+        "area": 0,
+        "duration": 180,
+        "min_magnitude": 0,
+        "max_magnitude": 0
+      }
+    ],
+    "data": {
+      "enchant_type": "CastWhenUsed",
+      "cost": 150,
+      "max_charge": 222,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Enchanting",
+    "flags": "",
     "id": "cybCiniaAxe_en",
     "effects": [
       {
@@ -5125,6 +5158,23 @@
       "weight": 1.0,
       "value": 90,
       "enchantment": 0
+    }
+  },
+  {
+    "type": "Clothing",
+    "flags": "",
+    "id": "AV_snare_sash",
+    "name": "Snaring Sash",
+    "script": "",
+    "mesh": "OAAB\\c\\belt_exp_01.nif",
+    "icon": "OAAB\\c\\belt_exp_01.dds",
+    "enchanting": "AV_snare_en",
+    "biped_objects": [],
+    "data": {
+      "clothing_type": "Belt",
+      "weight": 1.0,
+      "value": 700,
+      "enchantment": 50
     }
   },
   {
@@ -16786,7 +16836,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_sload_orb\" 100\nJournal \"AV_daedric_detective\" 90\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 3\nPlayer->AddItem \"AB_Misc_SoulGemBlack\" 3"
+    "script_text": "Journal \"AV_sload_orb\" 100\nJournal \"AV_daedric_detective\" 90\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 3\nPlayer->AddItem \"AB_Misc_SoulGemBlack\" 1\nPlayer->AddItem \"AV_snare_sash\" 1"
   },
   {
     "type": "DialogueInfo",
@@ -16996,7 +17046,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "<<talk about the orb>>",
+    "text": "Now that the orb is within this one’s possession, the bigger plan is in motion.",
     "filters": [
       {
         "index": 1,
