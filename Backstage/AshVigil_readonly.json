@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 869,
+    "num_objects": 881,
     "masters": [
       [
         "Morrowind.esm",
@@ -5110,6 +5110,85 @@
     }
   },
   {
+    "type": "Npc",
+    "flags": "",
+    "id": "AV_shapvaat",
+    "name": "",
+    "script": "nolore",
+    "mesh": "base_animkna.nif",
+    "inventory": [
+      [
+        1,
+        "ingred_black_lichen_01"
+      ],
+      [
+        4,
+        "ingred_gravedust_01"
+      ],
+      [
+        1,
+        "ingred_pearl_01"
+      ],
+      [
+        2,
+        "ingred_scathecraw_01"
+      ],
+      [
+        5,
+        "ingred_bloat_01"
+      ],
+      [
+        2,
+        "ingred_ash_yam_01"
+      ],
+      [
+        1,
+        "ingred_diamond_01"
+      ],
+      [
+        1,
+        "ingred_horker_tusk_01"
+      ],
+      [
+        1,
+        "ingred_wolfsbane_01"
+      ],
+      [
+        1,
+        "Ingred_lloramor_spines_01"
+      ]
+    ],
+    "spells": [
+      "heartbite",
+      "hearth heal",
+      "absorb speed [ranged]",
+      "argonian breathing"
+    ],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 0,
+      "services": "BARTERS_INGREDIENTS | BARTERS_ALCHEMY | OFFERS_TRAINING"
+    },
+    "ai_packages": [],
+    "travel_destinations": [],
+    "race": "Argonian",
+    "class": "Alchemist",
+    "faction": "",
+    "head": "tr_argonian_m_h08",
+    "hair": "b_n_argonian_m_hair06",
+    "npc_flags": "AUTO_CALCULATE",
+    "blood_type": 0,
+    "data": {
+      "level": 8,
+      "disposition": 50,
+      "reputation": 0,
+      "rank": 0,
+      "gold": 300
+    }
+  },
+  {
     "type": "Clothing",
     "flags": "",
     "id": "AV_VelasFamilyAmulet",
@@ -8411,6 +8490,36 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "corprus disease",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "282216481715144043631371511329",
+    "prev_id": "2197315804952815701",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I have seen its effects. You call it a disease but you overlook the abundance of life it creates. Wild and free in expression of form. It is beautiful.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "latest rumors",
     "dialogue_type": "Topic"
   },
@@ -11434,7 +11543,7 @@
     "flags": "",
     "id": "425934351217462441386951079136",
     "prev_id": "199489692416031408003056292237",
-    "next_id": "",
+    "next_id": "89745099206472630720937085280",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -11486,6 +11595,172 @@
       }
     ],
     "script_text": "AddTopic \"Beran Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "89745099206472630720937085280",
+    "prev_id": "425934351217462441386951079136",
+    "next_id": "932296966012221351035483005532",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[Hiss!]",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "932296966012221351035483005532",
+    "prev_id": "89745099206472630720937085280",
+    "next_id": "56129797002195040935051620841",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You talk without purpose. Do not disturb my work.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Goodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "56129797002195040935051620841",
+    "prev_id": "932296966012221351035483005532",
+    "next_id": "560952474016285181466346512512",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Fresh meat? The master finds use for you. This one is %Name.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "TalkedToPc",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "560952474016285181466346512512",
+    "prev_id": "56129797002195040935051620841",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Speak, %PCRace?",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -12183,7 +12458,7 @@
     "flags": "",
     "id": "3761222611292882436717959737",
     "prev_id": "260049922017637002423992704572",
-    "next_id": "",
+    "next_id": "2336318384673997554783924696",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -12199,6 +12474,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "I’m not a necromancer. The boss does all these weird things. The skeletons give me the creeps sometimes, but they don’t touch me, so I don’t touch them. This works for me. I’ve seen enough tomb guardians in my life to know that they can be effective, but they don’t replace us, mortals. The skeletons here seem to be the same. I don’t get why so many Dunmer insist that the tomb guardians in Morrowind are somehow different from the minions that the necromancers control. It boils down to this: it’s fine when the Temple says so.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2336318384673997554783924696",
+    "prev_id": "3761222611292882436717959737",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Empty vessels are more interesting, a more malleable form to refill as I see fit. Perhaps that is necromancy as you call it, but it is a limited smooth-skin word that does little to describe the freedom of expression and creation in my work. It makes no difference to the cup if it is filled with honey or mead. When it is broken, it must be repaired or it can do neither. So it is with any vessel.",
     "filters": [],
     "script_text": ""
   },
@@ -12333,7 +12632,7 @@
     "flags": "",
     "id": "37129208487633119977407886273",
     "prev_id": "404202679516011295601271152245",
-    "next_id": "",
+    "next_id": "18733825256842683128803684991",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -12349,6 +12648,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "There is not that much to say, really. I’m just a woman who learned how business is done. It changes your perspective. Makes you waste less time.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "18733825256842683128803684991",
+    "prev_id": "37129208487633119977407886273",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Such things are not important. The master gives me tools to do my work, here and now. That is what's important.",
     "filters": [],
     "script_text": ""
   },
@@ -13210,7 +13533,7 @@
     "flags": "",
     "id": "25976061017330228433326485024",
     "prev_id": "22916251742595225853",
-    "next_id": "",
+    "next_id": "386862969212868164424739388448",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -13226,6 +13549,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "Ah, yes. How I adore these sanctimonious priests. I’ve been hearing their preaching for half my life. Many of my friends got in trouble for voicing the slightest disagreement, so forgive me if I don’t treat the Temple \"teachings\" seriously. Justice, courtesy, generosity, humility — all those fine words in Saryoni's Sermons reek of hypocrisy when they’re coming from the Temple priests. They think it’s justice when it suits them, and then they throw you in the Ministry of Truth if you say something they don’t like. I’ve never met a courteous Ordinator in my life. Generosity? Well, they certainly ask for generous donations, but that’s about it. Humility is something they need to learn, but I’ve lost hope that it’ll ever happen. The Temple is holding us back because it wants to maintain the old order. The one that suits them and only them. Maybe someday more Dunmer will understand it. Then the days of the Temple will be numbered.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "386862969212868164424739388448",
+    "prev_id": "25976061017330228433326485024",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, they worship those creatures, don't they? The things this one could do with just a quart of one's blood.",
     "filters": [],
     "script_text": ""
   },
@@ -14728,7 +15075,7 @@
     "flags": "",
     "id": "37962848971929338743632801219",
     "prev_id": "308550884916696367203214585649",
-    "next_id": "",
+    "next_id": "419874354612951391419672493402",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14746,6 +15093,30 @@
     "text": "Your usefulness is only measured in what one of the boss’s undead minions can’t do. And what they can’t do is infiltrate the Keepers of the Dead, gain their trust, and then exploit that trust. Get hired and ingratiate yourself. Get promoted so you’re not just one of the grunts, we don’t need another of those. They’re holed up in Molag Mar.",
     "filters": [],
     "script_text": "AddTopic \"Keepers of the Dead\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "419874354612951391419672493402",
+    "prev_id": "37962848971929338743632801219",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Speak with the master.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -19329,7 +19700,7 @@
     "flags": "",
     "id": "89612249602956360395144779618",
     "prev_id": "195815492617804197388867707314",
-    "next_id": "",
+    "next_id": "37891402854131940560917382401",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -19345,6 +19716,30 @@
     "player_faction": "",
     "sound_path": "",
     "text": "They’re just the Temple under a different name, as far as I’m concerned. Hard to see the difference.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37891402854131940560917382401",
+    "prev_id": "89612249602956360395144779618",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "They put their dead in pots to keep them? This does not sound right. Is it a joke?",
     "filters": [],
     "script_text": ""
   },
@@ -31094,6 +31489,30 @@
     "flags": "",
     "id": "177880070711976874880088489029",
     "prev_id": "",
+    "next_id": "28987662851512159272811120310",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_shapvaat",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "An ever curious being.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "28987662851512159272811120310",
+    "prev_id": "177880070711976874880088489029",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",
