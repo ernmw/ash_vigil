@@ -13507,30 +13507,6 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "22916251742595225853",
-    "prev_id": "2980930061296411993",
-    "next_id": "25976061017330228433326485024",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 30,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "Healer",
-    "speaker_faction": "Temple",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Tribunal Temple is the native religion of civilized Morrowind. They worship three God-Kings, Almalexia, Sotha Sil, and Vivec, who are known together as the Tribunal. We usually just call it 'The Temple.'",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "25976061017330228433326485024",
     "prev_id": "22916251742595225853",
     "next_id": "386862969212868164424739388448",
