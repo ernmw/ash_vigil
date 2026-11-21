@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 854,
+    "num_objects": 867,
     "masters": [
       [
         "Morrowind.esm",
@@ -8403,6 +8403,617 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "latest rumors",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "391323532214772114987524686915",
+    "prev_id": "16027228191418416208",
+    "next_id": "358445164611731347797425253961",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 5,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "The Keepers of the Dead are conducting a census of ancestral tombs and carrying out purification and restoration duties on Vvardenfell. This will be a long process. They are stationed in Molag Mar. All because of the trial involving the Temple and the Great Houses, of course.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "NotCell",
+        "function": "NotCell",
+        "comparison": "Equal",
+        "id": "Molag Mar, Temple",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotFaction",
+        "function": "NotFaction",
+        "comparison": "Equal",
+        "id": "AV_KOTD",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "358445164611731347797425253961",
+    "prev_id": "391323532214772114987524686915",
+    "next_id": "168836390717871514026973475359",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 5,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Redoran",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "We have Keepers of the Dead on Vvardenfell now. From what I know, they’re stationed in Molag Mar, conducting a census of ancestral tombs and carrying out other duties. This is an interesting development. I guess the Temple had to act after the trial involving the Great Houses began.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "NotCell",
+        "function": "NotCell",
+        "comparison": "Equal",
+        "id": "Molag Mar, Redoran Stronghold",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "168836390717871514026973475359",
+    "prev_id": "358445164611731347797425253961",
+    "next_id": "1316329302207803034719229052",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 5,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Hlaalu",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "We have Keepers of the Dead on Vvardenfell now. From what I know, they’re stationed in Molag Mar, conducting a census of ancestral tombs and carrying out other duties. This is an interesting development. I guess the Temple had to act after the trial involving the Great Houses began.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1316329302207803034719229052",
+    "prev_id": "168836390717871514026973475359",
+    "next_id": "2100364578657236768911883897",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 5,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Telvanni",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "We have Keepers of the Dead on Vvardenfell now. From what I know, they’re stationed in Molag Mar, conducting a census of ancestral tombs and carrying out other duties. This is an interesting development. I guess the Temple had to act after the trial involving the Great Houses began.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2100364578657236768911883897",
+    "prev_id": "1316329302207803034719229052",
+    "next_id": "58987662301172003241104297217",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 0,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Redoran",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I’ve heard that the Keepers of the Dead have been stationed in Molag Mar. It’s been a while since they were last seen on Vvardenfell. Quite a change.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "NotCell",
+        "function": "NotCell",
+        "comparison": "Equal",
+        "id": "Molag Mar, Redoran Stronghold",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "58987662301172003241104297217",
+    "prev_id": "2100364578657236768911883897",
+    "next_id": "250197355513623643897371442199",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 0,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Hlaalu",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I’ve heard that the Keepers of the Dead have been stationed in Molag Mar. It’s been a while since they were last seen on Vvardenfell. Quite a change.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "250197355513623643897371442199",
+    "prev_id": "58987662301172003241104297217",
+    "next_id": "178171500110280981429134742882",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 30,
+      "speaker_rank": 0,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Telvanni",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I’ve heard that the Keepers of the Dead have been stationed in Molag Mar. It’s been a while since they were last seen on Vvardenfell. Quite a change.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "178171500110280981429134742882",
+    "prev_id": "250197355513623643897371442199",
+    "next_id": "19694802014055141653920039988",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "0",
+    "speaker_cell": "Maar Gan, Andus Tradehouse",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Saint Veloth’s Hostel has been very crowded since the Keepers of the Dead arrived.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotFaction",
+        "function": "NotFaction",
+        "comparison": "Equal",
+        "id": "AV_KOTD",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19694802014055141653920039988",
+    "prev_id": "178171500110280981429134742882",
+    "next_id": "14273527243615261843394982062",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "0",
+    "speaker_cell": "Molag Mar, Saetring the Nord: Smith",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Saint Veloth’s Hostel has been very crowded since the Keepers of the Dead arrived.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotFaction",
+        "function": "NotFaction",
+        "comparison": "Equal",
+        "id": "AV_KOTD",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14273527243615261843394982062",
+    "prev_id": "19694802014055141653920039988",
+    "next_id": "10093032224169499128974537734",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "0",
+    "speaker_cell": "Molag Mar, Vasesius Viciulus: Trader",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Saint Veloth’s Hostel has been very crowded since the Keepers of the Dead arrived.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotFaction",
+        "function": "NotFaction",
+        "comparison": "Equal",
+        "id": "AV_KOTD",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "10093032224169499128974537734",
+    "prev_id": "14273527243615261843394982062",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 50,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "0",
+    "speaker_cell": "Molag Mar, Armigers Stronghold",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Saint Veloth’s Hostel has been very crowded since the Keepers of the Dead arrived.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Local",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "nolore",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "NotFaction",
+        "function": "NotFaction",
+        "comparison": "Equal",
+        "id": "AV_KOTD",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_vandus",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "intelligence",
     "dialogue_type": "Topic"
   },
@@ -10833,6 +11444,17 @@
     "text": "%PCName! Just who I wanted to see. I heard you were heading to Beran Tomb?",
     "filters": [
       {
+        "index": 3,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 2,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -10841,17 +11463,6 @@
         "value": {
           "type": "Integer",
           "data": 0
-        }
-      },
-      {
-        "index": 1,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Less",
-        "id": "AV_therana_permission",
-        "value": {
-          "type": "Integer",
-          "data": 100
         }
       },
       {
@@ -12663,6 +13274,72 @@
     "text": "The lesser minions are but pawns. The greater Daedra are powerful beings that cannot be trusted. Their ways are never clear, but this one is old enough to know that Daedra give with one hand and take with the other. Their boons are fleeting, but their curses last longer than most mortals can even comprehend. Dunmer veneration of the Daedra is a trap, and none fall into that trap more readily than the Dunmer of Deshaan. House Dres is full of entrepreneurs who know how to make beneficial deals with worms and their fellow Dunmer alike. For that, they deserve praise. For their Daedra worship, they deserve mockery. This one believes that the slavers will become the slaves. They are blind not to see it.   ",
     "filters": [],
     "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Beds",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "264740093911377273031421557876",
+    "prev_id": "3579309451481124256",
+    "next_id": "21691267495925269043672327536",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "Publican",
+    "speaker_faction": "",
+    "speaker_cell": "Molag Mar, St. Veloth's Hostel",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Sorry, %PCRace. I couldn’t fit another body in here if I tried, thanks to the Keepers of the Dead moving in.",
+    "filters": [],
+    "script_text": "AddTopic \"Keepers of the Dead\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "21691267495925269043672327536",
+    "prev_id": "264740093911377273031421557876",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Molag Mar, St. Veloth's Hostel",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "There aren’t any left at the Hostel. Sharing such a small space with the Keepers of the Dead has everyone cranky.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "NotFaction",
+        "function": "NotFaction",
+        "comparison": "Equal",
+        "id": "AV_KOTD",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Keepers of the Dead\""
   },
   {
     "type": "Dialogue",
@@ -15254,6 +15931,17 @@
     "text": "Oh, yes, of course. I have something which may come in handy. Take this… Psst, %PCName. There's something else. You should really speak with the boss. It’s related to this audit and it’s quite important.   ",
     "filters": [
       {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_stone_location",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -16062,7 +16750,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "<<placeholder dialogue. sload gives reward>>",
+    "text": "Yes, this is some Daedric artifact. It hums with the vibrations of the Outer Realms. It whines under this one’s touch. Hmm. This is attuned to the one you know as Mehrunes Dagon. You did well, %PCName. Now the bigger plan has finally been put into motion. These will help you in furthering our work.",
     "filters": [
       {
         "index": 2,
@@ -16098,7 +16786,7 @@
         }
       }
     ],
-    "script_text": "Journal \"AV_sload_orb\" 100\nJournal \"AV_daedric_detective\" 90\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 3"
+    "script_text": "Journal \"AV_sload_orb\" 100\nJournal \"AV_daedric_detective\" 90\nPlayer->RemoveItem \"AV_obsidian_orb\" 1\nSet AV_stone_location 3\nPlayer->AddItem \"AB_Misc_SoulGemBlack\" 3"
   },
   {
     "type": "DialogueInfo",
@@ -16308,7 +16996,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "<<placeholder dialogue. sload talks about the nature of the orb>>",
+    "text": "<<talk about the orb>>",
     "filters": [
       {
         "index": 1,
@@ -21707,7 +22395,7 @@
     "flags": "",
     "id": "17883835706276754588314624815",
     "prev_id": "21179311186369644216518381154",
-    "next_id": "117935262414207342556185790159",
+    "next_id": "323894392915842113519271360189",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -21763,9 +22451,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "117935262414207342556185790159",
+    "id": "323894392915842113519271360189",
     "prev_id": "17883835706276754588314624815",
-    "next_id": "323894392915842113519271360189",
+    "next_id": "117935262414207342556185790159",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -21780,13 +22468,24 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs.",
+    "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs. By the way, Meille mentioned he has something for you. He's down at the Pilgrim's Rest.",
     "filters": [
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_KOTDLPP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
       {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
-        "comparison": "Equal",
+        "comparison": "NotEqual",
         "id": "AV_meet_the_boss",
         "value": {
           "type": "Integer",
@@ -21810,8 +22509,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "323894392915842113519271360189",
-    "prev_id": "117935262414207342556185790159",
+    "id": "117935262414207342556185790159",
+    "prev_id": "323894392915842113519271360189",
     "next_id": "76856067001473645283587687608",
     "data": {
       "dialogue_type": "Topic",
@@ -21827,7 +22526,7 @@
     "speaker_cell": "",
     "player_faction": "AV_KOTD",
     "sound_path": "",
-    "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs. By the way, Meille mentioned he has something for you. He's down at the Pilgrim's Rest.",
+    "text": "Good work, %PCRank. Now we can get on with the audit of the Arano and Beran tombs.",
     "filters": [
       {
         "index": 1,
@@ -21847,7 +22546,7 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "76856067001473645283587687608",
-    "prev_id": "323894392915842113519271360189",
+    "prev_id": "117935262414207342556185790159",
     "next_id": "17459476118730801584888650065",
     "data": {
       "dialogue_type": "Topic",
@@ -23536,7 +24235,7 @@
     "flags": "",
     "id": "937864445014349348801096282127",
     "prev_id": "270441179216929088429031526788",
-    "next_id": "1401816148771875791760097751",
+    "next_id": "37506048871130270032117673108",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -23558,45 +24257,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "1401816148771875791760097751",
-    "prev_id": "937864445014349348801096282127",
-    "next_id": "37506048871130270032117673108",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": 0
-    },
-    "speaker_id": "AV_KOTDArchAssist",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "AV_KOTD",
-    "sound_path": "",
-    "text": "I… I’m sorry, %PCName. I can’t talk about this. It’s too painful.",
-    "filters": [
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "AV_meet_the_boss",
-        "value": {
-          "type": "Integer",
-          "data": 100
-        }
-      }
-    ],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "37506048871130270032117673108",
-    "prev_id": "1401816148771875791760097751",
-    "next_id": "",
+    "prev_id": "937864445014349348801096282127",
+    "next_id": "1401816148771875791760097751",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 30,
@@ -23612,6 +24275,53 @@
     "player_faction": "AV_KOTD",
     "sound_path": "",
     "text": "We met in Narsis and became fast friends. We were both foreigners, in our own ways, there. It was easy to form a bond and commiserate about life in the big city. When I joined the Keepers and needed to move to Necrom to continue my studies, he signed on as an initiate so he could stay with me. I’m lucky to have him.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_KOTDLPP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "NotEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "1401816148771875791760097751",
+    "prev_id": "37506048871130270032117673108",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArchAssist",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I… I’m sorry, %PCName. I can’t talk about this. It’s too painful.",
     "filters": [],
     "script_text": ""
   },
