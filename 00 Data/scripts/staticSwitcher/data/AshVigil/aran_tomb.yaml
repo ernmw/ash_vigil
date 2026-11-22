@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Purify Aran Tomb
+priority: balance
+instances:
+  # respawn and hook up all the critters we need to kill for the quest
+  - conditions:
+      - cell: "aran ancestral tomb"
+      - has_journal:
+          quest: av_mm_aran
+          min: 10
+          max: 10
+      - not:
+          global_value:
+          - AV_AranPurged: 1
+      - creature_type:
+        - undead
+        - daedra
+      - is_follower: false
+      - not: {record_id: "^AV_"}
+      - not: {has_lua_script: scripts/AshVigil/ecs/interloper.lua}
+    actions:
+      # this respawns everything
+      - replace: self
+      - add_lua_script: scripts/AshVigil/ecs/interloper.lua
+  # place the mad prayer
+  - conditions:
+      - cell: "aran ancestral tomb"
+      - has_journal:
+          quest: av_mm_aran
+          min: 10
+          max: 10
+    once: true
+    trigger: cell_enter
+    actions:
+      - create:
+          AV_madprayer_note:
+            transform_type: absolute
+            position:
+              x: 788.215
+              y: 2942.91
+              z: -628.7

@@ -4,3 +4,7 @@ quests:
     destCell: "Arethan Ancestral Tomb"
     global: "AV_ArethanPurged"
     startStage: 10
+  - id: "av_mm_aran"
+    destCell: "Aran Ancestral Tomb"
+    global: "AV_AranPurged"
+    startStage: 10

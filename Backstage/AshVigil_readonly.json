@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 881,
+    "num_objects": 887,
     "masters": [
       [
         "Morrowind.esm",
@@ -29,6 +29,15 @@
         1733277
       ]
     ]
+  },
+  {
+    "type": "GlobalVariable",
+    "flags": "",
+    "id": "AV_AranPurged",
+    "value": {
+      "type": "Short",
+      "data": 0
+    }
   },
   {
     "type": "GlobalVariable",
@@ -5442,6 +5451,24 @@
   },
   {
     "type": "Book",
+    "flags": "PERSISTENT",
+    "id": "AV_madprayer_note",
+    "name": "Mad Prayer",
+    "script": "",
+    "mesh": "m\\Text_Note_01.nif",
+    "icon": "m\\Tx_note_01.tga",
+    "enchanting": "",
+    "text": "<DIV ALIGN=\"LEFT\"><FONT COLOR=\"000000\" SIZE=\"3\" FACE=\"Magic Cards\"><BR>\n[This appears to be some sort of heretical prayer. Not everything is legible.]<BR><BR>\n(...) We pray to (...) the Holy Mother, the Dreamwalker, the Patron of Rogues (...)<BR>\n(...) She-Who-Dreams-of-To(...).<BR>\nWe praise Her name and Her name is BLU (...)<BR>\nLet Her indomitable spirit guard us from (...)<BR><BR>\nWe pray to (...), the Patron of Savants and Jes(...)<BR>\nLet His words serve as guidance towards enlightenment.<BR>\nLet His (...) help us endure all hardships. Let the suffering serve as life les(...)<BR><BR>\nWe pray to (...) the Patron of Arts and Craftsmen, the One Who Keeps Things in Motion (...)<BR>\n(...) and His name is DUB (...)<BR>\nLet His deeds inspire us to (...) and to reach ever greater heights (...)<BR><BR>\nLet the work never remain unfinish(...)<BR>\nWe praise the new and holy (...)<BR>\n(...) and the holy words are BLUCYBDUB<BR>\n\n",
+    "data": {
+      "weight": 0.2,
+      "value": 0,
+      "book_type": "Scroll",
+      "skill": "None",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
     "flags": "",
     "id": "AV_savel_journal",
     "name": "Thief's Journal",
@@ -5484,7 +5511,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Inter Fendrath Aran",
+    "text": "Aran Tomb Purification",
     "quest_state": "Name",
     "filters": [],
     "script_text": ""
@@ -5494,7 +5521,7 @@
     "flags": "",
     "id": "3808375459248306",
     "prev_id": "1943187924580920",
-    "next_id": "3049930535185591",
+    "next_id": "8358677393582072",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -5509,103 +5536,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I picked up the remains of Fendrath Aran. I should deliver them to the Aran Ancestral Tomb, northwest of Mababi.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3049930535185591",
-    "prev_id": "3808375459248306",
-    "next_id": "7941790247754645",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 39,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The tomb has been defiled by daedra. I'll need to purge it of the mad dead and interlopers before I can inter Fendrath's remains.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "7941790247754645",
-    "prev_id": "3049930535185591",
-    "next_id": "3583462819300830",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 40,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "The Aran tomb is now at peace once again.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "3583462819300830",
-    "prev_id": "7941790247754645",
-    "next_id": "9816968219054704",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 49,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I interred Fendrath Aran in the tomb.",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "9816968219054704",
-    "prev_id": "3583462819300830",
-    "next_id": "8358677393582072",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 50,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "",
+    "text": "Aran Tomb has been corrupted. I’ve been tasked with purging it.",
     "filters": [],
     "script_text": ""
   },
@@ -5613,8 +5544,8 @@
     "type": "DialogueInfo",
     "flags": "",
     "id": "8358677393582072",
-    "prev_id": "9816968219054704",
-    "next_id": "8632377820211257",
+    "prev_id": "3808375459248306",
+    "next_id": "",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -5629,32 +5560,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I received payment from the Keepers.",
-    "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "8632377820211257",
-    "prev_id": "8358677393582072",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 200,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "I failed to deliver the remains.",
+    "text": "I made my report to Teris.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -14058,7 +13964,7 @@
     "flags": "",
     "id": "143112791615368858299449131807",
     "prev_id": "216499907610034215612129499422",
-    "next_id": "5911408290107197882501776595",
+    "next_id": "12198954002449353820574225353",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14114,8 +14020,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5911408290107197882501776595",
+    "id": "12198954002449353820574225353",
     "prev_id": "143112791615368858299449131807",
+    "next_id": "5911408290107197882501776595",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Talk to Teris, %PCRank. He has work for you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5911408290107197882501776595",
+    "prev_id": "12198954002449353820574225353",
     "next_id": "382474703614209496577415157191",
     "data": {
       "dialogue_type": "Topic",
@@ -14149,7 +14113,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_mm_savel",
+        "id": "AV_mm_aran",
         "value": {
           "type": "Integer",
           "data": 100
@@ -14456,7 +14420,7 @@
     "flags": "",
     "id": "151261802016425798692272289264",
     "prev_id": "27589280702243398254510023803",
-    "next_id": "13190006424932186383398965681",
+    "next_id": "318187532813225182873257616012",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14512,8 +14476,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "13190006424932186383398965681",
+    "id": "318187532813225182873257616012",
     "prev_id": "151261802016425798692272289264",
+    "next_id": "13190006424932186383398965681",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Indeed, %PCName. We’ve confirmed the Aran Tomb is corrupted.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Aran Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13190006424932186383398965681",
+    "prev_id": "318187532813225182873257616012",
     "next_id": "270177171016360501284117749139",
     "data": {
       "dialogue_type": "Topic",
@@ -32482,5 +32504,263 @@
       }
     ],
     "script_text": "Choice \"[Pay 500 gold.]\" 1 \"Nevermind.\" 2"
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "a mad prayer",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "366209179014137469708967329496",
+    "prev_id": "",
+    "next_id": "33168727628265455991513308509",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDSavant",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What a curious thing. Well, it’s obviously heretical. I don’t think it’s cursed, though. Literally just a mad sort of prayer. It may still serve as useful piece of evidence, though. If this was the kind of worship practised in the tomb, the Aran family will struggle with any claim against us. Here is something for you.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_madprayer_note",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Player->AddItem \"Gold_001\" 100\nPlayer->RemoveItem \"AV_madprayer_note\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "33168727628265455991513308509",
+    "prev_id": "366209179014137469708967329496",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "AV_KOTD",
+    "speaker_cell": "Molag Mar, St. Veloth's Hostel",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "What is this? This prayer seems heretical. Some mockery of the ALMSIVI, perhaps. You found it in the Aran Tomb? Give it to Ondar.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Greater",
+        "id": "AV_madprayer_note",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Aran Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "294756136413612660905595973926",
+    "prev_id": "",
+    "next_id": "368619886013814717330105771205",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "We’ve confirmed the Aran Tomb is corrupted. As far as I know, you may encounter both Daedric servants and former tomb guardians in the Aran Tomb. You know what needs to be done. Return to me once it’s purified.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "AV_AranPurged",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_aran\" 10\nAddTopic \"a mad prayer\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "368619886013814717330105771205",
+    "prev_id": "294756136413612660905595973926",
+    "next_id": "17358448428218130304046742506",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Thank you for the report. Looks like our information was correct. You handled yourself well. Take this helmet, %PCName. I’ve been looking for an opportunity to give it to someone, to tell you the truth. You deserve it. I have more work for you, if you feel ready for it.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "NotEqual",
+        "id": "AV_AranPurged",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_aran\" 100\nPlayer->AddItem \"T_De_BonemoldSacred_Helm_01\" 1\nModDisposition 10\nModPCFacRep 5 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "17358448428218130304046742506",
+    "prev_id": "368619886013814717330105771205",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "It lies east of Lake Nabia. That’s a very long walk from Molag Mar, child. If you know where Vandus Tomb is, just follow the road north of it to the east and then north. It should be on your right side before long.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
   }
 ]
