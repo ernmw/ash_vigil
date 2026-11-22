@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 887,
+    "num_objects": 919,
     "masters": [
       [
         "Morrowind.esm",
@@ -515,6 +515,21 @@
   {
     "type": "Script",
     "flags": "",
+    "id": "AV_kotdcrusader_script",
+    "header": {
+      "num_shorts": 0,
+      "num_longs": 0,
+      "num_floats": 0,
+      "bytecode_length": 0,
+      "variables_length": 0
+    },
+    "variables": "KLUv/QBYIQAAAAAAAA==",
+    "bytecode": "KLUv/QBYIQAAAAAAAA==",
+    "text": "Begin AV_kotdcrusader_script\n\nshort doonce\nshort nolore\nset nolore to 1\n\n\nif ( CellChanged == 1 )\n    if ( GetJournalIndex \"AV_mm_andas\" == 10 )\n        Disable\n    endif\nendif\n\nif ( doonce == 0 )\nif ( GetDeadCount \"AV_LichP\" > 0 )\n        set doonce to 1\n        Enable\nendif\nendif\n\nEnd AV_kotdcrusader_script\n"
+  },
+  {
+    "type": "Script",
+    "flags": "",
     "id": "cybDSFight",
     "header": {
       "num_shorts": 0,
@@ -585,7 +600,7 @@
     },
     "variables": "KLUv/QBYIQAAAAAAAA==",
     "bytecode": "KLUv/QBYIQAAAAAAAA==",
-    "text": "Begin cybLichFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( getdistance, player < 400 )\n\t\tif ( GetDetected, Player == 1 )\n\t\t\tif ( player->getinvisible == 0 )\n\t\t\t\taddspell \"cybLichSummonAV\"\n\t\t\t\tplaceatpc \"AV_LichPGhost\" 1,128,1\n\t\t\t\tset doonce to 1\n\t\t\tendif\n\t\tendif\n\tendif\nendif\n\nif ( getdistance, player <= 250 )\n\tif ( getspell \"cybLichShieldAV\" == 0 )\n\t\taddspell \"cybLichShieldAV\"\n\tendif\nendif\n\nEnd cybLichFight"
+    "text": "Begin cybLichFight\n\nshort doonce\n\nif ( doonce == 0 )\n\tif ( getdistance, player < 400 )\n\t\tif ( GetDetected, Player == 1 )\n\t\t\tif ( player->getinvisible == 0 )\n\t\t\t\taddspell \"cybLichSummonAV\"\n\t\t\t\tplaceatpc \"AV_LichPGhost\" 1,128,1\n\t\t\t\tset doonce to 1\n\t\t\tendif\n\t\tendif\n\tendif\nendif\n\nif ( getdistance, player <= 250 )\n\tif ( getspell \"cybLichShieldAV\" == 0 )\n\t\taddspell \"cybLichShieldAV\"\n\tendif\nendif\n\nif ( OnDeath == 1 )\nJournal \"AV_mm_andas\" 30\nendif\n\n\nEnd cybLichFight"
   },
   {
     "type": "Script",
@@ -2364,6 +2379,20 @@
     "flags": "",
     "id": "AV_velothismall_curve_01",
     "mesh": "ashvigil/av_velothismall_curve_01.nif"
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "AV_aran_keepsake",
+    "name": "Chisel",
+    "script": "",
+    "mesh": "pc\\m\\pc_misc_chisel_03.nif",
+    "icon": "pc\\m\\pc_misc_chisel_03.dds",
+    "data": {
+      "weight": 2.0,
+      "value": 2,
+      "flags": ""
+    }
   },
   {
     "type": "MiscItem",
@@ -4329,7 +4358,7 @@
     "flags": "",
     "id": "AV_KOTDCrusader",
     "name": "Teris Tanalas",
-    "script": "nolore",
+    "script": "AV_kotdcrusader_script",
     "mesh": "",
     "inventory": [
       [
@@ -5601,7 +5630,7 @@
     "flags": "",
     "id": "1938868551477460",
     "prev_id": "3026377260192459",
-    "next_id": "3258556023366595",
+    "next_id": "656406690010692268633611685277",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 10,
@@ -5623,9 +5652,33 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "3258556023366595",
+    "id": "656406690010692268633611685277",
     "prev_id": "1938868551477460",
-    "next_id": "656406690010692268633611685277",
+    "next_id": "3258556023366595",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3258556023366595",
+    "prev_id": "656406690010692268633611685277",
+    "next_id": "",
     "data": {
       "dialogue_type": "Journal",
       "disposition": 100,
@@ -5642,30 +5695,6 @@
     "sound_path": "",
     "text": "I performed the purification duty in the Arethan Tomb and made my report to the Keepers.",
     "quest_state": "Finished",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
-    "id": "656406690010692268633611685277",
-    "prev_id": "3258556023366595",
-    "next_id": "",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 20,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "",
     "filters": [],
     "script_text": ""
   },
@@ -8389,6 +8418,344 @@
     "player_faction": "",
     "sound_path": "",
     "text": "",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_mm_andas",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2181522700222368102244670228",
+    "prev_id": "",
+    "next_id": "145133830015046338740393131117",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Andas Tomb Purification",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "145133830015046338740393131117",
+    "prev_id": "2181522700222368102244670228",
+    "next_id": "25103604696785654480195587602",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I’ve been tasked with purifying Andas Tomb.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25103604696785654480195587602",
+    "prev_id": "145133830015046338740393131117",
+    "next_id": "31266429645718889979649372758",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 30,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I killed Goron Velas.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "31266429645718889979649372758",
+    "prev_id": "25103604696785654480195587602",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I made my report to Teris.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_sload_staff",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "125963073918081925580380300429",
+    "prev_id": "",
+    "next_id": "32473621779299173550156112728",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Staff of the Lich",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32473621779299173550156112728",
+    "prev_id": "125963073918081925580380300429",
+    "next_id": "342233772510024687073856716192",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "D’lgotha has asked me to kill Goron Velas and bring the enchanted staff back to them.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "342233772510024687073856716192",
+    "prev_id": "32473621779299173550156112728",
+    "next_id": "302111618816207365470810690816",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 20,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I traded the staff for Cinia’s axe and some sort of shard.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "302111618816207365470810690816",
+    "prev_id": "342233772510024687073856716192",
+    "next_id": "412576758913276901324027032206",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave D’lgotha the staff.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "412576758913276901324027032206",
+    "prev_id": "302111618816207365470810690816",
+    "next_id": "195870775716378637547642162615",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 110,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I traded the staff for Cinia’s axe. ",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "195870775716378637547642162615",
+    "prev_id": "412576758913276901324027032206",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 120,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I gave D’lgotha the shard.",
+    "quest_state": "Finished",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "AV_mm_lich",
+    "dialogue_type": "Journal"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "175778853011772463732358059268",
+    "prev_id": "",
+    "next_id": "360623715717111256708120850827",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Goron Velas",
+    "quest_state": "Name",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "360623715717111256708120850827",
+    "prev_id": "175778853011772463732358059268",
+    "next_id": "355648203797787590730448647",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 10,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I told Dulo about the lich.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "355648203797787590730448647",
+    "prev_id": "360623715717111256708120850827",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Journal",
+      "disposition": 100,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I reported that I killed the lich.",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -14022,7 +14389,7 @@
     "flags": "",
     "id": "12198954002449353820574225353",
     "prev_id": "143112791615368858299449131807",
-    "next_id": "5911408290107197882501776595",
+    "next_id": "29687733954046563512527058446",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14078,8 +14445,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "5911408290107197882501776595",
+    "id": "29687733954046563512527058446",
     "prev_id": "12198954002449353820574225353",
+    "next_id": "5911408290107197882501776595",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Teris has another purification job for you. Talk to him for the details.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "5911408290107197882501776595",
+    "prev_id": "29687733954046563512527058446",
     "next_id": "382474703614209496577415157191",
     "data": {
       "dialogue_type": "Topic",
@@ -14113,7 +14538,7 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "GreaterEqual",
-        "id": "AV_mm_aran",
+        "id": "AV_mm_andas",
         "value": {
           "type": "Integer",
           "data": 100
@@ -14478,7 +14903,7 @@
     "flags": "",
     "id": "318187532813225182873257616012",
     "prev_id": "151261802016425798692272289264",
-    "next_id": "13190006424932186383398965681",
+    "next_id": "21471421454717172960583542126",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -14534,8 +14959,66 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "13190006424932186383398965681",
+    "id": "21471421454717172960583542126",
     "prev_id": "318187532813225182873257616012",
+    "next_id": "13190006424932186383398965681",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "We’ve identified Andas Tomb as another potential source of corruption, %PCRank.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "AddTopic \"Andas Tomb\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "13190006424932186383398965681",
+    "prev_id": "21471421454717172960583542126",
     "next_id": "270177171016360501284117749139",
     "data": {
       "dialogue_type": "Topic",
@@ -29289,7 +29772,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "[She grins again] Sorry, I just couldn't resist. Yes, I know something about the hauntings. They're a side effect of some important work I'm doing. Have you heard of Goron Velas, %PCRace? I'm looking for him.",
+    "text": "[She grins again.] Sorry, I just couldn't resist. Yes, I know something about the hauntings. They're a side effect of some important work I'm doing. Have you heard of Goron Velas, %PCRace? I'm looking for him.",
     "filters": [
       {
         "index": 0,
@@ -29325,7 +29808,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "Hauntings? Really? Where? [Cinia looks around as if searching for someone]",
+    "text": "Hauntings? Really? Where? [Cinia looks around as if searching for someone.]",
     "filters": [],
     "script_text": "Choice \"Continue\" 1"
   },
@@ -29805,7 +30288,7 @@
         }
       }
     ],
-    "script_text": "Choice \"Lie about killing the interloper.\" 1\nChoice \"Tell the truth about your deal with Cinia.\" 2"
+    "script_text": "Choice \"[Lie about killing the interloper.]\" 1\nChoice \"[Tell the truth about your deal with Cinia.]\" 2"
   },
   {
     "type": "DialogueInfo",
@@ -30009,7 +30492,7 @@
     "flags": "",
     "id": "42132419147380185359608406108",
     "prev_id": "374033874012971269009143568603",
-    "next_id": "",
+    "next_id": "210438136911281472382035700096",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -30035,6 +30518,216 @@
         "value": {
           "type": "Integer",
           "data": 50
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "210438136911281472382035700096",
+    "prev_id": "42132419147380185359608406108",
+    "next_id": "720724532012162807446680413266",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "We have enough problems, and now you’re telling me a lich is causing havoc, too? I’ll put Teris on the issue. We’re getting spread too thin.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_lich",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_lich\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "720724532012162807446680413266",
+    "prev_id": "210438136911281472382035700096",
+    "next_id": "14754847581923234758288173322",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLeader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "I heard you handled the lich. Very impressive, %PCRank. Teris should have handled your reward.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_lich",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_hlervu_haunt",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_lich\" 10\nJournal \"AV_mm_lich\" 100\nModDisposition 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14754847581923234758288173322",
+    "prev_id": "720724532012162807446680413266",
+    "next_id": "36986361836613122738430434377",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A lich? Well, if both it and this Cinia character want that staff, then the boss probably wants it, too.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Equal",
+        "id": "AV_Cinia",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "36986361836613122738430434377",
+    "prev_id": "14754847581923234758288173322",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "A lich? I’m not sure who Cinia was, but if she was after that staff, then the boss probably wants it, too.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_Cinia",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 100
         }
       }
     ],
@@ -32749,6 +33442,495 @@
     "sound_path": "",
     "text": "It lies east of Lake Nabia. That’s a very long walk from Molag Mar, child. If you know where Vandus Tomb is, just follow the road north of it to the east and then north. It should be on your right side before long.",
     "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Andas Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "396409723517404850483064534823",
+    "prev_id": "",
+    "next_id": "973638226015378414073430239146",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Stay on your guard. I find many of our recent discoveries suspicious and we already know that there is a lich somewhere. Goron Velas, was it? It’s not confirmed yet, but he may be involved. While you investigate that tomb, I’ll inspect a different place that may be another source. We’ll meet again later and compare our findings.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_lich",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice 2 \"Continue\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "973638226015378414073430239146",
+    "prev_id": "396409723517404850483064534823",
+    "next_id": "16112517703180298996367619600",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Stay on your guard. I find many of our recent discoveries suspicious. There is something else going on. We just don’t know what it is yet. While you investigate that tomb, I’ll inspect a different place that may be another source. We’ll meet later and compare our findings.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_lich",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice 2 \"Continue\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16112517703180298996367619600",
+    "prev_id": "973638226015378414073430239146",
+    "next_id": "14029776273385280809284169610",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Here's the keepsake. Before you go, speak with Meille. He may have some useful information for you.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "NotEqual",
+        "id": "AV_meet_the_boss",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Player->AddItem \"AV_aran_keepsake\" 1\nJournal \"AV_mm_andas\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "14029776273385280809284169610",
+    "prev_id": "16112517703180298996367619600",
+    "next_id": "32224760203018768182509852930",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Here's the keepsake. Stay sharp.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Player->AddItem \"AV_aran_keepsake\" 1\nJournal \"AV_mm_andas\" 10"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "32224760203018768182509852930",
+    "prev_id": "14029776273385280809284169610",
+    "next_id": "38920761183324810532004808562",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Ever since your discovery of the necromancer in Helan Tomb, Ondar and I have been investigating possible sources of corruption in the region. We have a few leads. I’ve personally inspected several places already. Local Armigers and Ordinators helped us as well. There is still a lot of work that needs to be done, so now I need your help. Andas Tomb is quite far to the north. West of Tel Fyr. I don’t know if the keepsake still works, as initial reports indicate that the tomb guardians may be corrupted. Well, if that’s the case, purify the tomb.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "GreaterEqual",
+        "id": "AV_mm_aran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice 1 \"Continue\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "38920761183324810532004808562",
+    "prev_id": "32224760203018768182509852930",
+    "next_id": "16191963005137876995343864557",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDCrusader",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "So the Andas Tomb was corrupted by a lich. Actually, I think he defiled several places. Another ancestral tomb I’ve managed to purify bore traces of the same foul magic. We’ve dealt our enemies a powerful blow, %PCName. Please, take this. You know that we use this kind of armor often. Besides providing protection, among the Keepers it’s also considered a symbol of trust. We don’t have uniforms, but it’s as close to one as you’ll see here. I believe that you’ve received a whole set from us by now. Well deserved. I’ll need time to think about the next move. I’m sure that Firsylla has more work for you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal \"AV_mm_andas\" 100\nPlayer->AddItem \"T_De_BonemoldSacred_PauldL_01\" 1\nPlayer->AddItem \"T_De_BonemoldSacred_PauldR_01\" 1\nPlayer->AddItem \"T_De_BonemoldSacred_Boots_01\" 1\nPlayer->AddItem \"T_De_BonemoldSacred_GauntL_01\" 1\nPlayer->AddItem \"T_De_BonemoldSacred_GauntR_01\" 1\nModDisposition 15\nModPCFacRep 10 \"AV_KOTD\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "16191963005137876995343864557",
+    "prev_id": "38920761183324810532004808562",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDLPP",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "%PCName, I’m quite certain that the keepsake Teris gave you won’t work. Based on what I’ve learned, the tomb is most certainly corrupted, so make sure you’re well prepared. Oh, and you should definitely talk to our mutual friend. You’ll be interested in what he has to say.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
       {
         "index": 1,
         "filter_type": "Function",
