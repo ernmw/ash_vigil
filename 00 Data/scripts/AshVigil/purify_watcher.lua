@@ -15,12 +15,14 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
-local core                  = require('openmw.core')
+local core         = require('openmw.core')
 local types                 = require('openmw.types')
 local pself                 = require('openmw.self')
-local MOD_NAME              = require("scripts.AshVigil.ns")
+local MOD_NAME     = require("scripts.AshVigil.ns")
+local localization = core.l10n(MOD_NAME)
 local settings = require("scripts.AshVigil.settings.settings")
-local purifyQuests             = require("scripts.AshVigil.purifyQuests.load")
+local purifyQuests = require("scripts.AshVigil.purifyQuests.load")
+local ui                     = require('openmw.ui')
 
 local function onTombInterlopersCleared(cellID)
     settings.debugPrint("onTombInterlopersCleared start - "..tostring(cellID))
@@ -46,6 +48,9 @@ local function onTombInterlopersCleared(cellID)
         value = 1,
         player = pself,
     })
+
+    ui.showMessage(localization("purge_message"))
+
 end
 
 
