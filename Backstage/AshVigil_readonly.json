@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 919,
+    "num_objects": 923,
     "masters": [
       [
         "Morrowind.esm",
@@ -5156,6 +5156,18 @@
     "mesh": "base_animkna.nif",
     "inventory": [
       [
+        5,
+        "pick_apprentice_01"
+      ],
+      [
+        2,
+        "probe_journeyman_01"
+      ],
+      [
+        1,
+        "pick_master"
+      ],
+      [
         1,
         "ingred_black_lichen_01"
       ],
@@ -5189,6 +5201,10 @@
       ],
       [
         1,
+        "AB_c_CommonRobeBlack"
+      ],
+      [
+        1,
         "ingred_wolfsbane_01"
       ],
       [
@@ -5207,7 +5223,7 @@
       "fight": 30,
       "flee": 30,
       "alarm": 0,
-      "services": "BARTERS_INGREDIENTS | BARTERS_ALCHEMY | OFFERS_TRAINING"
+      "services": "BARTERS_INGREDIENTS | BARTERS_LOCKPICKS | BARTERS_PROBES | BARTERS_ALCHEMY | OFFERS_TRAINING"
     },
     "ai_packages": [],
     "travel_destinations": [],
@@ -19654,7 +19670,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "My child, it’s not “the Great Reorganization”. Things should just get back to how they once were. I love ALMSIVI and my ancestors with all my heart. We’ve all lost something when we turned away from the old rites. It pains me to see so many ancestral tombs abandoned and despoiled. I know that my ancestors think the same, as I speak with them often in Necrom. And I’m sure that ancestors of many good old Dunmer families would agree with us as well, even if some of them are too proud to admit it.",
+    "text": "My child, it’s not \"the Great Reorganization.\" Things should just get back to how they once were. I love ALMSIVI and my ancestors with all my heart. We’ve all lost something when we turned away from the old rites. It pains me to see so many ancestral tombs abandoned and despoiled. I know that my ancestors think the same, as I speak with them often in Necrom. And I’m sure that ancestors of many good old Dunmer families would agree with us as well, even if some of them are too proud to admit it.",
     "filters": [],
     "script_text": ""
   },
@@ -30295,7 +30311,7 @@
     "flags": "",
     "id": "262620646812281595518584622669",
     "prev_id": "288135521410992510952477066209",
-    "next_id": "",
+    "next_id": "873652685016560769216321543211",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -30336,6 +30352,30 @@
       }
     ],
     "script_text": "moddisposition 10\nModPCFacRep, 5, \"AV_KOTD\"\nplayer->additem \"T_Com_Potion_ReflectDamage_E\" 1\nplayer->additem \"gold_001\" 300\njournal \"AV_hlervu_haunt\" 100"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "873652685016560769216321543211",
+    "prev_id": "262620646812281595518584622669",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Hlervu? Yes, I heard you. It's east of Molag Mar, along the eastern coast. It's probably easiest to swim east, and when you see Odirniran, head northeast.",
+    "filters": [],
+    "script_text": ""
   },
   {
     "type": "Dialogue",
@@ -33892,7 +33932,7 @@
     "flags": "",
     "id": "16191963005137876995343864557",
     "prev_id": "38920761183324810532004808562",
-    "next_id": "",
+    "next_id": "196316093711817495705234664003",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -33931,6 +33971,84 @@
           "data": 100
         }
       },
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "196316093711817495705234664003",
+    "prev_id": "16191963005137876995343864557",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "The Andas Tomb can be found along the northeast coast of Molag Amur. From here, it's straight north as the cliffracer flies,  but the terrain is rough. If you can make it to Tel Fyr, it's just across the water to the west.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "PcExpelled",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Fadathram Tomb",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "42180816696518036770224033584",
+    "prev_id": "",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 0
+    },
+    "speaker_id": "AV_KOTDArch",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "AV_KOTD",
+    "sound_path": "",
+    "text": "Hmm. Oh yes, Fadathram! That's east of Ald'ruhn, along the Great Ghostfence.",
+    "filters": [
       {
         "index": 1,
         "filter_type": "Function",
