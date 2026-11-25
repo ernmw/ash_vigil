@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "House Fargoth",
     "description": "https://github.com/ernmw/ash_vigil",
-    "num_objects": 923,
+    "num_objects": 937,
     "masters": [
       [
         "Morrowind.esm",
@@ -2391,6 +2391,20 @@
     "data": {
       "weight": 2.0,
       "value": 2,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "AV_cinia_shard",
+    "name": "Staff Shard",
+    "script": "",
+    "mesh": "m\\Misc_soulgem_petty.NIF",
+    "icon": "m\\Tx_soulgem_Petty.tga",
+    "data": {
+      "weight": 0.2,
+      "value": 0,
       "flags": ""
     }
   },
@@ -8705,33 +8719,8 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "175778853011772463732358059268",
-    "prev_id": "",
-    "next_id": "360623715717111256708120850827",
-    "data": {
-      "dialogue_type": "Journal",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "",
-    "speaker_race": "",
-    "speaker_class": "",
-    "speaker_faction": "",
-    "speaker_cell": "",
-    "player_faction": "",
-    "sound_path": "",
-    "text": "Goron Velas",
-    "quest_state": "Name",
-    "filters": [],
-    "script_text": ""
-  },
-  {
-    "type": "DialogueInfo",
-    "flags": "",
     "id": "360623715717111256708120850827",
-    "prev_id": "175778853011772463732358059268",
+    "prev_id": "",
     "next_id": "355648203797787590730448647",
     "data": {
       "dialogue_type": "Journal",
@@ -8747,7 +8736,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I told Dulo about the lich.",
+    "text": "",
     "filters": [],
     "script_text": ""
   },
@@ -8771,7 +8760,7 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "I reported that I killed the lich.",
+    "text": "",
     "quest_state": "Finished",
     "filters": [],
     "script_text": ""
@@ -11156,7 +11145,7 @@
     "flags": "",
     "id": "19072203543552639118761036474",
     "prev_id": "20029295039707991184463822662",
-    "next_id": "323772855810399274797252331014",
+    "next_id": "17433217291961317764620385493",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -11190,8 +11179,472 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "323772855810399274797252331014",
+    "id": "17433217291961317764620385493",
     "prev_id": "19072203543552639118761036474",
+    "next_id": "37663332898312720661446481141",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "That’s right. Thank you for your assistance. I doubt that we will meet again, but you never know. Still, I want you to know that doing business with you was a pleasure. And here is my axe. Let it serve you.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "RemoveItem \"cybCiniaAxe\" 1\nPlayer->AddItem \"cybCiniaAxe\" 1\nJournal \"AV_sload_staff\" 110\nPlayer->RemoveItem \"CybLichStaff\" 1\n\"CybLichStaff\"->Disable\nDisable"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "37663332898312720661446481141",
+    "prev_id": "17433217291961317764620385493",
+    "next_id": "35551182275292355413763274421",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "What a shame. We had a deal. I did my part. Why did you have to make this difficult?",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "startcombat player\nsetfight 100\nGoodbye"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "35551182275292355413763274421",
+    "prev_id": "37663332898312720661446481141",
+    "next_id": "17733187207032364819638849779",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "A Sload? My, my. What interesting friends you have. A necromancer, I assume. That makes sense. I’m glad you told me. The slug probably wants to do the same thing the lich did: drain the staff of its magical power for a necromantic ritual. In fact, the lich came quite close to succeeding. It’s why teleportation magic doesn’t work here. It either ran out of time or was still missing something. ",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 3
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Continue\" 4"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "17733187207032364819638849779",
+    "prev_id": "35551182275292355413763274421",
+    "next_id": "194940303914203120089285918018",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Well, today is your lucky day. I know a way around this. You don’t seem dumb, so I’m sure you’ve realized by now that I’m a woman of many abilities. I’ll take the staff, but I’ll also give you something you can present to the Sload as proof that you tried to do your job. A depleted shard. Trust me, it’s all that would remain of the staff once the lich was done with it, and the Sload knows it. Just say that this is what you found on the lich.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 4
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Agreed.\" 5\nChoice \"No.\" 2\nChoice \"Who are you? Truly?\" 6"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "194940303914203120089285918018",
+    "prev_id": "17733187207032364819638849779",
+    "next_id": "105010697512935273114171886755",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[The woman takes the staff and mutters some incantations. After some time, a small shard appears before your eyes, but the staff is still there.] Take this. You know what to do. Thank you for your assistance. I doubt that we will meet again, but you never know. Still, I want you to know that doing business with you was a pleasure. And here is my axe. Let it serve you. ",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 5
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "RemoveItem \"cybCiniaAxe\" 1\nPlayer->AddItem \"cybCiniaAxe\" 1\nPlayer->AddItem \"AV_cinia_shard\" 1\nJournal \"AV_sload_staff\" 20\nPlayer->RemoveItem \"CybLichStaff\" 1\n\"CybLichStaff\"->Disable\nDisable"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "105010697512935273114171886755",
+    "prev_id": "194940303914203120089285918018",
+    "next_id": "146189082018121502658912296377",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[A familiar grin appears on Cinia’s face] An Imperial officer, of course. It doesn’t matter who I am. What matters is that we can help each other.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 6
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Agreed.\" 5\nChoice \"No.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "146189082018121502658912296377",
+    "prev_id": "105010697512935273114171886755",
+    "next_id": "12429751206404332539129095107",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "How good to see you, %PCRace! You see, I’ve saved you a lot of trouble by coming here. You don’t even have to look for me to give me that staff. Convenient, huh? [Cinia grins.] So I’ll just take it and be on my way. And of course, you’ll get the axe as a bonus, just as I promised.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"No.\" 2\nChoice \"Take it.\" 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12429751206404332539129095107",
+    "prev_id": "146189082018121502658912296377",
+    "next_id": "323772855810399274797252331014",
+    "data": {
+      "dialogue_type": "Greeting",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Cinia",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "How good to see you, %PCRace! You see, I’ve saved you a lot of trouble by coming here. You don’t even have to look for me to give me that staff. Convenient, huh? [Cinia grins.] So I’ll just take it and be on my way. And of course, you’ll get the axe as a bonus, just as I promised.",
+    "filters": [
+      {
+        "index": 2,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"No.\" 2\nChoice \"We have one other problem. There is a Sload who wants the same staff as well.\" 3"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "323772855810399274797252331014",
+    "prev_id": "12429751206404332539129095107",
     "next_id": "10687709343278142182105542611",
     "data": {
       "dialogue_type": "Greeting",
@@ -30731,7 +31184,7 @@
     "flags": "",
     "id": "36986361836613122738430434377",
     "prev_id": "14754847581923234758288173322",
-    "next_id": "",
+    "next_id": "329025919515901123382050333571",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -30771,6 +31224,30 @@
         }
       }
     ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "329025919515901123382050333571",
+    "prev_id": "36986361836613122738430434377",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Liches are not like most undead. Their nature is not that of servants. Occasionally, some sort of mutually beneficial pact may be formed, and they become allies. Ephemeral ones, as this one found. Goron Velas will not become this one’s ally. He will certainly declare you as his enemy as well. If you find him, do not expect a warm welcome.",
+    "filters": [],
     "script_text": ""
   },
   {
@@ -33990,7 +34467,7 @@
     "flags": "",
     "id": "196316093711817495705234664003",
     "prev_id": "16191963005137876995343864557",
-    "next_id": "",
+    "next_id": "401812059516785601147225617211",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -34013,6 +34490,340 @@
         "function": "PcExpelled",
         "comparison": "Equal",
         "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "401812059516785601147225617211",
+    "prev_id": "196316093711817495705234664003",
+    "next_id": "19139709625402303329851187485",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "This one is glad you have come. As an ever curious worm, this one has been studying the land. It appears that the nature of the studies made the others curious as well. Curiosity is just like resourcefulness. Appreciated in allies, not in enemies. There is a lich called Goron Velas which now considers himself this one’s rival. He presumes too much. He harbors a misconception about becoming this one’s equal, but so far, he has remained in hiding. This one is not certain whether the Andas Tomb is the lich’s lair, but it appears so. As this one’s agent, %PCName will find the lich and dispose of him. The creature has an enchanted staff. Bring it to this one.\n",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "CybLichStaff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_cinia_shard",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_mm_andas",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sload_staff 10\nAddTopic \"Goron Velas\""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19139709625402303329851187485",
+    "prev_id": "401812059516785601147225617211",
+    "next_id": "245792786913529500878223146812",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "[The Sload is inscrutable. You don’t know whether he truly believed you.] This is all you have found? Ah. You must have been late. A small shard will not be of much use to this one. Quite a disappointment. This one expected more of you, %PCName.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "CybLichStaff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_cinia_shard",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sload_staff 120\nPlayer->RemoveItem AV_cinia_shard 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "245792786913529500878223146812",
+    "prev_id": "19139709625402303329851187485",
+    "next_id": "3588262572598302054472356648",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, this is the right item. This one is pleased with your work, %PCName. A job well done deserves a reward. Take these concoctions. This one prepared them himself. Fruitful result of recent experiments. ",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "CybLichStaff",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_cinia_shard",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Journal AV_sload_staff 100\nPlayer->RemoveItem CybLichStaff 1"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "3588262572598302054472356648",
+    "prev_id": "245792786913529500878223146812",
+    "next_id": "339089606110482221849399708990",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The lich called Goron Velas is dead, yet you are empty-handed. Bring me the staff.",
+    "filters": [
+      {
+        "index": 4,
+        "filter_type": "Dead",
+        "function": "DeadType",
+        "comparison": "Greater",
+        "id": "AV_LichP",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 3,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "CybLichStaff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 2,
+        "filter_type": "Item",
+        "function": "ItemType",
+        "comparison": "Equal",
+        "id": "AV_cinia_shard",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "339089606110482221849399708990",
+    "prev_id": "3588262572598302054472356648",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "AV_Sload",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Kill the lich and bring this one the staff. A simple request.",
+    "filters": [
+      {
+        "index": 3,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "AV_sload_staff",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Greater",
+        "id": "AV_sload_staff",
         "value": {
           "type": "Integer",
           "data": 0
