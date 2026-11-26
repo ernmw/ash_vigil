@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Purify Andas Tomb
+# this version is for Tombs of Zafirbel Bay
+priority: balance
+instances:
+  - conditions:
+      - cell: "Andas Ancestral Tomb"
+      - has_journal:
+          quest: av_mm_andas
+          min: 10
+          max: 10
+    once: true
+    trigger: cell_enter
+    actions:
+      - create:
+          AV_LichP:
+            transform_type: absolute
+            position:
+              x: -2823
+              y: -105
+              z: 257
+      - create:
+          AV_Cinia:
+            transform_type: absolute
+            position:
+              x: -1208
+              y: 242
+              z: 129
