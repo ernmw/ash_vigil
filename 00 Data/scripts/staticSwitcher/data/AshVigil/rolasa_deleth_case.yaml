@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../../../../../Backstage/replacerSchema.json
+log_name: Rolasa Deleth Case
+instances:
+  - conditions:
+      - has_journal:
+          quest: AV_Rolasa_Deleth
+          min: 100
+      - record_id: "AV_RolasaFather"
+    actions:
+      - disable: true
+  - conditions:
+      - cell: "Molag Mar, The Pilgrim's Rest"
+      - has_journal:
+          quest: AV_Rolasa_Deleth
+          min: 10
+    once: true
+    trigger: cell_enter
+    actions:
+      - create:
+          AV_RolasaFather:
+            transform_type: absolute
+            position:
+              x: -807
+              y: 20
+              z: 1
